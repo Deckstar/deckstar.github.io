@@ -208,7 +208,7 @@ a {
 
 a:hover {
   border-bottom-color: transparent !important;
-  color: #6bd4c8;
+  color: #b68284;
 }
 
 strong,
@@ -2000,7 +2000,7 @@ input[type='password']:focus,
 input[type='email']:focus,
 select:focus,
 textarea:focus {
-  border-color: #6bd4c8;
+  border-color: #b68284;
 }
 
 select {
@@ -2105,7 +2105,7 @@ input[type='radio']:checked + label:before {
 
 input[type='checkbox']:focus + label:before,
 input[type='radio']:focus + label:before {
-  border-color: #6bd4c8;
+  border-color: #b68284;
 }
 
 input[type='checkbox'] + label:before {
@@ -2193,27 +2193,27 @@ input[type='radio'] + label:before {
 }
 
 .icon.style1:before {
-  color: #c3e895;
+  color: #ff7f50;
 }
 
 .icon.style2:before {
-  color: #8addaa;
+  color: #da806a;
 }
 
 .icon.style3:before {
-  color: #6bd4c8;
+  color: #b68284;
 }
 
 .icon.style4:before {
-  color: #57aed3;
+  color: #92839e;
 }
 
 .icon.style5:before {
-  color: #4a87d3;
+  color: #6e85b8;
 }
 
 .icon.style6:before {
-  color: #6b88e6;
+  color: #4a87d3;
 }
 
 .icon.major {
@@ -2803,7 +2803,7 @@ button:disabled,
   background-color: #4686a0;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed, fixed;
-  background-image: url("images/overlay2.png"), url("images/overlay3.svg"), linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
+  background-image: url("images/overlay2.png"), url("images/overlay3.svg"), linear-gradient(45deg, #e6531d 5%, #7d6e6f 30%, #3e6493);
   background-position: top left, center center, center center;
   background-size: auto, cover, cover;
   overflow: hidden;
@@ -2967,7 +2967,7 @@ button:disabled,
 #header:after {
   -webkit-transition: opacity 1s ease;
   transition: opacity 1s ease;
-  background-image: linear-gradient(45deg, #4fa49a, #4361c2);
+  background-image: linear-gradient(45deg, #7d6e6f, #3e6493);
   content: '';
   height: 100%;
   left: 0;
@@ -2999,7 +2999,7 @@ body.is-preload #header:after {
   background-color: #4686a0;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed, fixed;
-  background-image: url("images/overlay2.png"), url("images/overlay4.svg"), linear-gradient(45deg, #4361c2, #4fa49a 50%, #9dc66b 95%);
+  background-image: url("images/overlay2.png"), url("images/overlay4.svg"), linear-gradient(45deg, #3e6493, #7d6e6f 50%, #e6531d 95%);
   background-position: top left, center center, center center;
   background-size: auto, cover, cover;
   text-align: center;
@@ -3342,6 +3342,7 @@ body.is-preload #header:after {
   height: 7em;
   width: 7em;
   border-radius: 50%;
+  margin-top: 1em;
 }
 
 /* Navbar */
@@ -3359,9 +3360,23 @@ body.is-preload #header:after {
   z-index: 999;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px #4a87d3;
+  border-bottom: solid 1px #6e85b8;
   opacity: 0.9;
   background-color: #666666;
+}
+
+@media screen and (max-width: 736px) {
+  .navbar {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .navbar .empty-nav-div {
+    display: none;
+  }
 }
 
 .navbar ul {
@@ -3370,11 +3385,19 @@ body.is-preload #header:after {
   display: flex;
   list-style-type: none;
   margin: 0.5em;
+  padding: 0;
 }
 
 .navbar li {
   text-indent: 0;
   text-align: center;
+}
+
+@media screen and (max-width: 736px) {
+  .navbar li {
+    font-size: 0.85em;
+    padding: 0.2em 0;
+  }
 }
 
 .navbar a {

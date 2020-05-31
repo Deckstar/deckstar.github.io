@@ -1745,6 +1745,7 @@ body.is-preload {
   height: 7em;
   width: 7em;
   border-radius: 50%;
+  margin-top: 1em;
 }
 
 /* Navbar */
@@ -1761,15 +1762,31 @@ body.is-preload {
 
   background-color: _palette(dark, bg);
 
+  @include breakpoint('<=small') {
+    justify-content: center;
+  }
+
+  .empty-nav-div {
+    @include breakpoint('<=small') {
+      display: none;
+    }
+  }
+
   ul {
     display: flex;
     list-style-type: none;
     margin: 0.5em;
+    padding: 0;
   }
 
   li {
     text-indent: 0;
     text-align: center;
+
+    @include breakpoint('<=small') {
+      font-size: 0.85em;
+      padding: 0.2em 0;
+    }
   }
 
   a {
@@ -1780,11 +1797,11 @@ body.is-preload {
     border-bottom: none;
 
     &:hover {
-      color: _palette(orange);
+      color: _palette(accent1);
     }
   }
 
   .navbar-pipe {
-    color: _palette(orange);
+    color: _palette(accent1);
   }
 }
