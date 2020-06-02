@@ -1784,7 +1784,7 @@ body.is-preload {
     text-align: center;
 
     @include breakpoint('<=small') {
-      font-size: 0.85em;
+      font-size: 0.8em;
       padding: 0.2em 0;
     }
   }
@@ -1804,4 +1804,29 @@ body.is-preload {
   .navbar-pipe {
     color: _palette(accent1);
   }
+}
+
+/* Mini-images */
+.mini-logo {
+  height: 1em;
+}
+
+.mini-flag {
+  height: 0.8em;
+  // width: 1.2em;
+}
+
+/* Image grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 2em;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.subtitle {
+  font-size: 0.8em;
 }

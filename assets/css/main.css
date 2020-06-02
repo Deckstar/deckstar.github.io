@@ -3395,7 +3395,7 @@ body.is-preload #header:after {
 
 @media screen and (max-width: 736px) {
   .navbar li {
-    font-size: 0.85em;
+    font-size: 0.8em;
     padding: 0.2em 0;
   }
 }
@@ -3414,5 +3414,32 @@ body.is-preload #header:after {
 
 .navbar .navbar-pipe {
   color: #ff7f50;
+}
+
+/* Mini-images */
+.mini-logo {
+  height: 1em;
+}
+
+.mini-flag {
+  height: 0.8em;
+}
+
+/* Image grid */
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -webkit-column-gap: 2em;
+          column-gap: 2em;
+}
+
+.grid img {
+  max-width: 100%;
+}
+
+.subtitle {
+  font-size: 0.8em;
 }
 /*# sourceMappingURL=main.css.map */
