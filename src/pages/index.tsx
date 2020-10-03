@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { About, Banner, Contact, Education, Skills } from '@sections/home';
-import { Layout } from '@components/index';
+import { Wrapper } from '@components';
+import { WithTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 
-const Home = () => {
+const Home: FC<WithTranslation> = () => {
   return (
-    <Layout>
+    <Wrapper>
+      <Helmet>
+        <title>Dexter Sibirtsev | Portfolio</title>
+      </Helmet>
+
       <Banner />
       <About />
       <Skills />
       <Education />
       <Contact />
-    </Layout>
+    </Wrapper>
   );
 };
 

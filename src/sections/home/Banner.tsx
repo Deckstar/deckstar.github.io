@@ -1,7 +1,10 @@
 import React from 'react';
-import { photos } from '@images/index';
+import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
+import { photos } from '@images';
+import { useTranslation } from 'react-i18next';
 
 const Banner = () => {
+  const { t } = useTranslation();
   return (
     <section id="header">
       <div className="inner">
@@ -9,7 +12,7 @@ const Banner = () => {
         <h1>
           <strong>Dexter Sibirtsev</strong>
         </h1>
-        <h1>Software Developer</h1>
+        <h1>{t('Banner.SoftwareDeveloper')}</h1>
         <p>
           Hello! I am a professional programmer, specializing in websites &
           mobile apps.
@@ -19,25 +22,25 @@ const Banner = () => {
           <li>
             <a
               href="https://twitter.com/DexterSibirtsev"
-              className="icon brands alt fa-twitter"
+              className="icon brands alt"
             >
+              <FaTwitter size={26} />
               <span className="label">Twitter</span>
             </a>
           </li>
           <li>
-            <a
-              href="https://github.com/Deckstar"
-              className="icon brands alt fa-github"
-            >
-              <span className="label">GitHub</span>
+            <a href="https://github.com/Deckstar" className="icon brands alt">
+              <FaGithub size={26} />
+              <span className="label">Github</span>
             </a>
           </li>
           <li>
             <a
               href="https://www.goodreads.com/user/show/58196314-dexter"
-              className="icon brands alt fa-goodreads"
+              className="icon brands alt"
             >
-              <span className="label">GoodReads</span>
+              <FaGoodreads size={26} />
+              <span className="label">Goodreads</span>
             </a>
           </li>
           <li>

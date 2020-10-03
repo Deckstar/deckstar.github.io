@@ -1,5 +1,5 @@
 import React from 'react';
-import { education, flags } from '@images/index';
+import { education, flags } from '@images';
 
 const Education = () => {
   return (

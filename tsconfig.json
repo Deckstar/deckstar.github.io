@@ -13,6 +13,7 @@
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
+      "@*": ["src/*"],
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@images/*": ["src/images/*"],
@@ -26,5 +27,11 @@
     "noImplicitThis": true,
     "alwaysStrict": true
   },
-  "exclude": ["node_modules", "gatsby.config.js"]
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "gatsby.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { photos } from '@images/index';
+import { photos } from '@images';
 import resumePDF from '@assets/docs/Sibirtsev CV.pdf';
 
 const About = () => {

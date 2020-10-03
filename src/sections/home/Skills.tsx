@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaDesktop, FaMobile } from 'react-icons/fa';
-import { flags, logos } from '@images/index';
+import { flags, logos } from '@images';
 
 const Skills = () => {
   return (

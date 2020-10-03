@@ -1,14 +1,14 @@
 const flags = {
-  Estonia: require('./flags/Estonia Flag.png'),
-  France: require('./flags/France Flag.png'),
-  Germany: require('./flags/Germany Flag.png'),
-  Hungary: require('./flags/Hungary Flag.png'),
-  Japan: require('./flags/Japan Flag.png'),
-  Russia: require('./flags/Russia Flag.png'),
-  Spain: require('./flags/Spain Flag.png'),
-  Sweden: require('./flags/Sweden Flag.png'),
-  Switzerland: require('./flags/Switzerland Flag.png'),
-  UK: require('./flags/UK Flag.png'),
+  Estonia: require('./flags/estonia.png'),
+  France: require('./flags/france.png'),
+  Germany: require('./flags/germany.png'),
+  Hungary: require('./flags/hungary.png'),
+  Japan: require('./flags/japan.png'),
+  Russia: require('./flags/russia.png'),
+  Spain: require('./flags/spain.png'),
+  Sweden: require('./flags/sweden.png'),
+  Switzerland: require('./flags/switzerland.png'),
+  UK: require('./flags/united-kingdom.png'),
 };
 
 export default flags;
