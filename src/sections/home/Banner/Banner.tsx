@@ -47,7 +47,7 @@ const Banner = () => {
 
           <Box className={classes.buttons}>
             <Link href="#about" className="button">
-              <Button variant="contained">About Me & CV</Button>
+              <Button variant="contained">About Me &amp; CV</Button>
             </Link>
             <Link href="#skills" className="button">
               <Button variant="contained">Skills</Button>

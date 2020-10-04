@@ -205,8 +205,11 @@ const Skills = () => {
                   />
                 </Box>
                 <Box component="li">
-                  HTML & CSS{' '}
-                  <LineHighImage src={logos.HTMLandCSS} alt="HTML & CSS logo" />
+                  HTML &amp; CSS{' '}
+                  <LineHighImage
+                    src={logos.HTMLandCSS}
+                    alt="HTML &amp; CSS logo"
+                  />
                 </Box>
               </Box>
             </CardContent>
@@ -437,7 +440,7 @@ const Skills = () => {
                   and Bitbucket{' '}
                   <LineHighImage src={logos.bitbucket} alt="Bitbucket logo" />{' '}
                   <Box component="span" className={classes.subtitle}>
-                    (Team version control & remote repositories)
+                    (Team version control &amp; remote repositories)
                   </Box>
                 </Box>
                 <Box component="li">
@@ -497,7 +500,7 @@ const Skills = () => {
                   />{' '}
                   <LineHighImage src={logos.audition} alt="Audition logo" />{' '}
                   <Box component="span" className={classes.subtitle}>
-                    (graphics & audio)
+                    (graphics &amp; audio)
                   </Box>
                 </Box>
                 <Box component="li">
@@ -536,7 +539,7 @@ const Skills = () => {
                   Logic Pro{' '}
                   <LineHighImage src={logos.logicPro} alt="Logic Pro logo" />{' '}
                   <Box component="span" className={classes.subtitle}>
-                    (Audio recording & mixing)
+                    (Audio recording &amp; mixing)
                   </Box>
                 </Box>
                 <Box component="li">
@@ -552,11 +555,11 @@ const Skills = () => {
             </CardContent>
           </Card>
 
-          {/* Productivity & business */}
+          {/* Productivity &amp; business */}
           <Card elevation={3} className={classes.cardContainer}>
             <CardHeader
               className={classes.cardHeader}
-              title="Productivity & business:"
+              title="Productivity &amp; business:"
               titleTypographyProps={{
                 className: classes.cardTitle,
                 variant: 'body1',
@@ -577,11 +580,11 @@ const Skills = () => {
             </CardContent>
           </Card>
 
-          {/* Data & math */}
+          {/* Data &amp; math */}
           <Card elevation={3} className={classes.cardContainer}>
             <CardHeader
               className={classes.cardHeader}
-              title="Data & math:"
+              title="Data &amp; math:"
               titleTypographyProps={{
                 className: classes.cardTitle,
                 variant: 'body1',
@@ -603,7 +606,7 @@ const Skills = () => {
                     alt="Mathematica logo"
                   />{' '}
                   <Box component="span" className={classes.subtitle}>
-                    (Math & technical computing)
+                    (Math &amp; technical computing)
                   </Box>
                 </Box>
               </Box>

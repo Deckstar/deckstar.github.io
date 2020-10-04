@@ -69,6 +69,7 @@ const Education = () => {
           </Typography>
         </Box>
         <Box className={classes.grid}>
+          {/* Sweden */}
           <Card elevation={3} className={classes.cardContainer}>
             <CardMedia
               image={education.SSE}
@@ -81,11 +82,12 @@ const Education = () => {
                 <LineHighImage src={flags.Sweden} alt="Sweden flag" />
               </Typography>
               <Typography variant="body2" className={classes.cardCaption}>
-                MSc Master of Finance (2017-2019)
+                MSc Master of Finance (2017 – 2019)
               </Typography>
             </CardContent>
           </Card>
 
+          {/* United Kingdom */}
           <Card elevation={3} className={classes.cardContainer}>
             <CardMedia
               image={education.UCL}
@@ -98,11 +100,13 @@ const Education = () => {
                 <LineHighImage src={flags.UK} alt="UK flag" />
               </Typography>
               <Typography variant="body2" className={classes.cardCaption}>
-                BA Economics and Business with East European Studies (2014-2017)
+                BA Economics and Business with East European Studies (2014 –
+                2017)
               </Typography>
             </CardContent>
           </Card>
 
+          {/* Switzerland */}
           <Card elevation={3} className={classes.cardContainer}>
             <CardMedia
               image={education.leRosey}
@@ -115,7 +119,7 @@ const Education = () => {
                 <LineHighImage src={flags.Switzerland} alt="Switzerland flag" />
               </Typography>
               <Typography variant="body2" className={classes.cardCaption}>
-                IB International Baccalaureate bilingual diploma (2008-2014)
+                IB International Baccalaureate bilingual diploma (2008 – 2014)
               </Typography>
             </CardContent>
           </Card>
