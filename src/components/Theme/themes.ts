@@ -1,6 +1,10 @@
+import { ThemeOptions } from '@material-ui/core';
 import { lightBlue, deepOrange } from '@material-ui/core/colors';
 
-export const lightTheme = {
+const commonTheme: ThemeOptions = {};
+
+export const lightTheme: ThemeOptions = {
+  ...commonTheme,
   palette: {
     type: 'light',
     primary: {
@@ -12,7 +16,8 @@ export const lightTheme = {
   },
 };
 
-export const darkTheme = {
+export const darkTheme: ThemeOptions = {
+  ...commonTheme,
   palette: {
     type: 'dark',
     primary: {

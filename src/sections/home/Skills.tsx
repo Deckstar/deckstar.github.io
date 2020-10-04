@@ -1,553 +1,488 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
+import { Box, Container, Typography } from '@material-ui/core';
 import { FaDesktop, FaMobile } from 'react-icons/fa';
 import { flags, logos } from '@images';
+import { LineHighImage } from '@components';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      padding: 30,
+    },
+    title: {
+      marginBottom: '0.5em',
+    },
+    twoRows: {
+      display: 'grid',
+      gridTemplateColumns: '1fr',
+      [theme.breakpoints.up('md')]: {
+        gridTemplateColumns: '1fr 1fr',
+      },
+      columnGap: '2em',
+      rowGap: '1em',
+    },
+    skillCategory: {},
+    bigIconsContainer: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'center',
+      listStyle: 'none',
+      paddingLeft: 0,
+    },
+    bigIconListItem: {
+      display: 'inline-block',
+      padding: '2.5em',
+      textAlign: 'center',
+    },
+    bigIconOutline: {
+      borderRadius: 10,
+      border: `solid 1px ${theme.palette.text.primary}`,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '8em',
+      lineHeight: '8em',
+      margin: 0,
+      textAlign: 'center',
+      width: '8em',
+      transform: 'rotate(45deg)',
+    },
+    bigIcon: {
+      transform: 'rotate(-45deg)',
+      display: 'inline-block',
+      lineHeight: 'inherit',
+    },
+    textSection: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1em',
+    },
+    grid: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+      columnGap: '2em',
+    },
+    list: {
+      paddingInlineStart: '20px',
+    },
+    sublist: {
+      paddingInlineStart: '20px',
+    },
+    subtitle: {
+      fontSize: '0.8em',
+    },
+  })
+);
 
 const Skills = () => {
+  const classes = useStyles();
   return (
-    <Box component="section" id="skills" className="main style2">
-      <div className="container">
-        <div className="row gtr-150">
-          <div className="col-6 col-12-medium">
-            <ul className="major-icons">
-              <li>
-                <span className="icon solid major brands">
-                  <FaDesktop color="#ff7f50" size="50%" />
-                </span>
-              </li>
-              <li>
-                <span className="icon solid major brands">
-                  <FaMobile color="#4a87d3" size="50%" />
-                </span>
-              </li>
-            </ul>
-          </div>
-          <div className="col-6 col-12-medium">
-            <header className="major">
-              <h2>Skills</h2>
-            </header>
-            <p>
+    <Box component="section" className={classes.container} id="skills">
+      <Container>
+        <Typography variant="h3" className={classes.title}>
+          Skills
+        </Typography>
+        <Box className={classes.twoRows}>
+          <Box className={classes.bigIconsContainer}>
+            <Box className={classes.bigIconListItem}>
+              <span className={classes.bigIconOutline}>
+                <FaDesktop
+                  color="#ff7f50"
+                  size="50%"
+                  className={classes.bigIcon}
+                />
+              </span>
+            </Box>
+            <Box className={classes.bigIconListItem}>
+              <span className={classes.bigIconOutline}>
+                <FaMobile
+                  color="#4a87d3"
+                  size="50%"
+                  className={classes.bigIcon}
+                />
+              </span>
+            </Box>
+          </Box>
+
+          <Box className={classes.textSection}>
+            <Typography>
               This is a list of my favorite tools that I've worked with. Most of
               these I use every week, many I use every day.
-            </p>
-            <p>
+            </Typography>
+            <Typography>
               I admit that this section might be overly detailed. I've just
               always loved looking at colorful collections.
-            </p>
-          </div>
-        </div>
-        <div className="grid">
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box className={classes.grid}>
           <div className="skill-category">
             <h4>Programming languages:</h4>
-            <ul>
-              <li>
-                Python{' '}
-                <img
-                  src={logos.python}
-                  alt="Python logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
+            <Box component="ul" className={classes.list}>
+              <Box component="li">
+                Python <LineHighImage src={logos.python} alt="Python logo" />
+              </Box>
+              <Box component="li">
                 JavaScript{' '}
-                <img
-                  src={logos.javascript}
-                  alt="JavaScript logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
-                TypeScript{' '}
-                <img
-                  src={logos.typescript}
-                  alt="TypeScript logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
-                Java{' '}
-                <img src={logos.java} alt="Java logo" className="mini-logo" />
-              </li>
-              <li>
-                Swift{' '}
-                <img src={logos.swift} alt="Swift logo" className="mini-logo" />
-              </li>
-              <li>
+                <LineHighImage src={logos.javascript} alt="JavaScript logo" />
+                <Box component="ul" className={classes.sublist}>
+                  <Box component="li">
+                    TypeScript{' '}
+                    <LineHighImage
+                      src={logos.typescript}
+                      alt="TypeScript logo"
+                    />
+                  </Box>
+                </Box>
+              </Box>
+              <Box component="li">
+                Java <LineHighImage src={logos.java} alt="Java logo" />
+              </Box>
+              <Box component="li">
+                Swift <LineHighImage src={logos.swift} alt="Swift logo" />
+              </Box>
+              <Box component="li">
                 Wolfram Language{' '}
-                <img
+                <LineHighImage
                   src={logos.wolframLanguage}
                   alt="Wolfram Language logo"
-                  className="mini-logo"
                 />
-              </li>
-              <li>
+              </Box>
+              <Box component="li">
                 HTML & CSS{' '}
-                <img
-                  src={logos.HTMLandCSS}
-                  alt="HTML & CSS logo"
-                  className="mini-logo"
-                />
-              </li>
-            </ul>
+                <LineHighImage src={logos.HTMLandCSS} alt="HTML & CSS logo" />
+              </Box>
+            </Box>
           </div>
           <div className="skill-category">
             <h4>Frameworks & libraries:</h4>
-            <ul>
-              <li>
-                React{' '}
-                <img src={logos.react} alt="React logo" className="mini-logo" />
-                <ul className="sublist">
-                  <li>
+            <Box component="ul" className={classes.list}>
+              <Box component="li">
+                React <LineHighImage src={logos.react} alt="React logo" />
+                <Box component="ul" className={classes.sublist}>
+                  <Box component="li">
                     React Native{' '}
-                    <img
+                    <LineHighImage
                       src={logos.reactNative}
                       alt="React Native logo"
-                      className="mini-logo"
                     />
-                  </li>
-                  <li>
-                    Redux{' '}
-                    <img
-                      src={logos.redux}
-                      alt="Redux logo"
-                      className="mini-logo"
-                    />
-                    <ul className="sublist">
-                      <li>
+                  </Box>
+                  <Box component="li">
+                    Redux <LineHighImage src={logos.redux} alt="Redux logo" />
+                    <Box component="ul" className={classes.sublist}>
+                      <Box component="li">
                         Redux Saga{' '}
-                        <img
+                        <LineHighImage
                           src={logos.reduxSaga}
                           alt="Redux Saga logo"
-                          className="mini-logo"
                         />
-                      </li>
-                      <li>
+                      </Box>
+                      <Box component="li">
                         Redux Form{' '}
-                        <img
+                        <LineHighImage
                           src={logos.reduxForm}
                           alt="Redux Form logo"
-                          className="mini-logo"
                         />
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Box component="li">
                     Gatsby JS{' '}
-                    <img
-                      src={logos.gatsby}
-                      alt="Gatsby logo"
-                      className="mini-logo"
-                    />
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Django{' '}
-                <img
-                  src={logos.django}
-                  alt="Django logo"
-                  className="mini-logo"
-                />
-                <ul className="sublist">
-                  <li>
+                    <LineHighImage src={logos.gatsby} alt="Gatsby logo" />
+                  </Box>
+                </Box>
+              </Box>
+              <Box component="li">
+                Django <LineHighImage src={logos.django} alt="Django logo" />
+                <Box component="ul" className={classes.sublist}>
+                  <Box component="li">
                     Graphene{' '}
-                    <img
-                      src={logos.graphene}
-                      alt="Graphene logo"
-                      className="mini-logo"
-                    />
-                  </li>
-                </ul>
-              </li>
-              <li>
-                GraphQL{' '}
-                <img
-                  src={logos.graphql}
-                  alt="GraphQL logo"
-                  className="mini-logo"
-                />
-                <ul className="sublist">
-                  <li>
+                    <LineHighImage src={logos.graphene} alt="Graphene logo" />
+                  </Box>
+                </Box>
+              </Box>
+              <Box component="li">
+                GraphQL <LineHighImage src={logos.graphql} alt="GraphQL logo" />
+                <Box component="ul" className={classes.sublist}>
+                  <Box component="li">
                     Apollo{' '}
-                    <img
-                      src={logos.apollo}
-                      alt="Apollo logo"
-                      className="mini-logo"
-                    />
-                  </li>
-                </ul>
-              </li>
-              <li>
-                NodeJS{' '}
-                <img src={logos.node} alt="NodeJS logo" className="mini-logo" />{' '}
-                with Express
-                <ul className="sublist">
-                  <li>
+                    <LineHighImage src={logos.apollo} alt="Apollo logo" />
+                  </Box>
+                </Box>
+              </Box>
+              <Box component="li">
+                NodeJS <LineHighImage src={logos.node} alt="NodeJS logo" /> with
+                Express
+                <Box component="ul" className={classes.sublist}>
+                  <Box component="li">
                     Mongoose{' '}
-                    <img
-                      src={logos.mongoose}
-                      alt="Mongoose logo"
-                      className="mini-logo"
-                    />
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Svelte JS{' '}
-                <img
-                  src={logos.svelte}
-                  alt="Svelte logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(with Sapper JS)</span>{' '}
-                <img
-                  src={logos.sapper}
-                  alt="Sapper logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
-                Wordpress{' '}
-                <img
-                  src={logos.wordpress}
-                  alt="WordPress logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
+                    <LineHighImage src={logos.mongoose} alt="Mongoose logo" />
+                  </Box>
+                </Box>
+              </Box>
+              <Box component="li">
+                Svelte JS <LineHighImage src={logos.svelte} alt="Svelte logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (with Sapper JS)
+                </Box>{' '}
+                <LineHighImage src={logos.sapper} alt="Sapper logo" />
+              </Box>
+              <Box component="li">
+                WordPress{' '}
+                <LineHighImage src={logos.wordpress} alt="WordPress logo" />
+              </Box>
+              <Box component="li">
                 Electron{' '}
-                <img
-                  src={logos.electron}
-                  alt="Electron logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
-                Lodash{' '}
-                <img
-                  src={logos.lodash}
-                  alt="Lodash logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
+                <LineHighImage src={logos.electron} alt="Electron logo" />
+              </Box>
+              <Box component="li">
+                Lodash <LineHighImage src={logos.lodash} alt="Lodash logo" />
+              </Box>
+              <Box component="li">
                 Bootstrap CSS{' '}
-                <img
-                  src={logos.bootstrap}
-                  alt="Bootstrap logo"
-                  className="mini-logo"
-                />
-              </li>
-            </ul>
+                <LineHighImage src={logos.bootstrap} alt="Bootstrap logo" />
+              </Box>
+              <Box component="li">
+                Material UI{' '}
+                <LineHighImage src={logos.materialUI} alt="Material UI logo" />
+              </Box>
+            </Box>
           </div>
           <div className="skill-category">
             <h4>Databases:</h4>
-            <ul>
-              <li>
-                MongoDB{' '}
-                <img
-                  src={logos.mongodb}
-                  alt="MongoDB logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(with Cloud Atlas)</span>
-              </li>
-              <li>
+            <Box component="ul" className={classes.list}>
+              <Box component="li">
+                MongoDB <LineHighImage src={logos.mongodb} alt="MongoDB logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (with Cloud Atlas)
+                </Box>
+              </Box>
+              <Box component="li">
                 PostgreSQL{' '}
-                <img
-                  src={logos.pgadmin}
-                  alt="PgAdmin logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(with Postgres)</span>{' '}
-                <img
-                  src={logos.postgres}
-                  alt="Postgres logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
+                <LineHighImage src={logos.pgadmin} alt="PgAdmin logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (with Postgres)
+                </Box>{' '}
+                <LineHighImage src={logos.postgres} alt="Postgres logo" />
+              </Box>
+              <Box component="li">
                 Firebase{' '}
-                <img
-                  src={logos.firebase}
-                  alt="Firebase logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
-                SQLite3{' '}
-                <img
-                  src={logos.sqlite3}
-                  alt="SQLite3 logo"
-                  className="mini-logo"
-                />
-              </li>
-            </ul>
-          </div>
-          <div className="skill-category">
+                <LineHighImage src={logos.firebase} alt="Firebase logo" />
+              </Box>
+              <Box component="li">
+                SQLite3 <LineHighImage src={logos.sqlite3} alt="SQLite3 logo" />
+              </Box>
+            </Box>
+
             <h4>Deployment:</h4>
-            <ul>
-              <li>
-                Heroku{' '}
-                <img
-                  src={logos.heroku}
-                  alt="Heroku logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
+            <Box component="ul" className={classes.list}>
+              <Box component="li">
+                Heroku <LineHighImage src={logos.heroku} alt="Heroku logo" />
+              </Box>
+              <Box component="li">
                 Amazon Web Services{' '}
-                <img
-                  src={logos.aws}
-                  alt="Amazon Web Services logo"
-                  className="mini-logo"
-                />
-              </li>
-              <li>
+                <LineHighImage src={logos.aws} alt="Amazon Web Services logo" />
+              </Box>
+              <Box component="li">
                 DigitalOcean{' '}
-                <img
+                <LineHighImage
                   src={logos.digitalOcean}
                   alt="DigitalOcean logo"
-                  className="mini-logo"
                 />
-              </li>
-            </ul>
+              </Box>
+            </Box>
           </div>
+          {/* <div className="skill-category">
+
+          </div> */}
           <div className="skill-category">
             <h4>Dev tools:</h4>
-            <ul>
-              <li>
-                Git <img src={logos.git} alt="Git logo" className="mini-logo" />{' '}
-                <span className="subtitle">(Version control)</span>
-              </li>
-              <li>
+            <Box component="ul" className={classes.list}>
+              <Box component="li">
+                Docker <LineHighImage src={logos.docker} alt="Docker logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (Containerization)
+                </Box>
+              </Box>
+              <Box component="li">
+                Git <LineHighImage src={logos.git} alt="Git logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (Version control)
+                </Box>
+              </Box>
+              <Box component="li">
                 GitHub{' '}
-                <img
-                  src={logos.github}
-                  alt="GitHub Desktop logo"
-                  className="mini-logo"
-                />{' '}
+                <LineHighImage src={logos.github} alt="GitHub Desktop logo" />{' '}
                 and Bitbucket{' '}
-                <img
-                  src={logos.bitbucket}
-                  alt="Bitbucket logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">
+                <LineHighImage src={logos.bitbucket} alt="Bitbucket logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
                   (Team version control & remote repositories)
-                </span>
-              </li>
-              <li>
-                Jira{' '}
-                <img src={logos.jira} alt="Jira logo" className="mini-logo" />{' '}
-                <span className="subtitle">(Task management)</span>
-              </li>
-              <li>
-                Xcode{' '}
-                <img src={logos.xcode} alt="Xcode logo" className="mini-logo" />{' '}
-                <span className="subtitle">(iOS development)</span>
-              </li>
-              <li>
+                </Box>
+              </Box>
+              <Box component="li">
+                Jira <LineHighImage src={logos.jira} alt="Jira logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (Task management)
+                </Box>
+              </Box>
+              <Box component="li">
+                Xcode <LineHighImage src={logos.xcode} alt="Xcode logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (iOS development)
+                </Box>
+              </Box>
+              <Box component="li">
                 Android Studio{' '}
-                <img
+                <LineHighImage
                   src={logos.androidStudio}
                   alt="Android Studio logo"
-                  className="mini-logo"
                 />{' '}
-                <span className="subtitle">(Android development)</span>
-              </li>
-              <li>
-                Postman{' '}
-                <img
-                  src={logos.postman}
-                  alt="Postman logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(easy HTTP requests)</span>
-              </li>
-            </ul>
+                <Box component="span" className={classes.subtitle}>
+                  (Android development)
+                </Box>
+              </Box>
+              <Box component="li">
+                Postman <LineHighImage src={logos.postman} alt="Postman logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (easy HTTP requests)
+                </Box>
+              </Box>
+            </Box>
           </div>
           <div className="skill-category">
-            <h4>Design & media:</h4>
-            <ul>
-              <li>
+            <h4>Design:</h4>
+            <Box component="ul" className={classes.list}>
+              <Box component="li">
                 Adobe Photoshop, Illustrator and Audition{' '}
-                <img
-                  src={logos.photoshop}
-                  alt="PhotoShop logo"
-                  className="mini-logo"
-                />{' '}
-                <img
-                  src={logos.illustrator}
-                  alt="Illustrator logo"
-                  className="mini-logo"
-                />{' '}
-                <img
-                  src={logos.audition}
-                  alt="Audition logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(graphics & audio)</span>
-              </li>
-              <li>
-                Sketch{' '}
-                <img
-                  src={logos.sketch}
-                  alt="Sketch logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(UI / UX design)</span>
-              </li>
-            </ul>
-          </div>
-          <div className="skill-category">
-            <h4>Data & math:</h4>
-            <ul>
-              <li>
-                Jupyter Notebooks{' '}
-                <img
-                  src={logos.jupyter}
-                  alt="Jupyter logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(Python data analysis)</span>
-              </li>
-              <li>
-                Mathematica{' '}
-                <img
-                  src={logos.mathematica}
-                  alt="Mathematica logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(Math & technical computing)</span>
-              </li>
-            </ul>
-          </div>
-          <div className="skill-category">
-            <h4>Other software:</h4>
-            <ul>
-              <li>
-                Microsoft Office{' '}
-                <img src={logos.word} alt="Word logo" className="mini-logo" />{' '}
-                <img src={logos.excel} alt="Excel logo" className="mini-logo" />{' '}
-                <img
-                  src={logos.powerpoint}
-                  alt="PowerPoint logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(Word, Excel, Powerpoint)</span>
-              </li>
-              <li>
-                Guitar Pro{' '}
-                <img
-                  src={logos.guitarPro}
-                  alt="Guitar Pro logo"
-                  className="mini-logo"
-                />{' '}
-                and MuseScore{' '}
-                <img
-                  src={logos.musescore}
-                  alt="MuseScore logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(Music notation)</span>
-              </li>
-              <li>
-                Logic Pro{' '}
-                <img
-                  src={logos.logicPro}
-                  alt="Logic Pro logo"
-                  className="mini-logo"
-                />{' '}
-                <span className="subtitle">(Audio recording & mixing)</span>
-              </li>
-              <li>
+                <LineHighImage src={logos.photoshop} alt="PhotoShop logo" />{' '}
+                <LineHighImage src={logos.illustrator} alt="Illustrator logo" />{' '}
+                <LineHighImage src={logos.audition} alt="Audition logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (graphics & audio)
+                </Box>
+              </Box>
+              <Box component="li">
+                Sketch <LineHighImage src={logos.sketch} alt="Sketch logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (UI / UX design)
+                </Box>
+              </Box>
+            </Box>
+
+            <h4>Media:</h4>
+            <Box component="ul" className={classes.list}>
+              <Box component="li">
                 Final Cut Pro{' '}
-                <img
+                <LineHighImage
                   src={logos.finalCutPro}
                   alt="Final Cut Pro logo"
-                  className="mini-logo"
                 />{' '}
-                <span className="subtitle">(Video editing)</span>
-              </li>
-            </ul>
+                <Box component="span" className={classes.subtitle}>
+                  (Video editing)
+                </Box>
+              </Box>
+              <Box component="li">
+                Logic Pro{' '}
+                <LineHighImage src={logos.logicPro} alt="Logic Pro logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (Audio recording & mixing)
+                </Box>
+              </Box>
+              <Box component="li">
+                Guitar Pro{' '}
+                <LineHighImage src={logos.guitarPro} alt="Guitar Pro logo" />{' '}
+                and MuseScore{' '}
+                <LineHighImage src={logos.musescore} alt="MuseScore logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (Music notation)
+                </Box>
+              </Box>
+            </Box>
+          </div>
+          <div className="skill-category">
+            <h4>Productivity & business:</h4>
+            <Box component="ul" className={classes.list}>
+              <Box component="li">
+                Microsoft Office{' '}
+                <LineHighImage src={logos.word} alt="Word logo" />{' '}
+                <LineHighImage src={logos.excel} alt="Excel logo" />{' '}
+                <LineHighImage src={logos.powerpoint} alt="PowerPoint logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (Word, Excel, Powerpoint)
+                </Box>
+              </Box>
+            </Box>
+            <h4>Data & math:</h4>
+            <Box component="ul" className={classes.list}>
+              <Box component="li">
+                Jupyter Notebooks{' '}
+                <LineHighImage src={logos.jupyter} alt="Jupyter logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (Python data analysis)
+                </Box>
+              </Box>
+              <Box component="li">
+                Mathematica{' '}
+                <LineHighImage src={logos.mathematica} alt="Mathematica logo" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (Math & technical computing)
+                </Box>
+              </Box>
+            </Box>
           </div>
           <div className="skill-category">
             <h4>Human languages:</h4>
-            <ul>
-              <li>
-                English{' '}
-                <img src={flags.UK} alt="UK flag" className="mini-flag" />{' '}
-                <span className="subtitle">(first language)</span>
-              </li>
-              <li>
+            <Box component="ul" className={classes.list}>
+              <Box component="li">
+                English <LineHighImage src={flags.UK} alt="UK flag" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (first language)
+                </Box>
+              </Box>
+              <Box component="li">
                 Estonian{' '}
-                <img
-                  src={flags.Estonia}
-                  alt="Estonian flag"
-                  className="mini-flag"
-                />{' '}
-                <span className="subtitle">(native)</span>
-              </li>
-              <li>
-                Russian{' '}
-                <img
-                  src={flags.Russia}
-                  alt="Russian flag"
-                  className="mini-flag"
-                />{' '}
-                <span className="subtitle">(native)</span>
-              </li>
-              <li>
-                French{' '}
-                <img
-                  src={flags.France}
-                  alt="French flag"
-                  className="mini-flag"
-                />{' '}
-                <span className="subtitle">(conversational, B2)</span>
-              </li>
-              <li>
-                Spanish{' '}
-                <img
-                  src={flags.Spain}
-                  alt="Spanish flag"
-                  className="mini-flag"
-                />{' '}
-                <span className="subtitle">(conversational, B2)</span>
-              </li>
-              <li>
+                <LineHighImage src={flags.Estonia} alt="Estonian flag" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (native)
+                </Box>
+              </Box>
+              <Box component="li">
+                Russian <LineHighImage src={flags.Russia} alt="Russian flag" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (native)
+                </Box>
+              </Box>
+              <Box component="li">
+                French <LineHighImage src={flags.France} alt="French flag" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (conversational, B2)
+                </Box>
+              </Box>
+              <Box component="li">
+                Spanish <LineHighImage src={flags.Spain} alt="Spanish flag" />{' '}
+                <Box component="span" className={classes.subtitle}>
+                  (conversational, B2)
+                </Box>
+              </Box>
+              <Box component="li">
                 <span className="subtitle">
                   Plus some basic: German{' '}
-                  <img
-                    src={flags.Germany}
-                    alt="German flag"
-                    className="mini-flag"
-                  />
-                  , Hungarian{' '}
-                  <img
-                    src={flags.Hungary}
-                    alt="Hungarian flag"
-                    className="mini-flag"
-                  />
-                  , Swedish{' '}
-                  <img
-                    src={flags.Sweden}
-                    alt="Swedish flag"
-                    className="mini-flag"
-                  />
-                  , Japanese{' '}
-                  <img
-                    src={flags.Japan}
-                    alt="Japanese flag"
-                    className="mini-flag"
-                  />
+                  <LineHighImage src={flags.Germany} alt="German flag" />,
+                  Hungarian{' '}
+                  <LineHighImage src={flags.Hungary} alt="Hungarian flag" />,
+                  Swedish{' '}
+                  <LineHighImage src={flags.Sweden} alt="Swedish flag" />,
+                  Japanese{' '}
+                  <LineHighImage src={flags.Japan} alt="Japanese flag" />
                 </span>
-              </li>
-            </ul>
+              </Box>
+            </Box>
           </div>
-        </div>
-      </div>
+        </Box>
+      </Container>
     </Box>
   );
 };

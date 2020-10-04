@@ -1,53 +1,83 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
+import { Box, Button, Container, Link, Typography } from '@material-ui/core';
 import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      padding: 30,
+    },
+    title: {
+      marginBottom: '0.5em',
+    },
+    contentContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2em',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    textContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '0.5em',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    icons: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '2em',
+    },
+    icon: {
+      color: theme.palette.grey[400],
+    },
+    buttons: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '2em',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  })
+);
 
 const Contact = () => {
+  const classes = useStyles();
   return (
-    <Box component="section" id="contact" className="main style2 special">
-      <div className="container">
-        <header className="major">
-          <h2>Contact</h2>
-        </header>
-        <p>Let's get in touch! You can find me at any of these links:</p>
-        <ul className="icons" style={{ marginBottom: 20 }}>
-          <li>
-            <a
+    <Box component="section" id="contact" className={classes.container}>
+      <Container>
+        <Typography variant="h3" className={classes.title}>
+          Contact
+        </Typography>
+        <Box className={classes.contentContainer}>
+          <Typography>
+            Let's get in touch! You can find me at any of these links:
+          </Typography>
+          <Box className={classes.icons}>
+            <Link
               href="https://twitter.com/DexterSibirtsev"
-              className="icon brands alt"
+              className={classes.icon}
             >
               <FaTwitter size={26} />
-              <span className="label">Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/Deckstar" className="icon brands alt">
+            </Link>
+            <Link href="https://github.com/Deckstar" className={classes.icon}>
               <FaGithub size={26} />
-              <span className="label">GitHub</span>
-            </a>
-          </li>
-          <li>
-            <a
+            </Link>
+            <Link
               href="https://www.goodreads.com/user/show/58196314-dexter"
-              className="icon brands alt"
+              className={classes.icon}
             >
               <FaGoodreads size={26} />
-              <span className="label">GoodReads</span>
-            </a>
-          </li>
-        </ul>
-        <p>Or, just send me an email!</p>
-        <ul className="actions special">
-          <li>
-            <a
-              href="mailto:dexter.sibirtsev@gmail.com"
-              className="button wide primary"
-            >
-              dexter.sibirtsev@gmail.com
-            </a>
-          </li>
-        </ul>
-      </div>
+            </Link>
+          </Box>
+          <Typography>Or, just send me an email!</Typography>
+          <Link href="mailto:dexter.sibirtsev@gmail.com">
+            <Button variant="contained">dexter.sibirtsev@gmail.com</Button>
+          </Link>
+        </Box>
+      </Container>
     </Box>
   );
 };

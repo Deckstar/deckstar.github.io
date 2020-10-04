@@ -11,9 +11,10 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'center',
       alignItems: 'center',
       backgroundImage: `url(${overlays.overlay3})`,
+      backgroundSize: 'cover',
       position: 'relative',
 
-      '&::after': {
+      '&::before': {
         backgroundImage: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
         content: '""',
         position: 'absolute',
