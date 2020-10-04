@@ -1,10 +1,11 @@
 import React from 'react';
+import { Box } from '@material-ui/core';
 import { FaDesktop, FaMobile } from 'react-icons/fa';
 import { flags, logos } from '@images';
 
 const Skills = () => {
   return (
-    <section id="skills" className="main style2">
+    <Box component="section" id="skills" className="main style2">
       <div className="container">
         <div className="row gtr-150">
           <div className="col-6 col-12-medium">
@@ -547,7 +548,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Box>
   );
 };
 

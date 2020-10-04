@@ -1,9 +1,10 @@
 import React from 'react';
+import { Box } from '@material-ui/core';
 import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" className="main style2 special">
+    <Box component="section" id="contact" className="main style2 special">
       <div className="container">
         <header className="major">
           <h2>Contact</h2>
@@ -47,7 +48,7 @@ const Contact = () => {
           </li>
         </ul>
       </div>
-    </section>
+    </Box>
   );
 };
 

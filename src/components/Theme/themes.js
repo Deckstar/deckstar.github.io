@@ -1,4 +1,4 @@
-import { lightBlue, orange } from '@material-ui/core/colors';
+import { lightBlue, deepOrange } from '@material-ui/core/colors';
 
 export const lightTheme = {
   palette: {
@@ -7,7 +7,7 @@ export const lightTheme = {
       main: lightBlue[400],
     },
     secondary: {
-      main: orange[400],
+      main: deepOrange[400],
     },
   },
 };
@@ -19,7 +19,7 @@ export const darkTheme = {
       main: lightBlue[800],
     },
     secondary: {
-      main: orange[800],
+      main: deepOrange[800],
     },
   },
 };

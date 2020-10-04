@@ -1,9 +1,10 @@
 import React from 'react';
+import { Box } from '@material-ui/core';
 import { education, flags } from '@images';
 
 const Education = () => {
   return (
-    <section id="education" className="main style1 special">
+    <Box component="section" id="education" className="main style1 special">
       <div className="container">
         <header className="major">
           <h2>Education</h2>
@@ -57,7 +58,7 @@ const Education = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Box>
   );
 };
 

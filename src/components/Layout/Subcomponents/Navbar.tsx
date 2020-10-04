@@ -5,6 +5,7 @@ import {
   AppBar,
   Button,
   IconButton,
+  Link,
   Menu,
   MenuItem,
   Select,
@@ -123,52 +124,62 @@ const Navbar = () => {
       onClose={handleMobileMenuClose}
     >
       <LanguageMenu />
-      <MenuItem>
-        <IconButton
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <HomeIcon />
-        </IconButton>
-        <p>Home</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton color="inherit">
-          <AboutIcon />
-        </IconButton>
-        <p>About/CV</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <SkillIcon />
-        </IconButton>
-        <p>Skills</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AboutIcon />
-        </IconButton>
-        <p>Education</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <ContactIcon />
-        </IconButton>
-        <p>Contact</p>
-      </MenuItem>
+      <Link color="inherit" href="#">
+        <MenuItem>
+          <IconButton
+            aria-controls="primary-search-account-menu"
+            aria-haspopup="true"
+            color="inherit"
+          >
+            <HomeIcon />
+          </IconButton>
+          Home
+        </MenuItem>
+      </Link>
+      <Link color="inherit" href="#about">
+        <MenuItem>
+          <IconButton color="inherit">
+            <AboutIcon />
+          </IconButton>
+          About/CV
+        </MenuItem>
+      </Link>
+      <Link color="inherit" href="#skills">
+        <MenuItem>
+          <IconButton
+            aria-controls="primary-search-account-menu"
+            aria-haspopup="true"
+            color="inherit"
+          >
+            <SkillIcon />
+          </IconButton>
+          Skills
+        </MenuItem>
+      </Link>
+      <Link color="inherit" href="#education">
+        <MenuItem>
+          <IconButton
+            aria-controls="primary-search-account-menu"
+            aria-haspopup="true"
+            color="inherit"
+          >
+            <AboutIcon />
+          </IconButton>
+          Education
+        </MenuItem>
+      </Link>
+      <Link color="inherit" href="#contact">
+        <MenuItem>
+          <IconButton
+            aria-controls="primary-search-account-menu"
+            aria-haspopup="true"
+            color="inherit"
+          >
+            <ContactIcon />
+          </IconButton>
+          Contact
+        </MenuItem>
+      </Link>
     </Menu>
   );
 
@@ -187,11 +198,31 @@ const Navbar = () => {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <LanguageMenu />
-            <Button color="inherit">Home</Button>
-            <Button color="inherit">About/CV</Button>
-            <Button color="inherit">Skills</Button>
-            <Button color="inherit">Education</Button>
-            <Button color="inherit">Contact</Button>
+            <Button>
+              <Link color="inherit" href="#">
+                Home
+              </Link>
+            </Button>
+            <Button>
+              <Link color="inherit" href="#about">
+                About/CV
+              </Link>
+            </Button>
+            <Button>
+              <Link color="inherit" href="#skills">
+                Skills
+              </Link>
+            </Button>
+            <Button>
+              <Link color="inherit" href="#education">
+                Education
+              </Link>
+            </Button>
+            <Button>
+              <Link color="inherit" href="#contact">
+                Contact
+              </Link>
+            </Button>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton

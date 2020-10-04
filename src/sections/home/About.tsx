@@ -1,10 +1,11 @@
 import React from 'react';
+import { Box } from '@material-ui/core';
 import { photos } from '@images';
 import resumePDF from '@assets/docs/Sibirtsev CV.pdf';
 
 const About = () => {
   return (
-    <section id="about" className="main style1">
+    <Box component="section" id="about" className="main style1">
       <div className="container">
         <div className="row gtr-150">
           <div className="col-6 col-12-medium">
@@ -48,7 +49,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Box>
   );
 };
 
