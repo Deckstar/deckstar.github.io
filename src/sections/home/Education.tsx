@@ -14,7 +14,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
-      padding: 30,
+      padding: '30px 0',
     },
     title: {
       marginBottom: '0.5em',
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const Education = () => {
   const classes = useStyles();
   return (
-    <Box component="section" id="education" className="main style1 special">
+    <Box component="section" id="education" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
           Education

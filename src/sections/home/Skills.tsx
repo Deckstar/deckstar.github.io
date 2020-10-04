@@ -15,7 +15,20 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
-      padding: 30,
+      background: `linear-gradient(to right bottom, ${theme.palette.primary.dark} 35%, ${theme.palette.secondary.dark} 100%)`,
+      padding: '75px 0',
+      borderRadius: '400% 100% / 20%',
+      overflow: 'hidden',
+
+      [theme.breakpoints.up('md')]: {
+        padding: '105px 20px 100px',
+        borderRadius: '50% / 5%',
+      },
+
+      [theme.breakpoints.down('sm')]: {
+        padding: '50px 0',
+        borderRadius: '400% 200% / 10%',
+      },
     },
     title: {
       marginBottom: '0.5em',
