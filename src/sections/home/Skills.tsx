@@ -106,7 +106,7 @@ const Skills = () => {
             </Box>
           </Box>
 
-          <Box className={classes.textSection}>
+          <Box className={classes.textSection} textAlign="justify">
             <Typography>
               This is a list of my favorite tools that I've worked with. Most of
               these I use every week, many I use every day.

@@ -4,6 +4,7 @@ import { overlays } from '@images';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     inner: {
+      minHeight: '100vh',
       padding: 30,
       display: 'flex',
       flexDirection: 'column',
@@ -45,6 +46,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     icon: {
       color: theme.palette.grey[400],
+      '&:hover': {
+        color: theme.palette.grey[500],
+      },
     },
     buttons: {
       display: 'flex',

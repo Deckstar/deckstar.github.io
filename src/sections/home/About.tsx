@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme: Theme) =>
     paragraph: {
       marginBottom: '1em',
     },
+    cvLink: {
+      alignSelf: 'center',
+    },
     bigPhotoContainer: {},
     bigPhoto: {
       height: 0,
@@ -96,10 +99,10 @@ const About = () => {
                 — science, music, languages, to name a few — and with
                 programming I found that I could pursue all of those passions at
                 the same time. As a great bonus, I could also help people. I
-                hope we can work together! {';)'}
+                hope we can work together!
               </Typography>
             </Box>
-            <Link href={resumePDF} target="_blank">
+            <Link href={resumePDF} target="_blank" className={classes.cvLink}>
               <Button
                 variant="contained"
                 style={{ marginBottom: '2em' }}

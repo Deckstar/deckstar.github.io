@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     icon: {
       color: theme.palette.grey[400],
+      '&:hover': {
+        color: theme.palette.grey[500],
+      },
     },
     buttons: {
       display: 'flex',

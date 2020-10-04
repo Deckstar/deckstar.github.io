@@ -10,7 +10,7 @@ const Banner = () => {
   const classes = useStyles();
 
   return (
-    <Box component="section" id="header">
+    <Box component="section" id="banner">
       <Box className={classes.inner}>
         <img className={classes.profilePic} src={photos.profilePic} />
         <Box className={classes.textContainer}>
