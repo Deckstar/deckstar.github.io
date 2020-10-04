@@ -62,5 +62,4 @@ i18n.use(LanguageDetector).init(options);
 
 export default i18n;
 
-export { default as withTrans } from './components/withTrans';
 export { default as langMap } from './utils/langMap';

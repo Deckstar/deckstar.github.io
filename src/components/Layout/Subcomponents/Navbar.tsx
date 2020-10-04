@@ -63,7 +63,10 @@ const Navbar = () => {
   };
 
   const [langValue, setLangValue] = useState(
-    find(langMap, (lang) => lang.code === (i18n.language || 'en'))
+    find(
+      langMap,
+      (lang) => lang.code === (i18n.language.substring(0, 2) || 'en')
+    )
   );
 
   const handleChange = (event: React.ChangeEvent<{ value: Language }>) => {
