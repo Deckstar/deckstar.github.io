@@ -3,14 +3,7 @@ import { overlays } from '@images';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    inner: {
-      minHeight: '100vh',
-      padding: 30,
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '2em',
-      justifyContent: 'center',
-      alignItems: 'center',
+    background: {
       backgroundImage: `url(${overlays.overlay3})`,
       backgroundSize: 'cover',
       position: 'relative',
@@ -26,12 +19,21 @@ const useStyles = makeStyles((theme: Theme) =>
         width: '100%',
       },
     },
+    inner: {
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2em',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
     textContainer: {
       display: 'flex',
       flexDirection: 'column',
       gap: '0.5em',
       justifyContent: 'center',
       alignItems: 'center',
+      textAlign: 'center',
     },
     profilePic: {
       height: '7em',
