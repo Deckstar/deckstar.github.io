@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
-      background: `linear-gradient(to right bottom, ${theme.palette.primary.dark} 35%, ${theme.palette.secondary.dark} 100%)`,
+      background: `linear-gradient(to right bottom, ${theme.palette.primary.contrastText} 35%, ${theme.palette.secondary.contrastText} 100%)`,
       padding: '75px 0',
       borderRadius: '400% 100% / 20%',
       overflow: 'hidden',

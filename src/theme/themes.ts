@@ -9,9 +9,11 @@ export const lightTheme: ThemeOptions = {
     type: 'light',
     primary: {
       main: lightBlue[400],
+      contrastText: lightBlue[100],
     },
     secondary: {
       main: deepOrange[400],
+      contrastText: deepOrange[200],
     },
   },
 };
@@ -22,9 +24,11 @@ export const darkTheme: ThemeOptions = {
     type: 'dark',
     primary: {
       main: lightBlue[800],
+      contrastText: lightBlue[900],
     },
     secondary: {
       main: deepOrange[800],
+      contrastText: deepOrange[900],
     },
   },
 };
