@@ -11,6 +11,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const LineHighImage = (imgProps: ImgHTMLAttributes<{}>) => {
+  if (!imgProps.src) return null;
+
   const classes = useStyles();
 
   return <img className={classes.mini} {...imgProps} />;

@@ -187,14 +187,14 @@ const Navbar = () => {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <LanguageMenu />
