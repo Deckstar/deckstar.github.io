@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Box, Card, CardContent, CardHeader } from '@material-ui/core';
 import { map, size } from 'lodash';
-import { Fade } from 'react-awesome-reveal';
 import { LineHighImage } from '@components';
 import { SkillCardProps, SkillItem } from '@typescript/@types/skills';
 import useStyles from './SkillCard.style';
@@ -51,32 +50,30 @@ const Skill = (props: SkillItem) => {
   );
 };
 
-const SkillCard = (props: SkillCardProps) => {
+const SkillCard = memo((props: SkillCardProps) => {
   const { skillItems, title } = props;
   const classes = useStyles();
 
   return (
-    <Fade direction="up" triggerOnce>
-      <Card elevation={3} className={classes.cardContainer}>
-        <CardHeader
-          className={classes.cardHeader}
-          title={`${title}:`}
-          titleTypographyProps={{
-            className: classes.cardTitle,
-            variant: 'body1',
-          }}
-        />
-        <CardContent className={classes.cardContent}>
-          <Box component="ul" className={classes.list}>
-            {map(skillItems, (skill) => {
-              const { name } = skill;
-              return <Skill {...skill} key={`skill ${name}`} />;
-            })}
-          </Box>
-        </CardContent>
-      </Card>
-    </Fade>
+    <Card elevation={3} className={classes.cardContainer}>
+      <CardHeader
+        className={classes.cardHeader}
+        title={`${title}:`}
+        titleTypographyProps={{
+          className: classes.cardTitle,
+          variant: 'body1',
+        }}
+      />
+      <CardContent className={classes.cardContent}>
+        <Box component="ul" className={classes.list}>
+          {map(skillItems, (skill) => {
+            const { name } = skill;
+            return <Skill {...skill} key={`skill ${name}`} />;
+          })}
+        </Box>
+      </CardContent>
+    </Card>
   );
-};
+});
 
 export default SkillCard;

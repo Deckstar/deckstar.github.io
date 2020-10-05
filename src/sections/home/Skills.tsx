@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box, Container, Typography } from '@material-ui/core';
 import { FaDesktop, FaMobile } from 'react-icons/fa';
-import { map } from 'lodash';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import SkillCard from '@components/SkillCard/SkillCard';
 import skillCategories from '@data/skills';
+import { Masonry } from 'masonic';
+import { SkillCardProps } from '@typescript/@types/skills';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -74,17 +75,27 @@ const useStyles = makeStyles((theme: Theme) =>
       gap: '1em',
     },
     skillsGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-      columnGap: '2em',
-      rowGap: '1em',
       margin: '1.5em 0',
+      '& > div': {
+        outline: 'none',
+      },
     },
   })
 );
 
+const MasonryCard = (props: {
+  index: number;
+  width: number;
+  data: SkillCardProps;
+}) => {
+  const { data } = props;
+
+  return <SkillCard {...data} />;
+};
+
 const Skills = () => {
   const classes = useStyles();
+
   return (
     <Box component="section" className={classes.container} id="skills">
       <Container>
@@ -126,10 +137,11 @@ const Skills = () => {
         </Box>
 
         <Box className={classes.skillsGrid}>
-          {map(skillCategories, (category) => {
-            const { title } = category;
-            return <SkillCard {...category} key={title} />;
-          })}
+          <Masonry
+            items={skillCategories}
+            render={MasonryCard}
+            columnGutter={20}
+          />
         </Box>
       </Container>
     </Box>

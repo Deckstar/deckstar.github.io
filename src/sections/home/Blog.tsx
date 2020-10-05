@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const Blog = () => {
   const classes = useStyles();
   return (
-    <Box component="section" className={classes.container} id="skills">
+    <Box component="section" className={classes.container} id="blog">
       <Container>
         <Typography variant="h3" className={classes.title}>
           Blog
