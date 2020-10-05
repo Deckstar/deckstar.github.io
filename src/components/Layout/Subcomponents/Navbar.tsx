@@ -81,12 +81,12 @@ const Navbar = () => {
   const LanguageMenu = () => (
     <Select
       value={langValue}
-      onChange={(e) => handleChange(e)}
+      onChange={(e: any) => handleChange(e)}
       disableUnderline
       inputProps={{
         name: 'language',
       }}
-      renderValue={(value: Language): ReactNode => {
+      renderValue={(value: any): ReactNode => {
         return (
           <MenuItem>
             <img
