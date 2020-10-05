@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Card, CardContent, CardHeader } from '@material-ui/core';
 import { map, size } from 'lodash';
-import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 import { LineHighImage } from '@components';
 import { SkillCardProps, SkillItem } from '@typescript/@types/skills';
 import useStyles from './SkillCard.style';
@@ -56,7 +56,7 @@ const SkillCard = (props: SkillCardProps) => {
   const classes = useStyles();
 
   return (
-    <Fade bottom>
+    <Fade direction="up" triggerOnce>
       <Card elevation={3} className={classes.cardContainer}>
         <CardHeader
           className={classes.cardHeader}
