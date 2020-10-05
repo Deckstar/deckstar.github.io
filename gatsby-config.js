@@ -18,6 +18,7 @@ module.exports = {
           '@i18n': 'src/i18n',
           '@pages': 'src/pages',
           '@sections': 'src/sections',
+          '@theme': 'src/theme',
           '@typescript': 'src/typescript',
         },
       },
