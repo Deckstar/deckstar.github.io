@@ -15,7 +15,7 @@ const backend: SkillCardProps = {
       ],
     },
     {
-      name: 'Graphql',
+      name: 'GraphQL',
       src: logos.graphql,
     },
     {
