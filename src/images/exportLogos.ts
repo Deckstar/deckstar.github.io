@@ -1,4 +1,5 @@
 const logos = {
+  adobeCreativeCloud: require('./logos/adobe creative cloud.png'),
   androidStudio: require('./logos/android studio.png'),
   apollo: require('./logos/apollo.png'),
   audition: require('./logos/audition.png'),

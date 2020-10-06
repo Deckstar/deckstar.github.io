@@ -1,7 +1,12 @@
 import React from 'react';
 import { Box, Container, Typography } from '@material-ui/core';
 import { FaDesktop, FaMobile } from 'react-icons/fa';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import {
+  createStyles,
+  makeStyles,
+  Theme,
+  useTheme,
+} from '@material-ui/core/styles';
 import SkillCard from '@components/SkillCard/SkillCard';
 import skillCategories from '@data/skills';
 import { Masonry } from 'masonic';
@@ -95,6 +100,7 @@ const MasonryCard = (props: {
 
 const Skills = () => {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <Box component="section" className={classes.container} id="skills">
@@ -107,7 +113,7 @@ const Skills = () => {
             <Box className={classes.bigIconListItem}>
               <span className={classes.bigIconOutline}>
                 <FaDesktop
-                  color="#ff7f50"
+                  color={theme.palette.secondary.main}
                   size="50%"
                   className={classes.bigIcon}
                 />
@@ -116,7 +122,7 @@ const Skills = () => {
             <Box className={classes.bigIconListItem}>
               <span className={classes.bigIconOutline}>
                 <FaMobile
-                  color="#4a87d3"
+                  color={theme.palette.primary.main}
                   size="50%"
                   className={classes.bigIcon}
                 />

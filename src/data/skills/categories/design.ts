@@ -5,7 +5,8 @@ const design: SkillCardProps = {
   title: 'Design',
   skillItems: [
     {
-      name: 'Adobe Creative Suite',
+      name: 'Adobe Creative Cloud',
+      src: logos.adobeCreativeCloud,
       subSkills: [
         {
           name: 'Photoshop',

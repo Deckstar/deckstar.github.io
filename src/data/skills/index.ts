@@ -18,9 +18,9 @@ const skillCategories = [
   deployment,
   devTools,
   design,
-  media,
-  productivity,
   dataMath,
+  productivity,
+  media,
   humanLanguages,
 ];
 
