@@ -7,9 +7,9 @@ import {
   Container,
   Typography,
 } from '@material-ui/core';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { education, flags } from '@images';
 import { LineHighImage } from '@components';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -58,7 +58,7 @@ const Education = () => {
         <Typography variant="h3" className={classes.title}>
           Education
         </Typography>
-        <Box textAlign="justify">
+        <Box>
           <Typography className={classes.paragraph}>
             I am a completely self-taught programmer — I learned by watching
             YouTube, reading books and doing online courses. Still, I valued my

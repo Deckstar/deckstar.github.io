@@ -4,7 +4,7 @@ import {
   Banner,
   Blog,
   Contact,
-  Education,
+  Experience,
   Skills,
 } from '@sections/home';
 import { Wrapper } from '@components';
@@ -21,7 +21,7 @@ const Home: FC<WithTranslation> = () => {
       <Banner />
       <About />
       <Skills />
-      <Education />
+      <Experience />
       <Blog />
       <Contact />
     </Wrapper>
