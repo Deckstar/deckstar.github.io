@@ -11,6 +11,7 @@ import SkillCard from '@components/SkillCard/SkillCard';
 import skillCategories from '@data/skills';
 import { Masonry } from 'masonic';
 import { SkillCardProps } from '@typescript/@types/skills';
+import { Fade } from 'react-awesome-reveal';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -142,13 +143,15 @@ const Skills = () => {
           </Box>
         </Box>
 
-        <Box className={classes.skillsGrid}>
-          <Masonry
-            items={skillCategories}
-            render={MasonryCard}
-            columnGutter={20}
-          />
-        </Box>
+        <Fade triggerOnce direction="up">
+          <Box className={classes.skillsGrid}>
+            <Masonry
+              items={skillCategories}
+              render={MasonryCard}
+              columnGutter={20}
+            />
+          </Box>
+        </Fade>
       </Container>
     </Box>
   );
