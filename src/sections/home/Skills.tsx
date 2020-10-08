@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core/styles';
 import SkillCard from '@components/SkillCard/SkillCard';
 import skillCategories from '@data/skills';
-import { Masonry } from 'masonic';
+import { Masonry, RenderComponentProps } from 'masonic';
 import { SkillCardProps } from '@typescript/@types/skills';
 import { Fade } from 'react-awesome-reveal';
 
@@ -89,11 +89,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const MasonryCard = (props: {
-  index: number;
-  width: number;
-  data: SkillCardProps;
-}) => {
+const MasonryCard = (props: RenderComponentProps<SkillCardProps>) => {
   const { data } = props;
 
   return <SkillCard {...data} />;
