@@ -21,6 +21,7 @@ const logos = {
   guitarPro: require('./logos/guitar pro.png'),
   heroku: require('./logos/heroku.png'),
   HTMLandCSS: require('./logos/HTML5 CSS3.png'),
+  i18next: require('./logos/i18next.png'),
   illustrator: require('./logos/illustrator.png'),
   java: require('./logos/java.png'),
   javascript: require('./logos/javascript.png'),

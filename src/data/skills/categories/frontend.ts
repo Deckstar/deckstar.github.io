@@ -62,6 +62,10 @@ const frontend: SkillCardProps = {
       name: 'Material UI',
       src: logos.materialUI,
     },
+    {
+      name: 'i18next',
+      src: logos.i18next,
+    },
   ],
 };
 
