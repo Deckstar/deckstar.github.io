@@ -1,11 +1,12 @@
 import React from 'react';
 import { Box, Container, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { companies, flags } from '@images';
 import { map } from 'lodash';
-import ExperienceItem from '@components/ExperienceItem/ExperienceItem';
+import { companies, flags } from '@images';
+import { ExperienceItem } from '@components';
+import { ExperienceItemProps } from '@typescript/@types/experience';
 
-const workItems = [
+const workItems: ExperienceItemProps[] = [
   {
     location: 'Tallinn, Estonia',
     locationFlag: flags.Estonia,

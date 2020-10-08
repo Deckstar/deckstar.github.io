@@ -2,15 +2,7 @@ import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { Box, Tooltip, Typography } from '@material-ui/core';
 import useStyles from './ExperienceItem.style';
-
-interface ExperienceItemProps {
-  location: string;
-  locationFlag: string;
-  title: string;
-  logo: string;
-  dates: string;
-  description: string;
-}
+import { ExperienceItemProps } from '@typescript/@types/experience';
 
 const ExperienceItem = (props: ExperienceItemProps) => {
   const classes = useStyles();

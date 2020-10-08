@@ -1,18 +1,12 @@
 import React from 'react';
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Container,
-  Typography,
-} from '@material-ui/core';
+import { Box, Container, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { companies, education, flags } from '@images';
-import { ExperienceItem, LineHighImage } from '@components';
 import { map } from 'lodash';
+import { companies, flags } from '@images';
+import { ExperienceItem } from '@components';
+import { ExperienceItemProps } from '@typescript/@types/experience';
 
-const schoolItems = [
+const schoolItems: ExperienceItemProps[] = [
   {
     location: 'Stockholm, Sweden',
     locationFlag: flags.Sweden,
