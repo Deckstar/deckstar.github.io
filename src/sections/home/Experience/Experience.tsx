@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Education, Work } from '.';
+import { Education, Work } from '..';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
