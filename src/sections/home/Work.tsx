@@ -46,7 +46,6 @@ const workItems = [
 
 const lineSize = 3;
 const bulletSize = 24;
-const imageHeight = 40;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
