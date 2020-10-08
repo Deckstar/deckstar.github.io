@@ -17,12 +17,12 @@ const ExperienceItem = (props: ExperienceItemProps) => {
       <Box className={classes.itemContainer}>
         <Box className={classes.itemBulletContainer}>
           <Tooltip arrow title={location} enterTouchDelay={0}>
-            <span>
+            <Box component="span">
               <GatsbyImage
                 {...locationFlag.childImageSharp}
                 className={classes.itemBullet}
               />
-            </span>
+            </Box>
           </Tooltip>
         </Box>
         <Box className={classes.itemContent}>
