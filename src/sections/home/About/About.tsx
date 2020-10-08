@@ -1,60 +1,37 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import GatsbyImage from 'gatsby-image';
 import {
   Box,
   Button,
   Card,
   CardContent,
-  CardMedia,
   Container,
   Link,
   Typography,
 } from '@material-ui/core';
-import { photos } from '@images';
 import resumePDF from '@assets/docs/Sibirtsev CV.pdf';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    container: {
-      padding: '30px 0',
-    },
-    title: {
-      marginBottom: '0.5em',
-    },
-    twoRows: {
-      display: 'grid',
-      gridTemplateColumns: '1fr',
-      [theme.breakpoints.up('md')]: {
-        gridTemplateColumns: '1fr 1fr',
-      },
-      columnGap: '2em',
-    },
-    textSection: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1em',
-    },
-    paragraph: {
-      marginBottom: '1em',
-    },
-    cvLink: {
-      alignSelf: 'center',
-    },
-    bigPhotoContainer: {},
-    bigPhoto: {
-      height: 0,
-      // paddingTop: '56.25%', // 16:9
-      paddingTop: `${(1 / 2 ** (1 / 2)) * 100}%`, // 𝜑 (golden ratio)
-      maxWidth: '100%',
-    },
-    bigPhotoCaption: {
-      textAlign: 'center',
-    },
-  })
-);
+import useStyles from './About.style';
 
 const About = () => {
   const classes = useStyles();
+
+  const data = useStaticQuery(graphql`
+    {
+      photo: file(relativePath: { eq: "photos/working.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 610) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
+  const {
+    photo: { childImageSharp },
+  } = data;
+
   return (
     <Box component="section" className={classes.container} id="about">
       <Container>
@@ -115,11 +92,7 @@ const About = () => {
 
           <Box className="col-6 col-12-medium imp-medium">
             <Card elevation={3} className={classes.bigPhotoContainer}>
-              <CardMedia
-                image={photos.working}
-                title="Laptop photo"
-                className={classes.bigPhoto}
-              />
+              <GatsbyImage {...childImageSharp} className={classes.bigPhoto} />
               <CardContent>
                 <Typography
                   color="textSecondary"

@@ -23,13 +23,22 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet-async`,
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
         langKeyDefault: 'en',
         useLangKeyLayout: false,
+      },
+    },
+    `gatsby-plugin-react-helmet-async`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
   ],
