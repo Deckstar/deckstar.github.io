@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
     firmLogo: {
       maxHeight: imageHeight,
       maxWidth: '100%',
+      marginBottom: '0.5em',
     },
     title: {
       fontWeight: 'bold',

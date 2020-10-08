@@ -3,22 +3,34 @@ import { Fade } from 'react-awesome-reveal';
 import { Box, Tooltip, Typography } from '@material-ui/core';
 import useStyles from './ExperienceItem.style';
 import { ExperienceItemProps } from '@typescript/@types/experience';
+import GatsbyImage from 'gatsby-image';
 
 const ExperienceItem = (props: ExperienceItemProps) => {
   const classes = useStyles();
 
-  const { location, locationFlag, title, logo, dates, description } = props;
+  const {
+    node: { location, locationFlag, title, logo, dates, description },
+  } = props;
 
   return (
     <Fade triggerOnce direction="up">
       <Box className={classes.itemContainer}>
         <Box className={classes.itemBulletContainer}>
           <Tooltip arrow title={location} enterTouchDelay={0}>
-            <img src={locationFlag} className={classes.itemBullet} />
+            <span>
+              <GatsbyImage
+                {...locationFlag.childImageSharp}
+                className={classes.itemBullet}
+              />
+            </span>
           </Tooltip>
         </Box>
         <Box className={classes.itemContent}>
-          <img src={logo} className={classes.firmLogo} />
+          <GatsbyImage
+            {...logo.childImageSharp}
+            imgStyle={{ width: null }}
+            className={classes.firmLogo}
+          />
           <Typography variant="h5" className={classes.title}>
             {title}
           </Typography>
