@@ -6,7 +6,7 @@ import { Masonry, RenderComponentProps } from 'masonic';
 import { SkillCard } from '@components';
 import skillCategories from '@data/skills';
 import { SkillCardProps } from '@typescript/@types/skills';
-import useStyles from './Skills.styles';
+import useStyles from './Skills.style';
 
 const MasonryCard = (props: RenderComponentProps<SkillCardProps>) => {
   const { data } = props;

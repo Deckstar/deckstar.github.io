@@ -5,7 +5,7 @@ import { map } from 'lodash';
 import { companies, flags } from '@images';
 import { ExperienceItem } from '@components';
 import { ExperienceItemProps } from '@typescript/@types/experience';
-import useStyles from './Education.styles';
+import useStyles from './Education.style';
 
 const Education = () => {
   const classes = useStyles();

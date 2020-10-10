@@ -1,7 +1,7 @@
 import React from 'react';
 import { JackInTheBox } from 'react-awesome-reveal';
 import { Box, Container, Typography } from '@material-ui/core';
-import useStyles from './Blog.styles';
+import useStyles from './Blog.style';
 
 const Blog = () => {
   const classes = useStyles();

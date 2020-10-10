@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button, Container, Link, Typography } from '@material-ui/core';
 import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
-import useStyles from './Contact.styles';
+import useStyles from './Contact.style';
 
 const Contact = () => {
   const classes = useStyles();

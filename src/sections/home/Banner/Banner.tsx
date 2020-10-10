@@ -3,7 +3,7 @@ import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Container, Link, Typography } from '@material-ui/core';
 import { photos } from '@images';
-import useStyles from './Banner.styles';
+import useStyles from './Banner.style';
 
 const Banner = () => {
   const { t } = useTranslation();

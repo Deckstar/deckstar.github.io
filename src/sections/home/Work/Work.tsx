@@ -5,7 +5,7 @@ import { map } from 'lodash';
 import { companies, flags } from '@images';
 import { ExperienceItem } from '@components';
 import { ExperienceItemProps } from '@typescript/@types/experience';
-import useStyles from './Work.styles';
+import useStyles from './Work.style';
 
 const Work = () => {
   const classes = useStyles();
