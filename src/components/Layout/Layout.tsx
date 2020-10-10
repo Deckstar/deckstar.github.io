@@ -6,11 +6,13 @@ import '@assets/css/styles.scss';
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <Box component="main">
+    <>
       <Navbar />
-      {children}
-      <Footer />
-    </Box>
+      <Box component="main">
+        {children}
+        <Footer />
+      </Box>
+    </>
   );
 };
 

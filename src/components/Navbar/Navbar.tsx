@@ -1,14 +1,18 @@
-import React, { ReactNode, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { Component, ComponentType, ReactNode } from 'react';
+import { WithTranslation, withTranslation } from 'react-i18next';
 import {
   AppBar,
+  Box,
   Button,
+  Divider,
+  Drawer,
   IconButton,
   Link,
-  Menu,
   MenuItem,
   Select,
+  StyledComponentProps,
   Toolbar,
+  withStyles,
 } from '@material-ui/core';
 import {
   AccountCircle as AboutIcon,
@@ -16,207 +20,215 @@ import {
   Build as SkillIcon,
   Home as HomeIcon,
   Menu as MenuIcon,
-  MoreVert as MoreIcon,
+  Work as WorkIcon,
 } from '@material-ui/icons';
-import { find, get, map } from 'lodash';
 import { langMap } from '@i18n';
+import { HideOnScroll } from '@components';
+import { find, get, map } from 'lodash';
 import useStyles from './Navbar.style';
 
-const Navbar = () => {
-  const { t, i18n } = useTranslation();
-  const classes = useStyles();
+interface MenuLinkItem {
+  title: string;
+  link: string;
+  Icon: ComponentType;
+}
 
-  const [
-    mobileMoreAnchorEl,
-    setMobileMoreAnchorEl,
-  ] = React.useState<null | HTMLElement>(null);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+interface Props extends StyledComponentProps, WithTranslation {}
+interface State {
+  drawerOpen: boolean;
+  langValue: Language | undefined;
+}
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
+class Navbar extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+
+    this.state = {
+      drawerOpen: false,
+      langValue: find(
+        langMap,
+        (lang) => lang.code === (props.i18n.language.substring(0, 2) || 'en')
+      ),
+    };
+  }
+
+  getDrawerButtons = (): MenuLinkItem[] => {
+    return [
+      {
+        title: 'Home',
+        link: '',
+        Icon: HomeIcon,
+      },
+      {
+        title: 'About/CV',
+        link: 'about',
+        Icon: AboutIcon,
+      },
+      {
+        title: 'Skills',
+        link: 'skills',
+        Icon: SkillIcon,
+      },
+      {
+        title: 'Experience',
+        link: 'experience',
+        Icon: WorkIcon,
+      },
+      {
+        title: 'Contact',
+        link: 'contact',
+        Icon: ContactIcon,
+      },
+    ];
   };
 
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMoreAnchorEl(event.currentTarget);
+  handleDrawerMenuClose = () => {
+    this.setState({ drawerOpen: false });
   };
 
-  const [langValue, setLangValue] = useState(
-    find(
-      langMap,
-      (lang) => lang.code === (i18n.language.substring(0, 2) || 'en')
-    )
-  );
+  handleDrawerMenuOpen = () => {
+    this.setState({ drawerOpen: true });
+  };
 
-  const handleChange = (event: React.ChangeEvent<{ value: Language }>) => {
+  handleChange = (event: React.ChangeEvent<{ value: Language }>) => {
+    const { i18n } = this.props;
     const value = get(event, 'target.value', langMap[0]);
 
-    i18n.changeLanguage(value.code);
+    if (i18n) {
+      i18n.changeLanguage(value.code);
 
-    setLangValue(value);
+      this.setState({ langValue: value });
+    }
   };
 
-  const LanguageMenu = () => (
-    <Select
-      value={langValue}
-      onChange={(e: any) => handleChange(e)}
-      disableUnderline
-      inputProps={{
-        name: 'language',
-      }}
-      renderValue={(value: any): ReactNode => {
-        return (
-          <MenuItem>
-            <img
-              src={value.flag}
-              alt="Language flag"
-              style={{ height: '1.5em', marginRight: '1em' }}
-            />
-            {value.label}
+  renderFlagChoice = (props: Language) => {
+    const { code, label, flag } = props;
+
+    return (
+      <>
+        <IconButton disabled color="inherit">
+          <img src={flag} alt={`${code} flag`} style={{ height: 24 }} />
+        </IconButton>
+        {label}
+      </>
+    );
+  };
+
+  renderLanguageMenu = () => {
+    const FlagChoice = this.renderFlagChoice;
+
+    return (
+      <Select
+        value={this.state.langValue}
+        onChange={(e: any) => this.handleChange(e)}
+        disableUnderline
+        inputProps={{
+          name: 'language',
+        }}
+        renderValue={(value: any): ReactNode => (
+          <Box
+            component="span"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <FlagChoice {...value} />
+          </Box>
+        )}
+      >
+        {map(langMap, (lang) => (
+          <MenuItem component="span" value={lang} key={`language ${lang.code}`}>
+            <FlagChoice {...lang} />
           </MenuItem>
-        );
-      }}
-    >
-      {map(langMap, (lang) => (
-        <MenuItem value={lang} key={`language ${lang.code}`}>
-          <img
-            src={lang.flag}
-            alt="Language flag"
-            style={{ height: '1.5em', marginRight: '1em' }}
-          />
-          {lang.label}
-        </MenuItem>
-      ))}
-    </Select>
-  );
+        ))}
+      </Select>
+    );
+  };
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const MobileMenu = () => (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <LanguageMenu />
-      <Link color="inherit" href="#">
-        <MenuItem>
-          <IconButton
-            aria-controls="primary-search-account-menu"
-            aria-haspopup="true"
-            color="inherit"
-          >
-            <HomeIcon />
-          </IconButton>
-          Home
-        </MenuItem>
-      </Link>
-      <Link color="inherit" href="#about">
-        <MenuItem>
-          <IconButton color="inherit">
-            <AboutIcon />
-          </IconButton>
-          About/CV
-        </MenuItem>
-      </Link>
-      <Link color="inherit" href="#skills">
-        <MenuItem>
-          <IconButton
-            aria-controls="primary-search-account-menu"
-            aria-haspopup="true"
-            color="inherit"
-          >
-            <SkillIcon />
-          </IconButton>
-          Skills
-        </MenuItem>
-      </Link>
-      <Link color="inherit" href="#education">
-        <MenuItem>
-          <IconButton
-            aria-controls="primary-search-account-menu"
-            aria-haspopup="true"
-            color="inherit"
-          >
-            <AboutIcon />
-          </IconButton>
-          Education
-        </MenuItem>
-      </Link>
-      <Link color="inherit" href="#contact">
-        <MenuItem>
-          <IconButton
-            aria-controls="primary-search-account-menu"
-            aria-haspopup="true"
-            color="inherit"
-          >
-            <ContactIcon />
-          </IconButton>
-          Contact
-        </MenuItem>
-      </Link>
-    </Menu>
-  );
+  renderDesktopLink = (props: MenuLinkItem) => {
+    const { title, link } = props;
+    return (
+      <Button>
+        <Link color="inherit" href={`#${link}`}>
+          {title}
+        </Link>
+      </Button>
+    );
+  };
 
-  return (
-    <div className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar>
-          {/* <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton> */}
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <LanguageMenu />
-            <Button>
-              <Link color="inherit" href="#">
-                Home
-              </Link>
-            </Button>
-            <Button>
-              <Link color="inherit" href="#about">
-                About/CV
-              </Link>
-            </Button>
-            <Button>
-              <Link color="inherit" href="#skills">
-                Skills
-              </Link>
-            </Button>
-            <Button>
-              <Link color="inherit" href="#education">
-                Education
-              </Link>
-            </Button>
-            <Button>
-              <Link color="inherit" href="#contact">
-                Contact
-              </Link>
-            </Button>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
+  renderDrawerLink = (props: MenuLinkItem) => {
+    const { title, link, Icon } = props;
 
-      <MobileMenu />
-    </div>
-  );
-};
+    return (
+      <MenuItem>
+        <Link color="inherit" href={`#${link}`} underline="none">
+          <IconButton disableRipple>
+            <Icon />
+          </IconButton>
+          {title}
+        </Link>
+      </MenuItem>
+    );
+  };
 
-export default Navbar;
+  renderDrawerMenu = () => {
+    const LanguageMenu = this.renderLanguageMenu;
+    const DrawerLink = this.renderDrawerLink;
+
+    return (
+      <Box display="flex" flexDirection="column">
+        <LanguageMenu />
+        <Divider />
+        {map(this.getDrawerButtons(), (link, i) => (
+          <DrawerLink {...link} key={`drawer link ${i}`} />
+        ))}
+        <Divider />
+      </Box>
+    );
+  };
+
+  render() {
+    const { classes } = this.props;
+
+    const LanguageMenu = this.renderLanguageMenu;
+    const DrawerMenu = this.renderDrawerMenu;
+    const DesktopLink = this.renderDesktopLink;
+
+    return (
+      <>
+        <HideOnScroll>
+          <AppBar>
+            <Toolbar>
+              <IconButton
+                edge="start"
+                className={classes?.menuButton}
+                aria-label="open drawer"
+                onClick={this.handleDrawerMenuOpen}
+              >
+                <MenuIcon />
+              </IconButton>
+
+              <Box className={classes?.grow} />
+
+              <Box className={classes?.sectionDesktop}>
+                <LanguageMenu />
+                {map(this.getDrawerButtons(), (link, i) => (
+                  <DesktopLink {...link} key={`desktop link ${i}`} />
+                ))}
+              </Box>
+            </Toolbar>
+          </AppBar>
+        </HideOnScroll>
+
+        <Drawer
+          open={this.state.drawerOpen}
+          onClose={this.handleDrawerMenuClose}
+        >
+          <DrawerMenu />
+        </Drawer>
+      </>
+    );
+  }
+}
+
+export default withTranslation()(withStyles(useStyles)(Navbar));

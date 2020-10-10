@@ -1,6 +1,6 @@
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { Theme, createStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = (theme: Theme) =>
   createStyles({
     grow: {
       flexGrow: 1,
@@ -14,13 +14,6 @@ const useStyles = makeStyles((theme: Theme) =>
         display: 'flex',
       },
     },
-    sectionMobile: {
-      display: 'flex',
-      [theme.breakpoints.up('md')]: {
-        display: 'none',
-      },
-    },
-  })
-);
+  });
 
 export default useStyles;
