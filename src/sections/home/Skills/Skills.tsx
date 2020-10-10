@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Container, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
+import { graphql, useStaticQuery } from 'gatsby';
 import { FaDesktop, FaMobile } from 'react-icons/fa';
 import { Masonry, RenderComponentProps } from 'masonic';
 import { SkillCard } from '@components';
-import skillCategories from '@data/skills';
 import { SkillCardProps } from '@typescript/@types/skills';
 import useStyles from './Skills.styles';
 
@@ -17,6 +17,49 @@ const MasonryCard = (props: RenderComponentProps<SkillCardProps>) => {
 const Skills = () => {
   const classes = useStyles();
   const theme = useTheme();
+
+  const data = useStaticQuery(graphql`
+    {
+      allSkillsJson {
+        nodes {
+          title
+          skillItems {
+            extra
+            name
+            src {
+              childImageSharp {
+                fluid(maxHeight: 20) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            subSkills {
+              name
+              src {
+                childImageSharp {
+                  fluid(maxHeight: 20) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              subSkills {
+                name
+                src {
+                  childImageSharp {
+                    fluid(maxHeight: 20) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const skillCategories = data.allSkillsJson.nodes;
 
   return (
     <Box component="section" className={classes.container} id="skills">

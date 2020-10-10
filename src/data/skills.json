@@ -1,0 +1,371 @@
+[
+  {
+    "title": "Programming languages",
+    "skillItems": [
+      {
+        "name": "Python",
+        "src": "../images/logos/python.png"
+      },
+      {
+        "name": "JavaScript",
+        "src": "../images/logos/javascript.png",
+        "subSkills": [
+          {
+            "name": "TypeScript",
+            "src": "../images/logos/typescript.png"
+          }
+        ]
+      },
+      {
+        "name": "Java",
+        "src": "../images/logos/java.png"
+      },
+      {
+        "name": "Swift",
+        "src": "../images/logos/swift.png"
+      },
+      {
+        "name": "Wolfram Language",
+        "src": "../images/logos/wolfram language.png"
+      },
+      {
+        "name": "HTML & CSS",
+        "src": "../images/logos/HTML5 CSS3.png"
+      }
+    ]
+  },
+  {
+    "title": "Frontend",
+    "skillItems": [
+      {
+        "name": "React",
+        "src": "../images/logos/react.png",
+        "subSkills": [
+          {
+            "name": "React Native",
+            "src": "../images/logos/react native.png"
+          },
+          {
+            "name": "Redux",
+            "src": "../images/logos/redux.png",
+            "subSkills": [
+              {
+                "name": "Redux Saga",
+                "src": "../images/logos/redux-saga.png"
+              },
+              {
+                "name": "Redux Form",
+                "src": "../images/logos/redux-form.png"
+              }
+            ]
+          },
+          {
+            "name": "Apollo",
+            "src": "../images/logos/apollo.png"
+          },
+          {
+            "name": "Gatsby",
+            "src": "../images/logos/gatsby.png"
+          }
+        ]
+      },
+      {
+        "name": "WordPress",
+        "src": "../images/logos/wordpress.png"
+      },
+      {
+        "name": "Svelte",
+        "src": "../images/logos/svelte.png",
+        "subSkills": [
+          {
+            "name": "Sapper",
+            "src": "../images/logos/sapper.png"
+          }
+        ]
+      },
+      {
+        "name": "Electron",
+        "src": "../images/logos/electron.png"
+      },
+      {
+        "name": "Bootstrap CSS",
+        "src": "../images/logos/bootstrap.png"
+      },
+      {
+        "name": "Material UI",
+        "src": "../images/logos/materialUI.png"
+      },
+      {
+        "name": "i18next",
+        "src": "../images/logos/i18next.png"
+      }
+    ]
+  },
+  {
+    "title": "Backend",
+    "skillItems": [
+      {
+        "name": "Django",
+        "src": "../images/logos/django with python.png",
+        "subSkills": [
+          {
+            "name": "Graphene",
+            "src": "../images/logos/graphene.png"
+          }
+        ]
+      },
+      {
+        "name": "GraphQL",
+        "src": "../images/logos/graphql.png"
+      },
+      {
+        "name": "NodeJS",
+        "src": "../images/logos/node.png",
+        "extra": "with Express",
+        "subSkills": [
+          {
+            "name": "Mongoose",
+            "src": "../images/logos/mongoose.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Databases",
+    "skillItems": [
+      {
+        "name": "MongoDB",
+        "src": "../images/logos/mongodb.png",
+        "extra": "with Cloud Atlas"
+      },
+      {
+        "name": "PostgreSQL",
+        "src": "../images/logos/pgadmin.png",
+        "subSkills": [
+          {
+            "name": "Postgres",
+            "src": "../images/logos/postgres.png"
+          }
+        ]
+      },
+      {
+        "name": "Firebase",
+        "src": "../images/logos/firebase.png",
+        "extra": "Cloud Firestore"
+      },
+      {
+        "name": "SQLite3",
+        "src": "../images/logos/sqlite3.png"
+      }
+    ]
+  },
+  {
+    "title": "Deployment",
+    "skillItems": [
+      {
+        "name": "Heroku",
+        "src": "../images/logos/heroku.png"
+      },
+      {
+        "name": "Amazon Web Services",
+        "src": "../images/logos/aws.png"
+      },
+      {
+        "name": "DigitalOcean",
+        "src": "../images/logos/digital-ocean.png"
+      }
+    ]
+  },
+  {
+    "title": "Dev tools",
+    "skillItems": [
+      {
+        "name": "Docker",
+        "src": "../images/logos/docker.png",
+        "extra": "containerization"
+      },
+      {
+        "name": "Git",
+        "src": "../images/logos/git.png"
+      },
+      {
+        "name": "Github",
+        "src": "../images/logos/github.png"
+      },
+      {
+        "name": "Bitbucket",
+        "extra": "",
+        "src": "../images/logos/bitbucket.png"
+      },
+      {
+        "name": "Jira",
+        "src": "../images/logos/jira.png",
+        "extra": "task management"
+      },
+      {
+        "name": "Postman",
+        "src": "../images/logos/postman.png",
+        "extra": "easy HTTP requests"
+      },
+      {
+        "name": "Xcode",
+        "src": "../images/logos/Xcode.png",
+        "extra": "iOS development"
+      },
+      {
+        "name": "Android Studio",
+        "src": "../images/logos/android studio.png",
+        "extra": "Android development"
+      },
+      {
+        "name": "Lodash",
+        "src": "../images/logos/lodash.png"
+      }
+    ]
+  },
+  {
+    "title": "Design",
+    "skillItems": [
+      {
+        "name": "Adobe Creative Cloud",
+        "src": "../images/logos/adobe creative cloud.png",
+        "subSkills": [
+          {
+            "name": "Photoshop",
+            "src": "../images/logos/photoshop.png"
+          },
+          {
+            "name": "Illustrator",
+            "src": "../images/logos/illustrator.png"
+          },
+          {
+            "name": "Audition",
+            "src": "../images/logos/audition.png"
+          }
+        ]
+      },
+      {
+        "name": "Sketch",
+        "src": "../images/logos/sketch.png",
+        "extra": "UI / UX design"
+      }
+    ]
+  },
+  {
+    "title": "Data & math",
+    "skillItems": [
+      {
+        "name": "Jupyter Notebooks",
+        "src": "../images/logos/jupyter.png",
+        "extra": "Python data analysis"
+      },
+      {
+        "name": "Mathematica",
+        "src": "../images/logos/mathematica.png",
+        "extra": "Math & technical computing"
+      }
+    ]
+  },
+  {
+    "title": "Productivity & business",
+    "skillItems": [
+      {
+        "name": "Microsoft Office",
+        "subSkills": [
+          {
+            "name": "Word",
+            "src": "../images/logos/word.png"
+          },
+          {
+            "name": "Excel",
+            "src": "../images/logos/excel.png"
+          },
+          {
+            "name": "Powerpoint",
+            "src": "../images/logos/powerpoint.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Media",
+    "skillItems": [
+      {
+        "name": "Final Cut Pro",
+        "src": "../images/logos/final cut pro.png",
+        "extra": "Video editing"
+      },
+      {
+        "name": "Logic Pro",
+        "src": "../images/logos/logic pro.png",
+        "extra": "Audio recording & mixing"
+      },
+      {
+        "name": "Music notation",
+        "subSkills": [
+          {
+            "name": "Guitar Pro",
+            "src": "../images/logos/guitar pro.png"
+          },
+          {
+            "name": "MuseScore",
+            "src": "../images/logos/musescore.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Human languages",
+    "skillItems": [
+      {
+        "name": "English",
+        "src": "../images/flags/united-kingdom.png",
+        "extra": "first language"
+      },
+      {
+        "name": "Estonian",
+        "src": "../images/flags/estonia.png",
+        "extra": "native"
+      },
+      {
+        "name": "Russian",
+        "src": "../images/flags/russia.png",
+        "extra": "native"
+      },
+      {
+        "name": "French",
+        "src": "../images/flags/france.png",
+        "extra": "conversational, B2"
+      },
+      {
+        "name": "Spanish",
+        "src": "../images/flags/spain.png",
+        "extra": "conversational, B2"
+      },
+      {
+        "name": "Plus some basic:",
+        "subSkills": [
+          {
+            "name": "German",
+            "src": "../images/flags/germany.png"
+          },
+          {
+            "name": "Hungarian",
+            "src": "../images/flags/hungary.png"
+          },
+          {
+            "name": "Swedish",
+            "src": "../images/flags/sweden.png"
+          },
+          {
+            "name": "Japanese",
+            "src": "../images/flags/japan.png"
+          }
+        ]
+      }
+    ]
+  }
+]

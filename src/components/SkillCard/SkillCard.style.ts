@@ -105,6 +105,26 @@ const useStyles = makeStyles((theme: Theme) =>
     subtitle: {
       fontSize: '0.8em',
     },
+    miniImgContainer: {
+      maxHeight: '1em',
+      // width: '100%',
+      width: '30px',
+      verticalAlign: 'text-top',
+      display: 'inline',
+
+      '& > div': {
+        display: 'inline',
+        verticalAlign: 'text-top',
+        width: '30px',
+        position: 'relative',
+        maxHeight: '1em',
+      },
+    },
+    miniImg: {
+      verticalAlign: 'text-top',
+      width: undefined,
+      maxHeight: '1em',
+    },
   })
 );
 
