@@ -13,33 +13,31 @@ const Work = () => {
   const data = useStaticQuery(graphql`
     {
       allWorkJson {
-        edges {
-          node {
-            location
-            locationFlag {
-              childImageSharp {
-                fixed(width: 24, height: 24) {
-                  ...GatsbyImageSharpFixed
-                }
+        nodes {
+          location
+          locationFlag {
+            childImageSharp {
+              fixed(width: 24, height: 24) {
+                ...GatsbyImageSharpFixed
               }
             }
-            title
-            logo {
-              childImageSharp {
-                fluid(maxHeight: 40) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            dates
-            description
           }
+          title
+          logo {
+            childImageSharp {
+              fluid(maxHeight: 40) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          dates
+          description
         }
       }
     }
   `);
 
-  const workItems: ExperienceItemProps[] = data.allWorkJson.edges;
+  const workItems: ExperienceItemProps[] = data.allWorkJson.nodes;
 
   return (
     <Box component="section" id="work" className={classes.container}>

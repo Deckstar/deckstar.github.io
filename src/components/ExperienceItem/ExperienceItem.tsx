@@ -8,9 +8,7 @@ import GatsbyImage from 'gatsby-image';
 const ExperienceItem = (props: ExperienceItemProps) => {
   const classes = useStyles();
 
-  const {
-    node: { location, locationFlag, title, logo, dates, description },
-  } = props;
+  const { location, locationFlag, title, logo, dates, description } = props;
 
   return (
     <Fade triggerOnce direction="up">

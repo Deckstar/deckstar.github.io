@@ -13,33 +13,31 @@ const Education = () => {
   const data = useStaticQuery(graphql`
     {
       allEducationJson {
-        edges {
-          node {
-            location
-            locationFlag {
-              childImageSharp {
-                fixed(width: 24, height: 24) {
-                  ...GatsbyImageSharpFixed
-                }
+        nodes {
+          location
+          locationFlag {
+            childImageSharp {
+              fixed(width: 24, height: 24) {
+                ...GatsbyImageSharpFixed
               }
             }
-            title
-            logo {
-              childImageSharp {
-                fluid(maxHeight: 40) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            dates
-            description
           }
+          title
+          logo {
+            childImageSharp {
+              fluid(maxHeight: 40) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          dates
+          description
         }
       }
     }
   `);
 
-  const schoolItems: ExperienceItemProps[] = data.allEducationJson.edges;
+  const schoolItems: ExperienceItemProps[] = data.allEducationJson.nodes;
 
   return (
     <Box component="section" id="education" className={classes.container}>
