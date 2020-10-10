@@ -1,6 +1,5 @@
 import React, { ReactNode, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import {
   AppBar,
   Button,
@@ -21,29 +20,7 @@ import {
 } from '@material-ui/icons';
 import { find, get, map } from 'lodash';
 import { langMap } from '@i18n';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    grow: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    sectionDesktop: {
-      display: 'none',
-      [theme.breakpoints.up('md')]: {
-        display: 'flex',
-      },
-    },
-    sectionMobile: {
-      display: 'flex',
-      [theme.breakpoints.up('md')]: {
-        display: 'none',
-      },
-    },
-  })
-);
+import useStyles from './Navbar.style';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
