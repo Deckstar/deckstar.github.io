@@ -2,6 +2,7 @@ const logos = {
   adobeCreativeCloud: require('./logos/adobe creative cloud.png'),
   androidStudio: require('./logos/android studio.png'),
   apollo: require('./logos/apollo.png'),
+  asana: require('./logos/asana.png'),
   audition: require('./logos/audition.png'),
   aws: require('./logos/aws.png'),
   bitbucket: require('./logos/bitbucket.png'),
