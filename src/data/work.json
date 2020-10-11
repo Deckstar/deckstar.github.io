@@ -30,5 +30,13 @@
     "logo": "../images/companies/swedbank.png",
     "dates": "June 2016",
     "description": "Helped gather field survey data for and promote the company’s mobile app. Personally presented on the app’s benefits over internet banking to over 150 clients, and personally assisted many in transitioning. Work shadowed for client relations managers and financial holdings advisors."
+  },
+  {
+    "location": "London, United Kingdom",
+    "locationFlag": "../images/flags/united-kingdom.png",
+    "title": "UCL student union – Baltic Society Treasurer",
+    "logo": "../images/companies/uclu.png",
+    "dates": "May 2016 – May 2017",
+    "description": "Personally recruited over twenty people to join the organization. Helped organize speaking events, particularly administration and logistics. Practiced negotiation with organizers and sponsors such as the UCL student union and small business owners. Had full responsibility for the finances of the organization."
   }
 ]
