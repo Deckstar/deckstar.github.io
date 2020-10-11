@@ -129,6 +129,7 @@ const Post = (props: BlogPostProps) => {
             return (
               <Typography
                 key={`post ${id} tag ${tag}`}
+                variant="subtitle2"
                 className={classes.cardTag}
               >
                 #{tag}

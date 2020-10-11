@@ -65,6 +65,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     cardCaption: {},
     cardFooter: {
+      justifyContent: 'space-between',
       alignItems: 'flex-end',
       gap: '1em',
     },
