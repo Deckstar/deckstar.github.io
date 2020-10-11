@@ -5,3 +5,4 @@ export { default as LineHighImage } from './LineHighImage/LineHighImage';
 export { default as Navbar } from './Navbar/Navbar';
 export { default as SkillCard } from './SkillCard/SkillCard';
 export { default as Wrapper } from './Wrapper/Wrapper';
+export { default as ZoomToTopButton } from './ZoomToTopButton/ZoomToTopButton';
