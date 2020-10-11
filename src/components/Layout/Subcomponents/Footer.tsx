@@ -5,7 +5,7 @@ import { overlays } from '@images';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    inner: {
+    container: {
       padding: '45px 30px',
       display: 'flex',
       flexDirection: 'column',
@@ -46,21 +46,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Box component="section" id="footer">
-      <Box className={classes.inner}>
-        <Box className={classes.textContainer}>
-          <Typography>
-            &copy; 2019 – {currentYear} |{' '}
-            <Link
-              href="."
-              underline="none"
-              color="inherit"
-              className={classes.link}
-            >
-              Acknowledgments
-            </Link>
-          </Typography>
-        </Box>
+    <Box component="footer" id="footer" className={classes.container}>
+      <Box className={classes.textContainer}>
+        <Typography>
+          &copy; 2019 – {currentYear} |{' '}
+          <Link
+            href="."
+            underline="none"
+            color="inherit"
+            className={classes.link}
+          >
+            Acknowledgments
+          </Link>
+        </Typography>
       </Box>
     </Box>
   );

@@ -8,10 +8,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Navbar />
-      <Box component="main">
-        {children}
-        <Footer />
-      </Box>
+      <Box component="main">{children}</Box>
+      <Footer />
     </>
   );
 };
