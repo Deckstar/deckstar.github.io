@@ -21,15 +21,72 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       marginBottom: '0.5em',
     },
-    innerContainer: {
+    postsContainer: {
       display: 'flex',
-      justifyContent: 'center',
+      flexWrap: 'nowrap',
+      gap: '2em',
+      overflowX: 'auto',
+      padding: '2rem 1rem',
+    },
+
+    cardContainer: {
+      flex: '0 0 auto',
+      width: '100%',
+      maxWidth: '24rem',
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    cardPhoto: {
+      height: 0,
+      // paddingTop: '56.25%', // 16:9
+      paddingTop: `${(1 / 2 ** (1 / 2)) * 100}%`, // 𝜑 (golden ratio)
+      maxWidth: '100%',
+    },
+    cardContent: {
+      flexGrow: 1,
+      alignItems: 'center',
+
+      '&:last-child': {
+        padding: '8px 16px 16px',
+      },
+    },
+    cardTitle: {
+      fontWeight: 'bold',
+    },
+    cardDateContainer: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.5em',
+      fontSize: '0.9em',
+      marginBottom: '1em',
+    },
+    cardDate: {
+      fontSize: 'inherit',
+    },
+    cardCaption: {},
+    cardFooter: {
+      alignItems: 'flex-end',
+      gap: '1em',
+    },
+    cardButtons: {
+      display: 'flex',
       alignItems: 'center',
     },
-    comingSoonText: {
-      fontFamily: 'Marck Script',
-      width: 'min-content',
-      textAlign: 'center',
+    cardHeartCount: {
+      color: theme.palette.text.primary,
+    },
+    cardArticleTags: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '0 1em',
+      justifyContent: 'flex-end',
+    },
+    cardTag: {
+      fontWeight: 'bold',
+    },
+
+    dummyDivForPaddingToWork: {
+      color: 'rgba(0, 0, 0, 0)',
     },
   })
 );
