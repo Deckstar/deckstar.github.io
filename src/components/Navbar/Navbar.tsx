@@ -7,7 +7,6 @@ import {
   Divider,
   Drawer,
   IconButton,
-  Link,
   MenuItem,
   Select,
   StyledComponentProps,
@@ -22,6 +21,7 @@ import {
   Menu as MenuIcon,
   Work as WorkIcon,
 } from '@material-ui/icons';
+import { scroller } from 'react-scroll';
 import { langMap } from '@i18n';
 import { HideOnScroll } from '@components';
 import { find, get, map } from 'lodash';
@@ -56,7 +56,7 @@ class Navbar extends Component<Props, State> {
     return [
       {
         title: 'Home',
-        link: '',
+        link: 'banner',
         Icon: HomeIcon,
       },
       {
@@ -90,7 +90,7 @@ class Navbar extends Component<Props, State> {
     this.setState({ drawerOpen: true });
   };
 
-  handleChange = (event: React.ChangeEvent<{ value: Language }>) => {
+  handleChangeLanguage = (event: React.ChangeEvent<{ value: Language }>) => {
     const { i18n } = this.props;
     const value = get(event, 'target.value', langMap[0]);
 
@@ -100,6 +100,13 @@ class Navbar extends Component<Props, State> {
       this.setState({ langValue: value });
     }
   };
+
+  handleScrollTo = (id: string) =>
+    scroller.scrollTo(id, {
+      offset: -50, // so navbar doesn't block view
+      duration: 600,
+      smooth: true,
+    });
 
   renderFlagChoice = (props: Language) => {
     const { code, label, flag } = props;
@@ -120,7 +127,7 @@ class Navbar extends Component<Props, State> {
     return (
       <Select
         value={this.state.langValue}
-        onChange={(e: any) => this.handleChange(e)}
+        onChange={(e: any) => this.handleChangeLanguage(e)}
         disableUnderline
         inputProps={{
           name: 'language',
@@ -147,26 +154,18 @@ class Navbar extends Component<Props, State> {
 
   renderDesktopLink = (props: MenuLinkItem) => {
     const { title, link } = props;
-    return (
-      <Button>
-        <Link color="inherit" href={`#${link}`}>
-          {title}
-        </Link>
-      </Button>
-    );
+    return <Button onClick={() => this.handleScrollTo(link)}>{title}</Button>;
   };
 
   renderDrawerLink = (props: MenuLinkItem) => {
     const { title, link, Icon } = props;
 
     return (
-      <MenuItem>
-        <Link color="inherit" href={`#${link}`} underline="none">
-          <IconButton disableRipple>
-            <Icon />
-          </IconButton>
-          {title}
-        </Link>
+      <MenuItem onClick={() => this.handleScrollTo(link)}>
+        <IconButton disableRipple>
+          <Icon />
+        </IconButton>
+        {title}
       </MenuItem>
     );
   };
