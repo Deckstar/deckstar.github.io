@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Container, Typography } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import { map } from 'lodash';
-import { companies, flags } from '@images';
 import { ExperienceItem } from '@components';
 import { ExperienceItemProps } from '@typescript/@types/experience';
 import useStyles from './Education.style';
@@ -59,9 +58,8 @@ const Education = () => {
         <Box className={classes.itemsOuterContainer}>
           <Box className={classes.line} />
           <Box className={classes.itemsContainer}>
-            {/* <pre>{JSON.stringify(schoolItems, null, 2)}</pre> */}
             {map(schoolItems, (school, i) => {
-              return <ExperienceItem {...school} key={`school i`} />;
+              return <ExperienceItem {...school} key={`school ${i}`} />;
             })}
           </Box>
         </Box>
