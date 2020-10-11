@@ -16,6 +16,7 @@ import {
 import {
   AccountCircle as AboutIcon,
   AlternateEmail as ContactIcon,
+  Description as BlogIcon,
   Build as SkillIcon,
   Home as HomeIcon,
   Menu as MenuIcon,
@@ -73,6 +74,11 @@ class Navbar extends Component<Props, State> {
         title: 'Experience',
         link: 'experience',
         Icon: WorkIcon,
+      },
+      {
+        title: 'Blog',
+        link: 'blog',
+        Icon: BlogIcon,
       },
       {
         title: 'Contact',
