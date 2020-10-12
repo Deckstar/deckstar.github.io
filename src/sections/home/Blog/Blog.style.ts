@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
     cardContainer: {
       flex: '0 0 auto',
-      width: '100%',
+      width: '92.5%',
       maxWidth: '24rem',
       display: 'flex',
       flexDirection: 'column',

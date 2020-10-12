@@ -11,6 +11,7 @@ import {
   Select,
   StyledComponentProps,
   Toolbar,
+  Typography,
   withStyles,
 } from '@material-ui/core';
 import {
@@ -27,6 +28,7 @@ import { langMap } from '@i18n';
 import { HideOnScroll } from '@components';
 import { find, get, map } from 'lodash';
 import useStyles from './Navbar.style';
+import { backgrounds, photos } from '@images';
 
 interface MenuLinkItem {
   title: string;
@@ -182,6 +184,14 @@ class Navbar extends Component<Props, State> {
 
     return (
       <Box display="flex" flexDirection="column">
+        {/* To be replaced by logo */}
+        <Typography
+          variant="h4"
+          style={{ fontWeight: 'bold', padding: '1rem 0', textAlign: 'center' }}
+        >
+          Portfolio
+        </Typography>
+        <Divider />
         <LanguageMenu />
         <Divider />
         {map(this.getDrawerButtons(), (link, i) => (
