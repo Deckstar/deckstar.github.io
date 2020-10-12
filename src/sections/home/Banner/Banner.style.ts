@@ -26,6 +26,8 @@ const useStyles = makeStyles((theme: Theme) =>
       gap: '2em',
       justifyContent: 'center',
       alignItems: 'center',
+      paddingTop: '4rem',
+      paddingBottom: '1rem',
     },
     textContainer: {
       display: 'flex',
@@ -39,7 +41,6 @@ const useStyles = makeStyles((theme: Theme) =>
       height: '7em',
       width: '7em',
       borderRadius: '50%',
-      marginTop: '1em',
     },
     icons: {
       display: 'flex',
