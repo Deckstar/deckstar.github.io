@@ -6,6 +6,8 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: '30px 0',
     },
     title: {
+      fontFamily: 'Mistral',
+      fontVariant: 'small-caps',
       marginBottom: '0.5em',
     },
     twoRows: {

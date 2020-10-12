@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     title: {
+      fontFamily: 'Mistral',
+      fontVariant: 'small-caps',
       marginBottom: '0.5em',
     },
     postsContainer: {
