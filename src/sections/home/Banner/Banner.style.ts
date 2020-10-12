@@ -37,6 +37,10 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       textAlign: 'center',
     },
+    nameHeader: {
+      fontFamily: 'Mistral',
+      fontVariant: 'small-caps',
+    },
     profilePic: {
       height: '7em',
       width: '7em',

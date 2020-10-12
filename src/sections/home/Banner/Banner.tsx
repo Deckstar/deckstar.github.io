@@ -74,7 +74,7 @@ const Banner = () => {
         <Container className={classes.inner}>
           <img className={classes.profilePic} src={photos.profilePic} />
           <Box className={classes.textContainer}>
-            <Typography variant="h2">
+            <Typography variant="h2" className={classes.nameHeader}>
               <Box fontWeight="bold">Dexter Sibirtsev</Box>
             </Typography>
             <Typography variant="h3">
