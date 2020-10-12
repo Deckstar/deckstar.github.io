@@ -96,7 +96,7 @@ const Post = (props: BlogPostProps) => {
     <Card elevation={3} className={classes.cardContainer}>
       <CardMedia
         image={featuredImg}
-        title="Stockholm School of Economics"
+        title={title}
         className={classes.cardPhoto}
       />
       <CardContent className={classes.cardContent}>
