@@ -5,17 +5,17 @@ const useStyles = makeStyles((theme: Theme) =>
     container: {
       background: `linear-gradient(to right bottom, ${theme.palette.primary.contrastText} 35%, ${theme.palette.secondary.contrastText} 100%)`,
       padding: '75px 0',
-      borderRadius: '400% 100% / 30%',
+      borderRadius: '400% 100% / 10%',
       overflow: 'hidden',
 
-      [theme.breakpoints.up('lg')]: {
+      [theme.breakpoints.up('md')]: {
         padding: '105px 20px 100px',
-        borderRadius: '400% 120% / 1000%;',
+        borderRadius: '50% / 5%',
       },
 
       [theme.breakpoints.down('sm')]: {
         padding: '50px 0',
-        borderRadius: '400% 200% / 10%',
+        borderRadius: '400% 200% / 40%',
       },
     },
     title: {
