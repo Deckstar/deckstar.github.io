@@ -42,6 +42,15 @@ const useStyles = makeStyles((theme: Theme) =>
       fontVariant: 'small-caps',
     },
     profilePic: {
+      [theme.breakpoints.up('md')]: {
+        height: '9em',
+        width: '9em',
+      },
+      [theme.breakpoints.up('lg')]: {
+        height: '12em',
+        width: '12em',
+      },
+
       height: '7em',
       width: '7em',
       borderRadius: '50%',
