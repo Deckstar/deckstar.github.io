@@ -20,10 +20,6 @@ interface SocialLinkProps {
 
 const sectionButtons: SectionButtonProps[] = [
   {
-    title: 'Home',
-    link: 'banner',
-  },
-  {
     title: 'About/CV',
     link: 'about',
   },
@@ -34,6 +30,10 @@ const sectionButtons: SectionButtonProps[] = [
   {
     title: 'Experience',
     link: 'experience',
+  },
+  {
+    title: 'Blog',
+    link: 'blog',
   },
   {
     title: 'Contact',
