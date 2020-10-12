@@ -4,10 +4,15 @@ import { Navbar, ZoomToTopButton } from '@components';
 import Footer from './Subcomponents/Footer';
 import '@assets/css/styles.scss';
 
-const Layout = ({ children }: { children: ReactNode }) => {
+interface LayoutProps {
+  children: ReactNode;
+  homePage: boolean;
+}
+
+const Layout = ({ children, homePage }: LayoutProps) => {
   return (
     <>
-      <Navbar />
+      <Navbar homePage={homePage} />
       <Box component="main">{children}</Box>
       <Footer />
       <ZoomToTopButton />

@@ -7,6 +7,7 @@ import {
   Divider,
   Drawer,
   IconButton,
+  Link,
   MenuItem,
   Select,
   StyledComponentProps,
@@ -20,6 +21,7 @@ import {
   Build as SkillIcon,
   Home as HomeIcon,
   Menu as MenuIcon,
+  EmojiPeople as AcknowledgementsIcon,
   Work as WorkIcon,
 } from '@material-ui/icons';
 import { scroller } from 'react-scroll';
@@ -35,7 +37,9 @@ interface MenuLinkItem {
   Icon: ComponentType;
 }
 
-interface Props extends StyledComponentProps, WithTranslation {}
+interface Props extends StyledComponentProps, WithTranslation {
+  homePage?: boolean;
+}
 interface State {
   drawerOpen: boolean;
   langValue: Language | undefined;
@@ -56,11 +60,6 @@ class Navbar extends Component<Props, State> {
 
   getDrawerButtons = (): MenuLinkItem[] => {
     return [
-      {
-        title: 'Home',
-        link: 'banner',
-        Icon: HomeIcon,
-      },
       {
         title: 'About/CV',
         link: 'about',
@@ -85,6 +84,21 @@ class Navbar extends Component<Props, State> {
         title: 'Contact',
         link: 'contact',
         Icon: ContactIcon,
+      },
+    ];
+  };
+
+  getPagesButtons = (): MenuLinkItem[] => {
+    return [
+      {
+        title: 'Home',
+        link: '/',
+        Icon: HomeIcon,
+      },
+      {
+        title: 'Acknowledgements',
+        link: 'acknowledgements',
+        Icon: AcknowledgementsIcon,
       },
     ];
   };
@@ -164,7 +178,37 @@ class Navbar extends Component<Props, State> {
     return <Button onClick={() => this.handleScrollTo(link)}>{title}</Button>;
   };
 
+  renderDesktopLinks = () => {
+    const { homePage } = this.props;
+    if (!homePage) return null;
+
+    const DesktopLink = this.renderDesktopLink;
+
+    return (
+      <>
+        {map(this.getDrawerButtons(), (link, i) => (
+          <DesktopLink {...link} key={`desktop link ${i}`} />
+        ))}
+      </>
+    );
+  };
+
   renderDrawerLink = (props: MenuLinkItem) => {
+    const { title, link, Icon } = props;
+
+    return (
+      <MenuItem>
+        <Link color="inherit" href={link}>
+          <IconButton disableRipple>
+            <Icon />
+          </IconButton>
+          {title}
+        </Link>
+      </MenuItem>
+    );
+  };
+
+  renderHomePageLink = (props: MenuLinkItem) => {
     const { title, link, Icon } = props;
 
     return (
@@ -177,8 +221,25 @@ class Navbar extends Component<Props, State> {
     );
   };
 
+  renderHomePageLinks = () => {
+    const { homePage } = this.props;
+    if (!homePage) return null;
+
+    const HomePageLink = this.renderHomePageLink;
+
+    return (
+      <>
+        {map(this.getDrawerButtons(), (link, i) => (
+          <HomePageLink {...link} key={`drawer link ${i}`} />
+        ))}
+        <Divider />
+      </>
+    );
+  };
+
   renderDrawerMenu = () => {
     const LanguageMenu = this.renderLanguageMenu;
+    const HomePageLinks = this.renderHomePageLinks;
     const DrawerLink = this.renderDrawerLink;
 
     return (
@@ -196,8 +257,9 @@ class Navbar extends Component<Props, State> {
         <Divider />
         <LanguageMenu />
         <Divider />
-        {map(this.getDrawerButtons(), (link, i) => (
-          <DrawerLink {...link} key={`drawer link ${i}`} />
+        <HomePageLinks />
+        {map(this.getPagesButtons(), (link, i) => (
+          <DrawerLink {...link} key={`page link ${i}`} />
         ))}
         <Divider />
       </Box>
@@ -209,7 +271,7 @@ class Navbar extends Component<Props, State> {
 
     const LanguageMenu = this.renderLanguageMenu;
     const DrawerMenu = this.renderDrawerMenu;
-    const DesktopLink = this.renderDesktopLink;
+    const DesktopLinks = this.renderDesktopLinks;
 
     return (
       <>
@@ -229,9 +291,7 @@ class Navbar extends Component<Props, State> {
 
               <Box className={classes?.sectionDesktop}>
                 <LanguageMenu />
-                {map(this.getDrawerButtons(), (link, i) => (
-                  <DesktopLink {...link} key={`desktop link ${i}`} />
-                ))}
+                <DesktopLinks />
               </Box>
             </Toolbar>
           </AppBar>

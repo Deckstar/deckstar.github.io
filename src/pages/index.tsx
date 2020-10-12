@@ -13,7 +13,7 @@ import { Helmet } from 'react-helmet-async';
 
 const Home: FC<WithTranslation> = () => {
   return (
-    <Wrapper>
+    <Wrapper homePage>
       <Helmet>
         <title>Dexter Sibirtsev | Portfolio</title>
       </Helmet>

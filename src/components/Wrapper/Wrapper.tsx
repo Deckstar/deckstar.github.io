@@ -5,12 +5,12 @@ import I18n from '@i18n';
 import { Layout } from '@components';
 import { ThemeWrapper } from '@theme';
 
-const Wrapper = ({ children }: { children: ReactNode }) => {
+const Wrapper = ({ children, ...rest }: { children: ReactNode }) => {
   return (
     <I18nextProvider i18n={I18n}>
       <HelmetProvider>
         <ThemeWrapper>
-          <Layout>{children}</Layout>
+          <Layout {...rest}>{children}</Layout>
         </ThemeWrapper>
       </HelmetProvider>
     </I18nextProvider>
