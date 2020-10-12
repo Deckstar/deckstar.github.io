@@ -11,7 +11,6 @@ import {
   Select,
   StyledComponentProps,
   Toolbar,
-  Typography,
   withStyles,
 } from '@material-ui/core';
 import {
@@ -24,11 +23,11 @@ import {
   Work as WorkIcon,
 } from '@material-ui/icons';
 import { scroller } from 'react-scroll';
+import { find, get, map } from 'lodash';
 import { langMap } from '@i18n';
 import { HideOnScroll } from '@components';
-import { find, get, map } from 'lodash';
+import { icons } from '@images';
 import useStyles from './Navbar.style';
-import { backgrounds, photos } from '@images';
 
 interface MenuLinkItem {
   title: string;
@@ -184,13 +183,16 @@ class Navbar extends Component<Props, State> {
 
     return (
       <Box display="flex" flexDirection="column">
-        {/* To be replaced by logo */}
-        <Typography
-          variant="h4"
-          style={{ fontWeight: 'bold', padding: '1rem 0', textAlign: 'center' }}
-        >
-          Portfolio
-        </Typography>
+        <Box display="flex" justifyContent="center">
+          <img
+            src={icons.main}
+            style={{
+              margin: '1em',
+              width: '4em',
+              height: '4em',
+            }}
+          />
+        </Box>
         <Divider />
         <LanguageMenu />
         <Divider />
