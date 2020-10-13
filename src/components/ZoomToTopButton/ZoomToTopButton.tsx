@@ -7,10 +7,13 @@ import { animateScroll as scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    zoomButton: {
+    zoomButtons: {
       position: 'fixed',
       bottom: theme.spacing(2),
       right: theme.spacing(2),
+    },
+    zoomButton: {
+      marginTop: theme.spacing(1),
     },
     zoomButtonLabel: {
       color: theme.palette.text.primary,
@@ -40,22 +43,34 @@ const ZoomToTopButton = (props: Props) => {
   });
 
   return (
-    <Zoom in={trigger}>
-      <Box
-        onClick={handleClickToScroll}
-        role="presentation"
-        className={classes.zoomButton}
-      >
+    <Box className={classes.zoomButtons}>
+      <Zoom in={trigger}>
+        <Box
+          onClick={handleClickToScroll}
+          role="presentation"
+          className={classes.zoomButton}
+        >
+          <Fab
+            color="secondary"
+            size="small"
+            aria-label="scroll back to top"
+            classes={{ label: classes.zoomButtonLabel }}
+          >
+            <UpIcon />
+          </Fab>
+        </Box>
+      </Zoom>
+      {/* <Box role="presentation" className={classes.zoomButton}>
         <Fab
-          color="secondary"
+          color="primary"
           size="small"
-          aria-label="scroll back to top"
+          aria-label="open chat"
           classes={{ label: classes.zoomButtonLabel }}
         >
           <UpIcon />
         </Fab>
-      </Box>
-    </Zoom>
+      </Box> */}
+    </Box>
   );
 };
 
