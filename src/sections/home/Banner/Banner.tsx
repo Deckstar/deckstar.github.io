@@ -1,21 +1,15 @@
 import React from 'react';
-import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { scroller } from 'react-scroll';
-import { IconType } from 'react-icons';
 import { Box, Button, Container, Link, Typography } from '@material-ui/core';
 import { map } from 'lodash';
 import { photos } from '@images';
+import socialLinks from '@data/socialLinks';
 import useStyles from './Banner.style';
 
 interface SectionButtonProps {
   title: string;
   link: string;
-}
-
-interface SocialLinkProps {
-  link: string;
-  Icon: IconType;
 }
 
 const sectionButtons: SectionButtonProps[] = [
@@ -38,21 +32,6 @@ const sectionButtons: SectionButtonProps[] = [
   {
     title: 'Contact',
     link: 'contact',
-  },
-];
-
-const socialLinks: SocialLinkProps[] = [
-  {
-    link: 'https://twitter.com/DexterSibirtsev',
-    Icon: FaTwitter,
-  },
-  {
-    link: 'https://github.com/Deckstar',
-    Icon: FaGithub,
-  },
-  {
-    link: 'https://www.goodreads.com/user/show/58196314-dexter',
-    Icon: FaGoodreads,
   },
 ];
 
@@ -88,13 +67,9 @@ const Banner = () => {
 
           <Box className={classes.icons}>
             {map(socialLinks, (item, i) => {
-              const { link, Icon } = item;
+              const { url, Icon } = item;
               return (
-                <Link
-                  className={classes.icon}
-                  href={link}
-                  key={`social link ${i}`}
-                >
+                <Link className={classes.icon} href={url} key={`social ${i}`}>
                   <Icon size={26} />
                 </Link>
               );

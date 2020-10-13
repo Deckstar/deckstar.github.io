@@ -14,6 +14,32 @@ const useStyles = (theme: Theme) =>
         display: 'flex',
       },
     },
+    drawerContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      flexGrow: 1,
+    },
+    drawerLogoContainer: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    drawerLogo: {
+      margin: '1em',
+      width: '4em',
+      height: '4em',
+    },
+    drawerFooter: {
+      padding: '8px 16px',
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    socialLink: {
+      margin: '0 0.5em',
+
+      '&:hover': {
+        opacity: 0.7,
+      },
+    },
   });
 
 export default useStyles;

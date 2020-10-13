@@ -1,8 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Container, Link, Typography } from '@material-ui/core';
-import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
+import { map } from 'lodash';
 import useStyles from './Contact.style';
+import socialLinks from '@data/socialLinks';
 
 const Contact = () => {
   const classes = useStyles();
@@ -18,21 +19,14 @@ const Contact = () => {
             Let's get in touch! You can find me at any of these links:
           </Typography>
           <Box className={classes.icons}>
-            <Link
-              href="https://twitter.com/DexterSibirtsev"
-              className={classes.icon}
-            >
-              <FaTwitter size={26} />
-            </Link>
-            <Link href="https://github.com/Deckstar" className={classes.icon}>
-              <FaGithub size={26} />
-            </Link>
-            <Link
-              href="https://www.goodreads.com/user/show/58196314-dexter"
-              className={classes.icon}
-            >
-              <FaGoodreads size={26} />
-            </Link>
+            {map(socialLinks, (site, i) => {
+              const { url, Icon } = site;
+              return (
+                <Link key={`contact ${i}`} href={url} className={classes.icon}>
+                  <Icon size={26} />
+                </Link>
+              );
+            })}
           </Box>
           <Typography>Or, just send me an email!</Typography>
           <Link href="mailto:dexter.sibirtsev@gmail.com">

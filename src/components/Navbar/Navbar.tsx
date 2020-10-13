@@ -29,6 +29,7 @@ import { find, get, map } from 'lodash';
 import { langMap } from '@i18n';
 import { HideOnScroll } from '@components';
 import { icons } from '@images';
+import socialLinks from '@data/socialLinks';
 import useStyles from './Navbar.style';
 
 interface MenuLinkItem {
@@ -238,30 +239,40 @@ class Navbar extends Component<Props, State> {
   };
 
   renderDrawerMenu = () => {
+    const { classes } = this.props;
     const LanguageMenu = this.renderLanguageMenu;
     const HomePageLinks = this.renderHomePageLinks;
     const DrawerLink = this.renderDrawerLink;
 
     return (
-      <Box display="flex" flexDirection="column">
-        <Box display="flex" justifyContent="center">
-          <img
-            src={icons.main}
-            style={{
-              margin: '1em',
-              width: '4em',
-              height: '4em',
-            }}
-          />
+      <Box display="flex" flexDirection="column" className={classes?.grow}>
+        <Box className={classes?.drawerContainer}>
+          <Box className={classes?.drawerLogoContainer}>
+            <img src={icons.main} className={classes?.drawerLogo} />
+          </Box>
+          <Divider />
+          <LanguageMenu />
+          <Divider />
+          <HomePageLinks />
+          {map(this.getPagesButtons(), (link, i) => (
+            <DrawerLink {...link} key={`page link ${i}`} />
+          ))}
+          <Divider />
         </Box>
-        <Divider />
-        <LanguageMenu />
-        <Divider />
-        <HomePageLinks />
-        {map(this.getPagesButtons(), (link, i) => (
-          <DrawerLink {...link} key={`page link ${i}`} />
-        ))}
-        <Divider />
+        <Box className={classes?.drawerFooter}>
+          {map(socialLinks, (social, i) => {
+            const { url, Icon } = social;
+            return (
+              <Link
+                key={`footer social ${i}`}
+                href={url}
+                className={classes?.socialLink}
+              >
+                <Icon size={26} />
+              </Link>
+            );
+          })}
+        </Box>
       </Box>
     );
   };
