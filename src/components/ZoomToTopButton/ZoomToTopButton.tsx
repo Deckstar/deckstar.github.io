@@ -1,7 +1,10 @@
 import React from 'react';
 import { Fab, Zoom, useScrollTrigger, Box } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { KeyboardArrowUp as UpIcon } from '@material-ui/icons';
+import {
+  // ModeComment as ChatIcon,
+  KeyboardArrowUp as UpIcon,
+} from '@material-ui/icons';
 import { UseScrollTriggerOptions } from '@material-ui/core/useScrollTrigger/useScrollTrigger';
 import { animateScroll as scroll } from 'react-scroll';
 
@@ -67,7 +70,7 @@ const ZoomToTopButton = (props: Props) => {
           aria-label="open chat"
           classes={{ label: classes.zoomButtonLabel }}
         >
-          <UpIcon />
+          <ChatIcon />
         </Fab>
       </Box> */}
     </Box>
