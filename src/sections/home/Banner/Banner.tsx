@@ -38,7 +38,6 @@ const sectionButtons: SectionButtonProps[] = [
 const handleScrollTo = (id: string) => {
   scroller.scrollTo(id, {
     offset: -50, // so navbar doesn't block view
-    duration: 600,
     smooth: true,
   });
 };

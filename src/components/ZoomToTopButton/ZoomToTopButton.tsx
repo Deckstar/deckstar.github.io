@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const handleClickToScroll = () => {
   scroll.scrollToTop({
-    duration: 600,
     smooth: true,
   });
 };
