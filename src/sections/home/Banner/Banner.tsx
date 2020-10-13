@@ -75,7 +75,7 @@ const Banner = () => {
           <img className={classes.profilePic} src={photos.profilePic} />
           <Box className={classes.textContainer}>
             <Typography variant="h1" className={classes.nameHeader}>
-              Dexter Sibirtsev
+              {t('Banner.DexterSibirtsev')}
             </Typography>
             <Typography variant="h3">
               {t('Banner.SoftwareDeveloper')}

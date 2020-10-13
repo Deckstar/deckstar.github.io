@@ -1,5 +1,5 @@
-import React, { memo, useState } from 'react';
-import { JackInTheBox } from 'react-awesome-reveal';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Badge,
   Box,
@@ -144,12 +144,13 @@ const Post = (props: BlogPostProps) => {
 
 const Blog = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <Box component="section" className={classes.container} id="blog">
       <Container>
         <Typography variant="h3" className={classes.title}>
-          Blog
+          {t('Blog.Blog')}
         </Typography>
         <Paper className={classes.postsContainer} elevation={10}>
           {map(tempArticles, (post) => {

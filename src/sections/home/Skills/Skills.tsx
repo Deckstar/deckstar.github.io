@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Box, Container, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import { FaDesktop, FaMobile } from 'react-icons/fa';
@@ -17,12 +18,13 @@ const MasonryCard = (props: RenderComponentProps<SkillCardProps>) => {
 const Skills = () => {
   const classes = useStyles();
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Box component="section" className={classes.container} id="skills">
       <Container>
         <Typography variant="h3" className={classes.title}>
-          Skills
+          {t('Skills.Skills')}
         </Typography>
         <Box className={classes.twoRows}>
           <Box className={classes.bigIconsContainer}>

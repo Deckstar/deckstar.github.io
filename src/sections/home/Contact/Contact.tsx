@@ -1,15 +1,17 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Box, Button, Container, Link, Typography } from '@material-ui/core';
 import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
 import useStyles from './Contact.style';
 
 const Contact = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
   return (
     <Box component="section" id="contact" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
-          Contact
+          {t('Contact.Contact')}
         </Typography>
         <Box className={classes.contentContainer}>
           <Typography>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Box, Container, Typography } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import { map } from 'lodash';
@@ -8,6 +9,7 @@ import useStyles from './Education.style';
 
 const Education = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   const data = useStaticQuery(graphql`
     {
@@ -42,7 +44,7 @@ const Education = () => {
     <Box component="section" id="education" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
-          Education
+          {t('Education.Education')}
         </Typography>
         <Box>
           <Typography className={classes.paragraph}>

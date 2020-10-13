@@ -1,7 +1,27 @@
 {
   "en": {
+    "About": {
+      "AboutMe": "About me"
+    },
     "Banner": {
+      "DexterSibirtsev": "Dexter Sibirtsev",
+      "Experience": "Experience",
       "SoftwareDeveloper": "Software Developer"
+    },
+    "Blog": {
+      "Blog": "Blog"
+    },
+    "Contact": {
+      "Contact": "Contact"
+    },
+    "Education": {
+      "Education": "Education"
+    },
+    "Skills": {
+      "Skills": "Skills"
+    },
+    "Work": {
+      "Work": "Work"
     }
   }
 }

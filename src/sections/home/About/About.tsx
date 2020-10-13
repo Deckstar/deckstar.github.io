@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { graphql, useStaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import {
@@ -15,6 +16,7 @@ import useStyles from './About.style';
 
 const About = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   const data = useStaticQuery(graphql`
     {
@@ -36,7 +38,7 @@ const About = () => {
     <Box component="section" className={classes.container} id="about">
       <Container>
         <Typography variant="h3" className={classes.title}>
-          About me
+          {t('About.AboutMe')}
         </Typography>
         <Box className={classes.twoRows}>
           <Box className={classes.textSection}>
