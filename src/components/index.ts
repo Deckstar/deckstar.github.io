@@ -1,3 +1,4 @@
+export { default as ContextProvider } from './ContextProvider/ContextProvider';
 export { default as ExperienceItem } from './ExperienceItem/ExperienceItem';
 export { default as HideOnScroll } from './HideOnScroll/HideOnScroll';
 export { default as Layout } from './Layout/Layout';

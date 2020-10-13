@@ -6,7 +6,7 @@ import '@assets/css/styles.scss';
 
 interface LayoutProps {
   children: ReactNode;
-  homePage: boolean;
+  homePage?: boolean;
 }
 
 const Layout = ({ children, homePage }: LayoutProps) => {
