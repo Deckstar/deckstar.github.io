@@ -27,7 +27,7 @@ import {
 import { scroller } from 'react-scroll';
 import { find, get, map } from 'lodash';
 import { langMap } from '@i18n';
-import { HideOnScroll } from '@components';
+import { DarkModeToggle, HideOnScroll } from '@components';
 import { icons } from '@images';
 import socialLinks from '@data/socialLinks';
 import useStyles from './Navbar.style';
@@ -304,6 +304,7 @@ class Navbar extends Component<Props, State> {
                 <LanguageMenu />
                 <DesktopLinks />
               </Box>
+              <DarkModeToggle />
             </Toolbar>
           </AppBar>
         </HideOnScroll>

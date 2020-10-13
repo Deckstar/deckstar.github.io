@@ -1,3 +1,4 @@
+import { isNil } from 'lodash';
 import React, {
   createContext,
   ReactNode,
@@ -6,12 +7,16 @@ import React, {
   useState,
 } from 'react';
 
-const supportsDarkMode = () =>
-  window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+const checkDarkModePreference = () => {
+  const prefersDarkMode =
+    window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-const defaultState = { darkMode: true, toggleDark: () => {} };
+  return prefersDarkMode;
+};
 
-const Context = createContext(defaultState);
+const defaultState = { darkMode: true, toggleDarkMode: () => {} };
+
+export const Context = createContext(defaultState);
 
 interface Props {
   children: ReactNode;
@@ -20,29 +25,40 @@ interface Props {
 const ContextProvider = (props: Props) => {
   const [darkMode, setDarkMode] = useState(true);
 
+  const setPersistentDarkMode = useCallback(
+    (useDark: boolean) => {
+      // set dark mode state
+      setDarkMode(useDark);
+
+      // set local storage
+      localStorage.setItem('dark', String(useDark));
+    },
+    [setDarkMode]
+  );
+
+  const toggleDarkMode = useCallback(() => {
+    const newDarkMode = !darkMode;
+
+    setPersistentDarkMode(newDarkMode);
+  }, [darkMode, setPersistentDarkMode]);
+
   // component did mount
   useEffect(() => {
-    const dark = JSON.parse(
-      localStorage.getItem('dark') || String({ dark: false })
-    );
+    // check local storage for returning visitors
+    const dark = localStorage.getItem('dark');
 
-    if (dark === false) {
-      setDarkMode(dark);
-    } else if (supportsDarkMode()) {
-      setDarkMode(true);
+    if (!isNil(dark)) {
+      // browsers store the value as a string, so we must parse it first
+      setDarkMode(Boolean(dark));
+    } else {
+      const prefersDarkMode = checkDarkModePreference();
+
+      setPersistentDarkMode(prefersDarkMode);
     }
   }, []);
 
-  const toggleDark = useCallback(() => {
-    // set dark mode state
-    setDarkMode(!darkMode);
-
-    // set local storage
-    localStorage.setItem('dark', String(darkMode));
-  }, [setDarkMode]);
-
   return (
-    <Context.Provider value={{ darkMode, toggleDark }}>
+    <Context.Provider value={{ darkMode, toggleDarkMode }}>
       {props.children}
     </Context.Provider>
   );
