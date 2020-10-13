@@ -38,6 +38,8 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: 'center',
     },
     nameHeader: {
+      fontWeight: 'bold',
+      letterSpacing: '0.05em',
       fontFamily: 'Mistral',
       fontVariant: 'small-caps',
     },
