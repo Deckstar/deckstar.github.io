@@ -49,7 +49,7 @@ const ContextProvider = (props: Props) => {
 
     if (!isNil(dark)) {
       // browsers store the value as a string, so we must parse it first
-      setDarkMode(Boolean(dark));
+      setDarkMode(JSON.parse(dark));
     } else {
       const prefersDarkMode = checkDarkModePreference();
 
