@@ -1,5 +1,5 @@
 import React from 'react';
-import { Banner } from '@sections/acknowledgements';
+import { Banner, Content } from '@sections/acknowledgements';
 import { Wrapper } from '@components';
 import { Helmet } from 'react-helmet-async';
 
@@ -11,6 +11,7 @@ const Acknowledgements = () => {
       </Helmet>
 
       <Banner />
+      <Content />
     </Wrapper>
   );
 };

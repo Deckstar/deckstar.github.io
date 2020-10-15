@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     inner: {
-      minHeight: '100vh',
+      minHeight: '30rem',
       display: 'flex',
       flexDirection: 'column',
       gap: '2em',
@@ -28,12 +28,16 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
     textContainer: {
+      maxWidth: '40rem',
       display: 'flex',
       flexDirection: 'column',
       gap: '0.5em',
       justifyContent: 'center',
       alignItems: 'center',
       textAlign: 'center',
+    },
+    heading: {
+      marginBottom: '1em',
     },
   })
 );

@@ -51,7 +51,7 @@ const Footer = () => {
         <Typography>
           &copy; 2019 – {currentYear} |{' '}
           <Link
-            href="."
+            href="acknowledgements"
             underline="none"
             color="inherit"
             className={classes.link}

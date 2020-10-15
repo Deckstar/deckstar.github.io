@@ -1,11 +1,6 @@
 import React from 'react';
-import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import { scroller } from 'react-scroll';
-import { IconType } from 'react-icons';
-import { Box, Button, Container, Link, Typography } from '@material-ui/core';
-import { map } from 'lodash';
-import { photos } from '@images';
+import { Box, Container, Typography } from '@material-ui/core';
 import useStyles from './Banner.style';
 
 const Banner = () => {
@@ -17,8 +12,13 @@ const Banner = () => {
       <Box className={classes.background}>
         <Container className={classes.inner}>
           <Box className={classes.textContainer}>
-            <Typography variant="h3">
-              Thanks a lot to all these fine people for their help!
+            <Typography variant="h3" className={classes.heading}>
+              Thanks a lot to all these fine people for all their great work!
+            </Typography>
+            <Typography>
+              This portfolio page wouldn't have been possible without the work
+              of all of these wonderful creators. So I've devoted this page to
+              thanking them and providing links for more information.
             </Typography>
           </Box>
         </Container>
