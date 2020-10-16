@@ -42,11 +42,8 @@ const Content = () => {
               <Typography variant="h3" className={classes.title}>
                 Libraries
               </Typography>
-              <Typography className={classes.paragraph}>
-                Thanks a lot to all these libraries!
-              </Typography>
               <List>
-                <ListItem>
+                <ListItem className={classes.listItem}>
                   <Typography>
                     <LineHighImage src={logos.gatsby} alt="Gatsby JS logo" />{' '}
                     <Link href="https://www.gatsbyjs.com" color="secondary">
@@ -60,7 +57,7 @@ const Content = () => {
                     for free.
                   </Typography>
                 </ListItem>
-                <ListItem>
+                <ListItem className={classes.listItem}>
                   <Typography>
                     However you feel about the look of this website, I recommend
                     checking out{' '}
@@ -80,7 +77,7 @@ const Content = () => {
                     documentation is fantastic, too.
                   </Typography>
                 </ListItem>
-                <ListItem>
+                <ListItem className={classes.listItem}>
                   <Typography>
                     The <LineHighImage src={logos.masonic} alt="masonic logo" />{' '}
                     <Link
@@ -96,7 +93,7 @@ const Content = () => {
                     me).
                   </Typography>
                 </ListItem>
-                <ListItem>
+                <ListItem className={classes.listItem}>
                   <Typography>
                     There is only one translations library that I've ever used
                     with React, and that is{' '}
@@ -109,7 +106,7 @@ const Content = () => {
                     team working on this!
                   </Typography>
                 </ListItem>
-                <ListItem>
+                <ListItem className={classes.listItem}>
                   <Typography>
                     Finally, a quick shout-out to{' '}
                     <LineHighImage
@@ -157,11 +154,8 @@ const Content = () => {
               <Typography variant="h3" className={classes.title}>
                 Design
               </Typography>
-              <Typography className={classes.paragraph}>
-                Thanks a lot to all these designers!
-              </Typography>
               <List>
-                <ListItem>
+                <ListItem className={classes.listItem}>
                   <Typography>
                     The wonderful collection of round country flags that I used
                     throughout this website can be found at this{' '}
@@ -175,7 +169,7 @@ const Content = () => {
                     link, apparently made by Freepik.
                   </Typography>
                 </ListItem>
-                <ListItem>
+                <ListItem className={classes.listItem}>
                   <Typography>
                     Speaking of{' '}
                     <LineHighImage src={logos.freepik} alt="Freepik logo" />{' '}
@@ -221,11 +215,8 @@ const Content = () => {
               <Typography variant="h3" className={classes.title}>
                 Developers
               </Typography>
-              <Typography className={classes.paragraph}>
-                Thanks a lot to all these developers!
-              </Typography>
               <List>
-                <ListItem>
+                <ListItem className={classes.listItem}>
                   <Typography>
                     My sincerest thanks to the creator of{' '}
                     <LineHighImage src={logos.html5up} alt="HTML5UP logo" />{' '}
@@ -246,7 +237,7 @@ const Content = () => {
                     this site's style.
                   </Typography>
                 </ListItem>
-                <ListItem>
+                <ListItem className={classes.listItem}>
                   <Typography>
                     Two other developers who I should mention are{' '}
                     <Link href="https://amruthpillai.com" color="secondary">

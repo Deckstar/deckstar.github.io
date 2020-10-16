@@ -29,6 +29,10 @@ const useStyles = makeStyles((theme: Theme) =>
     paragraph: {
       marginBottom: '1em',
     },
+    listItem: {
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
     bigPhotoContainer: {
       width: '48%',
       flexGrow: 1,
