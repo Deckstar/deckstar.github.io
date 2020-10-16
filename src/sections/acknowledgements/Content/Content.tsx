@@ -108,7 +108,7 @@ const Content = () => {
                 </ListItem>
                 <ListItem className={classes.listItem}>
                   <Typography>
-                    Finally, a quick shout-out to{' '}
+                    Another quick shout-out goes to{' '}
                     <LineHighImage
                       src={logos.reactAwesomeReveal}
                       alt="React Awesome Reveal logo"
@@ -119,9 +119,19 @@ const Content = () => {
                     >
                       React Awesome Reveal
                     </Link>
-                    , for making it incredibly easy to make websites look fancy,
-                    without killing their performance or, more importantly, our
-                    free development time.
+                    , for making it incredibly easy to make websites look fancy
+                    without killing their performance.
+                  </Typography>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Typography>
+                    Last but not least, thanks a lot to{' '}
+                    <LineHighImage src={logos.lodash} alt="Lodash logo" />{' '}
+                    <Link href="https://lodash.com" color="secondary">
+                      Lodash
+                    </Link>
+                    . Without you, JavaScript development would have never been
+                    the same.
                   </Typography>
                 </ListItem>
               </List>
