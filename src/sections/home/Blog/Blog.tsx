@@ -6,27 +6,29 @@ import {
   Button,
   Card,
   CardActions,
-  CardMedia,
   CardContent,
   Container,
   Paper,
   Link,
+  Tooltip,
   Typography,
 } from '@material-ui/core';
 import {
   CalendarToday as DateIcon,
   FavoriteBorder as LoveIcon,
-  Launch as LinkIcon,
+  Launch as LaunchIcon,
+  Link as LinkIcon,
 } from '@material-ui/icons';
 import dayjs from 'dayjs';
-import { GatsbyImageProps } from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby';
+import GatsbyImage, { GatsbyImageProps } from 'gatsby-image';
 import { map } from 'lodash';
 import useStyles from './Blog.style';
-import { education } from '@images';
 
+// for a full list of props, see graphiql interface. These are just the props we need right now.
 interface Article {
   id: string;
-  featuredImg: { childImageSharp: GatsbyImageProps } | string;
+  featuredImg: { childImageSharp: GatsbyImageProps };
   article: {
     url: string;
     tags: string[];
@@ -39,45 +41,6 @@ interface Article {
 interface BlogPostProps extends Article {
   display?: boolean;
 }
-
-const tempArticles: Article[] = [
-  {
-    id: '1',
-    featuredImg: education.SSE,
-    article: {
-      url: 'https://www.hhs.se',
-      tags: ['sweden', 'finance', 'pseudoscience'],
-      title: 'Stockholm School of Economics',
-      description: 'A school full of BS',
-      published_at: dayjs('2019-10-20').format('DD MMMM YYYY'),
-      positive_reactions_count: 5,
-    },
-  },
-  {
-    id: '2',
-    featuredImg: education.UCL,
-    article: {
-      url: 'https://www.ucl.co.uk',
-      tags: ['london', 'economics', 'awesome'],
-      title: 'University College London',
-      description: 'Third year was the best year ever!',
-      published_at: dayjs('2017-07-13').format('DD MMMM YYYY'),
-      positive_reactions_count: 52,
-    },
-  },
-  {
-    id: '3',
-    featuredImg: education.leRosey,
-    article: {
-      url: 'https://www.google.com',
-      tags: ['rich kids', 'switzerland', 'languages'],
-      title: 'Le Rosey',
-      description: 'Best school in the world, but full of too many douchebags',
-      published_at: dayjs('2014-06-19').format('DD MMMM YYYY'),
-      positive_reactions_count: 3,
-    },
-  },
-];
 
 const Post = (props: BlogPostProps) => {
   const classes = useStyles();
@@ -94,16 +57,29 @@ const Post = (props: BlogPostProps) => {
 
   return (
     <Card elevation={3} className={classes.cardContainer}>
-      <CardMedia
-        image={featuredImg}
-        title={title}
-        className={classes.cardPhoto}
-      />
+      <Link href={url} target="_blank" className={classes.cardPhotoContainer}>
+        <GatsbyImage
+          className={classes.cardPhoto}
+          {...featuredImg.childImageSharp}
+        />
+        <Box className={classes.cardPhotoOverlay}>
+          <Button color="primary">
+            <LinkIcon
+              fontSize="large"
+              classes={{ fontSizeLarge: classes.cardPhotoLinkIcon }}
+            />
+          </Button>
+        </Box>
+      </Link>
       <CardContent className={classes.cardContent}>
-        <Typography className={classes.cardTitle}>{title}</Typography>
+        <Link href={url} target="_blank" color="inherit">
+          <Typography className={classes.cardTitle}>{title}</Typography>
+        </Link>
         <Box className={classes.cardDateContainer}>
           <DateIcon fontSize="inherit" />
-          <Typography className={classes.cardDate}>{published_at}</Typography>
+          <Typography className={classes.cardDate}>
+            {dayjs(published_at).format('DD MMMM YYYY')}
+          </Typography>
         </Box>
         <Typography variant="body2" className={classes.cardCaption}>
           {description}
@@ -113,7 +89,7 @@ const Post = (props: BlogPostProps) => {
         <Box className={classes.cardButtons}>
           <Link href={url} target="_blank">
             <Button size="small" color="primary">
-              <LinkIcon />
+              <LaunchIcon />
             </Button>
           </Link>
           <Badge
@@ -121,7 +97,13 @@ const Post = (props: BlogPostProps) => {
             color="secondary"
             classes={{ badge: classes.cardHeartCount }}
           >
-            <LoveIcon />
+            <Tooltip
+              arrow
+              title={`${positive_reactions_count} reactions`}
+              enterTouchDelay={0}
+            >
+              <LoveIcon />
+            </Tooltip>
           </Badge>
         </Box>
         <Box className={classes.cardArticleTags}>
@@ -146,6 +128,36 @@ const Blog = () => {
   const classes = useStyles();
   const { t } = useTranslation();
 
+  const data = useStaticQuery(graphql`
+    {
+      allDevArticles(
+        sort: { fields: [article___published_at], order: DESC }
+        limit: 6
+      ) {
+        nodes {
+          id
+          article {
+            url
+            tags
+            title
+            description
+            published_at
+            positive_reactions_count
+          }
+          featuredImg {
+            childImageSharp {
+              fluid(maxHeight: 300) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const devArticles: Article[] = data.allDevArticles.nodes;
+
   return (
     <Box component="section" className={classes.container} id="blog">
       <Container>
@@ -153,7 +165,7 @@ const Blog = () => {
           {t('Blog.Blog')}
         </Typography>
         <Paper className={classes.postsContainer} elevation={10}>
-          {map(tempArticles, (post) => {
+          {map(devArticles, (post) => {
             const { id } = post;
             return <Post {...post} key={`article ${id}`} />;
           })}

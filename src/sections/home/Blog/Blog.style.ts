@@ -39,11 +39,34 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       flexDirection: 'column',
     },
+    cardPhotoContainer: {
+      position: 'relative',
+    },
     cardPhoto: {
       height: 0,
       // paddingTop: '56.25%', // 16:9
       paddingTop: `${(1 / 2 ** (1 / 2)) * 100}%`, // 𝜑 (golden ratio)
       maxWidth: '100%',
+    },
+    cardPhotoOverlay: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      height: '100%',
+      width: '100%',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      opacity: 0,
+      transition: '.5s ease',
+
+      '&:hover': {
+        opacity: 1,
+      },
+    },
+    cardPhotoLinkIcon: {
+      fontSize: '6em',
     },
     cardContent: {
       flexGrow: 1,

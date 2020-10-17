@@ -25,6 +25,7 @@
     "gatsby-plugin-react-helmet-async": "^1.1.0",
     "gatsby-plugin-sass": "^2.3.14",
     "gatsby-plugin-sharp": "^2.6.39",
+    "gatsby-source-dev": "^0.1.4",
     "gatsby-source-filesystem": "^2.3.34",
     "gatsby-transformer-json": "^2.4.14",
     "gatsby-transformer-sharp": "^2.5.17",
