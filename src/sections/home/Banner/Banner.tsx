@@ -1,9 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { graphql, useStaticQuery } from 'gatsby';
+import GatsbyImage from 'gatsby-image';
 import { scroller } from 'react-scroll';
 import { Box, Button, Container, Link, Typography } from '@material-ui/core';
 import { map } from 'lodash';
-import { photos } from '@images';
 import socialLinks from '@data/socialLinks';
 import useStyles from './Banner.style';
 
@@ -46,11 +47,27 @@ const Banner = () => {
   const { t } = useTranslation();
   const classes = useStyles();
 
+  const data = useStaticQuery(graphql`
+    {
+      photo: file(relativePath: { eq: "photos/profile-pic.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 180) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
+  const {
+    photo: { childImageSharp },
+  } = data;
+
   return (
     <Box component="section" id="banner">
       <Box className={classes.background}>
         <Container className={classes.inner}>
-          <img className={classes.profilePic} src={photos.profilePic} />
+          <GatsbyImage {...childImageSharp} className={classes.profilePic} />
           <Box className={classes.textContainer}>
             <Typography variant="h1" className={classes.nameHeader}>
               {t('Banner.DexterSibirtsev')}
