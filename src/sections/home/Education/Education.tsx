@@ -48,12 +48,7 @@ const Education = () => {
         </Typography>
         <Box>
           <Typography className={classes.paragraph}>
-            I am a completely self-taught programmer — I learned by watching
-            YouTube, reading books and doing online courses. Still, I valued my
-            formal education very much. It was very international, so I've been
-            in a cosmopolitan environment for nearly all my life. Because of
-            this, I could learn how to speak several languages and interact with
-            people from all kinds of cultures.
+            {t('Education.Description')}
           </Typography>
         </Box>
 

@@ -14,7 +14,7 @@ interface SectionButtonProps {
 
 const sectionButtons: SectionButtonProps[] = [
   {
-    title: 'About/CV',
+    title: 'About',
     link: 'about',
   },
   {
@@ -59,8 +59,7 @@ const Banner = () => {
               {t('Banner.SoftwareDeveloper')}
             </Typography>
             <Typography variant="h5">
-              Hello! I am a professional programmer, specializing in websites
-              &amp; mobile apps.
+              {t('Banner.HelloIAmAProgrammer')}
             </Typography>
           </Box>
 
@@ -76,15 +75,15 @@ const Banner = () => {
           </Box>
 
           <Box className={classes.buttons}>
-            {map(sectionButtons, (button, i) => {
+            {map(sectionButtons, (button) => {
               const { title, link } = button;
               return (
                 <Button
                   variant="contained"
                   onClick={() => handleScrollTo(link)}
-                  key={`banner button ${i}`}
+                  key={`banner button ${title}`}
                 >
-                  {title}
+                  {t(`SectionButtons.${title}`)}
                 </Button>
               );
             })}

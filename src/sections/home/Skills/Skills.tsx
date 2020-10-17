@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Box, Container, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import { FaDesktop, FaMobile } from 'react-icons/fa';
@@ -49,14 +49,16 @@ const Skills = () => {
           </Box>
 
           <Box className={classes.textSection} textAlign="justify">
-            <Typography>
-              This is a list of my favorite tools that I've worked with. Most of
-              these I use every week, many I use every day.
-            </Typography>
-            <Typography>
-              I admit that this section might be overly detailed. I've just
-              always loved looking at colorful collections.
-            </Typography>
+            <Trans i18nKey="Skills.Overview">
+              <Typography>
+                This is a list of my favorite tools that I've worked with. Most
+                of these I use every week, many I use every day.
+              </Typography>
+              <Typography>
+                I admit that this section might be overly detailed. I've just
+                always loved looking at colorful collections.
+              </Typography>
+            </Trans>
           </Box>
         </Box>
 

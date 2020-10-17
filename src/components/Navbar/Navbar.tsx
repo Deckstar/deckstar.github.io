@@ -62,7 +62,7 @@ class Navbar extends Component<Props, State> {
   getDrawerButtons = (): MenuLinkItem[] => {
     return [
       {
-        title: 'About/CV',
+        title: 'About',
         link: 'about',
         Icon: AboutIcon,
       },
@@ -89,7 +89,7 @@ class Navbar extends Component<Props, State> {
     ];
   };
 
-  getPagesButtons = (): MenuLinkItem[] => {
+  getPageLinks = (): MenuLinkItem[] => {
     return [
       {
         title: 'Home',
@@ -174,8 +174,13 @@ class Navbar extends Component<Props, State> {
   };
 
   renderDesktopLink = (props: MenuLinkItem) => {
+    const { t } = this.props;
     const { title, link } = props;
-    return <Button onClick={() => this.handleScrollTo(link)}>{title}</Button>;
+    return (
+      <Button onClick={() => this.handleScrollTo(link)}>
+        {t(`SectionButtons.${title}`)}
+      </Button>
+    );
   };
 
   renderDesktopLinks = () => {
@@ -194,6 +199,7 @@ class Navbar extends Component<Props, State> {
   };
 
   renderDrawerLink = (props: MenuLinkItem) => {
+    const { t } = this.props;
     const { title, link, Icon } = props;
 
     return (
@@ -202,13 +208,14 @@ class Navbar extends Component<Props, State> {
           <IconButton disableRipple>
             <Icon />
           </IconButton>
-          {title}
+          {t(`PageLinks.${title}`)}
         </Link>
       </MenuItem>
     );
   };
 
   renderHomePageLink = (props: MenuLinkItem) => {
+    const { t } = this.props;
     const { title, link, Icon } = props;
 
     return (
@@ -216,7 +223,7 @@ class Navbar extends Component<Props, State> {
         <IconButton disableRipple>
           <Icon />
         </IconButton>
-        {title}
+        {t(`SectionButtons.${title}`)}
       </MenuItem>
     );
   };
@@ -253,7 +260,7 @@ class Navbar extends Component<Props, State> {
           <LanguageMenu />
           <Divider />
           <HomePageLinks />
-          {map(this.getPagesButtons(), (link, i) => (
+          {map(this.getPageLinks(), (link, i) => (
             <DrawerLink {...link} key={`page link ${i}`} />
           ))}
           <Divider />

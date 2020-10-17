@@ -15,9 +15,7 @@ const Contact = () => {
           {t('Contact.Contact')}
         </Typography>
         <Box className={classes.contentContainer}>
-          <Typography>
-            Let's get in touch! You can find me at any of these links:
-          </Typography>
+          <Typography>{t('Contact.GetInTouch')}:</Typography>
           <Box className={classes.icons}>
             {map(socialLinks, (site, i) => {
               const { url, Icon } = site;
@@ -28,7 +26,7 @@ const Contact = () => {
               );
             })}
           </Box>
-          <Typography>Or, just send me an email!</Typography>
+          <Typography>{t('Contact.GetInTouch')}:</Typography>
           <Link href="mailto:dexter.sibirtsev@gmail.com">
             <Button variant="contained">dexter.sibirtsev@gmail.com</Button>
           </Link>

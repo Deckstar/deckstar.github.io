@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Box, Link, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { overlays } from '@images';
+import dayjs from 'dayjs';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -43,7 +45,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Footer = () => {
   const classes = useStyles();
-  const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
+  const currentYear = dayjs().format('YYYY');
 
   return (
     <Box component="footer" id="footer" className={classes.container}>
@@ -56,7 +59,7 @@ const Footer = () => {
             color="inherit"
             className={classes.link}
           >
-            Acknowledgments
+            {t('PageLinks.Acknowledgements')}
           </Link>
         </Typography>
       </Box>
