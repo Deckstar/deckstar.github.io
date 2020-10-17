@@ -17,6 +17,17 @@
     "Education": {
       "Education": "Образование"
     },
+    "PageLinks": {
+      "Acknowledgements": "Благодарности",
+      "Home": "Главное"
+    },
+    "SectionButtons": {
+      "About": "О мне",
+      "Blog": "Блог",
+      "Contact": "Контакты",
+      "Experience": "Опыт",
+      "Skills": "Навыки"
+    },
     "Skills": {
       "Skills": "Навыки"
     },
