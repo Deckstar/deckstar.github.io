@@ -10,8 +10,8 @@ import {
   Link,
   MenuItem,
   Select,
-  StyledComponentProps,
   Toolbar,
+  WithStyles,
   withStyles,
 } from '@material-ui/core';
 import {
@@ -38,7 +38,7 @@ interface MenuLinkItem {
   Icon: ComponentType;
 }
 
-interface Props extends StyledComponentProps, WithTranslation {
+interface Props extends WithStyles<typeof useStyles>, WithTranslation {
   homePage?: boolean;
 }
 interface State {
@@ -251,10 +251,10 @@ class Navbar extends Component<Props, State> {
     const DrawerLink = this.renderDrawerLink;
 
     return (
-      <Box display="flex" flexDirection="column" className={classes?.grow}>
-        <Box className={classes?.drawerContainer}>
-          <Box className={classes?.drawerLogoContainer}>
-            <img src={icons.main} className={classes?.drawerLogo} />
+      <Box display="flex" flexDirection="column" className={classes.grow}>
+        <Box className={classes.drawerContainer}>
+          <Box className={classes.drawerLogoContainer}>
+            <img src={icons.main} className={classes.drawerLogo} />
           </Box>
           <Divider />
           <LanguageMenu />
@@ -265,14 +265,14 @@ class Navbar extends Component<Props, State> {
           ))}
           <Divider />
         </Box>
-        <Box className={classes?.drawerFooter}>
+        <Box className={classes.drawerFooter}>
           {map(socialLinks, (social, i) => {
             const { url, Icon } = social;
             return (
               <Link
                 key={`footer social ${i}`}
                 href={url}
-                className={classes?.socialLink}
+                className={classes.socialLink}
               >
                 <Icon size={26} />
               </Link>
@@ -297,16 +297,16 @@ class Navbar extends Component<Props, State> {
             <Toolbar>
               <IconButton
                 edge="start"
-                className={classes?.menuButton}
+                className={classes.menuButton}
                 aria-label="open drawer"
                 onClick={this.handleDrawerMenuOpen}
               >
                 <MenuIcon />
               </IconButton>
 
-              <Box className={classes?.grow} />
+              <Box className={classes.grow} />
 
-              <Box className={classes?.sectionDesktop}>
+              <Box className={classes.sectionDesktop}>
                 <LanguageMenu />
                 <DesktopLinks />
               </Box>
