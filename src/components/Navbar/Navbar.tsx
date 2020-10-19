@@ -203,14 +203,14 @@ class Navbar extends Component<Props, State> {
     const { title, link, Icon } = props;
 
     return (
-      <MenuItem>
-        <Link color="inherit" href={link}>
+      <Link color="inherit" href={link}>
+        <MenuItem>
           <IconButton disableRipple>
             <Icon />
           </IconButton>
           {t(`PageLinks.${title}`)}
-        </Link>
-      </MenuItem>
+        </MenuItem>
+      </Link>
     );
   };
 
