@@ -5,11 +5,6 @@ const databases: SkillCardProps = {
   title: 'Databases',
   skillItems: [
     {
-      name: 'MongoDB',
-      src: logos.mongodb,
-      extra: 'with Cloud Atlas',
-    },
-    {
       name: 'PostgreSQL',
       src: logos.pgadmin,
       subSkills: [
@@ -18,6 +13,11 @@ const databases: SkillCardProps = {
           src: logos.postgres,
         },
       ],
+    },
+    {
+      name: 'MongoDB',
+      src: logos.mongodb,
+      extra: 'with Cloud Atlas',
     },
     {
       name: 'Firebase',
