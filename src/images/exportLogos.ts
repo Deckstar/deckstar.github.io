@@ -17,6 +17,7 @@ const logos = {
   finalCutPro: require('./logos/final cut pro.png'),
   firebase: require('./logos/firebase.png'),
   flaticon: require('./logos/flaticon.png'),
+  formik: require('./logos/formik.png'),
   freepik: require('./logos/freepik.png'),
   gatsby: require('./logos/gatsby.png'),
   git: require('./logos/git.png'),
