@@ -4,9 +4,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       padding: '30px 0',
-      border: `solid ${theme.palette.divider}`,
-      borderTopWidth: 1,
-      borderBottomWidth: 1,
+      borderBottom: `2px solid ${theme.palette.divider}`,
     },
     title: {
       fontFamily: 'Mistral',
