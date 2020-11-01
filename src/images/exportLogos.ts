@@ -39,6 +39,7 @@ const logos = {
   masonic: require('./logos/masonic.png'),
   materialUI: require('./logos/materialUI.png'),
   mathematica: require('./logos/mathematica.png'),
+  mockaroo: require('./logos/mockaroo.png'),
   mongodb: require('./logos/mongodb.png'),
   mongoose: require('./logos/mongoose.png'),
   musescore: require('./logos/musescore.png'),
