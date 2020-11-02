@@ -96,6 +96,10 @@
         "src": "../images/logos/materialUI.png"
       },
       {
+        "name": "Formik",
+        "src": "../images/logos/formik.png"
+      },
+      {
         "name": "i18next",
         "src": "../images/logos/i18next.png"
       }
@@ -115,30 +119,42 @@
         ]
       },
       {
-        "name": "GraphQL",
-        "src": "../images/logos/graphql.png"
+        "name": "Apollo Server",
+        "src": "../images/logos.apollo-server",
+        "subSkills": [
+          {
+            "name": "TypeGraphQL",
+            "src": "../images/logos/type-graphql.png"
+          },
+          {
+            "name": "TypeORM",
+            "src": "../images/logos/typeORM.png"
+          }
+        ]
       },
       {
         "name": "NodeJS",
         "src": "../images/logos/node.png",
-        "extra": "with Express",
         "subSkills": [
+          {
+            "name": "Express",
+            "src": "../images/logos/express.png"
+          },
           {
             "name": "Mongoose",
             "src": "../images/logos/mongoose.png"
           }
         ]
+      },
+      {
+        "name": "Redis",
+        "src": "../images/logos/redis.png"
       }
     ]
   },
   {
     "title": "Databases",
     "skillItems": [
-      {
-        "name": "MongoDB",
-        "src": "../images/logos/mongodb.png",
-        "extra": "with Cloud Atlas"
-      },
       {
         "name": "PostgreSQL",
         "src": "../images/logos/pgadmin.png",
@@ -148,6 +164,11 @@
             "src": "../images/logos/postgres.png"
           }
         ]
+      },
+      {
+        "name": "MongoDB",
+        "src": "../images/logos/mongodb.png",
+        "extra": "with Cloud Atlas"
       },
       {
         "name": "Firebase",
@@ -187,21 +208,32 @@
       },
       {
         "name": "Git",
-        "src": "../images/logos/git.png"
+        "src": "../images/logos/git.png",
+        "subSkills": [
+          {
+            "name": "Github",
+            "src": "../images/logos/github.png"
+          },
+          {
+            "name": "Bitbucket",
+            "src": "../images/logos/bitbucket.png"
+          }
+        ]
       },
       {
-        "name": "Github",
-        "src": "../images/logos/github.png"
-      },
-      {
-        "name": "Bitbucket",
-        "extra": "",
-        "src": "../images/logos/bitbucket.png"
-      },
-      {
-        "name": "Jira",
-        "src": "../images/logos/jira.png",
-        "extra": "task management"
+        "name": "Task management",
+        "subSkills": [
+          {
+            "name": "Jira",
+            "src": "../images/logos/jira.png",
+            "extra": "task management"
+          },
+          {
+            "name": "Asana",
+            "src": "../images/logos/asana.png",
+            "extra": "task management"
+          }
+        ]
       },
       {
         "name": "Postman",
@@ -264,6 +296,11 @@
         "name": "Mathematica",
         "src": "../images/logos/mathematica.png",
         "extra": "Math & technical computing"
+      },
+      {
+        "name": "Mockaroo",
+        "src": "../images/logos/mockaroo.png",
+        "extra": "Mock data generation"
       }
     ]
   },
