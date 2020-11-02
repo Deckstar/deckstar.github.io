@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'center',
       alignItems: 'center',
       textAlign: 'center',
+      maxWidth: '50rem',
     },
     nameHeader: {
       fontWeight: 'bold',

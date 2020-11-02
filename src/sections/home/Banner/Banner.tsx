@@ -72,7 +72,7 @@ const Banner = () => {
             <Typography variant="h1" className={classes.nameHeader}>
               {t('Banner.DexterSibirtsev')}
             </Typography>
-            <Typography variant="h3">
+            <Typography variant="h3" paragraph>
               {t('Banner.SoftwareDeveloper')}
             </Typography>
             <Typography variant="h5">
