@@ -28,8 +28,10 @@ const Skills = () => {
             name
             src {
               childImageSharp {
-                fluid(maxHeight: 20) {
+                fluid(maxHeight: 16) {
                   ...GatsbyImageSharpFluid
+                  presentationWidth
+                  presentationHeight
                 }
               }
             }
@@ -37,8 +39,10 @@ const Skills = () => {
               name
               src {
                 childImageSharp {
-                  fluid(maxHeight: 20) {
+                  fluid(maxHeight: 16) {
                     ...GatsbyImageSharpFluid
+                    presentationWidth
+                    presentationHeight
                   }
                 }
               }
@@ -46,8 +50,10 @@ const Skills = () => {
                 name
                 src {
                   childImageSharp {
-                    fluid(maxHeight: 20) {
+                    fluid(maxHeight: 16) {
                       ...GatsbyImageSharpFluid
+                      presentationWidth
+                      presentationHeight
                     }
                   }
                 }

@@ -106,19 +106,9 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: '0.8em',
     },
     miniImgContainer: {
-      maxHeight: '1em',
-      // width: '100%',
-      width: '30px',
-      verticalAlign: 'text-top',
-      display: 'inline',
-
-      '& > div': {
-        display: 'inline',
-        verticalAlign: 'text-top',
-        width: '30px',
-        position: 'relative',
-        maxHeight: '1em',
-      },
+      verticalAlign: 'middle',
+      display: 'inline-block',
+      overflow: 'visible',
     },
     miniImg: {
       verticalAlign: 'text-top',

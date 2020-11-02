@@ -1,9 +1,8 @@
 import { ReactNode } from 'react';
-import { GatsbyImageProps } from 'gatsby-image';
 
 export interface SkillItem {
   name: string;
-  src?: { childImageSharp: GatsbyImageProps };
+  src?: { childImageSharp: any };
   extra?: ReactNode;
   subSkills?: SkillItem[];
 }

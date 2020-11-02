@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Box, Card, CardContent, CardHeader } from '@material-ui/core';
-import { map, size } from 'lodash';
+import { map, replace, size } from 'lodash';
 import { LineHighImage } from '@components';
 import { SkillCardProps, SkillItem } from '@typescript/@types/skills';
 import useStyles from './SkillCard.style';
@@ -42,21 +42,24 @@ const Extra = (props: { extra: SkillItem['extra'] }) => {
 const Logo = (props: { src: SkillItem['src'] }) => {
   const { src } = props;
   const classes = useStyles();
+  // console.log('stuff', src?.childImageSharp.fluid);
 
   if (src) {
+    // const widthPx = 20;
+    const widthPx: number = src?.childImageSharp.fluid.presentationWidth;
+    const heightPx: number = src?.childImageSharp.fluid.presentationHeight;
+    // const pxString: string = src?.childImageSharp.fluid.sizes.match(
+    //   / \d+px/
+    // )[0];
+    // const widthPx = Number(replace(replace(pxString, ' ', ''), 'px', ''));
+
+    // console.log('pxString', pxString);
+    console.log('widthPx', widthPx);
+
     return (
       <GatsbyImage
         {...src.childImageSharp}
-        imgStyle={{
-          verticalAlign: 'text-top',
-          width: undefined,
-          maxHeight: '1em',
-        }}
-        placeholderStyle={{
-          verticalAlign: 'text-top',
-          width: undefined,
-          maxHeight: '1em',
-        }}
+        style={{ width: widthPx + 0.5, height: heightPx }}
         className={classes.miniImgContainer}
       />
     );
