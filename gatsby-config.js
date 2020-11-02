@@ -13,6 +13,7 @@ module.exports = {
         alias: {
           '@assets': 'src/assets',
           '@components': 'src/components',
+          '@context': 'src/context',
           '@data': 'src/data',
           '@images': 'src/images',
           '@i18n': 'src/i18n',
@@ -34,6 +35,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-dev`,
+      options: {
+        username: `deckstar`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

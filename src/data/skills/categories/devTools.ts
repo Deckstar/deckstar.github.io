@@ -12,20 +12,30 @@ const devTools: SkillCardProps = {
     {
       name: 'Git',
       src: logos.git,
+      subSkills: [
+        {
+          name: 'Github',
+          src: logos.github,
+        },
+        {
+          name: 'Bitbucket',
+          extra: '',
+          src: logos.bitbucket,
+        },
+      ],
     },
     {
-      name: 'Github',
-      src: logos.github,
-    },
-    {
-      name: 'Bitbucket',
-      extra: '',
-      src: logos.bitbucket,
-    },
-    {
-      name: 'Jira',
-      src: logos.jira,
-      extra: 'task management',
+      name: 'Task management',
+      subSkills: [
+        {
+          name: 'Jira',
+          src: logos.jira,
+        },
+        {
+          name: 'Asana',
+          src: logos.asana,
+        },
+      ],
     },
     {
       name: 'Postman',

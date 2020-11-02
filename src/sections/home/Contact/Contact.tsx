@@ -1,38 +1,32 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Box, Button, Container, Link, Typography } from '@material-ui/core';
-import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
-import useStyles from './Contact.styles';
+import { map } from 'lodash';
+import useStyles from './Contact.style';
+import socialLinks from '@data/socialLinks';
 
 const Contact = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
   return (
     <Box component="section" id="contact" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
-          Contact
+          {t('Contact.Contact')}
         </Typography>
         <Box className={classes.contentContainer}>
-          <Typography>
-            Let's get in touch! You can find me at any of these links:
-          </Typography>
+          <Typography>{t('Contact.GetInTouch')}:</Typography>
           <Box className={classes.icons}>
-            <Link
-              href="https://twitter.com/DexterSibirtsev"
-              className={classes.icon}
-            >
-              <FaTwitter size={26} />
-            </Link>
-            <Link href="https://github.com/Deckstar" className={classes.icon}>
-              <FaGithub size={26} />
-            </Link>
-            <Link
-              href="https://www.goodreads.com/user/show/58196314-dexter"
-              className={classes.icon}
-            >
-              <FaGoodreads size={26} />
-            </Link>
+            {map(socialLinks, (site, i) => {
+              const { url, Icon } = site;
+              return (
+                <Link key={`contact ${i}`} href={url} className={classes.icon}>
+                  <Icon size={26} />
+                </Link>
+              );
+            })}
           </Box>
-          <Typography>Or, just send me an email!</Typography>
+          <Typography>{t('Contact.SendEmail')}:</Typography>
           <Link href="mailto:dexter.sibirtsev@gmail.com">
             <Button variant="contained">dexter.sibirtsev@gmail.com</Button>
           </Link>

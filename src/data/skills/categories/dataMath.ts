@@ -14,6 +14,11 @@ const dataMath: SkillCardProps = {
       src: logos.mathematica,
       extra: 'Math & technical computing',
     },
+    {
+      name: 'Mockaroo',
+      src: logos.mockaroo,
+      extra: 'Mock data generation',
+    },
   ],
 };
 

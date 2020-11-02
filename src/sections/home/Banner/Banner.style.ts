@@ -26,6 +26,8 @@ const useStyles = makeStyles((theme: Theme) =>
       gap: '2em',
       justifyContent: 'center',
       alignItems: 'center',
+      paddingTop: '4rem',
+      paddingBottom: '1rem',
     },
     textContainer: {
       display: 'flex',
@@ -35,11 +37,25 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       textAlign: 'center',
     },
+    nameHeader: {
+      fontWeight: 'bold',
+      letterSpacing: '0.05em',
+      fontFamily: 'Mistral',
+      fontVariant: 'small-caps',
+    },
     profilePic: {
+      [theme.breakpoints.up('md')]: {
+        height: '9em',
+        width: '9em',
+      },
+      [theme.breakpoints.up('lg')]: {
+        height: '12em',
+        width: '12em',
+      },
+
       height: '7em',
       width: '7em',
       borderRadius: '50%',
-      marginTop: '1em',
     },
     icons: {
       display: 'flex',

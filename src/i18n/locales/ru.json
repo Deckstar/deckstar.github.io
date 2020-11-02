@@ -1,7 +1,38 @@
 {
   "ru": {
+    "About": {
+      "AboutMe": "О мне"
+    },
     "Banner": {
+      "DexterSibirtsev": "Декстер Сибирцев",
+      "Experience": "Опыт",
       "SoftwareDeveloper": "Разработчик Софта"
+    },
+    "Blog": {
+      "Blog": "Блог"
+    },
+    "Contact": {
+      "Contact": "Контакты"
+    },
+    "Education": {
+      "Education": "Образование"
+    },
+    "PageLinks": {
+      "Acknowledgements": "Благодарности",
+      "Home": "Главное"
+    },
+    "SectionButtons": {
+      "About": "О мне",
+      "Blog": "Блог",
+      "Contact": "Контакты",
+      "Experience": "Опыт",
+      "Skills": "Навыки"
+    },
+    "Skills": {
+      "Skills": "Навыки"
+    },
+    "Work": {
+      "Work": "Работа"
     }
   }
 }

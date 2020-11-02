@@ -1,14 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Box, Container, Typography } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import { map } from 'lodash';
-import { companies, flags } from '@images';
 import { ExperienceItem } from '@components';
 import { ExperienceItemProps } from '@typescript/@types/experience';
-import useStyles from './Work.styles';
+import useStyles from './Work.style';
 
 const Work = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   const data = useStaticQuery(graphql`
     {
@@ -43,13 +44,13 @@ const Work = () => {
     <Box component="section" id="work" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
-          Work
+          {t('Work.Work')}
         </Typography>
         <Box className={classes.itemsOuterContainer}>
           <Box className={classes.line} />
           <Box className={classes.itemsContainer}>
             {map(workItems, (job, i) => {
-              return <ExperienceItem {...job} key={`job i`} />;
+              return <ExperienceItem {...job} key={`job ${i}`} />;
             })}
           </Box>
         </Box>

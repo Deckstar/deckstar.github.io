@@ -1,63 +1,109 @@
 import React from 'react';
-import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import { graphql, useStaticQuery } from 'gatsby';
+import GatsbyImage from 'gatsby-image';
+import { scroller } from 'react-scroll';
 import { Box, Button, Container, Link, Typography } from '@material-ui/core';
-import { photos } from '@images';
-import useStyles from './Banner.styles';
+import { map } from 'lodash';
+import socialLinks from '@data/socialLinks';
+import useStyles from './Banner.style';
+
+interface SectionButtonProps {
+  title: string;
+  link: string;
+}
+
+const sectionButtons: SectionButtonProps[] = [
+  {
+    title: 'About',
+    link: 'about',
+  },
+  {
+    title: 'Skills',
+    link: 'skills',
+  },
+  {
+    title: 'Experience',
+    link: 'experience',
+  },
+  {
+    title: 'Blog',
+    link: 'blog',
+  },
+  {
+    title: 'Contact',
+    link: 'contact',
+  },
+];
+
+const handleScrollTo = (id: string) => {
+  scroller.scrollTo(id, {
+    offset: -50, // so navbar doesn't block view
+    smooth: true,
+  });
+};
 
 const Banner = () => {
   const { t } = useTranslation();
   const classes = useStyles();
 
+  const data = useStaticQuery(graphql`
+    {
+      photo: file(relativePath: { eq: "photos/profile-pic.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 180) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
+  const {
+    photo: { childImageSharp },
+  } = data;
+
   return (
     <Box component="section" id="banner">
       <Box className={classes.background}>
         <Container className={classes.inner}>
-          <img className={classes.profilePic} src={photos.profilePic} />
+          <GatsbyImage {...childImageSharp} className={classes.profilePic} />
           <Box className={classes.textContainer}>
-            <Typography variant="h2">
-              <Box fontWeight="bold">Dexter Sibirtsev</Box>
+            <Typography variant="h1" className={classes.nameHeader}>
+              {t('Banner.DexterSibirtsev')}
             </Typography>
             <Typography variant="h3">
               {t('Banner.SoftwareDeveloper')}
             </Typography>
             <Typography variant="h5">
-              Hello! I am a professional programmer, specializing in websites &
-              mobile apps.
+              {t('Banner.HelloIAmAProgrammer')}
             </Typography>
           </Box>
 
           <Box className={classes.icons}>
-            <Link
-              href="https://twitter.com/DexterSibirtsev"
-              className={classes.icon}
-            >
-              <FaTwitter size={26} />
-            </Link>
-            <Link href="https://github.com/Deckstar" className={classes.icon}>
-              <FaGithub size={26} />
-            </Link>
-            <Link
-              href="https://www.goodreads.com/user/show/58196314-dexter"
-              className={classes.icon}
-            >
-              <FaGoodreads size={26} />
-            </Link>
+            {map(socialLinks, (item, i) => {
+              const { url, Icon } = item;
+              return (
+                <Link className={classes.icon} href={url} key={`social ${i}`}>
+                  <Icon size={26} />
+                </Link>
+              );
+            })}
           </Box>
 
           <Box className={classes.buttons}>
-            <Link href="#about" className="button">
-              <Button variant="contained">About Me &amp; CV</Button>
-            </Link>
-            <Link href="#skills" className="button">
-              <Button variant="contained">Skills</Button>
-            </Link>
-            <Link href="#education" className="button">
-              <Button variant="contained">Education</Button>
-            </Link>
-            <Link href="#contact" className="button">
-              <Button variant="contained">Contact</Button>
-            </Link>
+            {map(sectionButtons, (button) => {
+              const { title, link } = button;
+              return (
+                <Button
+                  variant="contained"
+                  onClick={() => handleScrollTo(link)}
+                  key={`banner button ${title}`}
+                >
+                  {t(`SectionButtons.${title}`)}
+                </Button>
+              );
+            })}
           </Box>
         </Container>
       </Box>

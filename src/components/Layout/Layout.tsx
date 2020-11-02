@@ -1,16 +1,22 @@
 import React, { ReactNode } from 'react';
 import { Box } from '@material-ui/core';
+import { Navbar, ZoomToTopButton } from '@components';
 import Footer from './Subcomponents/Footer';
-import Navbar from './Subcomponents/Navbar';
 import '@assets/css/styles.scss';
 
-const Layout = ({ children }: { children: ReactNode }) => {
+interface LayoutProps {
+  children: ReactNode;
+  homePage?: boolean;
+}
+
+const Layout = ({ children, homePage }: LayoutProps) => {
   return (
-    <Box component="main">
-      <Navbar />
-      {children}
+    <>
+      <Navbar homePage={homePage} />
+      <Box component="main">{children}</Box>
       <Footer />
-    </Box>
+      <ZoomToTopButton />
+    </>
   );
 };
 

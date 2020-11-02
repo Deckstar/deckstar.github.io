@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     title: {
+      fontFamily: 'Mistral',
+      letterSpacing: '0.05em',
+      fontVariant: 'small-caps',
       marginBottom: '0.5em',
     },
     twoRows: {

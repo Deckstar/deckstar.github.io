@@ -63,6 +63,10 @@ const frontend: SkillCardProps = {
       src: logos.materialUI,
     },
     {
+      name: 'Formik',
+      src: logos.formik,
+    },
+    {
       name: 'i18next',
       src: logos.i18next,
     },
