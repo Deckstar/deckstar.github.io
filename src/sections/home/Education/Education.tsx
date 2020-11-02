@@ -9,7 +9,7 @@ import useStyles from './Education.style';
 
 const Education = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const data = useStaticQuery(graphql`
     {
@@ -40,11 +40,15 @@ const Education = () => {
 
   const schoolItems: ExperienceItemProps[] = data.allEducationJson.nodes;
 
+  const lang = i18n.language;
+  const isEnglish = lang.substring(0, 2) === 'en';
+
   return (
     <Box component="section" id="education" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
           {t('Education.Education')}
+          {isEnglish ? '' : '*'}
         </Typography>
         <Box>
           <Typography className={classes.paragraph}>

@@ -9,7 +9,7 @@ import useStyles from './Work.style';
 
 const Work = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const data = useStaticQuery(graphql`
     {
@@ -40,11 +40,15 @@ const Work = () => {
 
   const workItems: ExperienceItemProps[] = data.allWorkJson.nodes;
 
+  const lang = i18n.language;
+  const isEnglish = lang.substring(0, 2) === 'en';
+
   return (
     <Box component="section" id="work" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
           {t('Work.Work')}
+          {isEnglish ? '' : '*'}
         </Typography>
         <Box className={classes.itemsOuterContainer}>
           <Box className={classes.line} />
