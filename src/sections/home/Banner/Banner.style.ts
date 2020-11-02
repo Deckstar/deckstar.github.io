@@ -44,13 +44,17 @@ const useStyles = makeStyles((theme: Theme) =>
       fontVariant: 'small-caps',
     },
     profilePic: {
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up('sm')]: {
         height: '9em',
         width: '9em',
       },
-      [theme.breakpoints.up('lg')]: {
+      [theme.breakpoints.up('md')]: {
         height: '12em',
         width: '12em',
+      },
+      [theme.breakpoints.up('lg')]: {
+        height: '15em',
+        width: '15em',
       },
 
       height: '7em',
