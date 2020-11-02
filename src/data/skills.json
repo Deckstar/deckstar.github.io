@@ -120,7 +120,7 @@
       },
       {
         "name": "Apollo Server",
-        "src": "../images/logos.apollo-server",
+        "src": "../images/logos/apollo-server",
         "subSkills": [
           {
             "name": "TypeGraphQL",
