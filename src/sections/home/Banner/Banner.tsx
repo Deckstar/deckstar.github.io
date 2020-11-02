@@ -49,7 +49,7 @@ const Banner = () => {
 
   const data = useStaticQuery(graphql`
     {
-      photo: file(relativePath: { eq: "photos/profile-pic.png" }) {
+      photo: file(relativePath: { eq: "photos/profile-pic.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 180) {
             ...GatsbyImageSharpFluid_withWebp
