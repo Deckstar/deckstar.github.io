@@ -1,7 +1,50 @@
 {
   "et": {
+    "About": {
+      "AboutMe": "Minust",
+      "Description": "<0>Olen iseõppinud programmeerija Tallinnast, Eestist.</0><1> Olen olnud arendaja juba üle {{yearsExperience}} aasta. Professionaalselt keskendun peamiselt <4>veebisaitide</4> arendamisele koos Reacti ja Djangoga ning <8>natiivsete mobiilirakenduste</8> arendamisele koos React Native'iga. Vabal ajal töötan ka teiste programmeerimistööriistadega.</1><2> Minu teekond programmeerimiseni võib tunduda natuke veider. Alustasin oma karjääri elades kogu Euroopas ja omandades kaks diplomi majanduses ning finant, kuid mõistsin varsti, et rahandusmaailm pole minu jaoks. Selle asemel otsustasin sukelduda põhjalikult programmeerimisse ja vahetage väljad <2>täistööajaga tarkvara- ja veebiarendusele</2>.</2><3> Mind on alati <2>huvitanud lai valik valdkondi</2> — teadus, muusika, keeled , kui nimetada vaid mõnda — ja programmeerimisega leidsin, et saan kõiki neid kirgi jätkata. Suurepärase boonusena võiksin ka inimesi aidata. Loodan, et saame koos töötada!</3> ",
+      "PhotoDescription": "Ma kirjutan koodi 🤷‍♂️",
+      "ViewCV": "Kuva CV"
+    },
+    "Acknowledgements": "Tänud",
     "Banner": {
-      "SoftwareDeveloper": "Tarkvara Arendaja"
+      "DexterSibirtsev": "Dexter Sibirtsev",
+      "Experience": "Kogemus",
+      "HelloIAmAProgrammer": "Tere! Olen professionaalne programmeerija, kes spetsialiseerub veebisaitide ja mobiilirakenduste arendamises.",
+      "SoftwareDeveloper": "Tarkvaraarendaja"
+    },
+    "Blog": {
+      "Blog": "Blogi"
+    },
+    "Contact": {
+      "Contact": "Kontakt",
+      "GetInTouch": "Võtame ühendust! Leiate mind läbi nende linkide",
+      "SendEmail": "Või saatke mulle lihtsalt e-kiri!"
+    },
+    "Education": {
+      "Description": "Olen täiesti iseõppinud programmeerija — õppisin YouTube'i vaadates, raamatuid lugedes ja veebikursuste õppides. Siiski ma hindan oma ametlikku haridust väga kõrgelt. See oli väga rahvusvaheline, seega olen olnud kosmopoliit keskkonnas peaaegu kogu elu. Seetõttu oli mul võimalus õppida mitut keelt ja suhelda palju erinevate kultuuride inimestega.",
+      "Education": "Haridus"
+    },
+    "Experience": {
+      "TranslationsUnderConstruction": "Tõlged on valmimisel"
+    },
+    "PageLinks": {
+      "Acknowledgements": "Tänud",
+      "Home": "Koduleht"
+    },
+    "SectionButtons": {
+      "About": "Minust / CV",
+      "Blog": "Blogi",
+      "Contact": "Kontakt",
+      "Experience": "Kogemus",
+      "Skills": "Oskused"
+    },
+    "Skills": {
+      "Overview": "<0>See on loetelu minu lemmiktööriistadest, millega olen töötanud. Enamikku neist kasutan iga nädal, paljusid iga päev.</0><1>Tunnistan, et see loend võib-olla ole liiga igakülgne. Lihtsalt mulle on alati meeldinud värvilisi kollektsioone näha. Siin on selline reegel: kui ma olen seda tehnoloogiat kasutanud rohkem kui ühe nädala ja kui sellel on logo, siis on see loendis.</1>",
+      "Skills": "Oskused"
+    },
+    "Work": {
+      "Work": "Töö"
     }
   }
 }
