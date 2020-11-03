@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme: Theme) =>
       borderBottom: `2px solid ${theme.palette.divider}`,
     },
     title: {
-      fontFamily: 'Mistral',
+      fontFamily: 'Mistral, "Roboto", "Helvetica", "Arial", sans-serif',
       letterSpacing: '0.05em',
       fontVariant: 'small-caps',
       marginBottom: '0.5em',
