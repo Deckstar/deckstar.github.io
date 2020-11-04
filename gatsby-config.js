@@ -8,6 +8,7 @@ module.exports = {
   /* Your site config here */
   plugins: [
     {
+      pathPrefix: `/`,
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
@@ -31,6 +32,7 @@ module.exports = {
         useLangKeyLayout: false,
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet-async`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
