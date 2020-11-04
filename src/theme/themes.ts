@@ -1,5 +1,5 @@
 import { ThemeOptions } from '@material-ui/core';
-import { lightBlue, deepOrange } from '@material-ui/core/colors';
+import { lightBlue, deepOrange, orange } from '@material-ui/core/colors';
 
 const commonTheme: ThemeOptions = {};
 
@@ -12,8 +12,8 @@ export const lightTheme: ThemeOptions = {
       contrastText: lightBlue[100],
     },
     secondary: {
-      main: deepOrange[400],
-      contrastText: deepOrange[200],
+      main: orange[400],
+      contrastText: orange[200],
     },
   },
 };
