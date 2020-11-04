@@ -2,13 +2,13 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import en from './locales/en.json';
-import de from './locales/de.json';
+// import de from './locales/de.json';
 import es from './locales/es.json';
 import et from './locales/et.json';
 import fr from './locales/fr.json';
 import hu from './locales/hu.json';
 import ru from './locales/ru.json';
-import se from './locales/se.json';
+// import se from './locales/se.json';
 
 const options = {
   interpolation: {
@@ -21,9 +21,9 @@ const options = {
     en: {
       common: en.en,
     },
-    de: {
-      common: de.de,
-    },
+    // de: {
+    //   common: de.de,
+    // },
     es: {
       common: es.es,
     },
@@ -39,9 +39,9 @@ const options = {
     ru: {
       common: ru.ru,
     },
-    se: {
-      common: se.se,
-    },
+    // se: {
+    //   common: se.se,
+    // },
   },
 
   fallbackLng: 'en',
