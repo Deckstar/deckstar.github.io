@@ -32,7 +32,7 @@ module.exports = {
         useLangKeyLayout: false,
       },
     },
-    `gatsby-plugin-material-ui `,
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet-async`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
