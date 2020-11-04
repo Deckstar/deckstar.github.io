@@ -7,6 +7,7 @@ import { ThemeWrapper } from '@theme';
 
 interface WrapperProps {
   children: ReactNode;
+  homePage?: boolean;
 }
 
 const Wrapper = ({ children, ...rest }: WrapperProps) => {
