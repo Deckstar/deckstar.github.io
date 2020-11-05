@@ -14,23 +14,21 @@ const useStyles = makeStyles((theme: Theme) =>
     contentContainer: {
       display: 'flex',
       flexDirection: 'column',
-      gap: '2em',
       justifyContent: 'center',
       alignItems: 'center',
     },
     textContainer: {
       display: 'flex',
       flexDirection: 'column',
-      gap: '0.5em',
       justifyContent: 'center',
       alignItems: 'center',
     },
     icons: {
       display: 'flex',
       flexWrap: 'wrap',
-      gap: '2em',
     },
     icon: {
+      margin: '1em',
       color: theme.palette.grey[400],
       '&:hover': {
         color: theme.palette.grey[500],
@@ -39,7 +37,6 @@ const useStyles = makeStyles((theme: Theme) =>
     buttons: {
       display: 'flex',
       flexWrap: 'wrap',
-      gap: '2em',
       justifyContent: 'center',
       alignItems: 'center',
     },

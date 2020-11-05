@@ -68,7 +68,6 @@ const useStyles = makeStyles((theme: Theme) =>
     textSection: {
       display: 'flex',
       flexDirection: 'column',
-      gap: '1em',
     },
     skillsGrid: {
       margin: '1.5em 0',

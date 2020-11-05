@@ -27,12 +27,12 @@ const useStyles = makeStyles((theme: Theme) =>
     postsContainer: {
       display: 'flex',
       flexWrap: 'nowrap',
-      gap: '2em',
       overflowX: 'auto',
       padding: '2rem 1rem',
     },
 
     cardContainer: {
+      marginRight: '1.5rem',
       flex: '0 0 auto',
       width: '92.5%',
       maxWidth: '24rem',
@@ -82,7 +82,6 @@ const useStyles = makeStyles((theme: Theme) =>
     cardDateContainer: {
       display: 'flex',
       alignItems: 'center',
-      gap: '0.5em',
       fontSize: '0.9em',
       marginBottom: '1em',
     },
@@ -93,7 +92,6 @@ const useStyles = makeStyles((theme: Theme) =>
     cardFooter: {
       justifyContent: 'space-between',
       alignItems: 'flex-end',
-      gap: '1em',
     },
     cardButtons: {
       display: 'flex',
@@ -105,10 +103,10 @@ const useStyles = makeStyles((theme: Theme) =>
     cardArticleTags: {
       display: 'flex',
       flexWrap: 'wrap',
-      gap: '0 1em',
       justifyContent: 'flex-end',
     },
     cardTag: {
+      marginLeft: '1em',
       fontWeight: 'bold',
     },
 

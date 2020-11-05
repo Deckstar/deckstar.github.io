@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme: Theme) =>
     textSection: {
       display: 'flex',
       flexDirection: 'column',
-      gap: '1em',
     },
     paragraph: {
       marginBottom: '1em',

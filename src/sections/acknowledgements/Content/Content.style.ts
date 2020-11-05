@@ -15,12 +15,10 @@ const useStyles = makeStyles((theme: Theme) =>
     twoRows: {
       display: 'flex',
       flexWrap: 'wrap',
-      gap: '2em',
     },
     textSection: {
       display: 'flex',
       flexDirection: 'column',
-      gap: '1em',
       width: '48%',
       flexGrow: 1,
     },
@@ -38,6 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      marginBottom: '2em',
     },
     bigPhotoCard: {
       flexGrow: 1,

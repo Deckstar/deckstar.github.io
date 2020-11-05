@@ -12,7 +12,7 @@ const Banner = () => {
       <Box className={classes.background}>
         <Container className={classes.inner}>
           <Box className={classes.textContainer}>
-            <Typography variant="h3" className={classes.heading}>
+            <Typography variant="h3" className={classes.heading} paragraph>
               Thanks a lot to all these fine people for all their great work!
             </Typography>
             <Typography>

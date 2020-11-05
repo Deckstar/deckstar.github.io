@@ -23,16 +23,14 @@ const useStyles = makeStyles((theme: Theme) =>
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      gap: '2em',
       justifyContent: 'center',
       alignItems: 'center',
-      paddingTop: '4rem',
+      paddingTop: '5rem',
       paddingBottom: '1rem',
     },
     textContainer: {
       display: 'flex',
       flexDirection: 'column',
-      gap: '0.5em',
       justifyContent: 'center',
       alignItems: 'center',
       textAlign: 'center',
@@ -58,6 +56,7 @@ const useStyles = makeStyles((theme: Theme) =>
         width: '15em',
       },
 
+      marginBottom: '1.25rem',
       height: '7em',
       width: '7em',
       borderRadius: '50%',
@@ -65,9 +64,9 @@ const useStyles = makeStyles((theme: Theme) =>
     icons: {
       display: 'flex',
       flexWrap: 'wrap',
-      gap: '2em',
     },
     icon: {
+      margin: '1em',
       color: theme.palette.grey[400],
       '&:hover': {
         color: theme.palette.grey[500],
@@ -76,9 +75,11 @@ const useStyles = makeStyles((theme: Theme) =>
     buttons: {
       display: 'flex',
       flexWrap: 'wrap',
-      gap: '2em',
       justifyContent: 'center',
       alignItems: 'center',
+    },
+    button: {
+      margin: '1em',
     },
   })
 );

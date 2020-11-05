@@ -62,11 +62,6 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'inline-block',
       lineHeight: 'inherit',
     },
-    textSection: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1em',
-    },
     skillsGrid: {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',

@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: '45px 30px',
       display: 'flex',
       flexDirection: 'column',
-      gap: '2em',
       justifyContent: 'center',
       alignItems: 'center',
       backgroundImage: `url(${overlays.overlay3})`,

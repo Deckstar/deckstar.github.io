@@ -69,7 +69,7 @@ const Banner = () => {
         <Container className={classes.inner}>
           <GatsbyImage {...childImageSharp} className={classes.profilePic} />
           <Box className={classes.textContainer}>
-            <Typography variant="h1" className={classes.nameHeader}>
+            <Typography variant="h1" className={classes.nameHeader} paragraph>
               {t('Banner.DexterSibirtsev')}
             </Typography>
             <Typography variant="h3" paragraph>
@@ -96,6 +96,7 @@ const Banner = () => {
               const { title, link } = button;
               return (
                 <Button
+                  className={classes.button}
                   variant="contained"
                   onClick={() => handleScrollTo(link)}
                   key={`banner button ${title}`}
