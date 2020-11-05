@@ -7,6 +7,11 @@ import React, {
   useState,
 } from 'react';
 
+interface ContextState {
+  darkMode: boolean | null;
+  toggleDarkMode: () => void;
+}
+
 const checkDarkModePreference = () => {
   const prefersDarkMode =
     window.matchMedia('(prefers-color-scheme: dark)').matches === true;
@@ -14,7 +19,7 @@ const checkDarkModePreference = () => {
   return prefersDarkMode;
 };
 
-const defaultState = { darkMode: true, toggleDarkMode: () => {} };
+const defaultState: ContextState = { darkMode: null, toggleDarkMode: () => {} };
 
 export const Context = createContext(defaultState);
 
@@ -23,7 +28,7 @@ interface Props {
 }
 
 const ContextProvider = (props: Props) => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState<boolean | null>(null);
 
   const setPersistentDarkMode = useCallback(
     (useDark: boolean) => {
