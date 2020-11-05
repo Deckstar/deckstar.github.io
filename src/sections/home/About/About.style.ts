@@ -33,7 +33,8 @@ const useStyles = makeStyles((theme: Theme) =>
     bigPhoto: {
       height: 0,
       // paddingTop: '56.25%', // 16:9
-      paddingTop: `${(1 / 2 ** (1 / 2)) * 100}%`, // 𝜑 (golden ratio)
+      paddingTop: '60%', // 5:3
+      // paddingTop: `${(1 / 2 ** (1 / 2)) * 100}%`, // 𝜑 (golden ratio)
       maxWidth: '100%',
     },
     bigPhotoCaption: {
