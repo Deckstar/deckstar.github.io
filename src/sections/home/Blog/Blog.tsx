@@ -165,7 +165,7 @@ const Blog = () => {
           {t('Blog.Blog')}
         </Typography>
         <Paper className={classes.postsContainer} elevation={10}>
-          {map([...devArticles, ...devArticles, ...devArticles, ...devArticles, ...devArticles], (post) => {
+          {map(devArticles, (post) => {
             const { id } = post;
             return <Post {...post} key={`article ${id}`} />;
           })}
