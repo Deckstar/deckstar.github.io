@@ -1,4 +1,6 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { WithTranslation } from 'react-i18next';
+import { PageProps } from 'gatsby';
 import {
   About,
   Banner,
@@ -7,24 +9,21 @@ import {
   Experience,
   Skills,
 } from '@sections/home';
-import { Wrapper } from '@components';
-import { WithTranslation } from 'react-i18next';
-import { Helmet } from 'react-helmet-async';
+import { SEO, Wrapper } from '@components';
 
-const Home: FC<WithTranslation> = () => {
+const Home = (pageProps: PageProps & WithTranslation) => {
   return (
-    <Wrapper homePage>
-      <Helmet>
-        <title>Dexter Sibirtsev | Portfolio</title>
-      </Helmet>
-
-      <Banner />
-      <About />
-      <Skills />
-      <Experience />
-      <Blog />
-      <Contact />
-    </Wrapper>
+    <>
+      <SEO pathname={pageProps.location.pathname} />
+      <Wrapper homePage>
+        <Banner />
+        <About />
+        <Skills />
+        <Experience />
+        <Blog />
+        <Contact />
+      </Wrapper>
+    </>
   );
 };
 

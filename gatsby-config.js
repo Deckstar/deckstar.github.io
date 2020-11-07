@@ -4,8 +4,17 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+const siteUrl =
+  process.env.URL || process.env.DEPLOY_URL || `https://deckstar.github.io`;
+
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: `Dexter Sibirtsev | Portfolio`,
+    description: `Full-stack software developer from Tallinn, Estonia. Web and mobile app development (full time).`,
+    author: `Deckstar`,
+    siteUrl,
+  },
   plugins: [
     {
       pathPrefix: `/`,
@@ -32,14 +41,7 @@ module.exports = {
         useLangKeyLayout: false,
       },
     },
-    {
-      resolve: 'gatsby-plugin-material-ui',
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
-    },
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet-async`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,

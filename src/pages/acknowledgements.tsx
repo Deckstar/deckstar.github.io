@@ -1,18 +1,17 @@
 import React from 'react';
 import { Banner, Content } from '@sections/acknowledgements';
-import { Wrapper } from '@components';
-import { Helmet } from 'react-helmet-async';
+import { SEO, Wrapper } from '@components';
+import { PageProps } from 'gatsby';
 
-const Acknowledgements = () => {
+const Acknowledgements = (pageProps: PageProps) => {
   return (
-    <Wrapper>
-      <Helmet>
-        <title>Acknowledgements</title>
-      </Helmet>
-
-      <Banner />
-      <Content />
-    </Wrapper>
+    <>
+      <SEO title="Acknowledgements" pathname={pageProps.location.pathname} />
+      <Wrapper>
+        <Banner />
+        <Content />
+      </Wrapper>
+    </>
   );
 };
 
