@@ -24,6 +24,7 @@ import {
   EmojiPeople as AcknowledgementsIcon,
   Work as WorkIcon,
 } from '@material-ui/icons';
+import { Link as GatsbyLink } from 'gatsby';
 import { scroller } from 'react-scroll';
 import { find, get, map } from 'lodash';
 import { langMap } from '@i18n';
@@ -203,7 +204,7 @@ class Navbar extends Component<Props, State> {
     const { title, link, Icon } = props;
 
     return (
-      <Link color="inherit" href={link}>
+      <Link component={GatsbyLink} to={link} color="inherit">
         <MenuItem>
           <IconButton disableRipple>
             <Icon />

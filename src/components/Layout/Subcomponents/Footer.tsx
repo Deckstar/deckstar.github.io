@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Link, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { Link as GatsbyLink } from 'gatsby';
 import { overlays } from '@images';
 import dayjs from 'dayjs';
 
@@ -53,7 +54,8 @@ const Footer = () => {
         <Typography>
           &copy; 2019 – {currentYear} |{' '}
           <Link
-            href="acknowledgements"
+            component={GatsbyLink}
+            to="acknowledgements"
             underline="none"
             color="inherit"
             className={classes.link}
