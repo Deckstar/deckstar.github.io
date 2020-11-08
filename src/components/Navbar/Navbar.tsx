@@ -14,6 +14,7 @@ import {
   WithStyles,
   withStyles,
 } from '@material-ui/core';
+import { SelectInputProps } from '@material-ui/core/Select/SelectInput';
 import {
   AccountCircle as AboutIcon,
   AlternateEmail as ContactIcon,
@@ -44,7 +45,7 @@ interface Props extends WithStyles<typeof useStyles>, WithTranslation {
 }
 interface State {
   drawerOpen: boolean;
-  langValue: Language | undefined;
+  langValue: Language;
 }
 
 class Navbar extends Component<Props, State> {
@@ -53,12 +54,21 @@ class Navbar extends Component<Props, State> {
 
     this.state = {
       drawerOpen: false,
-      langValue: find(
-        langMap,
-        (lang) => lang.code === (props.i18n.language.substring(0, 2) || 'en')
-      ),
+      langValue: langMap[0],
     };
   }
+
+  componentDidUpdate = (prevProps: Props, prevState: State) => {
+    const newLangCode = this.props.i18n?.language.substring(0, 2);
+    const oldState = prevState.langValue?.code;
+    const stateShouldUpdate = newLangCode !== oldState && !!newLangCode;
+
+    if (stateShouldUpdate) {
+      const newLanguage =
+        find(langMap, (lang) => lang.code === newLangCode) || langMap[0];
+      this.setState({ langValue: newLanguage });
+    }
+  };
 
   getDrawerButtons = (): MenuLinkItem[] => {
     return [
@@ -113,14 +123,14 @@ class Navbar extends Component<Props, State> {
     this.setState({ drawerOpen: true });
   };
 
-  handleChangeLanguage = (event: React.ChangeEvent<{ value: Language }>) => {
+  handleChangeLanguage = (
+    event: React.ChangeEvent<{ value: Language['code'] }>
+  ) => {
     const { i18n } = this.props;
-    const value = get(event, 'target.value', langMap[0]);
+    const newCode = get(event, 'target.value', langMap[0].code);
 
     if (i18n) {
-      i18n.changeLanguage(value.code);
-
-      this.setState({ langValue: value });
+      i18n.changeLanguage(newCode);
     }
   };
 
@@ -143,30 +153,38 @@ class Navbar extends Component<Props, State> {
     );
   };
 
+  renderSelectedFlag = (value: any): ReactNode => {
+    const { langValue } = this.state;
+    if (!langValue || !value) return null;
+
+    const { flag, code } = langValue;
+    return (
+      <IconButton color="inherit">
+        <img src={flag} alt={`${code} flag`} style={{ height: 24 }} />
+      </IconButton>
+    );
+  };
+
+  renderLanguageInputComponent = () => {
+    return null;
+  };
+
   renderLanguageMenu = () => {
+    const { classes } = this.props;
     const FlagChoice = this.renderFlagChoice;
 
     return (
       <Select
-        value={this.state.langValue}
-        onChange={(e: any) => this.handleChangeLanguage(e)}
+        value={this.state.langValue?.code || ''}
+        onChange={this.handleChangeLanguage as SelectInputProps['onChange']}
         disableUnderline
-        inputProps={{
-          name: 'language',
-        }}
-        renderValue={(value: any): ReactNode => (
-          <Box
-            component="span"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <FlagChoice {...value} />
-          </Box>
-        )}
+        IconComponent={this.renderLanguageInputComponent}
+        inputProps={{ name: 'language' }}
+        classes={{ select: classes.languageSelect }}
+        renderValue={this.renderSelectedFlag}
       >
         {map(langMap, (lang) => (
-          <MenuItem component="span" value={lang} key={`language ${lang.code}`}>
+          <MenuItem value={lang.code} key={`language ${lang.code}`}>
             <FlagChoice {...lang} />
           </MenuItem>
         ))}
@@ -308,9 +326,9 @@ class Navbar extends Component<Props, State> {
               <Box className={classes.grow} />
 
               <Box className={classes.sectionDesktop}>
-                <LanguageMenu />
                 <DesktopLinks />
               </Box>
+              <LanguageMenu />
               <DarkModeToggle />
             </Toolbar>
           </AppBar>

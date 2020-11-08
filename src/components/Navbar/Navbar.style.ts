@@ -14,6 +14,10 @@ const useStyles = (theme: Theme) =>
         display: 'flex',
       },
     },
+    languageSelect: {
+      padding: '0px !important',
+      backgroundColor: 'unset !important'
+    },
     drawerContainer: {
       display: 'flex',
       flexDirection: 'column',
