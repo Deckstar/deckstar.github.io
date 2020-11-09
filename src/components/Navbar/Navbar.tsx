@@ -276,8 +276,6 @@ class Navbar extends Component<Props, State> {
             <img src={icons.main} className={classes.drawerLogo} />
           </Box>
           <Divider />
-          <LanguageMenu />
-          <Divider />
           <HomePageLinks />
           {map(this.getPageLinks(), (link, i) => (
             <DrawerLink {...link} key={`page link ${i}`} />
