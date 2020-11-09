@@ -119,6 +119,10 @@
         ]
       },
       {
+        "name": "GraphQL",
+        "src": "../images/logos/graphql.png"
+      },
+      {
         "name": "Apollo Server",
         "src": "../images/logos/apollo-server.png",
         "subSkills": [

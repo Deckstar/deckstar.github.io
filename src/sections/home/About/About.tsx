@@ -11,7 +11,7 @@ import {
   Link,
   Typography,
 } from '@material-ui/core';
-import resumePDF from '@assets/docs/Sibirtsev CV.pdf';
+import resumePDF from '@assets/docs/Sibirtsev CV 2020.pdf';
 import useStyles from './About.style';
 import dayjs from 'dayjs';
 
