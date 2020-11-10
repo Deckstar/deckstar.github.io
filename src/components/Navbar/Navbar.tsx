@@ -28,7 +28,7 @@ import {
 import { Link as GatsbyLink } from 'gatsby';
 import { scroller } from 'react-scroll';
 import { find, get, map } from 'lodash';
-import { langMap } from '@i18n';
+import langMap from '@i18n/utils/langMap';
 import { DarkModeToggle, HideOnScroll } from '@components';
 import { icons } from '@images';
 import socialLinks from '@data/socialLinks';

@@ -1,5 +1,6 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { map } from 'lodash';
 
 import en from './locales/en.json';
 // import de from './locales/de.json';
@@ -9,6 +10,8 @@ import fr from './locales/fr.json';
 import hu from './locales/hu.json';
 import ru from './locales/ru.json';
 // import se from './locales/se.json';
+
+import langMap from './utils/langMap';
 
 const options = {
   interpolation: {
@@ -46,6 +49,10 @@ const options = {
 
   fallbackLng: 'en',
 
+  nonExplicitSupportedLngs: true,
+
+  whitelist: map(langMap, lang => lang.code),
+
   ns: ['common'],
 
   defaultNS: 'common',
@@ -61,5 +68,3 @@ const options = {
 i18n.use(LanguageDetector).init(options);
 
 export default i18n;
-
-export { default as langMap } from './utils/langMap';
