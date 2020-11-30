@@ -151,6 +151,10 @@
         ]
       },
       {
+        "name": "NestJS",
+        "src": "../images/logos/nestjs.png"
+      },
+      {
         "name": "Redis",
         "src": "../images/logos/redis.png"
       }

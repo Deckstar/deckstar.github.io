@@ -43,6 +43,7 @@ const logos = {
   mongodb: require('./logos/mongodb.png'),
   mongoose: require('./logos/mongoose.png'),
   musescore: require('./logos/musescore.png'),
+  nestjs: require('./logos/nestjs.png'),
   node: require('./logos/node.png'),
   pgadmin: require('./logos/pgadmin.png'),
   photoshop: require('./logos/photoshop.png'),
