@@ -29,6 +29,10 @@
         "src": "../images/logos/wolfram language.png"
       },
       {
+        "name": "GraphQL",
+        "src": "../images/logos/graphql.png"
+      },
+      {
         "name": "HTML & CSS",
         "src": "../images/logos/HTML5 CSS3.png"
       }
@@ -109,34 +113,6 @@
     "title": "Backend",
     "skillItems": [
       {
-        "name": "Django",
-        "src": "../images/logos/django with python.png",
-        "subSkills": [
-          {
-            "name": "Graphene",
-            "src": "../images/logos/graphene.png"
-          }
-        ]
-      },
-      {
-        "name": "GraphQL",
-        "src": "../images/logos/graphql.png"
-      },
-      {
-        "name": "Apollo Server",
-        "src": "../images/logos/apollo-server.png",
-        "subSkills": [
-          {
-            "name": "TypeGraphQL",
-            "src": "../images/logos/type-graphql.png"
-          },
-          {
-            "name": "TypeORM",
-            "src": "../images/logos/typeORM.png"
-          }
-        ]
-      },
-      {
         "name": "NodeJS",
         "src": "../images/logos/node.png",
         "subSkills": [
@@ -145,14 +121,40 @@
             "src": "../images/logos/express.png"
           },
           {
+            "name": "Apollo Server",
+            "src": "../images/logos/apollo-server.png"
+          },
+          {
+            "name": "PostGraphile",
+            "src": "../images/logos/postgraphile.png"
+          },
+          {
+            "name": "NestJS",
+            "src": "../images/logos/nestjs.png"
+          },
+          {
+            "name": "TypeGraphQL",
+            "src": "../images/logos/type-graphql.png"
+          },
+          {
+            "name": "TypeORM",
+            "src": "../images/logos/typeORM.png"
+          },
+          {
             "name": "Mongoose",
             "src": "../images/logos/mongoose.png"
           }
         ]
       },
       {
-        "name": "NestJS",
-        "src": "../images/logos/nestjs.png"
+        "name": "Django",
+        "src": "../images/logos/django with python.png",
+        "subSkills": [
+          {
+            "name": "Graphene",
+            "src": "../images/logos/graphene.png"
+          }
+        ]
       },
       {
         "name": "Redis",
@@ -164,28 +166,40 @@
     "title": "Databases",
     "skillItems": [
       {
-        "name": "PostgreSQL",
-        "src": "../images/logos/pgadmin.png",
+        "name": "SQL",
+        "src": "../images/logos/sql.png",
         "subSkills": [
           {
-            "name": "Postgres",
-            "src": "../images/logos/postgres.png"
+            "name": "PostgreSQL",
+            "src": "../images/logos/pgadmin.png",
+            "subSkills": [
+              {
+                "name": "Postgres",
+                "src": "../images/logos/postgres.png"
+              }
+            ]
+          },
+          {
+            "name": "SQLite3",
+            "src": "../images/logos/sqlite3.png"
           }
         ]
       },
       {
-        "name": "MongoDB",
-        "src": "../images/logos/mongodb.png",
-        "extra": "with Cloud Atlas"
-      },
-      {
-        "name": "Firebase",
-        "src": "../images/logos/firebase.png",
-        "extra": "Cloud Firestore"
-      },
-      {
-        "name": "SQLite3",
-        "src": "../images/logos/sqlite3.png"
+        "name": "NoSQL",
+        "src": "../images/logos/nosql.png",
+        "subSkills": [
+          {
+            "name": "MongoDB",
+            "src": "../images/logos/mongodb.png",
+            "extra": "with Cloud Atlas"
+          },
+          {
+            "name": "Firebase",
+            "src": "../images/logos/firebase.png",
+            "extra": "Cloud Firestore"
+          }
+        ]
       }
     ]
   },
