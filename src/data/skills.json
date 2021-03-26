@@ -171,8 +171,12 @@
         "subSkills": [
           {
             "name": "PostgreSQL",
-            "src": "../images/logos/pgadmin.png",
+            "src": "../images/logos/postgresql.png",
             "subSkills": [
+              {
+                "name": "PostGIS",
+                "src": "../images/logos/postgis.png"
+              },
               {
                 "name": "Postgres",
                 "src": "../images/logos/postgres.png"
@@ -279,7 +283,7 @@
     ]
   },
   {
-    "title": "Design",
+    "title": "UI / UX Design",
     "skillItems": [
       {
         "name": "Adobe Creative Cloud",
@@ -300,9 +304,12 @@
         ]
       },
       {
+        "name": "Figma",
+        "src": "../images/logos/figma.png"
+      },
+      {
         "name": "Sketch",
-        "src": "../images/logos/sketch.png",
-        "extra": "UI / UX design"
+        "src": "../images/logos/sketch.png"
       }
     ]
   },
