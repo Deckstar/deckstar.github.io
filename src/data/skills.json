@@ -178,6 +178,10 @@
                 "src": "../images/logos/postgis.png"
               },
               {
+                "name": "PL/pgSQL",
+                "src": "../images/logos/pl-pgsql.png"
+              },
+              {
                 "name": "Postgres",
                 "src": "../images/logos/postgres.png"
               }

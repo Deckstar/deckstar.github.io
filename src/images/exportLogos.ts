@@ -47,6 +47,7 @@ const logos = {
   nestjs: require('./logos/nestjs.png'),
   node: require('./logos/node.png'),
   nosql: require('./logos/nosql.png'),
+  plPgqsql: require('./logos/pl-pgsql.png'),
   photoshop: require('./logos/photoshop.png'),
   postgis: require('./logos/postgis.png'),
   postgresql: require('./logos/postgresql.png'),
