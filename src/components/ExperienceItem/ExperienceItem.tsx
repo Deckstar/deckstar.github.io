@@ -1,9 +1,10 @@
-import React from 'react';
-import { Fade } from 'react-awesome-reveal';
 import { Box, Tooltip, Typography } from '@material-ui/core';
-import useStyles from './ExperienceItem.style';
 import { ExperienceItemProps } from '@typescript/@types/experience';
 import GatsbyImage from 'gatsby-image';
+import React from 'react';
+import { Fade } from 'react-awesome-reveal';
+
+import useStyles from './ExperienceItem.style';
 
 const ExperienceItem = (props: ExperienceItemProps) => {
   const classes = useStyles();

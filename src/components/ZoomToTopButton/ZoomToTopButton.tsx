@@ -1,11 +1,10 @@
-import React from 'react';
-import { Fab, Zoom, useScrollTrigger, Box } from '@material-ui/core';
+import { Box, Fab, useScrollTrigger, Zoom } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {
   // ModeComment as ChatIcon,
   KeyboardArrowUp as UpIcon,
 } from '@material-ui/icons';
-import { UseScrollTriggerOptions } from '@material-ui/core/useScrollTrigger/useScrollTrigger';
+import React from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -30,16 +29,10 @@ const handleClickToScroll = () => {
   });
 };
 
-interface Props {
-  window?: UseScrollTriggerOptions['target'];
-}
-
-const ZoomToTopButton = (props: Props) => {
-  const { window } = props;
+const ZoomToTopButton = () => {
   const classes = useStyles();
 
   const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
     disableHysteresis: true,
     threshold: 100,
   });

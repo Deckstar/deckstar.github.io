@@ -1,11 +1,11 @@
-import React from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { Button } from '@material-ui/core';
-
-import { scroller } from 'react-scroll';
-import { map } from 'lodash';
-import { DRAWER_BUTTONS, MenuLinkItem } from './DrawerMenu';
 import { globalHistory } from '@reach/router';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { map } from 'lodash';
+import React from 'react';
+import { scroller } from 'react-scroll';
+
+import { DRAWER_BUTTONS, MenuLinkItem } from './DrawerMenu';
 
 export const handleScrollTo = (id: string) =>
   scroller.scrollTo(id, {

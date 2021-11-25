@@ -1,5 +1,3 @@
-import React from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
 import {
   Badge,
   Box,
@@ -8,8 +6,8 @@ import {
   CardActions,
   CardContent,
   Container,
-  Paper,
   Link,
+  Paper,
   Tooltip,
   Typography,
 } from '@material-ui/core';
@@ -22,7 +20,10 @@ import {
 import dayjs from 'dayjs';
 import { graphql, useStaticQuery } from 'gatsby';
 import GatsbyImage, { GatsbyImageProps } from 'gatsby-image';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
+import React from 'react';
+
 import useStyles from './Blog.style';
 
 // for a full list of props, see graphiql interface. These are just the props we need right now.

@@ -1,10 +1,12 @@
-import React from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { overlays } from '@images';
 import { Box, Link, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Link as GatsbyLink } from 'gatsby-plugin-react-i18next';
-import { overlays } from '@images';
 import dayjs from 'dayjs';
+import {
+  Link as GatsbyLink,
+  useTranslation,
+} from 'gatsby-plugin-react-i18next';
+import React from 'react';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

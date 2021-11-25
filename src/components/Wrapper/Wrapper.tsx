@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
 import { Layout } from '@components';
 import { ThemeWrapper } from '@theme';
+import React, { FC } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 
 const Wrapper: FC = ({ children }) => {
   return (

@@ -1,7 +1,4 @@
-import React from 'react';
-import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
-import { graphql, useStaticQuery } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
+import resumePDF from '@assets/docs/Sibirtsev CV 2020.pdf';
 import {
   Box,
   Button,
@@ -11,9 +8,13 @@ import {
   Link,
   Typography,
 } from '@material-ui/core';
-import resumePDF from '@assets/docs/Sibirtsev CV 2020.pdf';
-import useStyles from './About.style';
 import dayjs from 'dayjs';
+import { graphql, useStaticQuery } from 'gatsby';
+import GatsbyImage from 'gatsby-image';
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import React from 'react';
+
+import useStyles from './About.style';
 
 const yearsExperience = dayjs().diff(dayjs('2018-10-24'), 'year');
 

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Banner, Content } from '@sections/acknowledgements';
 import { SEO, Wrapper } from '@components';
+import { Banner, Content } from '@sections/acknowledgements';
 import { graphql, PageProps } from 'gatsby';
+import React from 'react';
 
 export const query = graphql`
   query($language: String!) {

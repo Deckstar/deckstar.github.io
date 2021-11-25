@@ -1,6 +1,7 @@
-import React from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { Box, Container, Typography } from '@material-ui/core';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import React from 'react';
+
 import { Education, Work } from '..';
 import useStyles from './Experience.style';
 

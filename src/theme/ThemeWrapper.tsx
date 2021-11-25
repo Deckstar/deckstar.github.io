@@ -1,8 +1,9 @@
-import React, { ReactNode, useContext } from 'react';
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
-import { darkTheme, lightTheme } from './themes';
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import { Context } from '@context';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import React, { ReactNode, useContext } from 'react';
+
+import { darkTheme, lightTheme } from './themes';
 
 const Theme = (props: { children: ReactNode }) => {
   const { children } = props;

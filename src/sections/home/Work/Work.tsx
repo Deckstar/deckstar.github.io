@@ -1,10 +1,11 @@
-import React from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
-import { Box, Container, Typography } from '@material-ui/core';
-import { graphql, useStaticQuery } from 'gatsby';
-import { map } from 'lodash';
 import { ExperienceItem } from '@components';
+import { Box, Container, Typography } from '@material-ui/core';
 import { ExperienceItemProps } from '@typescript/@types/experience';
+import { graphql, useStaticQuery } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { map } from 'lodash';
+import React from 'react';
+
 import useStyles from './Work.style';
 
 const Work = () => {

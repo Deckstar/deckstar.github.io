@@ -60,7 +60,7 @@ const ContextProvider = (props: Props) => {
 
       setPersistentDarkMode(prefersDarkMode);
     }
-  }, []);
+  }, [setPersistentDarkMode]);
 
   return (
     <Context.Provider value={{ darkMode, toggleDarkMode }}>

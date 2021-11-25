@@ -1,7 +1,7 @@
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import React, { ImgHTMLAttributes } from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     mini: {
       height: '1em',
@@ -11,9 +11,11 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const LineHighImage = (imgProps: ImgHTMLAttributes<{}>) => {
-  if (!imgProps.src) return null;
-
   const classes = useStyles();
+
+  if (!imgProps.src) {
+    return null;
+  }
 
   return <img className={classes.mini} {...imgProps} />;
 };

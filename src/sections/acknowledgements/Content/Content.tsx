@@ -1,5 +1,5 @@
-import React from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { LineHighImage } from '@components';
+import { logos, stories } from '@images';
 import {
   Box,
   Container,
@@ -8,13 +8,12 @@ import {
   ListItem,
   Typography,
 } from '@material-ui/core';
+import React from 'react';
+
 import useStyles from './Content.style';
-import { logos, stories } from '@images';
-import { LineHighImage } from '@components';
 
 const Content = () => {
   const classes = useStyles();
-  const { t } = useTranslation();
 
   return (
     <>

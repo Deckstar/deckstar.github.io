@@ -7,6 +7,9 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "lint": "yarn prettier:all --check && yarn eslint .",
+    "lint:fix": "yarn eslint --fix . && yarn prettier:all --write",
+    "prettier:all": "prettier --ignore-path .eslintignore \"**/*.{js,jsx,ts,tsx,graphql,md}\"",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -45,7 +48,18 @@
     "react-scroll": "^1.8.1"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint_d": "^10.1.2",
+    "prettier": "2.1.2",
+    "typescript": "^4.4.3"
   },
   "repository": {
     "type": "git",

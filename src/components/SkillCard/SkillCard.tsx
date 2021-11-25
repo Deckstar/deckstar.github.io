@@ -1,9 +1,10 @@
-import React, { memo } from 'react';
 import { Box, Card, CardContent, CardHeader } from '@material-ui/core';
-import { map, size } from 'lodash';
 import { SkillCardProps, SkillItem } from '@typescript/@types/skills';
-import useStyles from './SkillCard.style';
 import GatsbyImage from 'gatsby-image';
+import { map, size } from 'lodash';
+import React, { memo } from 'react';
+
+import useStyles from './SkillCard.style';
 
 const SubSkills = (props: { subSkills?: SkillItem[] }) => {
   const { subSkills } = props;
@@ -26,8 +27,9 @@ const SubSkills = (props: { subSkills?: SkillItem[] }) => {
 const Extra = (props: { extra: SkillItem['extra'] }) => {
   const { extra } = props;
 
+  const classes = useStyles();
+
   if (extra) {
-    const classes = useStyles();
     return (
       <Box component="span" className={classes.subtitle}>
         ({extra})
@@ -69,7 +71,7 @@ const Skill = (props: SkillItem) => {
   );
 };
 
-const SkillCard = memo((props: SkillCardProps) => {
+const SkillCard = memo(function SkillCard(props: SkillCardProps) {
   const { skillItems, title } = props;
   const classes = useStyles();
 

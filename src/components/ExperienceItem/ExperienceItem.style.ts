@@ -1,10 +1,9 @@
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 
-const lineSize = 3;
 const bulletSize = 24;
 const imageHeight = 40;
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     // make sure you use px units (not em) for this css logic, otherwise it won't align
     itemContainer: {

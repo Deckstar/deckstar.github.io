@@ -1,5 +1,5 @@
-import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
 import { IconType } from 'react-icons';
+import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
 
 interface SocialLink {
   title: string;

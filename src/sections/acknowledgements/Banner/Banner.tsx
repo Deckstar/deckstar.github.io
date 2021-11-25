@@ -1,10 +1,9 @@
-import React from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { Box, Container, Typography } from '@material-ui/core';
+import React from 'react';
+
 import useStyles from './Banner.style';
 
 const Banner = () => {
-  const { t } = useTranslation();
   const classes = useStyles();
 
   return (

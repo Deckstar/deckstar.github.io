@@ -1,5 +1,5 @@
 import { ThemeOptions } from '@material-ui/core';
-import { lightBlue, deepOrange, orange } from '@material-ui/core/colors';
+import { deepOrange, lightBlue, orange } from '@material-ui/core/colors';
 
 const commonTheme: ThemeOptions = {};
 

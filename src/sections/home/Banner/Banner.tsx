@@ -1,11 +1,12 @@
-import React from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import socialLinks from '@data/socialLinks';
+import { Box, Button, Container, Link, Typography } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
-import { scroller } from 'react-scroll';
-import { Box, Button, Container, Link, Typography } from '@material-ui/core';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
-import socialLinks from '@data/socialLinks';
+import React from 'react';
+import { scroller } from 'react-scroll';
+
 import useStyles from './Banner.style';
 
 interface SectionButtonProps {

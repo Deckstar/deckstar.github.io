@@ -1,8 +1,10 @@
-import React, { ReactNode } from 'react';
-import { Box } from '@material-ui/core';
-import { Navbar, ZoomToTopButton } from '@components';
-import Footer from './Subcomponents/Footer';
 import '@assets/css/styles.scss';
+
+import { Navbar, ZoomToTopButton } from '@components';
+import { Box } from '@material-ui/core';
+import React, { ReactNode } from 'react';
+
+import Footer from './Subcomponents/Footer';
 
 interface LayoutProps {
   children: ReactNode;

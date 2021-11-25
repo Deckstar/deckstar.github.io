@@ -1,8 +1,8 @@
+import photos from '@images/exportPhotos';
+import { graphql, useStaticQuery } from 'gatsby';
+import { concat } from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useStaticQuery, graphql } from 'gatsby';
-import { concat } from 'lodash';
-import photos from '@images/exportPhotos';
 
 interface Site {
   siteMetadata: {

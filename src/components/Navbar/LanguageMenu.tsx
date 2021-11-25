@@ -1,14 +1,12 @@
-import React, { ReactNode, useCallback, useContext } from 'react';
-import { useI18next } from 'gatsby-plugin-react-i18next';
+import langMap from '@i18n/utils/langMap';
 import { IconButton, MenuItem, Select } from '@material-ui/core';
 import { SelectInputProps } from '@material-ui/core/Select/SelectInput';
-
+import { useI18next } from 'gatsby-plugin-react-i18next';
 import { get, map } from 'lodash';
-import langMap from '@i18n/utils/langMap';
-
-import useStyles from './Navbar.style';
+import React, { ReactNode, useCallback, useContext } from 'react';
 
 import { NavbarContext } from './Context';
+import useStyles from './Navbar.style';
 
 const FlagChoice = (props: Language) => {
   const { code, label, flag } = props;

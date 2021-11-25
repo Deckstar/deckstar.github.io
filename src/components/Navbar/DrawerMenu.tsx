@@ -1,22 +1,25 @@
-import React, { ComponentType } from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import socialLinks from '@data/socialLinks';
+import { icons } from '@images';
 import { Box, Divider, IconButton, Link, MenuItem } from '@material-ui/core';
 import {
   AccountCircle as AboutIcon,
   AlternateEmail as ContactIcon,
-  Description as BlogIcon,
   Build as SkillIcon,
-  Home as HomeIcon,
+  Description as BlogIcon,
   EmojiPeople as AcknowledgementsIcon,
+  Home as HomeIcon,
   Work as WorkIcon,
 } from '@material-ui/icons';
-import { Link as GatsbyLink } from 'gatsby-plugin-react-i18next';
-import { map } from 'lodash';
-import { icons } from '@images';
-import socialLinks from '@data/socialLinks';
-import useStyles from './Navbar.style';
-import { handleScrollTo } from './DesktopLinks';
 import { globalHistory } from '@reach/router';
+import {
+  Link as GatsbyLink,
+  useTranslation,
+} from 'gatsby-plugin-react-i18next';
+import { map } from 'lodash';
+import React, { ComponentType } from 'react';
+
+import { handleScrollTo } from './DesktopLinks';
+import useStyles from './Navbar.style';
 
 export interface MenuLinkItem {
   title: string;

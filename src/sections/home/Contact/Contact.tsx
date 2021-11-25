@@ -1,9 +1,10 @@
-import React from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
-import { Box, Button, Container, Link, Typography } from '@material-ui/core';
-import { map } from 'lodash';
-import useStyles from './Contact.style';
 import socialLinks from '@data/socialLinks';
+import { Box, Button, Container, Link, Typography } from '@material-ui/core';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { map } from 'lodash';
+import React from 'react';
+
+import useStyles from './Contact.style';
 
 const Contact = () => {
   const classes = useStyles();

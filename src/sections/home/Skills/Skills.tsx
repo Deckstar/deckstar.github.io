@@ -1,12 +1,13 @@
-import React from 'react';
-import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import { SkillCard } from '@components';
 import { Box, Container, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
-import { graphql, useStaticQuery } from 'gatsby';
-import { FaDesktop, FaMobile } from 'react-icons/fa';
-import { Masonry, RenderComponentProps } from 'masonic';
-import { SkillCard } from '@components';
 import { SkillCardProps } from '@typescript/@types/skills';
+import { graphql, useStaticQuery } from 'gatsby';
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import { Masonry, RenderComponentProps } from 'masonic';
+import React from 'react';
+import { FaDesktop, FaMobile } from 'react-icons/fa';
+
 import useStyles from './Skills.style';
 
 const MasonryCard = (props: RenderComponentProps<SkillCardProps>) => {

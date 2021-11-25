@@ -1,5 +1,4 @@
-import React from 'react';
-import { graphql, PageProps } from 'gatsby';
+import { SEO, Wrapper } from '@components';
 import {
   About,
   Banner,
@@ -8,7 +7,8 @@ import {
   Experience,
   Skills,
 } from '@sections/home';
-import { SEO, Wrapper } from '@components';
+import { graphql, PageProps } from 'gatsby';
+import React from 'react';
 
 export const query = graphql`
   query($language: String!) {
