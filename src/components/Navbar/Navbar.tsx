@@ -1,5 +1,5 @@
 import React, { ComponentType, ReactNode } from 'react';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 import {
   AppBar,
   Box,
@@ -49,7 +49,8 @@ interface State {
 
 const Navbar = (props: Props) => {
   const classes = useStyles();
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
+  const { changeLanguage } = useI18next();
 
   const [state, setState] = useLocalState<State>({
     drawerOpen: false,
@@ -114,9 +115,7 @@ const Navbar = (props: Props) => {
   ) => {
     const newCode = get(event, 'target.value', langMap[0].code);
 
-    if (i18n) {
-      i18n.changeLanguage(newCode);
-    }
+    changeLanguage(newCode);
   };
 
   const handleScrollTo = (id: string) =>
