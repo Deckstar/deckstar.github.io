@@ -1,5 +1,5 @@
-import React, { Component, ComponentType, ReactNode } from 'react';
-import { WithTranslation, withTranslation } from 'gatsby-plugin-react-i18next';
+import React, { ComponentType, ReactNode } from 'react';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import {
   AppBar,
   Box,
@@ -11,8 +11,6 @@ import {
   MenuItem,
   Select,
   Toolbar,
-  WithStyles,
-  withStyles,
 } from '@material-ui/core';
 import { SelectInputProps } from '@material-ui/core/Select/SelectInput';
 import {
@@ -27,12 +25,13 @@ import {
 } from '@material-ui/icons';
 import { Link as GatsbyLink } from 'gatsby-plugin-react-i18next';
 import { scroller } from 'react-scroll';
-import { find, get, map } from 'lodash';
+import { get, map } from 'lodash';
 import langMap from '@i18n/utils/langMap';
 import { DarkModeToggle, HideOnScroll } from '@components';
 import { icons } from '@images';
 import socialLinks from '@data/socialLinks';
 import useStyles from './Navbar.style';
+import { useLocalState } from '@hooks/useLocalState';
 
 interface MenuLinkItem {
   title: string;
@@ -40,7 +39,7 @@ interface MenuLinkItem {
   Icon: ComponentType;
 }
 
-interface Props extends WithStyles<typeof useStyles>, WithTranslation {
+interface Props {
   homePage?: boolean;
 }
 interface State {
@@ -48,29 +47,16 @@ interface State {
   langValue: Language;
 }
 
-class Navbar extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
+const Navbar = (props: Props) => {
+  const classes = useStyles();
+  const { i18n, t } = useTranslation();
 
-    this.state = {
-      drawerOpen: false,
-      langValue: langMap[0],
-    };
-  }
+  const [state, setState] = useLocalState<State>({
+    drawerOpen: false,
+    langValue: langMap[0],
+  });
 
-  componentDidUpdate = (prevProps: Props, prevState: State) => {
-    const newLangCode = this.props.i18n?.language.substring(0, 2);
-    const oldState = prevState.langValue?.code;
-    const stateShouldUpdate = newLangCode !== oldState && !!newLangCode;
-
-    if (stateShouldUpdate) {
-      const newLanguage =
-        find(langMap, (lang) => lang.code === newLangCode) || langMap[0];
-      this.setState({ langValue: newLanguage });
-    }
-  };
-
-  getDrawerButtons = (): MenuLinkItem[] => {
+  const getDrawerButtons = (): MenuLinkItem[] => {
     return [
       {
         title: 'About',
@@ -100,7 +86,7 @@ class Navbar extends Component<Props, State> {
     ];
   };
 
-  getPageLinks = (): MenuLinkItem[] => {
+  const getPageLinks = (): MenuLinkItem[] => {
     return [
       {
         title: 'Home',
@@ -115,18 +101,17 @@ class Navbar extends Component<Props, State> {
     ];
   };
 
-  handleDrawerMenuClose = () => {
-    this.setState({ drawerOpen: false });
+  const handleDrawerMenuClose = () => {
+    setState({ drawerOpen: false });
   };
 
-  handleDrawerMenuOpen = () => {
-    this.setState({ drawerOpen: true });
+  const handleDrawerMenuOpen = () => {
+    setState({ drawerOpen: true });
   };
 
-  handleChangeLanguage = (
+  const handleChangeLanguage = (
     event: React.ChangeEvent<{ value: Language['code'] }>
   ) => {
-    const { i18n } = this.props;
     const newCode = get(event, 'target.value', langMap[0].code);
 
     if (i18n) {
@@ -134,13 +119,13 @@ class Navbar extends Component<Props, State> {
     }
   };
 
-  handleScrollTo = (id: string) =>
+  const handleScrollTo = (id: string) =>
     scroller.scrollTo(id, {
       offset: -50, // so navbar doesn't block view
       smooth: true,
     });
 
-  renderFlagChoice = (props: Language) => {
+  const FlagChoice = (props: Language) => {
     const { code, label, flag } = props;
 
     return (
@@ -153,8 +138,8 @@ class Navbar extends Component<Props, State> {
     );
   };
 
-  renderSelectedFlag = (value: any): ReactNode => {
-    const { langValue } = this.state;
+  const SelectedFlag = (value: any): ReactNode => {
+    const { langValue } = state;
     if (!langValue || !value) return null;
 
     const { flag, code } = langValue;
@@ -165,23 +150,20 @@ class Navbar extends Component<Props, State> {
     );
   };
 
-  renderLanguageInputComponent = () => {
+  const LanguageInputComponent = () => {
     return null;
   };
 
-  renderLanguageMenu = () => {
-    const { classes } = this.props;
-    const FlagChoice = this.renderFlagChoice;
-
+  const LanguageMenu = () => {
     return (
       <Select
-        value={this.state.langValue?.code || ''}
-        onChange={this.handleChangeLanguage as SelectInputProps['onChange']}
+        value={state.langValue?.code || ''}
+        onChange={handleChangeLanguage as SelectInputProps['onChange']}
         disableUnderline
-        IconComponent={this.renderLanguageInputComponent}
+        IconComponent={LanguageInputComponent}
         inputProps={{ name: 'language' }}
         classes={{ select: classes.languageSelect }}
-        renderValue={this.renderSelectedFlag}
+        renderValue={SelectedFlag}
       >
         {map(langMap, (lang) => (
           <MenuItem value={lang.code} key={`language ${lang.code}`}>
@@ -192,33 +174,29 @@ class Navbar extends Component<Props, State> {
     );
   };
 
-  renderDesktopLink = (props: MenuLinkItem) => {
-    const { t } = this.props;
+  const DesktopLink = (props: MenuLinkItem) => {
     const { title, link } = props;
     return (
-      <Button onClick={() => this.handleScrollTo(link)}>
+      <Button onClick={() => handleScrollTo(link)}>
         {t(`SectionButtons.${title}`)}
       </Button>
     );
   };
 
-  renderDesktopLinks = () => {
-    const { homePage } = this.props;
+  const DesktopLinks = () => {
+    const { homePage } = props;
     if (!homePage) return null;
-
-    const DesktopLink = this.renderDesktopLink;
 
     return (
       <>
-        {map(this.getDrawerButtons(), (link, i) => (
+        {map(getDrawerButtons(), (link, i) => (
           <DesktopLink {...link} key={`desktop link ${i}`} />
         ))}
       </>
     );
   };
 
-  renderDrawerLink = (props: MenuLinkItem) => {
-    const { t } = this.props;
+  const DrawerLink = (props: MenuLinkItem) => {
     const { title, link, Icon } = props;
 
     return (
@@ -233,12 +211,11 @@ class Navbar extends Component<Props, State> {
     );
   };
 
-  renderHomePageLink = (props: MenuLinkItem) => {
-    const { t } = this.props;
+  const HomePageLink = (props: MenuLinkItem) => {
     const { title, link, Icon } = props;
 
     return (
-      <MenuItem onClick={() => this.handleScrollTo(link)}>
+      <MenuItem onClick={() => handleScrollTo(link)}>
         <IconButton disableRipple>
           <Icon />
         </IconButton>
@@ -247,15 +224,13 @@ class Navbar extends Component<Props, State> {
     );
   };
 
-  renderHomePageLinks = () => {
-    const { homePage } = this.props;
+  const HomePageLinks = () => {
+    const { homePage } = props;
     if (!homePage) return null;
-
-    const HomePageLink = this.renderHomePageLink;
 
     return (
       <>
-        {map(this.getDrawerButtons(), (link, i) => (
+        {map(getDrawerButtons(), (link, i) => (
           <HomePageLink {...link} key={`drawer link ${i}`} />
         ))}
         <Divider />
@@ -263,12 +238,7 @@ class Navbar extends Component<Props, State> {
     );
   };
 
-  renderDrawerMenu = () => {
-    const { classes } = this.props;
-    const LanguageMenu = this.renderLanguageMenu;
-    const HomePageLinks = this.renderHomePageLinks;
-    const DrawerLink = this.renderDrawerLink;
-
+  const DrawerMenu = () => {
     return (
       <Box display="flex" flexDirection="column" className={classes.grow}>
         <Box className={classes.drawerContainer}>
@@ -277,7 +247,7 @@ class Navbar extends Component<Props, State> {
           </Box>
           <Divider />
           <HomePageLinks />
-          {map(this.getPageLinks(), (link, i) => (
+          {map(getPageLinks(), (link, i) => (
             <DrawerLink {...link} key={`page link ${i}`} />
           ))}
           <Divider />
@@ -300,47 +270,36 @@ class Navbar extends Component<Props, State> {
     );
   };
 
-  render() {
-    const { classes } = this.props;
+  return (
+    <>
+      <HideOnScroll>
+        <AppBar>
+          <Toolbar>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              aria-label="open drawer"
+              onClick={handleDrawerMenuOpen}
+            >
+              <MenuIcon />
+            </IconButton>
 
-    const LanguageMenu = this.renderLanguageMenu;
-    const DrawerMenu = this.renderDrawerMenu;
-    const DesktopLinks = this.renderDesktopLinks;
+            <Box className={classes.grow} />
 
-    return (
-      <>
-        <HideOnScroll>
-          <AppBar>
-            <Toolbar>
-              <IconButton
-                edge="start"
-                className={classes.menuButton}
-                aria-label="open drawer"
-                onClick={this.handleDrawerMenuOpen}
-              >
-                <MenuIcon />
-              </IconButton>
+            <Box className={classes.sectionDesktop}>
+              <DesktopLinks />
+            </Box>
+            <LanguageMenu />
+            <DarkModeToggle />
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
 
-              <Box className={classes.grow} />
+      <Drawer open={state.drawerOpen} onClose={handleDrawerMenuClose}>
+        <DrawerMenu />
+      </Drawer>
+    </>
+  );
+};
 
-              <Box className={classes.sectionDesktop}>
-                <DesktopLinks />
-              </Box>
-              <LanguageMenu />
-              <DarkModeToggle />
-            </Toolbar>
-          </AppBar>
-        </HideOnScroll>
-
-        <Drawer
-          open={this.state.drawerOpen}
-          onClose={this.handleDrawerMenuClose}
-        >
-          <DrawerMenu />
-        </Drawer>
-      </>
-    );
-  }
-}
-
-export default withTranslation()(withStyles(useStyles)(Navbar));
+export default Navbar;

@@ -25,6 +25,7 @@ module.exports = {
           '@components': 'src/components',
           '@context': 'src/context',
           '@data': 'src/data',
+          '@hooks': 'src/hooks',
           '@images': 'src/images',
           '@i18n': 'src/i18n',
           '@pages': 'src/pages',

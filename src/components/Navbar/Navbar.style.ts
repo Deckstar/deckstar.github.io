@@ -1,6 +1,6 @@
-import { Theme, createStyles } from '@material-ui/core/styles';
+import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 
-const useStyles = (theme: Theme) =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     grow: {
       flexGrow: 1,
@@ -16,7 +16,7 @@ const useStyles = (theme: Theme) =>
     },
     languageSelect: {
       padding: '0px !important',
-      backgroundColor: 'unset !important'
+      backgroundColor: 'unset !important',
     },
     drawerContainer: {
       display: 'flex',
@@ -44,6 +44,7 @@ const useStyles = (theme: Theme) =>
         opacity: 0.7,
       },
     },
-  });
+  })
+);
 
 export default useStyles;
