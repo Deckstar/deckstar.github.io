@@ -55,7 +55,7 @@ const Footer = () => {
           &copy; 2019 – {currentYear} |{' '}
           <Link
             component={GatsbyLink}
-            to="acknowledgements"
+            to="/acknowledgements"
             underline="none"
             color="inherit"
             className={classes.link}

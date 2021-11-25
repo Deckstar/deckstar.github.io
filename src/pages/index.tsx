@@ -30,7 +30,7 @@ const Home = (pageProps: PageProps) => {
   return (
     <>
       <SEO pathname={pageProps.location.pathname} />
-      <Wrapper homePage>
+      <Wrapper>
         <Banner />
         <About />
         <Skills />

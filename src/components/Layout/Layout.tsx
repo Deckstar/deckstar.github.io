@@ -6,13 +6,12 @@ import '@assets/css/styles.scss';
 
 interface LayoutProps {
   children: ReactNode;
-  homePage?: boolean;
 }
 
-const Layout = ({ children, homePage }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <Navbar homePage={homePage} />
+      <Navbar />
       <Box component="main">{children}</Box>
       <Footer />
       <ZoomToTopButton />

@@ -1,18 +1,13 @@
-import React, { ReactNode } from 'react';
+import React, { FC } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Layout } from '@components';
 import { ThemeWrapper } from '@theme';
 
-interface WrapperProps {
-  children: ReactNode;
-  homePage?: boolean;
-}
-
-const Wrapper = ({ children, ...rest }: WrapperProps) => {
+const Wrapper: FC = ({ children }) => {
   return (
     <HelmetProvider>
       <ThemeWrapper>
-        <Layout {...rest}>{children}</Layout>
+        <Layout>{children}</Layout>
       </ThemeWrapper>
     </HelmetProvider>
   );
