@@ -35,10 +35,29 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-i18n',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        langKeyDefault: 'en',
-        useLangKeyLayout: false,
+        name: `locale`,
+        path: `${__dirname}/locales`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        languages: ['en', 'de', 'es', 'et', 'fr', 'hu', 'ru', 'se'],
+        defaultLanguage: 'en',
+        siteUrl,
+        i18nextOptions: {
+          defaultNS: 'common',
+          // debug: true,
+          lowerCaseLng: true,
+          saveMissing: false,
+          interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+          },
+          nsSeparator: false,
+        },
+        pages: [],
       },
     },
     `gatsby-plugin-material-ui`,

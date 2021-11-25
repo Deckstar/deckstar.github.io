@@ -1,50 +1,48 @@
 {
-  "fr": {
-    "About": {
-      "AboutMe": "À propos",
-      "Description": "<0>Je suis un programmeur autodidacte de Tallinn, en Estonie.</0><1>Je suis développeur depuis plus de {{ yearsExperience }} ans. Professionnellement, je me concentre principalement sur la création de <4>sites Web</4> avec React et NodeJS, et des  <8>applications</8> mobiles natives avec React Native. Dans mon temps libre, je travaille également avec d'autres outils de programmation.</1><2>Mon parcours vers la programmation est peut-être un peu étrange. J'ai commencé ma carrière en vivant à travers toute l'Europe et en obtenant deux diplômes en économie et en finance, mais j'ai vite compris que le monde de la finance n'était pas pour moi. Au lieu de cela, j'ai décidé de me plonger profondément dans la programmation et de basculer vers le <2>développement logiciel et Web à plein temps</2>.</2><3>J'ai toujours été <2>intéressé par un large éventail de domaines</2> — la science, la musique, les langues, par exemple — et avec la programmation, j'ai trouvé que je pouvais poursuivre toutes ces passions en même temps. En prime, je pourrais aussi aider les gens. J'espère que nous pourrons travailler ensemble!</3>",
-      "PhotoDescription": "Je code 🤷‍♂️",
-      "ViewCV": "Afficher le CV"
-    },
+  "About": {
+    "AboutMe": "À propos",
+    "Description": "<0>Je suis un programmeur autodidacte de Tallinn, en Estonie.</0><1>Je suis développeur depuis plus de {{ yearsExperience }} ans. Professionnellement, je me concentre principalement sur la création de <4>sites Web</4> avec React et NodeJS, et des  <8>applications</8> mobiles natives avec React Native. Dans mon temps libre, je travaille également avec d'autres outils de programmation.</1><2>Mon parcours vers la programmation est peut-être un peu étrange. J'ai commencé ma carrière en vivant à travers toute l'Europe et en obtenant deux diplômes en économie et en finance, mais j'ai vite compris que le monde de la finance n'était pas pour moi. Au lieu de cela, j'ai décidé de me plonger profondément dans la programmation et de basculer vers le <2>développement logiciel et Web à plein temps</2>.</2><3>J'ai toujours été <2>intéressé par un large éventail de domaines</2> — la science, la musique, les langues, par exemple — et avec la programmation, j'ai trouvé que je pouvais poursuivre toutes ces passions en même temps. En prime, je pourrais aussi aider les gens. J'espère que nous pourrons travailler ensemble!</3>",
+    "PhotoDescription": "Je code 🤷‍♂️",
+    "ViewCV": "Afficher le CV"
+  },
+  "Acknowledgements": "Remerciements",
+  "Banner": {
+    "DexterSibirtsev": "Dexter Sibirtsev",
+    "Experience": "Expérience",
+    "HelloIAmAProgrammer": "Bonjour! Je suis un programmeur professionnel, spécialisé dans les sites Web et les applications mobiles.",
+    "SoftwareDeveloper": "Développeur de Logiciels"
+  },
+  "Blog": {
+    "Blog": "Blog"
+  },
+  "Contact": {
+    "Contact": "Contact",
+    "GetInTouch": "Contactez-nous! Vous pouvez me trouver sur l'un de ces liens",
+    "SendEmail": "Ou envoyez-moi simplement un e-mail!"
+  },
+  "Education": {
+    "Description": "Je suis un programmeur complètement autodidacte. J'ai appris en regardant des vidéos YouTube, en lisant des livres et en suivant des cours en ligne. Pourtant, j'ai beaucoup apprécié mon éducation formelle. C'était très international, donc j'ai été dans un monde cosmopolite pendant presque toute ma vie. Grâce à cela, j'ai pu apprendre à parler plusieurs langues et interagir avec des personnes du monde entier.",
+    "Education": "Education"
+  },
+  "Experience": {
+    "TranslationsUnderConstruction": "Traductions en construction"
+  },
+  "PageLinks": {
     "Acknowledgements": "Remerciements",
-    "Banner": {
-      "DexterSibirtsev": "Dexter Sibirtsev",
-      "Experience": "Expérience",
-      "HelloIAmAProgrammer": "Bonjour! Je suis un programmeur professionnel, spécialisé dans les sites Web et les applications mobiles.",
-      "SoftwareDeveloper": "Développeur de Logiciels"
-    },
-    "Blog": {
-      "Blog": "Blog"
-    },
-    "Contact": {
-      "Contact": "Contact",
-      "GetInTouch": "Contactez-nous! Vous pouvez me trouver sur l'un de ces liens",
-      "SendEmail": "Ou envoyez-moi simplement un e-mail!"
-    },
-    "Education": {
-      "Description": "Je suis un programmeur complètement autodidacte. J'ai appris en regardant des vidéos YouTube, en lisant des livres et en suivant des cours en ligne. Pourtant, j'ai beaucoup apprécié mon éducation formelle. C'était très international, donc j'ai été dans un monde cosmopolite pendant presque toute ma vie. Grâce à cela, j'ai pu apprendre à parler plusieurs langues et interagir avec des personnes du monde entier.",
-      "Education": "Education"
-    },
-    "Experience": {
-      "TranslationsUnderConstruction": "Traductions en construction"
-    },
-    "PageLinks": {
-      "Acknowledgements": "Remerciements",
-      "Home": "Accueil"
-    },
-    "SectionButtons": {
-      "About": "À propos/CV",
-      "Blog": "Blog",
-      "Contact": "Contact",
-      "Experience": "Expérience",
-      "Skills": "Compétences"
-    },
-    "Skills": {
-      "Overview": "<0>Voici une liste de mes outils préférés avec lesquels j'ai travaillé. J'utilise la plupart d'entre eux chaque semaine, et une grande partie tous les jours.</0><1>J'admets que cette section pourrait paraître trop détaillée. C'est juste que j'ai toujours adoré regarder des collections colorées. La règle ici est la suivante: si je l'utilise depuis plus d'une semaine, et s'il a un logo, alors c'est sur la liste.</1>",
-      "Skills": "Compétences"
-    },
-    "Work": {
-      "Work": "Travail"
-    }
+    "Home": "Accueil"
+  },
+  "SectionButtons": {
+    "About": "À propos/CV",
+    "Blog": "Blog",
+    "Contact": "Contact",
+    "Experience": "Expérience",
+    "Skills": "Compétences"
+  },
+  "Skills": {
+    "Overview": "<0>Voici une liste de mes outils préférés avec lesquels j'ai travaillé. J'utilise la plupart d'entre eux chaque semaine, et une grande partie tous les jours.</0><1>J'admets que cette section pourrait paraître trop détaillée. C'est juste que j'ai toujours adoré regarder des collections colorées. La règle ici est la suivante: si je l'utilise depuis plus d'une semaine, et s'il a un logo, alors c'est sur la liste.</1>",
+    "Skills": "Compétences"
+  },
+  "Work": {
+    "Work": "Travail"
   }
 }

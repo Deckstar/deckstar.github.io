@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { Box, Button, Container, Link, Typography } from '@material-ui/core';
 import { map } from 'lodash';
 import useStyles from './Contact.style';

@@ -1,6 +1,5 @@
 import React from 'react';
-import { WithTranslation } from 'react-i18next';
-import { PageProps } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import {
   About,
   Banner,
@@ -11,7 +10,23 @@ import {
 } from '@sections/home';
 import { SEO, Wrapper } from '@components';
 
-const Home = (pageProps: PageProps & WithTranslation) => {
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(
+      filter: { ns: { in: ["common"] }, language: { eq: $language } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
+
+const Home = (pageProps: PageProps) => {
   return (
     <>
       <SEO pathname={pageProps.location.pathname} />

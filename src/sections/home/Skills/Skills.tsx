@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trans, useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import { Box, Container, Typography } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import { graphql, useStaticQuery } from 'gatsby';

@@ -1,7 +1,5 @@
 {
-  "se": {
-    "Banner": {
-      "SoftwareDeveloper": "Mjukvaruutvecklare"
-    }
+  "Banner": {
+    "SoftwareDeveloper": "Mjukvaruutvecklare"
   }
 }

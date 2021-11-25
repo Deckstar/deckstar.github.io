@@ -1,5 +1,5 @@
 import React, { Component, ComponentType, ReactNode } from 'react';
-import { WithTranslation, withTranslation } from 'react-i18next';
+import { WithTranslation, withTranslation } from 'gatsby-plugin-react-i18next';
 import {
   AppBar,
   Box,
@@ -25,7 +25,7 @@ import {
   EmojiPeople as AcknowledgementsIcon,
   Work as WorkIcon,
 } from '@material-ui/icons';
-import { Link as GatsbyLink } from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby-plugin-react-i18next';
 import { scroller } from 'react-scroll';
 import { find, get, map } from 'lodash';
 import langMap from '@i18n/utils/langMap';
