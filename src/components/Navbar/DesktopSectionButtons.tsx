@@ -5,7 +5,7 @@ import { map } from 'lodash';
 import React from 'react';
 import { scroller } from 'react-scroll';
 
-import { DRAWER_BUTTONS, MenuLinkItem } from './DrawerMenu';
+import { DRAWER_BUTTONS, MenuSectionItem } from './DrawerMenu';
 
 export const handleScrollTo = (id: string) =>
   scroller.scrollTo(id, {
@@ -13,19 +13,19 @@ export const handleScrollTo = (id: string) =>
     smooth: true,
   });
 
-const DesktopLink = (props: MenuLinkItem) => {
-  const { title, link } = props;
+const DesktopSectionButton = (props: MenuSectionItem) => {
+  const { title, id } = props;
 
   const { t } = useTranslation();
 
   return (
-    <Button onClick={() => handleScrollTo(link)}>
+    <Button onClick={() => handleScrollTo(id)}>
       {t(`SectionButtons.${title}`)}
     </Button>
   );
 };
 
-const DesktopLinks = () => {
+const DesktopSectionButtons = () => {
   const { route } = useRouter();
 
   const isHomePage = route === '/';
@@ -37,10 +37,10 @@ const DesktopLinks = () => {
   return (
     <>
       {map(DRAWER_BUTTONS, (link, i) => (
-        <DesktopLink {...link} key={`desktop link ${i}`} />
+        <DesktopSectionButton {...link} key={`desktop link ${i}`} />
       ))}
     </>
   );
 };
 
-export default DesktopLinks;
+export default DesktopSectionButtons;

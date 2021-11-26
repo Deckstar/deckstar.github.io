@@ -5,7 +5,7 @@ import { Menu as MenuIcon } from '@material-ui/icons';
 import React from 'react';
 
 import { NavbarContextProvider } from './Context';
-import DesktopLinks from './DesktopLinks';
+import DesktopSectionButtons from './DesktopSectionButtons';
 import DrawerMenu from './DrawerMenu';
 import LanguageMenu from './LanguageMenu';
 import useStyles from './Navbar.style';
@@ -47,7 +47,7 @@ const Navbar = () => {
             <Box className={classes.grow} />
 
             <Box className={classes.sectionDesktop}>
-              <DesktopLinks />
+              <DesktopSectionButtons />
             </Box>
             <LanguageMenu />
             <DarkModeToggle />

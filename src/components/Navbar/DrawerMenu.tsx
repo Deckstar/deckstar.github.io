@@ -18,39 +18,45 @@ import {
 import { map } from 'lodash';
 import React, { ComponentType } from 'react';
 
-import { handleScrollTo } from './DesktopLinks';
+import { handleScrollTo } from './DesktopSectionButtons';
 import useStyles from './Navbar.style';
 
-export interface MenuLinkItem {
+interface MenuItemType {
   title: string;
-  link: string;
   Icon: ComponentType;
 }
 
-export const DRAWER_BUTTONS: MenuLinkItem[] = [
+interface MenuLinkItem extends MenuItemType {
+  link: string;
+}
+export interface MenuSectionItem extends MenuItemType {
+  id: string;
+}
+
+export const DRAWER_BUTTONS: MenuSectionItem[] = [
   {
     title: 'About',
-    link: 'about',
+    id: 'about',
     Icon: AboutIcon,
   },
   {
     title: 'Skills',
-    link: 'skills',
+    id: 'skills',
     Icon: SkillIcon,
   },
   {
     title: 'Experience',
-    link: 'experience',
+    id: 'experience',
     Icon: WorkIcon,
   },
   {
     title: 'Blog',
-    link: 'blog',
+    id: 'blog',
     Icon: BlogIcon,
   },
   {
     title: 'Contact',
-    link: 'contact',
+    id: 'contact',
     Icon: ContactIcon,
   },
 ];
@@ -85,13 +91,13 @@ const DrawerLink = (props: MenuLinkItem) => {
   );
 };
 
-const HomePageLink = (props: MenuLinkItem) => {
-  const { title, link, Icon } = props;
+const HomePageSectionButton = (props: MenuSectionItem) => {
+  const { title, id, Icon } = props;
 
   const { t } = useTranslation();
 
   return (
-    <MenuItem onClick={() => handleScrollTo(link)}>
+    <MenuItem onClick={() => handleScrollTo(id)}>
       <IconButton disableRipple>
         <Icon />
       </IconButton>
@@ -100,7 +106,7 @@ const HomePageLink = (props: MenuLinkItem) => {
   );
 };
 
-const HomePageLinks = () => {
+const HomePageSectionButtons = () => {
   const { route } = useRouter();
 
   const isHomePage = route === '/';
@@ -111,8 +117,8 @@ const HomePageLinks = () => {
 
   return (
     <>
-      {map(DRAWER_BUTTONS, (link, i) => (
-        <HomePageLink {...link} key={`drawer link ${i}`} />
+      {map(DRAWER_BUTTONS, (section, i) => (
+        <HomePageSectionButton {...section} key={`drawer link ${i}`} />
       ))}
       <Divider />
     </>
@@ -129,7 +135,9 @@ const DrawerMenu = () => {
           <img src={icons.main} className={classes.drawerLogo} />
         </Box>
         <Divider />
-        <HomePageLinks />
+
+        <HomePageSectionButtons />
+
         {map(PAGE_LINKS, (link, i) => (
           <DrawerLink {...link} key={`page link ${i}`} />
         ))}
