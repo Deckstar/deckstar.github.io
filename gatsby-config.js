@@ -32,6 +32,7 @@ module.exports = {
           '@sections': 'src/sections',
           '@theme': 'src/theme',
           '@typescript': 'src/typescript',
+          '@utils': 'src/utils',
         },
       },
     },

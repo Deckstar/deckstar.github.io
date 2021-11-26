@@ -1,4 +1,5 @@
 import socialLinks from '@data/socialLinks';
+import { useRouter } from '@hooks/useRouter';
 import { icons } from '@images';
 import { Box, Divider, IconButton, Link, MenuItem } from '@material-ui/core';
 import {
@@ -10,7 +11,6 @@ import {
   Home as HomeIcon,
   Work as WorkIcon,
 } from '@material-ui/icons';
-import { globalHistory } from '@reach/router';
 import {
   Link as GatsbyLink,
   useTranslation,
@@ -101,9 +101,9 @@ const HomePageLink = (props: MenuLinkItem) => {
 };
 
 const HomePageLinks = () => {
-  const path = globalHistory.location.pathname;
+  const { route } = useRouter();
 
-  const isHomePage = path === '/';
+  const isHomePage = route === '/';
 
   if (!isHomePage) {
     return null;

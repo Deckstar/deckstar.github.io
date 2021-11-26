@@ -1,5 +1,5 @@
+import { useRouter } from '@hooks/useRouter';
 import { Button } from '@material-ui/core';
-import { globalHistory } from '@reach/router';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
 import React from 'react';
@@ -26,9 +26,9 @@ const DesktopLink = (props: MenuLinkItem) => {
 };
 
 const DesktopLinks = () => {
-  const path = globalHistory.location.pathname;
+  const { route } = useRouter();
 
-  const isHomePage = path === '/';
+  const isHomePage = route === '/';
 
   if (!isHomePage) {
     return null;

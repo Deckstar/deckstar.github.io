@@ -1,4 +1,4 @@
-import langMap from '@i18n/utils/langMap';
+import { langMap } from '@utils/languages';
 import React, { createContext, Dispatch, FC } from 'react';
 
 import { NavbarState } from './Navbar';

@@ -1,6 +1,6 @@
-import langMap from '@i18n/utils/langMap';
 import { IconButton, MenuItem, Select } from '@material-ui/core';
 import { SelectInputProps } from '@material-ui/core/Select/SelectInput';
+import { langMap, LanguageCode, LanguageObject } from '@utils/languages';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { get, map } from 'lodash';
 import React, { ReactNode, useCallback, useContext } from 'react';
@@ -8,7 +8,7 @@ import React, { ReactNode, useCallback, useContext } from 'react';
 import { NavbarContext } from './Context';
 import useStyles from './Navbar.style';
 
-const FlagChoice = (props: Language) => {
+const FlagChoice = (props: LanguageObject) => {
   const { code, label, flag } = props;
 
   return (
@@ -47,7 +47,7 @@ const LanguageMenu = () => {
   const { changeLanguage } = useI18next();
 
   const handleChangeLanguage = useCallback(
-    (event: React.ChangeEvent<{ value: Language['code'] }>) => {
+    (event: React.ChangeEvent<{ value: LanguageCode }>) => {
       const newCode = get(event, 'target.value', langMap[0].code);
 
       changeLanguage(newCode);
