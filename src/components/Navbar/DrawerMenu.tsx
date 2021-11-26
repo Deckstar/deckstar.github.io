@@ -63,7 +63,7 @@ const PAGE_LINKS: MenuLinkItem[] = [
   },
   {
     title: 'Acknowledgements',
-    link: 'acknowledgements',
+    link: '/acknowledgements',
     Icon: AcknowledgementsIcon,
   },
 ];
