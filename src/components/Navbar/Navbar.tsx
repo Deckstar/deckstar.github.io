@@ -2,7 +2,6 @@ import { DarkModeToggle, HideOnScroll } from '@components';
 import { useLocalState } from '@hooks/useLocalState';
 import { AppBar, Box, Drawer, IconButton, Toolbar } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
-import { langMap, LanguageObject } from '@utils/languages';
 import React from 'react';
 
 import { NavbarContextProvider } from './Context';
@@ -13,7 +12,6 @@ import useStyles from './Navbar.style';
 
 export interface NavbarState {
   drawerOpen: boolean;
-  langValue: LanguageObject;
 }
 
 const Navbar = () => {
@@ -21,7 +19,6 @@ const Navbar = () => {
 
   const localState = useLocalState<NavbarState>({
     drawerOpen: false,
-    langValue: langMap[0],
   });
   const [state, setState] = localState;
 

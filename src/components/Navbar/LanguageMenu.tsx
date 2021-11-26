@@ -1,40 +1,46 @@
-import { IconButton, MenuItem, Select } from '@material-ui/core';
+import {
+  IconButton,
+  IconButtonProps,
+  MenuItem,
+  Select,
+} from '@material-ui/core';
 import { SelectInputProps } from '@material-ui/core/Select/SelectInput';
 import { langMap, LanguageCode, LanguageObject } from '@utils/languages';
 import { useI18next } from 'gatsby-plugin-react-i18next';
-import { get, map } from 'lodash';
-import React, { ReactNode, useCallback, useContext } from 'react';
+import { find, map } from 'lodash';
+import React, { useCallback } from 'react';
 
-import { NavbarContext } from './Context';
 import useStyles from './Navbar.style';
 
+const Flag = (props: { code: LanguageCode; flag: any } & IconButtonProps) => {
+  const { code, flag, ...iconButtonProps } = props;
+
+  return (
+    <IconButton {...iconButtonProps} color="inherit">
+      <img src={flag} alt={`${code} flag`} style={{ height: 24 }} />
+    </IconButton>
+  );
+};
 const FlagChoice = (props: LanguageObject) => {
   const { code, label, flag } = props;
 
   return (
     <>
-      <IconButton disabled color="inherit">
-        <img src={flag} alt={`${code} flag`} style={{ height: 24 }} />
-      </IconButton>
+      <Flag disabled code={code} flag={flag} />
       {label}
     </>
   );
 };
 
-const SelectedFlag = (value: any): ReactNode => {
-  const [state] = useContext(NavbarContext);
-  const { langValue } = state;
-
-  if (!langValue || !value) {
+const SelectedFlag = (value: any) => {
+  if (!value) {
     return null;
   }
 
-  const { flag, code } = langValue;
-  return (
-    <IconButton color="inherit">
-      <img src={flag} alt={`${code} flag`} style={{ height: 24 }} />
-    </IconButton>
-  );
+  const currentLang = find(langMap, ({ code }) => code === value) || langMap[0];
+
+  const { flag, code } = currentLang;
+  return <Flag code={code} flag={flag} />;
 };
 
 const LanguageInputComponent = () => {
@@ -42,34 +48,40 @@ const LanguageInputComponent = () => {
 };
 
 const LanguageMenu = () => {
-  const [state] = useContext(NavbarContext);
   const classes = useStyles();
-  const { changeLanguage } = useI18next();
+  const { changeLanguage, language } = useI18next();
 
-  const handleChangeLanguage = useCallback(
-    (event: React.ChangeEvent<{ value: LanguageCode }>) => {
-      const newCode = get(event, 'target.value', langMap[0].code);
+  const handleChangeLanguage = useCallback<
+    NonNullable<SelectInputProps['onChange']>
+  >(
+    async (event) => {
+      const defaultLang = langMap[0];
+      const newCode = (event?.target?.value ??
+        defaultLang.code) as LanguageCode;
 
-      changeLanguage(newCode);
+      await changeLanguage(newCode);
     },
     [changeLanguage]
   );
 
   return (
     <Select
-      value={state.langValue?.code || ''}
-      onChange={handleChangeLanguage as SelectInputProps['onChange']}
+      value={language as LanguageCode}
+      onChange={handleChangeLanguage}
       disableUnderline
       IconComponent={LanguageInputComponent}
       inputProps={{ name: 'language' }}
       classes={{ select: classes.languageSelect }}
       renderValue={SelectedFlag}
     >
-      {map(langMap, (lang) => (
-        <MenuItem value={lang.code} key={`language ${lang.code}`}>
-          <FlagChoice {...lang} />
-        </MenuItem>
-      ))}
+      {map(langMap, (lang) => {
+        const { code } = lang || {};
+        return (
+          <MenuItem key={code} value={code}>
+            <FlagChoice {...lang} />
+          </MenuItem>
+        );
+      })}
     </Select>
   );
 };
