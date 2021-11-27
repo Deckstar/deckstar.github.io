@@ -1,9 +1,9 @@
 import { Context } from '@context';
-import { IconButton } from '@material-ui/core';
 import {
   Brightness4 as DarkIcon,
   Brightness7 as LightIcon,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
+import { IconButton } from '@mui/material';
 import React, { useContext } from 'react';
 
 const DarkModeIcon = (props: { darkMode: boolean }) => {
@@ -20,7 +20,7 @@ const DarkModeToggle = () => {
   const { darkMode, toggleDarkMode } = useContext(Context);
 
   return (
-    <IconButton onClick={toggleDarkMode}>
+    <IconButton onClick={toggleDarkMode} size="large">
       <DarkModeIcon darkMode={!!darkMode} />
     </IconButton>
   );

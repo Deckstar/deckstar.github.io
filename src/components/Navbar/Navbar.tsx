@@ -1,7 +1,7 @@
 import { DarkModeToggle, HideOnScroll } from '@components';
 import { useLocalState } from '@hooks/useLocalState';
-import { AppBar, Box, Drawer, IconButton, Toolbar } from '@material-ui/core';
-import { Menu as MenuIcon } from '@material-ui/icons';
+import { Menu as MenuIcon } from '@mui/icons-material';
+import { AppBar, Box, Drawer, IconButton, Toolbar } from '@mui/material';
 import React from 'react';
 
 import { NavbarContextProvider } from './Context';
@@ -40,6 +40,7 @@ const Navbar = () => {
               className={classes.menuButton}
               aria-label="open drawer"
               onClick={handleDrawerMenuOpen}
+              size="large"
             >
               <MenuIcon />
             </IconButton>

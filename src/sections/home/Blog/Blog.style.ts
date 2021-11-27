@@ -1,4 +1,6 @@
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { Theme } from '@mui/material/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -13,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
         borderRadius: '50% / 5%',
       },
 
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('lg')]: {
         padding: '50px 0',
         borderRadius: '400% 200% / 40%',
       },

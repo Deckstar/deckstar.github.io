@@ -1,7 +1,6 @@
 import socialLinks from '@data/socialLinks';
 import { useRouter } from '@hooks/useRouter';
 import { icons } from '@images';
-import { Box, Divider, IconButton, Link, MenuItem } from '@material-ui/core';
 import {
   AccountCircle as AboutIcon,
   AlternateEmail as ContactIcon,
@@ -10,7 +9,8 @@ import {
   EmojiPeople as AcknowledgementsIcon,
   Home as HomeIcon,
   Work as WorkIcon,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
+import { Box, Divider, IconButton, Link, MenuItem } from '@mui/material';
 import {
   Link as GatsbyLink,
   useTranslation,
@@ -82,7 +82,7 @@ const DrawerLink = (props: MenuLinkItem) => {
   return (
     <Link component={GatsbyLink} to={link} color="inherit">
       <MenuItem>
-        <IconButton disableRipple>
+        <IconButton disableRipple size="large">
           <Icon />
         </IconButton>
         {t(`PageLinks.${title}`)}
@@ -98,7 +98,7 @@ const HomePageSectionButton = (props: MenuSectionItem) => {
 
   return (
     <MenuItem onClick={() => handleScrollTo(id)}>
-      <IconButton disableRipple>
+      <IconButton disableRipple size="large">
         <Icon />
       </IconButton>
       {t(`SectionButtons.${title}`)}

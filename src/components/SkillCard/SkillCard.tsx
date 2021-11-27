@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardHeader } from '@material-ui/core';
+import { Box, Card, CardContent, CardHeader } from '@mui/material';
 import { SkillCardProps, SkillItem } from '@typescript/@types/skills';
 import GatsbyImage from 'gatsby-image';
 import { map, size } from 'lodash';

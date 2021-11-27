@@ -1,4 +1,4 @@
-import { Box, Tooltip, Typography } from '@material-ui/core';
+import { Box, Tooltip, Typography } from '@mui/material';
 import { ExperienceItemProps } from '@typescript/@types/experience';
 import GatsbyImage from 'gatsby-image';
 import React from 'react';

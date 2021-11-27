@@ -1,24 +1,37 @@
 import { Context } from '@context';
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import {
+  createTheme,
+  CssBaseline,
+  responsiveFontSizes,
+  StyledEngineProvider,
+  Theme,
+  ThemeProvider,
+} from '@mui/material';
 import React, { ReactNode, useContext } from 'react';
 
 import { darkTheme, lightTheme } from './themes';
 
-const Theme = (props: { children: ReactNode }) => {
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
+const ThemeWrapper = (props: { children: ReactNode }) => {
   const { children } = props;
   const { darkMode } = useContext(Context);
 
   return (
-    <ThemeProvider
-      theme={responsiveFontSizes(
-        createMuiTheme(darkMode ? darkTheme : lightTheme)
-      )}
-    >
-      <CssBaseline />
-      {children}
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider
+        theme={responsiveFontSizes(
+          createTheme(darkMode ? darkTheme : lightTheme)
+        )}
+      >
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 };
 
-export default Theme;
+export default ThemeWrapper;

@@ -3,8 +3,8 @@ import {
   IconButtonProps,
   MenuItem,
   Select,
-} from '@material-ui/core';
-import { SelectInputProps } from '@material-ui/core/Select/SelectInput';
+  SelectProps,
+} from '@mui/material';
 import { langMap, LanguageCode, LanguageObject } from '@utils/languages';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { find, map } from 'lodash';
@@ -16,7 +16,7 @@ const Flag = (props: { code: LanguageCode; flag: any } & IconButtonProps) => {
   const { code, flag, ...iconButtonProps } = props;
 
   return (
-    <IconButton {...iconButtonProps} color="inherit">
+    <IconButton {...iconButtonProps} color="inherit" size="large">
       <img src={flag} alt={`${code} flag`} style={{ height: 24 }} />
     </IconButton>
   );
@@ -52,7 +52,7 @@ const LanguageMenu = () => {
   const { changeLanguage, language } = useI18next();
 
   const handleChangeLanguage = useCallback<
-    NonNullable<SelectInputProps['onChange']>
+    NonNullable<SelectProps<LanguageCode>['onChange']>
   >(
     async (event) => {
       const defaultLang = langMap[0];

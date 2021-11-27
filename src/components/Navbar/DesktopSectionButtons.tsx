@@ -1,5 +1,5 @@
 import { useRouter } from '@hooks/useRouter';
-import { Button } from '@material-ui/core';
+import { Button } from '@mui/material';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
 import React from 'react';

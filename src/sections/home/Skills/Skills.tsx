@@ -1,6 +1,6 @@
 import { SkillCard } from '@components';
-import { Box, Container, Typography } from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
+import { Box, Container, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { SkillCardProps } from '@typescript/@types/skills';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';

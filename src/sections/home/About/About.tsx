@@ -7,7 +7,7 @@ import {
   Container,
   Link,
   Typography,
-} from '@material-ui/core';
+} from '@mui/material';
 import dayjs from 'dayjs';
 import { graphql, useStaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';

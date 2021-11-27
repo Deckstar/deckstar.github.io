@@ -1,4 +1,10 @@
 import {
+  CalendarToday as DateIcon,
+  FavoriteBorder as LoveIcon,
+  Launch as LaunchIcon,
+  Link as LinkIcon,
+} from '@mui/icons-material';
+import {
   Badge,
   Box,
   Button,
@@ -10,13 +16,7 @@ import {
   Paper,
   Tooltip,
   Typography,
-} from '@material-ui/core';
-import {
-  CalendarToday as DateIcon,
-  FavoriteBorder as LoveIcon,
-  Launch as LaunchIcon,
-  Link as LinkIcon,
-} from '@material-ui/icons';
+} from '@mui/material';
 import dayjs from 'dayjs';
 import { graphql, useStaticQuery } from 'gatsby';
 import GatsbyImage, { GatsbyImageProps } from 'gatsby-image';

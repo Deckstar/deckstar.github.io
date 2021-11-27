@@ -1,7 +1,7 @@
 import '@assets/css/styles.scss';
 
 import { Navbar, ZoomButtons } from '@components';
-import { Box } from '@material-ui/core';
+import { Box } from '@mui/material';
 import React, { ReactNode } from 'react';
 
 import Footer from './Subcomponents/Footer';

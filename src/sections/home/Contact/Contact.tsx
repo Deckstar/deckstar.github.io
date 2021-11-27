@@ -1,5 +1,5 @@
 import socialLinks from '@data/socialLinks';
-import { Box, Button, Container, Link, Typography } from '@material-ui/core';
+import { Box, Button, Container, Link, Typography } from '@mui/material';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
 import React from 'react';

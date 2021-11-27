@@ -1,12 +1,12 @@
-import { ThemeOptions } from '@material-ui/core';
-import { deepOrange, lightBlue, orange } from '@material-ui/core/colors';
+import { ThemeOptions } from '@mui/material';
+import { deepOrange, lightBlue, orange } from '@mui/material/colors';
 
 const commonTheme: ThemeOptions = {};
 
 export const lightTheme: ThemeOptions = {
   ...commonTheme,
   palette: {
-    type: 'light',
+    mode: 'light',
     primary: {
       main: lightBlue[400],
       contrastText: lightBlue[100],
@@ -21,7 +21,7 @@ export const lightTheme: ThemeOptions = {
 export const darkTheme: ThemeOptions = {
   ...commonTheme,
   palette: {
-    type: 'dark',
+    mode: 'dark',
     primary: {
       main: lightBlue[800],
       contrastText: lightBlue[900],

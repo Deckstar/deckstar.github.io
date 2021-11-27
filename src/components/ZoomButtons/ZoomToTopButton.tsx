@@ -1,6 +1,8 @@
-import { Box, Fab, useScrollTrigger, Zoom } from '@material-ui/core';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { KeyboardArrowUp as UpIcon } from '@material-ui/icons';
+import { KeyboardArrowUp as UpIcon } from '@mui/icons-material';
+import { Box, Fab, useScrollTrigger, Zoom } from '@mui/material';
+import { Theme } from '@mui/material/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 
@@ -40,7 +42,7 @@ const ZoomToTopButton = () => {
           color="secondary"
           size="small"
           aria-label="scroll back to top"
-          classes={{ label: classes.zoomButtonLabel }}
+          className={classes.zoomButtonLabel}
         >
           <UpIcon />
         </Fab>

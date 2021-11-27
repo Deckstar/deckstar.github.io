@@ -1,5 +1,5 @@
 import { ExperienceItem } from '@components';
-import { Box, Container, Typography } from '@material-ui/core';
+import { Box, Container, Typography } from '@mui/material';
 import { ExperienceItemProps } from '@typescript/@types/experience';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
