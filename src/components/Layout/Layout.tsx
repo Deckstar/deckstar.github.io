@@ -1,6 +1,6 @@
 import '@assets/css/styles.scss';
 
-import { Navbar, ZoomToTopButton } from '@components';
+import { Navbar, ZoomButtons } from '@components';
 import { Box } from '@material-ui/core';
 import React, { ReactNode } from 'react';
 
@@ -16,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       <Box component="main">{children}</Box>
       <Footer />
-      <ZoomToTopButton />
+      <ZoomButtons />
     </>
   );
 };

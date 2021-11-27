@@ -8,4 +8,4 @@ export { default as Navbar } from './Navbar/Navbar';
 export { default as SEO } from './SEO/SEO';
 export { default as SkillCard } from './SkillCard/SkillCard';
 export { default as Wrapper } from './Wrapper/Wrapper';
-export { default as ZoomToTopButton } from './ZoomToTopButton/ZoomToTopButton';
+export { default as ZoomButtons } from './ZoomButtons/ZoomButtons';
