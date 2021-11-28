@@ -73,6 +73,7 @@ const LanguageMenu = () => {
       inputProps={{ name: 'language' }}
       classes={{ select: classes.languageSelect }}
       renderValue={SelectedFlag}
+      variant="standard"
     >
       {map(langMap, (lang) => {
         const { code } = lang || {};

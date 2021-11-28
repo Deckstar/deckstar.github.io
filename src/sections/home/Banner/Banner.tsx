@@ -97,6 +97,7 @@ const Banner = () => {
               const { title, link } = button;
               return (
                 <Button
+                  color="grey"
                   className={classes.button}
                   variant="contained"
                   onClick={() => handleScrollTo(link)}

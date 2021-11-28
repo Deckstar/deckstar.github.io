@@ -4,29 +4,31 @@ import {
   CssBaseline,
   responsiveFontSizes,
   StyledEngineProvider,
-  Theme,
   ThemeProvider,
 } from '@mui/material';
-import React, { ReactNode, useContext } from 'react';
+import React, { ReactNode, useContext, useMemo } from 'react';
 
-import { darkTheme, lightTheme } from './themes';
-
-declare module '@mui/styles/defaultTheme' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
+import { darkTheme, lightTheme, makeOverrides } from './themes';
 
 const ThemeWrapper = (props: { children: ReactNode }) => {
   const { children } = props;
   const { darkMode } = useContext(Context);
 
+  const activeTheme = useMemo(() => {
+    const colorTheme = darkMode ? darkTheme : lightTheme;
+
+    const generatedTheme = createTheme(colorTheme);
+    const themeOverrides = makeOverrides(generatedTheme);
+
+    const combinedTheme = createTheme(generatedTheme, themeOverrides);
+
+    const responsiveTheme = responsiveFontSizes(combinedTheme);
+    return responsiveTheme;
+  }, [darkMode]);
+
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeProvider
-        theme={responsiveFontSizes(
-          createTheme(darkMode ? darkTheme : lightTheme)
-        )}
-      >
+      <ThemeProvider theme={activeTheme}>
         <CssBaseline />
         {children}
       </ThemeProvider>

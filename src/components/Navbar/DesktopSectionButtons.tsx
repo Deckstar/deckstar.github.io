@@ -19,7 +19,7 @@ const DesktopSectionButton = (props: MenuSectionItem) => {
   const { t } = useTranslation();
 
   return (
-    <Button onClick={() => handleScrollTo(id)}>
+    <Button color="grey" onClick={() => handleScrollTo(id)}>
       {t(`SectionButtons.${title}`)}
     </Button>
   );

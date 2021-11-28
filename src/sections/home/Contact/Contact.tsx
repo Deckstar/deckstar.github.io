@@ -29,7 +29,9 @@ const Contact = () => {
           </Box>
           <Typography paragraph>{t('Contact.SendEmail')}:</Typography>
           <Link href="mailto:dexter.sibirtsev@gmail.com">
-            <Button variant="contained">dexter.sibirtsev@gmail.com</Button>
+            <Button color="grey" variant="contained">
+              dexter.sibirtsev@gmail.com
+            </Button>
           </Link>
         </Box>
       </Container>

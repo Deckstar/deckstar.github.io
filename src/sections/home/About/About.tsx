@@ -89,6 +89,7 @@ const About = () => {
             </Box>
             <Link href={resumePDF} target="_blank" className={classes.cvLink}>
               <Button
+                color="grey"
                 variant="contained"
                 style={{ marginBottom: '2em' }}
                 id="cv"
