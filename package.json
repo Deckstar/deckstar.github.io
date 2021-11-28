@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "yarn gatsby-preload-fonts gatsby build",
     "develop": "gatsby develop",
     "lint": "yarn prettier:all --check && yarn eslint .",
     "lint:fix": "yarn eslint --fix . && yarn prettier:all --write",
@@ -15,7 +15,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "yarn build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "@emotion/react": "^11.7.0",
@@ -30,6 +30,7 @@
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-emotion": "^7.2.0",
     "gatsby-plugin-material-ui": "^4.0.2",
+    "gatsby-plugin-preload-fonts": "^3.2.0",
     "gatsby-plugin-react-helmet-async": "^1.1.0",
     "gatsby-plugin-react-i18next": "^1.2.2",
     "gatsby-plugin-sass": "^2.3.14",
