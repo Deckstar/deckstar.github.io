@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "yarn gatsby-preload-fonts gatsby build",
+    "build": "yarn gatsby-preload-fonts && gatsby build",
     "develop": "gatsby develop",
     "lint": "yarn prettier:all --check && yarn eslint .",
     "lint:fix": "yarn eslint --fix . && yarn prettier:all --write",
