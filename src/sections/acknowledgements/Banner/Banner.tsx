@@ -4,7 +4,7 @@ import React from 'react';
 import useStyles from './Banner.style';
 
 const Banner = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Box component="section" id="banner">

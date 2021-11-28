@@ -7,7 +7,7 @@ import React from 'react';
 import useStyles from './Contact.style';
 
 const Contact = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t } = useTranslation();
   return (
     <Box component="section" id="contact" className={classes.container}>

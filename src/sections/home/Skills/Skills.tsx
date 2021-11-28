@@ -17,7 +17,7 @@ const MasonryCard = (props: RenderComponentProps<SkillCardProps>) => {
 };
 
 const Skills = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const theme = useTheme();
   const { t } = useTranslation();
 

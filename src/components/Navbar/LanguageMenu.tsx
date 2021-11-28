@@ -48,7 +48,7 @@ const LanguageInputComponent = () => {
 };
 
 const LanguageMenu = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { changeLanguage, language } = useI18next();
 
   const handleChangeLanguage = useCallback<

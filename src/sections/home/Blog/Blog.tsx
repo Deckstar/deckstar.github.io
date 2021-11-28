@@ -44,7 +44,7 @@ interface BlogPostProps extends Article {
 }
 
 const Post = (props: BlogPostProps) => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const { id, article, featuredImg } = props;
   const {
@@ -126,7 +126,7 @@ const Post = (props: BlogPostProps) => {
 };
 
 const Blog = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t } = useTranslation();
 
   const data = useStaticQuery(graphql`

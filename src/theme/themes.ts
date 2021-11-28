@@ -1,5 +1,7 @@
-import { alpha, Theme, ThemeOptions } from '@mui/material';
+import createCache from '@emotion/cache';
+import { alpha, Theme, ThemeOptions, useTheme } from '@mui/material';
 import { deepOrange, grey, lightBlue, orange } from '@mui/material/colors';
+import { createMakeAndWithStyles } from 'tss-react';
 
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
@@ -121,3 +123,18 @@ export const makeOverrides = (theme: Theme) => {
 
   return themeOverrides;
 };
+
+export const muiCache = createCache({
+  key: 'mui',
+  prepend: true,
+});
+
+export const { makeStyles, withStyles } = createMakeAndWithStyles({
+  useTheme,
+  /*
+  OR, if you have extended the default mui theme adding your own custom properties:
+  Let's assume the myTheme object that you provide to the <ThemeProvider /> is of
+  type MyTheme then you'll write:
+  */
+  // "useTheme": useTheme as (()=> MyTheme)
+});

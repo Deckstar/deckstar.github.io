@@ -1,21 +1,18 @@
 import { KeyboardArrowUp as UpIcon } from '@mui/icons-material';
 import { Box, Fab, useScrollTrigger, Zoom } from '@mui/material';
 import { Theme } from '@mui/material/styles';
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@theme/themes';
 import React from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    zoomButton: {
-      marginTop: theme.spacing(1),
-    },
-    zoomButtonLabel: {
-      color: theme.palette.text.primary,
-    },
-  })
-);
+const useStyles = makeStyles()((theme: Theme) => ({
+  zoomButton: {
+    marginTop: theme.spacing(1),
+  },
+  zoomButtonLabel: {
+    color: theme.palette.text.primary,
+  },
+}));
 
 const handleClickToScroll = () => {
   scroll.scrollToTop({
@@ -24,7 +21,7 @@ const handleClickToScroll = () => {
 };
 
 const ZoomToTopButton = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,

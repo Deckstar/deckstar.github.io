@@ -62,6 +62,7 @@ module.exports = {
         pages: [],
       },
     },
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet-async`,
     `gatsby-plugin-sass`,

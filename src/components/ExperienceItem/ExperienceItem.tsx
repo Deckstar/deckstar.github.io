@@ -7,7 +7,7 @@ import { Fade } from 'react-awesome-reveal';
 import useStyles from './ExperienceItem.style';
 
 const ExperienceItem = (props: ExperienceItemProps) => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const { location, locationFlag, title, logo, dates, description } = props;
 

@@ -9,7 +9,7 @@ import React from 'react';
 import useStyles from './Work.style';
 
 const Work = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t, i18n } = useTranslation();
 
   const data = useStaticQuery(graphql`

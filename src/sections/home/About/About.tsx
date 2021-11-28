@@ -19,7 +19,7 @@ import useStyles from './About.style';
 const yearsExperience = dayjs().diff(dayjs('2018-10-24'), 'year');
 
 const About = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t } = useTranslation();
 
   const data = useStaticQuery(graphql`

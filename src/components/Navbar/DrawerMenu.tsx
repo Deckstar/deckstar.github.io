@@ -126,7 +126,7 @@ const HomePageSectionButtons = () => {
 };
 
 const DrawerMenu = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Box display="flex" flexDirection="column" className={classes.grow}>

@@ -1,14 +1,14 @@
 import { Context } from '@context';
+import { CacheProvider } from '@emotion/react';
 import {
   createTheme,
   CssBaseline,
   responsiveFontSizes,
-  StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material';
 import React, { ReactNode, useContext, useMemo } from 'react';
 
-import { darkTheme, lightTheme, makeOverrides } from './themes';
+import { darkTheme, lightTheme, makeOverrides, muiCache } from './themes';
 
 const ThemeWrapper = (props: { children: ReactNode }) => {
   const { children } = props;
@@ -27,12 +27,12 @@ const ThemeWrapper = (props: { children: ReactNode }) => {
   }, [darkMode]);
 
   return (
-    <StyledEngineProvider injectFirst>
+    <CacheProvider value={muiCache}>
       <ThemeProvider theme={activeTheme}>
         <CssBaseline />
         {children}
       </ThemeProvider>
-    </StyledEngineProvider>
+    </CacheProvider>
   );
 };
 

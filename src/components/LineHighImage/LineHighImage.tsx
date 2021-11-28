@@ -1,18 +1,15 @@
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@theme/themes';
 import React, { ImgHTMLAttributes } from 'react';
 
-const useStyles = makeStyles(() =>
-  createStyles({
-    mini: {
-      height: '1em',
-      verticalAlign: 'text-top',
-    },
-  })
-);
+const useStyles = makeStyles()(() => ({
+  mini: {
+    height: '1em',
+    verticalAlign: 'text-top',
+  },
+}));
 
 const LineHighImage = (imgProps: ImgHTMLAttributes<{}>) => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   if (!imgProps.src) {
     return null;

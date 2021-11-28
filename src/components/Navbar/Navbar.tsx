@@ -15,7 +15,7 @@ export interface NavbarState {
 }
 
 const Navbar = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const localState = useLocalState<NavbarState>({
     drawerOpen: false,

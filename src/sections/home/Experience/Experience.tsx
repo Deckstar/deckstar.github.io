@@ -6,7 +6,7 @@ import { Education, Work } from '..';
 import useStyles from './Experience.style';
 
 const TranslationDisclaimer = (props: { hide: boolean }) => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t } = useTranslation();
 
   const { hide } = props;
@@ -20,7 +20,7 @@ const TranslationDisclaimer = (props: { hide: boolean }) => {
 };
 
 const Experience = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { i18n } = useTranslation();
 
   const lang = i18n.language;

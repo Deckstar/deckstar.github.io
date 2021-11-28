@@ -8,7 +8,7 @@ import useStyles from './SkillCard.style';
 
 const SubSkills = (props: { subSkills?: SkillItem[] }) => {
   const { subSkills } = props;
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   if (size(subSkills) > 0) {
     return (
@@ -27,7 +27,7 @@ const SubSkills = (props: { subSkills?: SkillItem[] }) => {
 const Extra = (props: { extra: SkillItem['extra'] }) => {
   const { extra } = props;
 
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   if (extra) {
     return (
@@ -42,7 +42,7 @@ const Extra = (props: { extra: SkillItem['extra'] }) => {
 
 const Logo = (props: { src: SkillItem['src'] }) => {
   const { src } = props;
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   if (src) {
     const widthPx: number = src?.childImageSharp.fluid.presentationWidth;
@@ -73,7 +73,7 @@ const Skill = (props: SkillItem) => {
 
 const SkillCard = memo(function SkillCard(props: SkillCardProps) {
   const { skillItems, title } = props;
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Card elevation={3} className={classes.cardContainer}>

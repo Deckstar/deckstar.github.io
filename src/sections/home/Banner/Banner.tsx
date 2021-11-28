@@ -46,7 +46,7 @@ const handleScrollTo = (id: string) => {
 
 const Banner = () => {
   const { t } = useTranslation();
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const data = useStaticQuery(graphql`
     {

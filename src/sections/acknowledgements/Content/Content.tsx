@@ -13,7 +13,7 @@ import React from 'react';
 import useStyles from './Content.style';
 
 const Content = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <>
