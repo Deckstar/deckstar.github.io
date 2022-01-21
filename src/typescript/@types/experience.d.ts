@@ -1,10 +1,20 @@
-import { GatsbyImageProps } from 'gatsby-image';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 export interface ExperienceItemProps {
   location: string;
-  locationFlag: { childImageSharp: GatsbyImageProps };
+  locationFlag: {
+    childImageSharp: {
+      gatsbyImageData: IGatsbyImageData;
+    };
+    name: string;
+  };
   title: string;
-  logo: { childImageSharp: GatsbyImageProps };
+  logo: {
+    childImageSharp: {
+      gatsbyImageData: IGatsbyImageData;
+    };
+    name: string;
+  };
   dates: string;
   description: string;
 }

@@ -17,7 +17,7 @@ const Flag = (props: { code: LanguageCode; flag: any } & IconButtonProps) => {
 
   return (
     <IconButton {...iconButtonProps} color="inherit" size="large">
-      <img src={flag} alt={`${code} flag`} style={{ height: 24 }} />
+      <img src={flag?.default} alt={`${code} flag`} style={{ height: 24 }} />
     </IconButton>
   );
 };

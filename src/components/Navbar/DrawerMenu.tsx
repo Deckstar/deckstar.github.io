@@ -132,7 +132,7 @@ const DrawerMenu = () => {
     <Box display="flex" flexDirection="column" className={classes.grow}>
       <Box className={classes.drawerContainer}>
         <Box className={classes.drawerLogoContainer}>
-          <img src={icons.main} className={classes.drawerLogo} />
+          <img src={icons.main.default} className={classes.drawerLogo} />
         </Box>
         <Divider />
 

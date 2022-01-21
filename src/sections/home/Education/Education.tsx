@@ -18,18 +18,16 @@ const Education = () => {
         nodes {
           location
           locationFlag {
+            name
             childImageSharp {
-              fixed(width: 24, height: 24) {
-                ...GatsbyImageSharpFixed
-              }
+              gatsbyImageData(layout: FIXED, width: 24, height: 24)
             }
           }
           title
           logo {
+            name
             childImageSharp {
-              fluid(maxHeight: 40) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(layout: CONSTRAINED, height: 40)
             }
           }
           dates

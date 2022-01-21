@@ -17,23 +17,10 @@ module.exports = {
   },
   plugins: [
     {
-      pathPrefix: `/`,
-      resolve: `gatsby-plugin-alias-imports`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        alias: {
-          '@assets': 'src/assets',
-          '@components': 'src/components',
-          '@context': 'src/context',
-          '@data': 'src/data',
-          '@hooks': 'src/hooks',
-          '@images': 'src/images',
-          '@i18n': 'src/i18n',
-          '@pages': 'src/pages',
-          '@sections': 'src/sections',
-          '@theme': 'src/theme',
-          '@typescript': 'src/typescript',
-          '@utils': 'src/utils',
-        },
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -63,6 +50,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-react-helmet-async`,

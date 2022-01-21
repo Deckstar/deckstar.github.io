@@ -1,6 +1,6 @@
 import { Box, Tooltip, Typography } from '@mui/material';
 import { ExperienceItemProps } from '@typescript/@types/experience';
-import GatsbyImage from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 
@@ -18,7 +18,8 @@ const ExperienceItem = (props: ExperienceItemProps) => {
           <Tooltip arrow title={location} enterTouchDelay={0}>
             <Box component="span">
               <GatsbyImage
-                {...locationFlag.childImageSharp}
+                image={locationFlag?.childImageSharp?.gatsbyImageData}
+                alt={locationFlag?.name}
                 className={classes.itemBullet}
               />
             </Box>
@@ -26,8 +27,8 @@ const ExperienceItem = (props: ExperienceItemProps) => {
         </Box>
         <Box className={classes.itemContent}>
           <GatsbyImage
-            {...logo.childImageSharp}
-            imgStyle={{ width: null }}
+            image={logo?.childImageSharp?.gatsbyImageData}
+            alt={logo?.name}
             className={classes.firmLogo}
           />
           <Typography variant="h5" className={classes.title}>

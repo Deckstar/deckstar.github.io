@@ -1,7 +1,6 @@
 import socialLinks from '@data/socialLinks';
 import { Box, Button, Container, Link, Typography } from '@mui/material';
-import { graphql, useStaticQuery } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
 import React from 'react';
@@ -48,27 +47,16 @@ const Banner = () => {
   const { t } = useTranslation();
   const { classes } = useStyles();
 
-  const data = useStaticQuery(graphql`
-    {
-      photo: file(relativePath: { eq: "photos/profile-pic.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 180) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-
-  const {
-    photo: { childImageSharp },
-  } = data;
-
   return (
     <Box component="section" id="banner">
       <Box className={classes.background}>
         <Container className={classes.inner}>
-          <GatsbyImage {...childImageSharp} className={classes.profilePic} />
+          <StaticImage
+            alt={t('Banner.DexterSibirtsev')}
+            src="../../../images/photos/profile-pic.jpg"
+            className={classes.profilePic}
+          />
+
           <Box className={classes.textContainer}>
             <Typography variant="h1" className={classes.nameHeader} paragraph>
               {t('Banner.DexterSibirtsev')}

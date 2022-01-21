@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, CardHeader } from '@mui/material';
 import { SkillCardProps, SkillItem } from '@typescript/@types/skills';
-import GatsbyImage from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { map, size } from 'lodash';
 import React, { memo } from 'react';
 
@@ -40,18 +40,15 @@ const Extra = (props: { extra: SkillItem['extra'] }) => {
   return null;
 };
 
-const Logo = (props: { src: SkillItem['src'] }) => {
-  const { src } = props;
+const Logo = (props: { name: SkillItem['name']; src: SkillItem['src'] }) => {
+  const { name, src } = props;
   const { classes } = useStyles();
 
   if (src) {
-    const widthPx: number = src?.childImageSharp.fluid.presentationWidth;
-    const heightPx: number = src?.childImageSharp.fluid.presentationHeight;
-
     return (
       <GatsbyImage
-        {...src.childImageSharp}
-        style={{ width: widthPx + 0.5, height: heightPx }}
+        alt={name}
+        image={src.childImageSharp?.gatsbyImageData}
         className={classes.miniImgContainer}
       />
     );
@@ -65,7 +62,7 @@ const Skill = (props: SkillItem) => {
 
   return (
     <Box component="li">
-      {name} <Logo src={src} /> <Extra extra={extra} />
+      {name} <Logo name={name} src={src} /> <Extra extra={extra} />
       <SubSkills subSkills={subSkills} />
     </Box>
   );

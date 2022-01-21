@@ -9,8 +9,7 @@ import {
   Typography,
 } from '@mui/material';
 import dayjs from 'dayjs';
-import { graphql, useStaticQuery } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import React from 'react';
 
@@ -21,22 +20,6 @@ const yearsExperience = dayjs().diff(dayjs('2018-10-24'), 'year');
 const About = () => {
   const { classes } = useStyles();
   const { t } = useTranslation();
-
-  const data = useStaticQuery(graphql`
-    {
-      photo: file(relativePath: { eq: "photos/working.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 610) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-
-  const {
-    photo: { childImageSharp },
-  } = data;
 
   return (
     <Box component="section" className={classes.container} id="about">
@@ -101,7 +84,11 @@ const About = () => {
 
           <Box className="col-6 col-12-medium imp-medium">
             <Card elevation={3} className={classes.bigPhotoContainer}>
-              <GatsbyImage {...childImageSharp} className={classes.bigPhoto} />
+              <StaticImage
+                alt={t('About.PhotoDescription')}
+                src={'../../../images/photos/working.jpg'}
+                className={classes.bigPhoto}
+              />
               <CardContent>
                 <Typography
                   color="textSecondary"

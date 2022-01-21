@@ -19,7 +19,7 @@ import {
 } from '@mui/material';
 import dayjs from 'dayjs';
 import { graphql, useStaticQuery } from 'gatsby';
-import GatsbyImage, { GatsbyImageProps } from 'gatsby-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
 import React from 'react';
@@ -29,7 +29,7 @@ import useStyles from './Blog.style';
 // for a full list of props, see graphiql interface. These are just the props we need right now.
 interface Article {
   id: string;
-  featuredImg: { childImageSharp: GatsbyImageProps };
+  featuredImg: { childImageSharp: { gatsbyImageData: IGatsbyImageData } };
   article: {
     url: string;
     tags: string[];
@@ -61,7 +61,8 @@ const Post = (props: BlogPostProps) => {
       <Link href={url} target="_blank" className={classes.cardPhotoContainer}>
         <GatsbyImage
           className={classes.cardPhoto}
-          {...featuredImg.childImageSharp}
+          alt={title}
+          image={featuredImg?.childImageSharp?.gatsbyImageData}
         />
         <Box className={classes.cardPhotoOverlay}>
           <Button color="primary">
@@ -147,9 +148,7 @@ const Blog = () => {
           }
           featuredImg {
             childImageSharp {
-              fluid(maxHeight: 300) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(layout: CONSTRAINED, height: 300)
             }
           }
         }

@@ -1,8 +1,13 @@
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 import { ReactNode } from 'react';
 
 export interface SkillItem {
   name: string;
-  src?: { childImageSharp: any };
+  src?: {
+    childImageSharp: {
+      gatsbyImageData: IGatsbyImageData;
+    };
+  };
   extra?: ReactNode;
   subSkills?: SkillItem[];
 }

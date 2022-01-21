@@ -22,7 +22,10 @@ const Content = () => {
           <Box className={classes.twoRows} flexDirection="row-reverse">
             <Box className={classes.bigPhotoContainer}>
               <Box className={classes.bigPhotoCard}>
-                <img src={stories.libraries} className={classes.bigPhoto} />
+                <img
+                  src={stories.libraries.default}
+                  className={classes.bigPhoto}
+                />
                 <Box>
                   <Typography
                     color="textSecondary"
@@ -44,7 +47,10 @@ const Content = () => {
               <List>
                 <ListItem className={classes.listItem}>
                   <Typography>
-                    <LineHighImage src={logos.gatsby} alt="Gatsby JS logo" />{' '}
+                    <LineHighImage
+                      src={logos.gatsby.default}
+                      alt="Gatsby JS logo"
+                    />{' '}
                     <Link href="https://www.gatsbyjs.com" color="secondary">
                       Gatsby JS
                     </Link>{' '}
@@ -61,7 +67,7 @@ const Content = () => {
                     However you feel about the look of this website, I recommend
                     checking out{' '}
                     <LineHighImage
-                      src={logos.materialUI}
+                      src={logos.materialUI.default}
                       alt="Material UI logo"
                     />{' '}
                     <Link href="https://material-ui.com" color="secondary">
@@ -78,7 +84,11 @@ const Content = () => {
                 </ListItem>
                 <ListItem className={classes.listItem}>
                   <Typography>
-                    The <LineHighImage src={logos.masonic} alt="masonic logo" />{' '}
+                    The{' '}
+                    <LineHighImage
+                      src={logos.masonic.default}
+                      alt="masonic logo"
+                    />{' '}
                     <Link
                       href="https://github.com/jaredLunde/masonic"
                       color="secondary"
@@ -96,7 +106,10 @@ const Content = () => {
                   <Typography>
                     There is only one translations library that I've ever used
                     with React, and that is{' '}
-                    <LineHighImage src={logos.i18next} alt="i18next logo" />{' '}
+                    <LineHighImage
+                      src={logos.i18next.default}
+                      alt="i18next logo"
+                    />{' '}
                     <Link href="https://www.i18next.com" color="secondary">
                       i18next
                     </Link>
@@ -109,7 +122,7 @@ const Content = () => {
                   <Typography>
                     Another quick shout-out goes to{' '}
                     <LineHighImage
-                      src={logos.reactAwesomeReveal}
+                      src={logos.reactAwesomeReveal.default}
                       alt="React Awesome Reveal logo"
                     />{' '}
                     <Link
@@ -125,7 +138,10 @@ const Content = () => {
                 <ListItem className={classes.listItem}>
                   <Typography>
                     Last but not least, thanks a lot to{' '}
-                    <LineHighImage src={logos.lodash} alt="Lodash logo" />{' '}
+                    <LineHighImage
+                      src={logos.lodash.default}
+                      alt="Lodash logo"
+                    />{' '}
                     <Link href="https://lodash.com" color="secondary">
                       Lodash
                     </Link>
@@ -144,7 +160,10 @@ const Content = () => {
           <Box className={classes.twoRows}>
             <Box className={classes.bigPhotoContainer}>
               <Box className={classes.bigPhotoCard}>
-                <img src={stories.designers} className={classes.bigPhoto} />
+                <img
+                  src={stories.designers.default}
+                  className={classes.bigPhoto}
+                />
                 <Box>
                   <Typography
                     color="textSecondary"
@@ -168,7 +187,10 @@ const Content = () => {
                   <Typography>
                     The wonderful collection of round country flags that I used
                     throughout this website can be found at this{' '}
-                    <LineHighImage src={logos.flaticon} alt="Flaticon logo" />{' '}
+                    <LineHighImage
+                      src={logos.flaticon.default}
+                      alt="Flaticon logo"
+                    />{' '}
                     <Link
                       href="https://www.flaticon.com/packs/countrys-flags"
                       color="secondary"
@@ -181,7 +203,10 @@ const Content = () => {
                 <ListItem className={classes.listItem}>
                   <Typography>
                     Speaking of{' '}
-                    <LineHighImage src={logos.freepik} alt="Freepik logo" />{' '}
+                    <LineHighImage
+                      src={logos.freepik.default}
+                      alt="Freepik logo"
+                    />{' '}
                     <Link
                       href="https://stories.freepik.com/rafiki"
                       color="secondary"
@@ -205,7 +230,10 @@ const Content = () => {
           <Box className={classes.twoRows} flexDirection="row-reverse">
             <Box className={classes.bigPhotoContainer}>
               <Box className={classes.bigPhotoCard}>
-                <img src={stories.developers} className={classes.bigPhoto} />
+                <img
+                  src={stories.developers.default}
+                  className={classes.bigPhoto}
+                />
                 <Box>
                   <Typography
                     color="textSecondary"
@@ -228,7 +256,10 @@ const Content = () => {
                 <ListItem className={classes.listItem}>
                   <Typography>
                     My sincerest thanks to the creator of{' '}
-                    <LineHighImage src={logos.html5up} alt="HTML5UP logo" />{' '}
+                    <LineHighImage
+                      src={logos.html5up.default}
+                      alt="HTML5UP logo"
+                    />{' '}
                     <Link href="https://html5up.net" color="secondary">
                       HTML5UP
                     </Link>

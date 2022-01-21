@@ -31,33 +31,21 @@ const Skills = () => {
             name
             src {
               childImageSharp {
-                fluid(maxHeight: 16) {
-                  ...GatsbyImageSharpFluid
-                  presentationWidth
-                  presentationHeight
-                }
+                gatsbyImageData(layout: CONSTRAINED, height: 16)
               }
             }
             subSkills {
               name
               src {
                 childImageSharp {
-                  fluid(maxHeight: 16) {
-                    ...GatsbyImageSharpFluid
-                    presentationWidth
-                    presentationHeight
-                  }
+                  gatsbyImageData(layout: CONSTRAINED, height: 16)
                 }
               }
               subSkills {
                 name
                 src {
                   childImageSharp {
-                    fluid(maxHeight: 16) {
-                      ...GatsbyImageSharpFluid
-                      presentationWidth
-                      presentationHeight
-                    }
+                    gatsbyImageData(layout: CONSTRAINED, height: 16)
                   }
                 }
               }
