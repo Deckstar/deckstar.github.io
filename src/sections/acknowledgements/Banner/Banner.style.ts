@@ -4,7 +4,7 @@ import { makeStyles } from '@theme/themes';
 
 const useStyles = makeStyles()((theme: Theme) => ({
   background: {
-    backgroundImage: `url(${overlays.overlay3})`,
+    backgroundImage: `url(${overlays.overlay3.default})`,
     backgroundSize: 'cover',
     position: 'relative',
 

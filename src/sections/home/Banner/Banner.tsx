@@ -48,7 +48,7 @@ const Banner = () => {
   const { classes } = useStyles();
 
   return (
-    <Box component="section" id="banner">
+    <Box component="section" id="banner" className={classes.section}>
       <Box className={classes.background}>
         <Container className={classes.inner}>
           <StaticImage

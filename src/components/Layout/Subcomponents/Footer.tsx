@@ -16,7 +16,7 @@ const useStyles = makeStyles()((theme: Theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundImage: `url(${overlays.overlay3})`,
+    backgroundImage: `url(${overlays.overlay3.default})`,
     backgroundSize: 'cover',
     position: 'relative',
 
