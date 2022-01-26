@@ -1,7 +1,8 @@
-import createCache from '@emotion/cache';
 import { alpha, Theme, ThemeOptions, useTheme } from '@mui/material';
 import { deepOrange, grey, lightBlue, orange } from '@mui/material/colors';
 import { createMakeAndWithStyles } from 'tss-react';
+
+import { makeMuiCache } from './cache';
 
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
@@ -124,10 +125,7 @@ export const makeOverrides = (theme: Theme) => {
   return themeOverrides;
 };
 
-export const muiCache = createCache({
-  key: 'mui',
-  prepend: true,
-});
+export const muiCache = makeMuiCache();
 
 export const { makeStyles, withStyles } = createMakeAndWithStyles({
   useTheme,
