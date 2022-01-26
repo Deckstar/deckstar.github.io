@@ -18,11 +18,11 @@ const Contact = () => {
         <div className={classes.contentContainer}>
           <Typography>{t('Contact.GetInTouch')}:</Typography>
           <div className={classes.icons}>
-            {map(socialLinks, (site, i) => {
-              const { url, Icon } = site;
+            {map(socialLinks, (site) => {
+              const { url, Icon, title } = site;
               return (
-                <Link key={`contact ${i}`} href={url} className={classes.icon}>
-                  <Icon size={26} />
+                <Link key={title} href={url} className={classes.icon}>
+                  <Icon width={26} height={26} />
                 </Link>
               );
             })}

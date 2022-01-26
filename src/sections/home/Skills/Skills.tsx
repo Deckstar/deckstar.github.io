@@ -1,13 +1,12 @@
 import { SkillCard } from '@components';
+import { DesktopWindows, PhoneIphone } from '@mui/icons-material';
 import { Container, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 import { SkillCardProps } from '@typescript/@types/skills';
 import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import { Masonry, RenderComponentProps } from 'masonic';
 import React from 'react';
-import { FaDesktop, FaMobile } from 'react-icons/fa';
 
 import useStyles from './Skills.style';
 
@@ -19,7 +18,6 @@ const MasonryCard = (props: RenderComponentProps<SkillCardProps>) => {
 
 const Skills = () => {
   const { classes } = useStyles();
-  const theme = useTheme();
   const { t } = useTranslation();
 
   const data = useStaticQuery(graphql`
@@ -69,20 +67,12 @@ const Skills = () => {
           <div className={classes.bigIconsContainer}>
             <div className={classes.bigIconListItem}>
               <span className={classes.bigIconOutline}>
-                <FaDesktop
-                  color={theme.palette.secondary.main}
-                  size="50%"
-                  className={classes.bigIcon}
-                />
+                <DesktopWindows color="secondary" className={classes.bigIcon} />
               </span>
             </div>
             <div className={classes.bigIconListItem}>
               <span className={classes.bigIconOutline}>
-                <FaMobile
-                  color={theme.palette.primary.main}
-                  size="50%"
-                  className={classes.bigIcon}
-                />
+                <PhoneIphone color="primary" className={classes.bigIcon} />
               </span>
             </div>
           </div>

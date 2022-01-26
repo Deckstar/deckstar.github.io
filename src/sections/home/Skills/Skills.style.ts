@@ -64,6 +64,8 @@ const useStyles = makeStyles()((theme: Theme) => ({
     transform: 'rotate(-45deg)',
     display: 'inline-block',
     lineHeight: 'inherit',
+    width: '50%',
+    height: '50%',
   },
   textSection: {
     display: 'flex',

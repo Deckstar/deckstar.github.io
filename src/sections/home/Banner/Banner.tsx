@@ -70,11 +70,11 @@ const Banner = () => {
           </div>
 
           <div className={classes.icons}>
-            {map(socialLinks, (item, i) => {
-              const { url, Icon } = item;
+            {map(socialLinks, (item) => {
+              const { url, Icon, title } = item;
               return (
-                <Link className={classes.icon} href={url} key={`social ${i}`}>
-                  <Icon size={26} />
+                <Link className={classes.icon} href={url} key={title}>
+                  <Icon width={26} height={26} />
                 </Link>
               );
             })}

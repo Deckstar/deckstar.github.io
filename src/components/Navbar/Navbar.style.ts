@@ -41,13 +41,6 @@ const useStyles = makeStyles()((theme: Theme) => ({
     display: 'flex',
     justifyContent: 'center',
   },
-  socialLink: {
-    margin: '0 0.5em',
-
-    '&:hover': {
-      opacity: 0.7,
-    },
-  },
 }));
 
 export default useStyles;

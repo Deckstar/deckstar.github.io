@@ -1,27 +1,27 @@
-import { IconType } from 'react-icons';
-import { FaGithub, FaGoodreads, FaTwitter } from 'react-icons/fa';
+import { Github, Goodreads, Twitter } from '@components/Icons';
+import { SvgIconComponent } from '@mui/icons-material';
 
 interface SocialLink {
   title: string;
   url: string;
-  Icon: IconType;
+  Icon: SvgIconComponent;
 }
 
 const socialLinks: SocialLink[] = [
   {
     title: 'Twitter',
     url: 'https://twitter.com/DexterSibirtsev',
-    Icon: FaTwitter,
+    Icon: Twitter,
   },
   {
     title: 'Github,',
     url: 'https://github.com/Deckstar',
-    Icon: FaGithub,
+    Icon: Github,
   },
   {
     title: 'Goodreads',
     url: 'https://www.goodreads.com/user/show/58196314-dexter',
-    Icon: FaGoodreads,
+    Icon: Goodreads,
   },
 ];
 

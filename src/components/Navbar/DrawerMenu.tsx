@@ -145,15 +145,13 @@ const DrawerMenu = () => {
         <Divider />
       </div>
       <div className={classes.drawerFooter}>
-        {map(socialLinks, (social, i) => {
-          const { url, Icon } = social;
+        {map(socialLinks, (social) => {
+          const { url, Icon, title } = social;
           return (
-            <Link
-              key={`footer social ${i}`}
-              href={url}
-              className={classes.socialLink}
-            >
-              <Icon size={26} />
+            <Link key={title} href={url}>
+              <IconButton>
+                <Icon color="primary" width={26} height={26} />
+              </IconButton>
             </Link>
           );
         })}
