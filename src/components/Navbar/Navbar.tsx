@@ -1,7 +1,7 @@
 import { HideOnScroll } from '@components';
 import { useLocalState } from '@hooks/useLocalState';
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { AppBar, Box, Drawer, IconButton, Toolbar } from '@mui/material';
+import { AppBar, Drawer, IconButton, Toolbar } from '@mui/material';
 import React from 'react';
 
 import { NavbarContextProvider } from './Context';
@@ -45,11 +45,11 @@ const Navbar = () => {
               <MenuIcon />
             </IconButton>
 
-            <Box className={classes.grow} />
+            <div className={classes.grow} />
 
-            <Box className={classes.sectionDesktop}>
+            <div className={classes.sectionDesktop}>
               <DesktopSectionButtons />
-            </Box>
+            </div>
             <LanguageMenu />
           </Toolbar>
         </AppBar>

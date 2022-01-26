@@ -16,6 +16,10 @@ const useStyles = makeStyles()((theme: Theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
   },
+  reverse: {
+    flexDirection: 'row-reverse',
+  },
+  bold: { fontWeight: 'bold' },
   textSection: {
     display: 'flex',
     flexDirection: 'column',

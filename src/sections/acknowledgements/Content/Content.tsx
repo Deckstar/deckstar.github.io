@@ -1,13 +1,7 @@
 import { LineHighImage } from '@components';
 import { logos, stories } from '@images';
-import {
-  Box,
-  Container,
-  Link,
-  List,
-  ListItem,
-  Typography,
-} from '@mui/material';
+import { Container, Link, List, ListItem, Typography } from '@mui/material';
+import clsx from 'clsx';
 import React from 'react';
 
 import useStyles from './Content.style';
@@ -17,30 +11,30 @@ const Content = () => {
 
   return (
     <>
-      <Box component="section" className={classes.container} id="libraries">
+      <section className={classes.container} id="libraries">
         <Container>
-          <Box className={classes.twoRows} flexDirection="row-reverse">
-            <Box className={classes.bigPhotoContainer}>
-              <Box className={classes.bigPhotoCard}>
+          <div className={clsx(classes.twoRows, classes.reverse)}>
+            <div className={classes.bigPhotoContainer}>
+              <div className={classes.bigPhotoCard}>
                 <img
                   src={stories.libraries.default}
                   className={classes.bigPhoto}
                 />
-                <Box>
+                <div>
                   <Typography
                     color="textSecondary"
                     className={classes.bigPhotoCaption}
                   >
-                    <Box fontWeight="bold">
+                    <div className={classes.bold}>
                       The best things come in small packages
-                    </Box>{' '}
+                    </div>{' '}
                     (or bundle sizes!)
                   </Typography>
-                </Box>
-              </Box>
-            </Box>
+                </div>
+              </div>
+            </div>
 
-            <Box className={classes.textSection}>
+            <div className={classes.textSection}>
               <Typography variant="h3" className={classes.title}>
                 Libraries
               </Typography>
@@ -150,35 +144,35 @@ const Content = () => {
                   </Typography>
                 </ListItem>
               </List>
-            </Box>
-          </Box>
+            </div>
+          </div>
         </Container>
-      </Box>
+      </section>
 
-      <Box component="section" className={classes.container} id="design">
+      <section className={classes.container} id="design">
         <Container>
-          <Box className={classes.twoRows}>
-            <Box className={classes.bigPhotoContainer}>
-              <Box className={classes.bigPhotoCard}>
+          <div className={classes.twoRows}>
+            <div className={classes.bigPhotoContainer}>
+              <div className={classes.bigPhotoCard}>
                 <img
                   src={stories.designers.default}
                   className={classes.bigPhoto}
                 />
-                <Box>
+                <div>
                   <Typography
                     color="textSecondary"
                     className={classes.bigPhotoCaption}
                   >
-                    <Box fontWeight="bold">
+                    <div className={classes.bold}>
                       A picture is worth a thousand words
-                    </Box>{' '}
+                    </div>{' '}
                     (and a design is worth a thousand lines of code)
                   </Typography>
-                </Box>
-              </Box>
-            </Box>
+                </div>
+              </div>
+            </div>
 
-            <Box className={classes.textSection}>
+            <div className={classes.textSection}>
               <Typography variant="h3" className={classes.title}>
                 Design
               </Typography>
@@ -220,35 +214,35 @@ const Content = () => {
                   </Typography>
                 </ListItem>
               </List>
-            </Box>
-          </Box>
+            </div>
+          </div>
         </Container>
-      </Box>
+      </section>
 
-      <Box component="section" className={classes.container} id="developers">
+      <section className={classes.container} id="developers">
         <Container>
-          <Box className={classes.twoRows} flexDirection="row-reverse">
-            <Box className={classes.bigPhotoContainer}>
-              <Box className={classes.bigPhotoCard}>
+          <div className={clsx(classes.twoRows, classes.reverse)}>
+            <div className={classes.bigPhotoContainer}>
+              <div className={classes.bigPhotoCard}>
                 <img
                   src={stories.developers.default}
                   className={classes.bigPhoto}
                 />
-                <Box>
+                <div>
                   <Typography
                     color="textSecondary"
                     className={classes.bigPhotoCaption}
                   >
-                    <Box fontWeight="bold">
+                    <div className={classes.bold}>
                       To see far, stand on the shoulders of giants
-                    </Box>{' '}
+                    </div>{' '}
                     (and search for open-source)
                   </Typography>
-                </Box>
-              </Box>
-            </Box>
+                </div>
+              </div>
+            </div>
 
-            <Box className={classes.textSection}>
+            <div className={classes.textSection}>
               <Typography variant="h3" className={classes.title}>
                 Developers
               </Typography>
@@ -300,10 +294,10 @@ const Content = () => {
                   </Typography>
                 </ListItem>
               </List>
-            </Box>
-          </Box>
+            </div>
+          </div>
         </Container>
-      </Box>
+      </section>
     </>
   );
 };

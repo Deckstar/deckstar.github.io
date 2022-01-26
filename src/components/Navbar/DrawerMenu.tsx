@@ -10,7 +10,8 @@ import {
   Home as HomeIcon,
   Work as WorkIcon,
 } from '@mui/icons-material';
-import { Box, Divider, IconButton, Link, MenuItem } from '@mui/material';
+import { Divider, IconButton, Link, MenuItem } from '@mui/material';
+import clsx from 'clsx';
 import {
   Link as GatsbyLink,
   useTranslation,
@@ -129,11 +130,11 @@ const DrawerMenu = () => {
   const { classes } = useStyles();
 
   return (
-    <Box display="flex" flexDirection="column" className={classes.grow}>
-      <Box className={classes.drawerContainer}>
-        <Box className={classes.drawerLogoContainer}>
+    <div className={clsx(classes.grow, classes.drawerMenu)}>
+      <div className={classes.drawerContainer}>
+        <div className={classes.drawerLogoContainer}>
           <img src={icons.main.default} className={classes.drawerLogo} />
-        </Box>
+        </div>
         <Divider />
 
         <HomePageSectionButtons />
@@ -142,8 +143,8 @@ const DrawerMenu = () => {
           <DrawerLink {...link} key={`page link ${i}`} />
         ))}
         <Divider />
-      </Box>
-      <Box className={classes.drawerFooter}>
+      </div>
+      <div className={classes.drawerFooter}>
         {map(socialLinks, (social, i) => {
           const { url, Icon } = social;
           return (
@@ -156,8 +157,8 @@ const DrawerMenu = () => {
             </Link>
           );
         })}
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import { overlays } from '@images';
-import { Box, Link, Typography } from '@mui/material';
+import { Link, Typography } from '@mui/material';
 import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@theme/themes';
 import dayjs from 'dayjs';
@@ -50,8 +50,8 @@ const Footer = () => {
   const currentYear = dayjs().format('YYYY');
 
   return (
-    <Box component="footer" id="footer" className={classes.container}>
-      <Box className={classes.textContainer}>
+    <footer id="footer" className={classes.container}>
+      <div className={classes.textContainer}>
         <Typography>
           &copy; 2019 – {currentYear} |{' '}
           <Link
@@ -64,8 +64,8 @@ const Footer = () => {
             {t('PageLinks.Acknowledgements')}
           </Link>
         </Typography>
-      </Box>
-    </Box>
+      </div>
+    </footer>
   );
 };
 

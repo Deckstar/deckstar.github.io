@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardHeader } from '@mui/material';
+import { Card, CardContent, CardHeader } from '@mui/material';
 import { SkillCardProps, SkillItem } from '@typescript/@types/skills';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { map, size } from 'lodash';
@@ -12,12 +12,12 @@ const SubSkills = (props: { subSkills?: SkillItem[] }) => {
 
   if (size(subSkills) > 0) {
     return (
-      <Box component="ul" className={classes.list}>
+      <ul className={classes.list}>
         {map(subSkills, (subSkill) => {
           const { name } = subSkill;
           return <Skill {...subSkill} key={`subSkill ${name}`} />;
         })}
-      </Box>
+      </ul>
     );
   }
 
@@ -30,11 +30,7 @@ const Extra = (props: { extra: SkillItem['extra'] }) => {
   const { classes } = useStyles();
 
   if (extra) {
-    return (
-      <Box component="span" className={classes.subtitle}>
-        ({extra})
-      </Box>
-    );
+    return <span className={classes.subtitle}>({extra})</span>;
   }
 
   return null;
@@ -61,10 +57,10 @@ const Skill = (props: SkillItem) => {
   const { name, src, extra, subSkills } = props;
 
   return (
-    <Box component="li">
+    <li>
       {name} <Logo name={name} src={src} /> <Extra extra={extra} />
       <SubSkills subSkills={subSkills} />
-    </Box>
+    </li>
   );
 };
 
@@ -83,12 +79,12 @@ const SkillCard = memo(function SkillCard(props: SkillCardProps) {
         }}
       />
       <CardContent className={classes.cardContent}>
-        <Box component="ul" className={classes.list}>
+        <ul className={classes.list}>
           {map(skillItems, (skill) => {
             const { name } = skill;
             return <Skill {...skill} key={`skill ${name}`} />;
           })}
-        </Box>
+        </ul>
       </CardContent>
     </Card>
   );

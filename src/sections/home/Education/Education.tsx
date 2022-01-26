@@ -1,5 +1,5 @@
 import { ExperienceItem } from '@components';
-import { Box, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { ExperienceItemProps } from '@typescript/@types/experience';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
@@ -44,28 +44,28 @@ const Education = () => {
   const isEnglish = lang.substring(0, 2) === 'en';
 
   return (
-    <Box component="section" id="education" className={classes.container}>
+    <section id="education" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
           {t('Education.Education')}
           {isEnglish ? '' : '*'}
         </Typography>
-        <Box>
+        <div>
           <Typography className={classes.paragraph}>
             {t('Education.Description')}
           </Typography>
-        </Box>
+        </div>
 
-        <Box className={classes.itemsOuterContainer}>
-          <Box className={classes.line} />
-          <Box className={classes.itemsContainer}>
+        <div className={classes.itemsOuterContainer}>
+          <div className={classes.line} />
+          <div className={classes.itemsContainer}>
             {map(schoolItems, (school, i) => {
               return <ExperienceItem {...school} key={`school ${i}`} />;
             })}
-          </Box>
-        </Box>
+          </div>
+        </div>
       </Container>
-    </Box>
+    </section>
   );
 };
 

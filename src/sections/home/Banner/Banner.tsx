@@ -1,5 +1,5 @@
 import socialLinks from '@data/socialLinks';
-import { Box, Button, Container, Link, Typography } from '@mui/material';
+import { Button, Container, Link, Typography } from '@mui/material';
 import { StaticImage } from 'gatsby-plugin-image';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
@@ -48,8 +48,8 @@ const Banner = () => {
   const { classes } = useStyles();
 
   return (
-    <Box component="section" id="banner" className={classes.section}>
-      <Box className={classes.background}>
+    <section id="banner" className={classes.section}>
+      <div className={classes.background}>
         <Container className={classes.inner}>
           <StaticImage
             alt={t('Banner.DexterSibirtsev')}
@@ -57,7 +57,7 @@ const Banner = () => {
             className={classes.profilePic}
           />
 
-          <Box className={classes.textContainer}>
+          <div className={classes.textContainer}>
             <Typography variant="h1" className={classes.nameHeader} paragraph>
               {t('Banner.DexterSibirtsev')}
             </Typography>
@@ -67,9 +67,9 @@ const Banner = () => {
             <Typography variant="h5">
               {t('Banner.HelloIAmAProgrammer')}
             </Typography>
-          </Box>
+          </div>
 
-          <Box className={classes.icons}>
+          <div className={classes.icons}>
             {map(socialLinks, (item, i) => {
               const { url, Icon } = item;
               return (
@@ -78,9 +78,9 @@ const Banner = () => {
                 </Link>
               );
             })}
-          </Box>
+          </div>
 
-          <Box className={classes.buttons}>
+          <div className={classes.buttons}>
             {map(sectionButtons, (button) => {
               const { title, link } = button;
               return (
@@ -95,10 +95,10 @@ const Banner = () => {
                 </Button>
               );
             })}
-          </Box>
+          </div>
         </Container>
-      </Box>
-    </Box>
+      </div>
+    </section>
   );
 };
 

@@ -69,6 +69,7 @@ const useStyles = makeStyles()((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
+  textJustify: { textAlign: 'justify' },
   skillsGrid: {
     margin: '1.5em 0',
     '& > div': {

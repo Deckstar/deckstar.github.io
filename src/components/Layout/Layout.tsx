@@ -1,7 +1,6 @@
 import '@assets/css/styles.scss';
 
 import { Navbar, ZoomButtons } from '@components';
-import { Box } from '@mui/material';
 import { makeStyles } from '@theme/themes';
 import React, { ReactNode } from 'react';
 
@@ -23,9 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Navbar />
-      <Box component="main" className={classes.main}>
-        {children}
-      </Box>
+      <main className={classes.main}>{children}</main>
       <Footer />
       <ZoomButtons />
     </>

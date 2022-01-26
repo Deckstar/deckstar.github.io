@@ -6,7 +6,6 @@ import {
 } from '@mui/icons-material';
 import {
   Badge,
-  Box,
   Button,
   Card,
   CardActions,
@@ -64,31 +63,31 @@ const Post = (props: BlogPostProps) => {
           alt={title}
           image={featuredImg?.childImageSharp?.gatsbyImageData}
         />
-        <Box className={classes.cardPhotoOverlay}>
+        <div className={classes.cardPhotoOverlay}>
           <Button color="primary">
             <LinkIcon
               fontSize="large"
               classes={{ fontSizeLarge: classes.cardPhotoLinkIcon }}
             />
           </Button>
-        </Box>
+        </div>
       </Link>
       <CardContent className={classes.cardContent}>
         <Link href={url} target="_blank" color="inherit">
           <Typography className={classes.cardTitle}>{title}</Typography>
         </Link>
-        <Box className={classes.cardDateContainer}>
+        <div className={classes.cardDateContainer}>
           <DateIcon fontSize="inherit" />
           <Typography className={classes.cardDate}>
             {dayjs(published_at).format('DD MMMM YYYY')}
           </Typography>
-        </Box>
+        </div>
         <Typography variant="body2" className={classes.cardCaption}>
           {description}
         </Typography>
       </CardContent>
       <CardActions className={classes.cardFooter}>
-        <Box className={classes.cardButtons}>
+        <div className={classes.cardButtons}>
           <Link href={url} target="_blank">
             <Button size="small" color="primary">
               <LaunchIcon />
@@ -107,8 +106,8 @@ const Post = (props: BlogPostProps) => {
               <LoveIcon />
             </Tooltip>
           </Badge>
-        </Box>
-        <Box className={classes.cardArticleTags}>
+        </div>
+        <div className={classes.cardArticleTags}>
           {map(tags, (tag) => {
             return (
               <Typography
@@ -120,7 +119,7 @@ const Post = (props: BlogPostProps) => {
               </Typography>
             );
           })}
-        </Box>
+        </div>
       </CardActions>
     </Card>
   );
@@ -159,7 +158,7 @@ const Blog = () => {
   const devArticles: Article[] = data.allDevArticles.nodes;
 
   return (
-    <Box component="section" className={classes.container} id="blog">
+    <section className={classes.container} id="blog">
       <Container>
         <Typography variant="h3" className={classes.title}>
           {t('Blog.Blog')}
@@ -171,10 +170,10 @@ const Blog = () => {
           })}
 
           {/* Without this end dot, the last article touches the right wall of the scroll container */}
-          <Box className={classes.dummyDivForPaddingToWork}>.</Box>
+          <div className={classes.dummyDivForPaddingToWork}>.</div>
         </Paper>
       </Container>
-    </Box>
+    </section>
   );
 };
 

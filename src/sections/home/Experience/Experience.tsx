@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import React from 'react';
 
@@ -27,15 +27,15 @@ const Experience = () => {
   const isEnglish = lang.substring(0, 2) === 'en';
 
   return (
-    <Box component="section" id="experience">
+    <section id="experience">
       <Container className={classes.container}>
-        <Box className={classes.workAndEducation}>
+        <div className={classes.workAndEducation}>
           <Work />
           <Education />
-        </Box>
+        </div>
         <TranslationDisclaimer hide={isEnglish} />
       </Container>
-    </Box>
+    </section>
   );
 };
 

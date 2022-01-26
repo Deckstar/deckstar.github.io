@@ -1,5 +1,5 @@
 import { KeyboardArrowUp as UpIcon } from '@mui/icons-material';
-import { Box, Fab, useScrollTrigger, Zoom } from '@mui/material';
+import { Fab, useScrollTrigger, Zoom } from '@mui/material';
 import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@theme/themes';
 import React from 'react';
@@ -30,7 +30,7 @@ const ZoomToTopButton = () => {
 
   return (
     <Zoom in={trigger}>
-      <Box
+      <div
         onClick={handleClickToScroll}
         role="presentation"
         className={classes.zoomButton}
@@ -43,7 +43,7 @@ const ZoomToTopButton = () => {
         >
           <UpIcon />
         </Fab>
-      </Box>
+      </div>
     </Zoom>
   );
 };

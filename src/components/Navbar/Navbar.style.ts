@@ -18,6 +18,10 @@ const useStyles = makeStyles()((theme: Theme) => ({
     padding: '0px !important',
     backgroundColor: 'unset !important',
   },
+  drawerMenu: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
   drawerContainer: {
     display: 'flex',
     flexDirection: 'column',

@@ -1,7 +1,8 @@
 import { SkillCard } from '@components';
-import { Box, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { SkillCardProps } from '@typescript/@types/skills';
+import clsx from 'clsx';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import { Masonry, RenderComponentProps } from 'masonic';
@@ -59,14 +60,14 @@ const Skills = () => {
   const skillCategories = data.allSkillsJson.nodes;
 
   return (
-    <Box component="section" className={classes.container} id="skills">
+    <section className={classes.container} id="skills">
       <Container>
         <Typography variant="h3" className={classes.title}>
           {t('Skills.Skills')}
         </Typography>
-        <Box className={classes.twoRows}>
-          <Box className={classes.bigIconsContainer}>
-            <Box className={classes.bigIconListItem}>
+        <div className={classes.twoRows}>
+          <div className={classes.bigIconsContainer}>
+            <div className={classes.bigIconListItem}>
               <span className={classes.bigIconOutline}>
                 <FaDesktop
                   color={theme.palette.secondary.main}
@@ -74,8 +75,8 @@ const Skills = () => {
                   className={classes.bigIcon}
                 />
               </span>
-            </Box>
-            <Box className={classes.bigIconListItem}>
+            </div>
+            <div className={classes.bigIconListItem}>
               <span className={classes.bigIconOutline}>
                 <FaMobile
                   color={theme.palette.primary.main}
@@ -83,10 +84,10 @@ const Skills = () => {
                   className={classes.bigIcon}
                 />
               </span>
-            </Box>
-          </Box>
+            </div>
+          </div>
 
-          <Box className={classes.textSection} textAlign="justify">
+          <div className={clsx(classes.textSection, classes.textJustify)}>
             <Trans i18nKey="Skills.Overview">
               <Typography>
                 This is a list of my favorite tools that I've worked with. Most
@@ -97,18 +98,18 @@ const Skills = () => {
                 always loved looking at colorful collections.
               </Typography>
             </Trans>
-          </Box>
-        </Box>
+          </div>
+        </div>
 
-        <Box className={classes.skillsGrid}>
+        <div className={classes.skillsGrid}>
           <Masonry
             items={skillCategories}
             render={MasonryCard}
             columnGutter={20}
           />
-        </Box>
+        </div>
       </Container>
-    </Box>
+    </section>
   );
 };
 
