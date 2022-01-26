@@ -1,4 +1,3 @@
-import { Context } from '@context';
 import { CacheProvider } from '@emotion/react';
 import {
   createTheme,
@@ -6,25 +5,22 @@ import {
   responsiveFontSizes,
   ThemeProvider,
 } from '@mui/material';
-import React, { ReactNode, useContext, useMemo } from 'react';
+import React, { ReactNode, useMemo } from 'react';
 
-import { darkTheme, lightTheme, makeOverrides, muiCache } from './themes';
+import { darkTheme, makeOverrides, muiCache } from './themes';
 
 const ThemeWrapper = (props: { children: ReactNode }) => {
   const { children } = props;
-  const { darkMode } = useContext(Context);
 
   const activeTheme = useMemo(() => {
-    const colorTheme = darkMode ? darkTheme : lightTheme;
-
-    const generatedTheme = createTheme(colorTheme);
+    const generatedTheme = createTheme(darkTheme);
     const themeOverrides = makeOverrides(generatedTheme);
 
     const combinedTheme = createTheme(generatedTheme, themeOverrides);
 
     const responsiveTheme = responsiveFontSizes(combinedTheme);
     return responsiveTheme;
-  }, [darkMode]);
+  }, []);
 
   return (
     <CacheProvider value={muiCache}>

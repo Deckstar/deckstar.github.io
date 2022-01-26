@@ -1,4 +1,4 @@
-import { DarkModeToggle, HideOnScroll } from '@components';
+import { HideOnScroll } from '@components';
 import { useLocalState } from '@hooks/useLocalState';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { AppBar, Box, Drawer, IconButton, Toolbar } from '@mui/material';
@@ -51,7 +51,6 @@ const Navbar = () => {
               <DesktopSectionButtons />
             </Box>
             <LanguageMenu />
-            <DarkModeToggle />
           </Toolbar>
         </AppBar>
       </HideOnScroll>
