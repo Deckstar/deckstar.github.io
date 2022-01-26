@@ -7,10 +7,10 @@ const useStyles = makeStyles()((theme: Theme) => ({
     borderBottom: `2px solid ${theme.palette.divider}`,
   },
   title: {
-    fontFamily: 'Mistral, "Roboto", "Helvetica", "Arial", sans-serif',
-    letterSpacing: '0.05em',
+    fontFamily: 'Caveat, "Roboto", "Helvetica", "Arial", sans-serif',
+    letterSpacing: '0.01em',
     fontVariant: 'small-caps',
-    marginBottom: '0.5em',
+    marginBottom: theme.spacing(2),
   },
   twoRows: {
     display: 'flex',

@@ -9,10 +9,10 @@ const useStyles = makeStyles()((theme: Theme) => ({
     padding: '30px 0',
   },
   title: {
-    fontFamily: 'Mistral, "Roboto", "Helvetica", "Arial", sans-serif',
-    letterSpacing: '0.05em',
+    fontFamily: 'Caveat, "Roboto", "Helvetica", "Arial", sans-serif',
+    letterSpacing: '0.01em',
     fontVariant: 'small-caps',
-    marginBottom: '0.5em',
+    marginBottom: theme.spacing(2),
   },
   paragraph: {
     marginBottom: '1em',

@@ -30,8 +30,8 @@ const useStyles = makeStyles()((theme: Theme) => ({
   },
   nameHeader: {
     fontWeight: 'bold',
-    letterSpacing: '0.05em',
-    fontFamily: 'Mistral, "Roboto", "Helvetica", "Arial", sans-serif',
+    letterSpacing: '0.01em',
+    fontFamily: 'Caveat, "Roboto", "Helvetica", "Arial", sans-serif',
     fontVariant: 'small-caps',
   },
   profilePic: {
