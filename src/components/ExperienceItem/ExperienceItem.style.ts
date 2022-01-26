@@ -3,11 +3,12 @@ import { makeStyles } from '@theme/themes';
 const bulletSize = 24;
 const imageHeight = 40;
 
-const useStyles = makeStyles()(() => ({
+const useStyles = makeStyles()((theme) => ({
   // make sure you use px units (not em) for this css logic, otherwise it won't align
   itemContainer: {
     display: 'flex',
-    padding: '0.5px 0 1.5rem',
+    paddingTop: theme.spacing(0.5),
+    paddingBottom: theme.spacing(3),
   },
   itemBulletContainer: {
     paddingTop: `calc(${imageHeight / 2}px - ${bulletSize / 2}px)`,
@@ -17,19 +18,30 @@ const useStyles = makeStyles()(() => ({
     height: `${bulletSize}px`,
   },
   itemContent: {
-    marginLeft: '2em',
+    marginLeft: theme.spacing(4),
   },
   // end px units
-  firmLogo: {
+  logo: {
     maxHeight: imageHeight,
     maxWidth: '100%',
-    marginBottom: '0.5em',
+    marginBottom: theme.spacing(1),
   },
   title: {
     fontWeight: 'bold',
   },
-  dates: {
-    marginBottom: '1em',
+  rows: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.spacing(0.25),
+    marginBottom: theme.spacing(2),
+  },
+  row: {
+    display: 'flex',
+    gap: theme.spacing(1),
+    alignItems: 'center',
+  },
+  location: {
+    fontStyle: 'italic',
   },
   description: {},
 }));
