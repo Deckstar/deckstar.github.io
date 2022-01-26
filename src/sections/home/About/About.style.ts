@@ -23,6 +23,9 @@ const useStyles = makeStyles()((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
+  descriptionContainer: {
+    textAlign: 'justify',
+  },
   paragraph: {
     marginBottom: '1em',
   },
@@ -39,6 +42,9 @@ const useStyles = makeStyles()((theme: Theme) => ({
   },
   bigPhotoCaption: {
     textAlign: 'center',
+  },
+  bold: {
+    fontWeight: 'bold',
   },
 }));
 
