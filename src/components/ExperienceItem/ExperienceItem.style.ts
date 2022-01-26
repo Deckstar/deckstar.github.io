@@ -43,7 +43,9 @@ const useStyles = makeStyles()((theme) => ({
   location: {
     fontStyle: 'italic',
   },
-  description: {},
+  description: {
+    whiteSpace: 'pre-wrap',
+  },
 }));
 
 export default useStyles;
