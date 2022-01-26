@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import React from 'react';
 
 import useStyles from './Banner.style';
@@ -7,10 +7,10 @@ const Banner = () => {
   const { classes } = useStyles();
 
   return (
-    <Box component="section" id="banner">
-      <Box className={classes.background}>
+    <section className={classes.section} id="banner">
+      <div className={classes.background}>
         <Container className={classes.inner}>
-          <Box className={classes.textContainer}>
+          <div className={classes.textContainer}>
             <Typography variant="h3" className={classes.heading} paragraph>
               Thanks a lot to all these fine people for all their great work!
             </Typography>
@@ -19,10 +19,10 @@ const Banner = () => {
               of all of these wonderful creators. So I've devoted this page to
               thanking them and providing links for more information.
             </Typography>
-          </Box>
+          </div>
         </Container>
-      </Box>
-    </Box>
+      </div>
+    </section>
   );
 };
 

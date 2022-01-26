@@ -3,21 +3,13 @@ import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@theme/themes';
 
 const useStyles = makeStyles()((theme: Theme) => ({
+  section: {
+    backgroundImage: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+  },
   background: {
     backgroundImage: `url(${overlays.overlay3.default})`,
     backgroundSize: 'cover',
     position: 'relative',
-
-    '&::before': {
-      backgroundImage: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-      content: '""',
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      zIndex: -1,
-      height: '100%',
-      width: '100%',
-    },
   },
   inner: {
     minHeight: '30rem',
