@@ -1,4 +1,5 @@
 import resumePDF from '@assets/docs/Sibirtsev CV 2020.pdf';
+import { ContactPage } from '@mui/icons-material';
 import {
   Box,
   Button,
@@ -76,6 +77,7 @@ const About = () => {
                 variant="contained"
                 style={{ marginBottom: '2em' }}
                 id="cv"
+                startIcon={<ContactPage />}
               >
                 {t('About.ViewCV')}
               </Button>
