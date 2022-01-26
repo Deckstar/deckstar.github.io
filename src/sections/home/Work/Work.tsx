@@ -24,6 +24,7 @@ const Work = () => {
             }
           }
           title
+          name
           logo {
             name
             childImageSharp {

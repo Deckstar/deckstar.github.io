@@ -10,7 +10,15 @@ import useStyles from './ExperienceItem.style';
 const ExperienceItem = (props: ExperienceItemProps) => {
   const { classes } = useStyles();
 
-  const { location, locationFlag, title, logo, dates, description } = props;
+  const {
+    location,
+    locationFlag,
+    title,
+    logo,
+    name,
+    dates,
+    description,
+  } = props;
 
   return (
     <Fade triggerOnce direction="up">
@@ -29,7 +37,7 @@ const ExperienceItem = (props: ExperienceItemProps) => {
         <div className={classes.itemContent}>
           <GatsbyImage
             image={logo?.childImageSharp?.gatsbyImageData}
-            alt={logo?.name}
+            alt={name}
             className={classes.logo}
           />
           <div className={classes.rows}>

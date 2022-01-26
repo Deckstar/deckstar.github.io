@@ -24,6 +24,7 @@ const Education = () => {
             }
           }
           title
+          name
           logo {
             name
             childImageSharp {

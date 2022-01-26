@@ -4,6 +4,7 @@
     "locationFlag": "../images/flags/sweden.png",
     "title": "Stockholm School of Economics",
     "logo": "../images/companies/sse-logo-white.png",
+    "name": "Stockholm School of Economics (Handelshögskolan i Stockholm)",
     "dates": "September 2017 – May 2019",
     "description": "MSc Master of Finance, specialization in Investment Management"
   },
@@ -12,6 +13,7 @@
     "locationFlag": "../images/flags/united-kingdom.png",
     "title": "University College London",
     "logo": "../images/companies/ucl.png",
+    "name": "University College London",
     "dates": "September 2014 – May 2017",
     "description": "BA Economics and Business with East European Studies"
   },
@@ -20,6 +22,7 @@
     "locationFlag": "../images/flags/switzerland.png",
     "title": "Institut Le Rosey",
     "logo": "../images/companies/le-rosey-light.png",
+    "name": "Institut Le Rosey",
     "dates": "September 2008 – June 2014",
     "description": "IB International Baccalaureate bilingual diploma"
   }
