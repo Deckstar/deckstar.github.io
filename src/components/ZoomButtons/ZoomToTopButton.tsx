@@ -3,7 +3,6 @@ import { Fab, useScrollTrigger, Zoom } from '@mui/material';
 import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@theme/themes';
 import React from 'react';
-import { animateScroll as scroll } from 'react-scroll';
 
 const useStyles = makeStyles()((theme: Theme) => ({
   zoomButton: {
@@ -15,8 +14,13 @@ const useStyles = makeStyles()((theme: Theme) => ({
 }));
 
 const handleClickToScroll = () => {
-  scroll.scrollToTop({
-    smooth: true,
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
   });
 };
 
