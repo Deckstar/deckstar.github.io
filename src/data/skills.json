@@ -38,7 +38,7 @@
       },
       {
         "name": "Wolfram Language",
-        "src": "../images/logos/wolfram language.png",
+        "src": "../images/logos/wolfram-language.png",
         "subSkills": [
           {
             "name": "Mathematica",
@@ -49,7 +49,7 @@
       },
       {
         "name": "HTML & CSS",
-        "src": "../images/logos/HTML5 CSS3.png"
+        "src": "../images/logos/html5-css3.png"
       }
     ]
   },
@@ -97,7 +97,7 @@
           },
           {
             "name": "Material UI",
-            "src": "../images/logos/materialUI.png"
+            "src": "../images/logos/material-ui.png"
           },
           {
             "name": "Formik",
@@ -156,7 +156,7 @@
           },
           {
             "name": "TypeORM",
-            "src": "../images/logos/typeORM.png"
+            "src": "../images/logos/type-orm.png"
           },
           {
             "name": "Mongoose",
@@ -166,7 +166,7 @@
       },
       {
         "name": "Django",
-        "src": "../images/logos/django with python.png",
+        "src": "../images/logos/django-python.png",
         "subSkills": [
           {
             "name": "Graphene",
@@ -247,7 +247,7 @@
           },
           {
             "name": "Azure Repos",
-            "src": "../images/logos/azure repos.png"
+            "src": "../images/logos/azure-repos.png"
           }
         ]
       },
@@ -312,7 +312,7 @@
       },
       {
         "name": "Android Studio",
-        "src": "../images/logos/android studio.png",
+        "src": "../images/logos/android-studio.png",
         "extra": "Android development"
       },
       {
@@ -327,7 +327,7 @@
     "skillItems": [
       {
         "name": "Adobe Creative Cloud",
-        "src": "../images/logos/adobe creative cloud.png",
+        "src": "../images/logos/adobe-creative-cloud.png",
         "subSkills": [
           {
             "name": "Photoshop",
@@ -380,7 +380,7 @@
     "skillItems": [
       {
         "name": "Final Cut Pro",
-        "src": "../images/logos/final cut pro.png",
+        "src": "../images/logos/final-cut-pro.png",
         "extra": "video editing"
       },
       {
@@ -393,7 +393,7 @@
         "subSkills": [
           {
             "name": "Guitar Pro",
-            "src": "../images/logos/guitar pro.png"
+            "src": "../images/logos/guitar-pro.png"
           },
           {
             "name": "MuseScore",
