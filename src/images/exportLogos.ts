@@ -63,7 +63,6 @@ const logos = {
   redux: require('./logos/redux.png'),
   reduxForm: require('./logos/redux-form.png'),
   reduxSaga: require('./logos/redux-saga.png'),
-  sapper: require('./logos/sapper.png'),
   sketch: require('./logos/sketch.png'),
   sql: require('./logos/sql.png'),
   sqlite3: require('./logos/sqlite3.png'),
