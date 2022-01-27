@@ -9,24 +9,43 @@
           {
             "name": "TypeScript",
             "src": "../images/logos/typescript.png"
+          },
+          {
+            "name": "Lodash",
+            "src": "../images/logos/lodash.png",
+            "extra": "utilities"
           }
         ]
       },
       {
         "name": "Python",
-        "src": "../images/logos/python.png"
+        "src": "../images/logos/python.png",
+        "subSkills": [
+          {
+            "name": "Jupyter",
+            "src": "../images/logos/jupyter.png",
+            "extra": "data analysis"
+          }
+        ]
       },
       {
         "name": "Java",
         "src": "../images/logos/java.png"
       },
       {
-        "name": "Wolfram Language",
-        "src": "../images/logos/wolfram language.png"
-      },
-      {
         "name": "GraphQL",
         "src": "../images/logos/graphql.png"
+      },
+      {
+        "name": "Wolfram Language",
+        "src": "../images/logos/wolfram language.png",
+        "subSkills": [
+          {
+            "name": "Mathematica",
+            "src": "../images/logos/mathematica.png",
+            "extra": "math & technical computing"
+          }
+        ]
       },
       {
         "name": "HTML & CSS",
@@ -96,13 +115,7 @@
       },
       {
         "name": "Svelte",
-        "src": "../images/logos/svelte.png",
-        "subSkills": [
-          {
-            "name": "Sapper",
-            "src": "../images/logos/sapper.png"
-          }
-        ]
+        "src": "../images/logos/svelte.png"
       },
       {
         "name": "Electron",
@@ -217,32 +230,11 @@
     ]
   },
   {
-    "title": "Deployment",
+    "title": "CI/CD (continuous integration & deployment)",
     "skillItems": [
-      {
-        "name": "Heroku",
-        "src": "../images/logos/heroku.png"
-      },
-      {
-        "name": "Amazon Web Services",
-        "src": "../images/logos/aws.png"
-      },
-      {
-        "name": "DigitalOcean",
-        "src": "../images/logos/digital-ocean.png"
-      }
-    ]
-  },
-  {
-    "title": "Dev tools",
-    "skillItems": [
-      {
-        "name": "Docker",
-        "src": "../images/logos/docker.png",
-        "extra": "containerization"
-      },
       {
         "name": "Git",
+        "extra": "version control",
         "src": "../images/logos/git.png",
         "subSkills": [
           {
@@ -252,21 +244,59 @@
           {
             "name": "Bitbucket",
             "src": "../images/logos/bitbucket.png"
+          },
+          {
+            "name": "Azure Repos",
+            "src": "../images/logos/azure repos.png"
           }
         ]
       },
+      {
+        "name": "Testing",
+        "subSkills": [{ "name": "Jest", "src": "../images/logos/jest.png" }]
+      },
+      {
+        "name": "Docker",
+        "src": "../images/logos/docker.png",
+        "extra": "containerization"
+      },
+      {
+        "name": "PM2",
+        "src": "../images/logos/pm2.png",
+        "extra": "process management"
+      },
+      {
+        "name": "Hosting",
+        "subSkills": [
+          {
+            "name": "Heroku",
+            "src": "../images/logos/heroku.png"
+          },
+          {
+            "name": "Amazon Web Services",
+            "src": "../images/logos/aws.png"
+          },
+          {
+            "name": "DigitalOcean",
+            "src": "../images/logos/digital-ocean.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Dev tools",
+    "skillItems": [
       {
         "name": "Task management",
         "subSkills": [
           {
             "name": "Jira",
-            "src": "../images/logos/jira.png",
-            "extra": "task management"
+            "src": "../images/logos/jira.png"
           },
           {
             "name": "Asana",
-            "src": "../images/logos/asana.png",
-            "extra": "task management"
+            "src": "../images/logos/asana.png"
           }
         ]
       },
@@ -277,7 +307,7 @@
       },
       {
         "name": "Xcode",
-        "src": "../images/logos/Xcode.png",
+        "src": "../images/logos/xcode.png",
         "extra": "iOS development"
       },
       {
@@ -286,8 +316,9 @@
         "extra": "Android development"
       },
       {
-        "name": "Lodash",
-        "src": "../images/logos/lodash.png"
+        "name": "Mockaroo",
+        "src": "../images/logos/mockaroo.png",
+        "extra": "mock data generation"
       }
     ]
   },
@@ -323,26 +354,6 @@
     ]
   },
   {
-    "title": "Data & math",
-    "skillItems": [
-      {
-        "name": "Jupyter Notebooks",
-        "src": "../images/logos/jupyter.png",
-        "extra": "Python data analysis"
-      },
-      {
-        "name": "Mathematica",
-        "src": "../images/logos/mathematica.png",
-        "extra": "Math & technical computing"
-      },
-      {
-        "name": "Mockaroo",
-        "src": "../images/logos/mockaroo.png",
-        "extra": "Mock data generation"
-      }
-    ]
-  },
-  {
     "title": "Productivity & business",
     "skillItems": [
       {
@@ -370,12 +381,12 @@
       {
         "name": "Final Cut Pro",
         "src": "../images/logos/final cut pro.png",
-        "extra": "Video editing"
+        "extra": "video editing"
       },
       {
         "name": "Logic Pro",
         "src": "../images/logos/logic pro.png",
-        "extra": "Audio recording & mixing"
+        "extra": "audio recording & mixing"
       },
       {
         "name": "Music notation",

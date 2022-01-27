@@ -36,6 +36,7 @@ const Skills = () => {
               }
             }
             subSkills {
+              extra
               name
               src {
                 childImageSharp {
