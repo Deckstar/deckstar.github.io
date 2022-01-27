@@ -13,6 +13,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import React from 'react';
 
+import { useSectionRefs } from '../Context';
 import useStyles from './About.style';
 
 const yearsExperience = dayjs().diff(dayjs('2018-10-24'), 'year');
@@ -20,9 +21,10 @@ const yearsExperience = dayjs().diff(dayjs('2018-10-24'), 'year');
 const About = () => {
   const { classes } = useStyles();
   const { t } = useTranslation();
+  const { about } = useSectionRefs();
 
   return (
-    <section className={classes.container} id="about">
+    <section ref={about} id="about" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
           {t('About.AboutMe')}

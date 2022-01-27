@@ -11,6 +11,8 @@ import {
   Work as WorkIcon,
 } from '@mui/icons-material';
 import { Divider, IconButton, Link, MenuItem } from '@mui/material';
+import { useSectionScrollers } from '@sections/home/Context';
+import { ArrayElement } from '@typescript/@types/utils';
 import clsx from 'clsx';
 import {
   Link as GatsbyLink,
@@ -19,7 +21,6 @@ import {
 import { map } from 'lodash';
 import React, { ComponentType } from 'react';
 
-import { handleScrollTo } from './DesktopSectionButtons';
 import useStyles from './Navbar.style';
 
 interface MenuItemType {
@@ -30,11 +31,9 @@ interface MenuItemType {
 interface MenuLinkItem extends MenuItemType {
   link: string;
 }
-export interface MenuSectionItem extends MenuItemType {
-  id: string;
-}
+export type MenuSectionItem = ArrayElement<typeof DRAWER_BUTTONS>;
 
-export const DRAWER_BUTTONS: MenuSectionItem[] = [
+export const DRAWER_BUTTONS = [
   {
     title: 'About',
     id: 'about',
@@ -60,7 +59,7 @@ export const DRAWER_BUTTONS: MenuSectionItem[] = [
     id: 'contact',
     Icon: ContactIcon,
   },
-];
+] as const;
 
 const PAGE_LINKS: MenuLinkItem[] = [
   {
@@ -92,13 +91,15 @@ const DrawerLink = (props: MenuLinkItem) => {
   );
 };
 
-const HomePageSectionButton = (props: MenuSectionItem) => {
-  const { title, id, Icon } = props;
+const HomePageSectionButton = (
+  props: MenuSectionItem & { onClick: () => void }
+) => {
+  const { title, Icon, onClick } = props;
 
   const { t } = useTranslation();
 
   return (
-    <MenuItem onClick={() => handleScrollTo(id)}>
+    <MenuItem onClick={onClick}>
       <IconButton disableRipple size="large">
         <Icon />
       </IconButton>
@@ -109,6 +110,7 @@ const HomePageSectionButton = (props: MenuSectionItem) => {
 
 const HomePageSectionButtons = () => {
   const { route } = useRouter();
+  const scrollers = useSectionScrollers();
 
   const isHomePage = route === '/';
 
@@ -118,9 +120,18 @@ const HomePageSectionButtons = () => {
 
   return (
     <>
-      {map(DRAWER_BUTTONS, (section, i) => (
-        <HomePageSectionButton {...section} key={`drawer link ${i}`} />
-      ))}
+      {map(DRAWER_BUTTONS, (section) => {
+        const { id } = section;
+        const handleScrollToSection = scrollers[id];
+
+        return (
+          <HomePageSectionButton
+            {...section}
+            onClick={handleScrollToSection}
+            key={id}
+          />
+        );
+      })}
       <Divider />
     </>
   );

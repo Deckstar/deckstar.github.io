@@ -3,6 +3,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import React from 'react';
 
 import { Education, Work } from '..';
+import { useSectionRefs } from '../Context';
 import useStyles from './Experience.style';
 
 const TranslationDisclaimer = (props: { hide: boolean }) => {
@@ -22,12 +23,13 @@ const TranslationDisclaimer = (props: { hide: boolean }) => {
 const Experience = () => {
   const { classes } = useStyles();
   const { i18n } = useTranslation();
+  const { experience } = useSectionRefs();
 
   const lang = i18n.language;
   const isEnglish = lang.substring(0, 2) === 'en';
 
   return (
-    <section id="experience">
+    <section ref={experience} id="experience">
       <Container className={classes.container}>
         <div className={classes.workAndEducation}>
           <Work />

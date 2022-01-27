@@ -4,13 +4,16 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
 import React from 'react';
 
+import { useSectionRefs } from '../Context';
 import useStyles from './Contact.style';
 
 const Contact = () => {
   const { classes } = useStyles();
   const { t } = useTranslation();
+  const { contact } = useSectionRefs();
+
   return (
-    <section id="contact" className={classes.container}>
+    <section ref={contact} id="contact" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
           {t('Contact.Contact')}

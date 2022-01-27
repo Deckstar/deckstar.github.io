@@ -23,6 +23,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
 import React from 'react';
 
+import { useSectionRefs } from '../Context';
 import useStyles from './Blog.style';
 
 // for a full list of props, see graphiql interface. These are just the props we need right now.
@@ -128,6 +129,7 @@ const Post = (props: BlogPostProps) => {
 const Blog = () => {
   const { classes } = useStyles();
   const { t } = useTranslation();
+  const { blog } = useSectionRefs();
 
   const data = useStaticQuery(graphql`
     {
@@ -158,7 +160,7 @@ const Blog = () => {
   const devArticles: Article[] = data.allDevArticles.nodes;
 
   return (
-    <section className={classes.container} id="blog">
+    <section ref={blog} id="blog" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
           {t('Blog.Blog')}

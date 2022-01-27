@@ -7,6 +7,7 @@ import {
   Experience,
   Skills,
 } from '@sections/home';
+import { SectionRefsProvider } from '@sections/home/Context';
 import { graphql, PageProps } from 'gatsby';
 import React from 'react';
 
@@ -30,14 +31,17 @@ const Home = (pageProps: PageProps) => {
   return (
     <>
       <SEO pathname={pageProps.location.pathname} />
-      <Wrapper>
-        <Banner />
-        <About />
-        <Skills />
-        <Experience />
-        <Blog />
-        <Contact />
-      </Wrapper>
+
+      <SectionRefsProvider>
+        <Wrapper>
+          <Banner />
+          <About />
+          <Skills />
+          <Experience />
+          <Blog />
+          <Contact />
+        </Wrapper>
+      </SectionRefsProvider>
     </>
   );
 };

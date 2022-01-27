@@ -4,16 +4,11 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
 import React from 'react';
-import { scroller } from 'react-scroll';
 
+import { useSectionRefs, useSectionScrollers } from '../Context';
 import useStyles from './Banner.style';
 
-interface SectionButtonProps {
-  title: string;
-  link: string;
-}
-
-const sectionButtons: SectionButtonProps[] = [
+const sectionButtons = [
   {
     title: 'About',
     link: 'about',
@@ -34,21 +29,16 @@ const sectionButtons: SectionButtonProps[] = [
     title: 'Contact',
     link: 'contact',
   },
-];
-
-const handleScrollTo = (id: string) => {
-  scroller.scrollTo(id, {
-    offset: -50, // so navbar doesn't block view
-    smooth: true,
-  });
-};
+] as const;
 
 const Banner = () => {
   const { t } = useTranslation();
   const { classes } = useStyles();
+  const { banner } = useSectionRefs();
+  const scrollers = useSectionScrollers();
 
   return (
-    <section id="banner" className={classes.section}>
+    <section ref={banner} id="banner" className={classes.section}>
       <div className={classes.background}>
         <Container className={classes.inner}>
           <StaticImage
@@ -83,13 +73,15 @@ const Banner = () => {
           <div className={classes.buttons}>
             {map(sectionButtons, (button) => {
               const { title, link } = button;
+              const handleScrollToSection = scrollers[link];
+
               return (
                 <Button
+                  key={title}
                   color="grey"
                   className={classes.button}
                   variant="contained"
-                  onClick={() => handleScrollTo(link)}
-                  key={`banner button ${title}`}
+                  onClick={handleScrollToSection}
                 >
                   {t(`SectionButtons.${title}`)}
                 </Button>

@@ -8,6 +8,7 @@ import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import { Masonry, RenderComponentProps } from 'masonic';
 import React from 'react';
 
+import { useSectionRefs } from '../Context';
 import useStyles from './Skills.style';
 
 const MasonryCard = (props: RenderComponentProps<SkillCardProps>) => {
@@ -19,6 +20,7 @@ const MasonryCard = (props: RenderComponentProps<SkillCardProps>) => {
 const Skills = () => {
   const { classes } = useStyles();
   const { t } = useTranslation();
+  const { skills } = useSectionRefs();
 
   const data = useStaticQuery(graphql`
     {
@@ -58,7 +60,7 @@ const Skills = () => {
   const skillCategories = data.allSkillsJson.nodes;
 
   return (
-    <section className={classes.container} id="skills">
+    <section ref={skills} id="skills" className={classes.container}>
       <Container>
         <Typography variant="h3" className={classes.title}>
           {t('Skills.Skills')}
