@@ -50,7 +50,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-image`,
-    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-react-helmet-async`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
