@@ -1,0 +1,15 @@
+[
+  { "code": "de", "name": "German", "src": "../images/flags/germany.png" },
+  {
+    "code": "en",
+    "name": "English",
+    "src": "../images/flags/united-kingdom.png"
+  },
+  { "code": "es", "name": "Spanish", "src": "../images/flags/spain.png" },
+  { "code": "et", "name": "Estonian", "src": "../images/flags/estonia.png" },
+  { "code": "fr", "name": "French", "src": "../images/flags/france.png" },
+  { "code": "hu", "name": "Hungarian", "src": "../images/flags/hungary.png" },
+  { "code": "ja", "name": "Japanese", "src": "../images/flags/japan.png" },
+  { "code": "ru", "name": "Russian", "src": "../images/flags/russia.png" },
+  { "code": "sv", "name": "Swedish", "src": "../images/flags/sweden.png" }
+]
