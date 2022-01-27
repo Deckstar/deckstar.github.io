@@ -10,7 +10,7 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   {
     title: 'Twitter',
-    url: 'https://twitter.com/DexterSibirtsev',
+    url: 'https://twitter.com/Deckstar01',
     Icon: Twitter,
   },
   {
