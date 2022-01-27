@@ -161,7 +161,7 @@ const DrawerMenu = () => {
           return (
             <Link key={title} href={url}>
               <IconButton>
-                <Icon color="primary" width={26} height={26} />
+                <Icon color="secondary" width={26} height={26} />
               </IconButton>
             </Link>
           );
