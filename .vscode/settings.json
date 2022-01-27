@@ -12,7 +12,7 @@
   },
   "cSpell.words": ["scrollers", "unlisten"],
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll.sortJSON": false
   },
   "editor.formatOnSave": true,
   "editor.insertSpaces": true,
