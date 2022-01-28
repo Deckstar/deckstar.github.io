@@ -1,5 +1,6 @@
 import photos from '@images/exportPhotos';
 import { graphql, useStaticQuery } from 'gatsby';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 import { concat } from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -26,14 +27,15 @@ interface StaticItems {
 
 interface SEOProps {
   description?: string;
-  lang?: string;
   meta?: HTMLMetaElement[];
   title?: string;
   pathname?: string;
 }
 
 const SEO = (props: SEOProps) => {
-  const { description = '', lang = 'en', meta = [], title, pathname } = props;
+  const { description = '', meta = [], title, pathname } = props;
+
+  const { language } = useI18next();
 
   const { site, image: metaImage } = useStaticQuery<StaticItems>(
     graphql`
@@ -69,9 +71,7 @@ const SEO = (props: SEOProps) => {
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+      htmlAttributes={{ lang: language }}
       title={title}
       titleTemplate={
         pathname === '/'
