@@ -1,14 +1,11 @@
 import { KeyboardArrowUp as UpIcon } from '@mui/icons-material';
-import { Fab, useScrollTrigger, Zoom } from '@mui/material';
+import { Fab, Zoom } from '@mui/material';
 import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@theme/themes';
 import { hasWindow } from '@utils/ssr';
 import React from 'react';
 
 const useStyles = makeStyles()((theme: Theme) => ({
-  zoomButton: {
-    marginTop: theme.spacing(1),
-  },
   zoomButtonLabel: {
     color: theme.palette.text.primary,
   },
@@ -25,30 +22,25 @@ const handleClickToScroll = () => {
   });
 };
 
-const ZoomToTopButton = () => {
-  const { classes } = useStyles();
+interface Props {
+  trigger: boolean;
+}
 
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 100,
-  });
+const ZoomToTopButton = (props: Props) => {
+  const { trigger } = props;
+
+  const { classes } = useStyles();
 
   return (
     <Zoom in={trigger}>
-      <div
+      <Fab
         onClick={handleClickToScroll}
-        role="presentation"
-        className={classes.zoomButton}
+        color="secondary"
+        size="large"
+        className={classes.zoomButtonLabel}
       >
-        <Fab
-          color="secondary"
-          size="small"
-          aria-label="scroll back to top"
-          className={classes.zoomButtonLabel}
-        >
-          <UpIcon />
-        </Fab>
-      </div>
+        <UpIcon />
+      </Fab>
     </Zoom>
   );
 };
