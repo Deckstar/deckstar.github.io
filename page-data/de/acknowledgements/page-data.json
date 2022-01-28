@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-pages-acknowledgements-tsx",
     "path": "/de/acknowledgements/",
     "result": {"data":{"locales":{"edges":[{"node":{"ns":"common","data":"{\"Banner\":{\"SoftwareDeveloper\":\"Softwareentwickler\"}}","language":"de"}}]}},"pageContext":{"language":"de","i18n":{"language":"de","languages":["en","de","es","et","fr","hu","ru","se"],"defaultLanguage":"en","generateDefaultLanguagePage":false,"routed":true,"originalPath":"/acknowledgements/","path":"de/acknowledgements/"}}},
-    "staticQueryHashes": ["79244422"]}
+    "staticQueryHashes": ["3486922188","79244422"]}
