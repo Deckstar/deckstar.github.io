@@ -1,3 +1,4 @@
+import { hasWindow } from '@utils/ssr';
 import { mapValues } from 'lodash';
 import React, {
   createContext,
@@ -24,8 +25,6 @@ const defaultContext = {
 const scrollOffset = 50; // so Navbar doesn't block view
 
 export const handleScrollTo = (ref: SectionRef) => {
-  const hasWindow = !(typeof window === 'undefined');
-
   if (hasWindow && ref?.current) {
     const current = ref.current;
     const position = current.offsetTop;

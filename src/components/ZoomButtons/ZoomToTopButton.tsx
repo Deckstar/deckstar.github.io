@@ -2,6 +2,7 @@ import { KeyboardArrowUp as UpIcon } from '@mui/icons-material';
 import { Fab, useScrollTrigger, Zoom } from '@mui/material';
 import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@theme/themes';
+import { hasWindow } from '@utils/ssr';
 import React from 'react';
 
 const useStyles = makeStyles()((theme: Theme) => ({
@@ -14,7 +15,7 @@ const useStyles = makeStyles()((theme: Theme) => ({
 }));
 
 const handleClickToScroll = () => {
-  if (typeof window === 'undefined') {
+  if (!hasWindow) {
     return;
   }
 
