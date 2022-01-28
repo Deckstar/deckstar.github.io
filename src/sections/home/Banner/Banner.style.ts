@@ -52,6 +52,7 @@ const useStyles = makeStyles()((theme: Theme) => ({
     height: '7em',
     width: '7em',
     borderRadius: '50%',
+    '& img': { borderRadius: '50%' },
   },
   icons: {
     display: 'flex',
