@@ -82,8 +82,9 @@ const useStyles = makeStyles()((theme: Theme) => ({
   cardDateContainer: {
     display: 'flex',
     alignItems: 'center',
-    fontSize: '0.9em',
-    marginBottom: '1em',
+    fontSize: theme.typography.subtitle2['fontSize'],
+    marginBottom: theme.spacing(1),
+    gap: theme.spacing(1),
   },
   cardDate: {
     fontSize: 'inherit',
