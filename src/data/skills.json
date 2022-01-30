@@ -65,10 +65,6 @@
             "src": "../images/logos/react native.png"
           },
           {
-            "name": "Apollo",
-            "src": "../images/logos/apollo.png"
-          },
-          {
             "name": "Server/static rendering",
             "subSkills": [
               {
@@ -80,6 +76,10 @@
                 "src": "../images/logos/gatsby.png"
               }
             ]
+          },
+          {
+            "name": "Apollo",
+            "src": "../images/logos/apollo.png"
           },
           {
             "name": "Redux",
