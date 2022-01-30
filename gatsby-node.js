@@ -1,5 +1,6 @@
 const { createRemoteFileNode } = require('gatsby-source-filesystem');
 
+/** @param {import('gatsby').CreateSchemaCustomizationArgs }*/
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
@@ -7,7 +8,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type DevArticles implements Node {
       id: ID!
       article: Article
-      featuredImg: File @link(from: "featuredImg___NODE")
+      featuredImg: File @link(from: "fields.featuredImg")
     }
 
     type Article {
@@ -28,33 +29,34 @@ exports.createSchemaCustomization = ({ actions }) => {
   `);
 };
 
-exports.onCreateNode = async ({
-  node,
-  actions: { createNode },
-  store,
-  cache,
-  createNodeId,
-}) => {
+/** @param {import('gatsby').CreateNodeArgs } args */
+exports.onCreateNode = async (args) => {
+  const { node, actions, getCache, createNodeId } = args;
+
+  const { createNode, createNodeField } = actions;
+
   if (
     node.internal.type === 'DevArticles' &&
-    (node.article.cover_image !== null || node.article.social_image !== null)
+    (node.article.cover_image || node.article.social_image)
   ) {
     const fileNode = await createRemoteFileNode({
       url: node.article.cover_image || node.article.social_image,
       parentNodeId: node.id,
       createNode,
       createNodeId,
-      cache,
-      store,
+      getCache,
     });
 
     if (fileNode) {
-      node.featuredImg___NODE = fileNode.id;
+      const nodeField = { node, name: 'featuredImg', value: fileNode.id };
+      createNodeField(nodeField);
     }
   }
 };
 
 const path = require('path');
+
+/** @param {import('gatsby').CreateWebpackConfigArgs }*/
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
