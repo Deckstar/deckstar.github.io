@@ -96,6 +96,7 @@ const Post = (props: BlogPostProps) => {
           </Link>
           <Badge
             badgeContent={positive_reactions_count}
+            max={10 ** 5}
             color="secondary"
             classes={{ badge: classes.cardHeartCount }}
           >
