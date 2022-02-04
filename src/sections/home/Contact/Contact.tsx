@@ -1,4 +1,5 @@
 import socialLinks from '@data/socialLinks';
+import { Email } from '@mui/icons-material';
 import { Button, Container, Link, Typography } from '@mui/material';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { map } from 'lodash';
@@ -32,7 +33,7 @@ const Contact = () => {
           </div>
           <Typography paragraph>{t('Contact.SendEmail')}:</Typography>
           <Link href="mailto:dexter.sibirtsev@gmail.com">
-            <Button color="grey" variant="contained">
+            <Button color="grey" variant="contained" startIcon={<Email />}>
               dexter.sibirtsev@gmail.com
             </Button>
           </Link>
