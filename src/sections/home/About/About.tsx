@@ -1,4 +1,4 @@
-import resumePDF from '@assets/docs/Sibirtsev CV 2020.pdf';
+import resumePDF from '@assets/docs/Sibirtsev CV 2022.pdf';
 import { ContactPage } from '@mui/icons-material';
 import {
   Button,
