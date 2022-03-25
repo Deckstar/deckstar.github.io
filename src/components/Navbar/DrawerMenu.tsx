@@ -1,6 +1,5 @@
 import socialLinks from '@data/socialLinks';
 import { useRouter } from '@hooks/useRouter';
-import { icons } from '@images';
 import {
   AccountCircle as AboutIcon,
   AlternateEmail as ContactIcon,
@@ -14,6 +13,7 @@ import { Divider, IconButton, Link, MenuItem } from '@mui/material';
 import { useSectionScrollers } from '@sections/home/Context';
 import { ArrayElement } from '@typescript/@types/utils';
 import clsx from 'clsx';
+import { StaticImage } from 'gatsby-plugin-image';
 import {
   Link as GatsbyLink,
   useTranslation,
@@ -144,8 +144,13 @@ const DrawerMenu = () => {
     <div className={clsx(classes.grow, classes.drawerMenu)}>
       <div className={classes.drawerContainer}>
         <div className={classes.drawerLogoContainer}>
-          <img src={icons.main.default} className={classes.drawerLogo} />
+          <StaticImage
+            src="../../images/icons/main.png"
+            className={classes.drawerLogo}
+            alt="DS"
+          />
         </div>
+
         <Divider />
 
         <HomePageSectionButtons />
