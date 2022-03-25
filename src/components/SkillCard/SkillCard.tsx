@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, Link } from '@mui/material';
 import { SkillCardProps, SkillItem } from '@typescript/@types/skills';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { map, size } from 'lodash';
+import { isEmpty, map } from 'lodash';
 import React, { FC, memo } from 'react';
 
 import useStyles from './SkillCard.style';
@@ -10,18 +10,20 @@ const SubSkills = (props: { subSkills?: SkillItem[] }) => {
   const { subSkills } = props;
   const { classes } = useStyles();
 
-  if (size(subSkills) > 0) {
-    return (
-      <ul className={classes.list}>
-        {map(subSkills, (subSkill) => {
-          const { name } = subSkill;
-          return <Skill {...subSkill} key={`subSkill ${name}`} />;
-        })}
-      </ul>
-    );
+  const hasSkills = !isEmpty(subSkills);
+
+  if (!hasSkills) {
+    return null;
   }
 
-  return null;
+  return (
+    <ul className={classes.list}>
+      {map(subSkills, (subSkill) => {
+        const { name } = subSkill;
+        return <Skill {...subSkill} key={`subSkill ${name}`} />;
+      })}
+    </ul>
+  );
 };
 
 const Extra = (props: { extra: SkillItem['extra'] }) => {
@@ -29,28 +31,28 @@ const Extra = (props: { extra: SkillItem['extra'] }) => {
 
   const { classes } = useStyles();
 
-  if (extra) {
-    return <span className={classes.subtitle}>({extra})</span>;
+  if (!extra) {
+    return null;
   }
 
-  return null;
+  return <span className={classes.subtitle}>({extra})</span>;
 };
 
 const Logo = (props: { name: SkillItem['name']; src: SkillItem['src'] }) => {
   const { name, src } = props;
   const { classes } = useStyles();
 
-  if (src) {
-    return (
-      <GatsbyImage
-        alt={name}
-        image={src.childImageSharp?.gatsbyImageData}
-        className={classes.miniImgContainer}
-      />
-    );
+  if (!src) {
+    return null;
   }
 
-  return null;
+  return (
+    <GatsbyImage
+      alt={name}
+      image={src.childImageSharp?.gatsbyImageData}
+      className={classes.miniImgContainer}
+    />
+  );
 };
 
 const LinkOrFragment: FC<{ href?: string }> = (props) => {
