@@ -1,4 +1,5 @@
-import photos from '@images/exportPhotos';
+// @ts-ignore
+import thumbnail from '@images/photos/thumbnail.png';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useI18next } from 'gatsby-plugin-react-i18next';
 import { concat } from 'lodash';
@@ -66,7 +67,7 @@ const SEO = (props: SEOProps) => {
   const image =
     metaImage && metaImage.src
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-      : photos.thumbnail;
+      : thumbnail;
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
   return (
