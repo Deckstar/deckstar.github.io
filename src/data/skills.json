@@ -84,24 +84,6 @@
             ]
           },
           {
-            "name": "Apollo",
-            "src": "../images/logos/apollo.png"
-          },
-          {
-            "name": "Redux",
-            "src": "../images/logos/redux.png",
-            "subSkills": [
-              {
-                "name": "Redux Saga",
-                "src": "../images/logos/redux-saga.png"
-              },
-              {
-                "name": "Redux Form",
-                "src": "../images/logos/redux-form.png"
-              }
-            ]
-          },
-          {
             "name": "Material UI",
             "src": "../images/logos/material-ui.png"
           },
@@ -112,6 +94,34 @@
           {
             "name": "i18next",
             "src": "../images/logos/i18next.png"
+          }
+        ]
+      },
+      {
+        "name": "Vue",
+        "src": "../images/logos/vue.png",
+        "subSkills": [
+          {
+            "name": "Ant Design",
+            "src": "../images/logos/ant-design-vue.png"
+          }
+        ]
+      },
+      {
+        "name": "Apollo",
+        "src": "../images/logos/apollo.png"
+      },
+      {
+        "name": "Redux",
+        "src": "../images/logos/redux.png",
+        "subSkills": [
+          {
+            "name": "Redux Saga",
+            "src": "../images/logos/redux-saga.png"
+          },
+          {
+            "name": "Redux Form",
+            "src": "../images/logos/redux-form.png"
           }
         ]
       },
