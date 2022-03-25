@@ -1606,6 +1606,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/cache@npm:*":
+  version: 11.7.1
+  resolution: "@emotion/cache@npm:11.7.1"
+  dependencies:
+    "@emotion/memoize": ^0.7.4
+    "@emotion/sheet": ^1.1.0
+    "@emotion/utils": ^1.0.0
+    "@emotion/weak-memoize": ^0.2.5
+    stylis: 4.0.13
+  checksum: cf7aa8fe3bacfdedcda94b53e76a7635e122043439715fcfbf7f1a81340cfe6099a59134481a03ec3e0437466566d18528577d1e6ea92f5b98c372b8b38a8f35
+  languageName: node
+  linkType: hard
+
 "@emotion/cache@npm:^11.1.3":
   version: 11.1.3
   resolution: "@emotion/cache@npm:11.1.3"
@@ -8156,7 +8169,7 @@ __metadata:
     react-helmet-async: ^1.0.7
     react-i18next: ^11.7.3
     sass: ^1.48.0
-    tss-react: ^2.1.1
+    tss-react: ^3.6.0
     typescript: ^4.4.3
   languageName: unknown
   linkType: soft
@@ -14838,6 +14851,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"stylis@npm:4.0.13":
+  version: 4.0.13
+  resolution: "stylis@npm:4.0.13"
+  checksum: 8ea7a87028b6383c6a982231c4b5b6150031ce028e0fdaf7b2ace82253d28a8af50cc5a9da8a421d3c7c4441592f393086e332795add672aa4a825f0fe3713a3
+  languageName: node
+  linkType: hard
+
 "stylis@npm:^4.0.10":
   version: 4.0.10
   resolution: "stylis@npm:4.0.10"
@@ -15293,15 +15313,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tss-react@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "tss-react@npm:2.1.1"
+"tss-react@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "tss-react@npm:3.6.0"
   dependencies:
+    "@emotion/cache": "*"
     "@emotion/serialize": "*"
     "@emotion/utils": "*"
   peerDependencies:
     "@emotion/react": ^11.4.1
-  checksum: 58378b1b54f3879aa762820fe85f3760482394dd9564902f902e81cfc503ae0e2ac2aa5aa86223d346745506254658b40e4d58680adf8f50d257c6251008a099
+    react: ^16.8.0 || ^17.0.2
+  checksum: 043912827188a8c6aa3802d7ded2661b0b6b74c5bd51eb6897f335f9a6713c8a1561686d7dd7cd8847ed30521ce56c23094f3fc09f70db26e1df1e1c499159ca
   languageName: node
   linkType: hard
 
