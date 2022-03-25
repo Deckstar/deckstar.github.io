@@ -15,7 +15,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "yarn build --prefix-paths && gh-pages -d public"
+    "deploy": "yarn build --prefix-paths && yarn gh-pages -d public"
   },
   "dependencies": {
     "@emotion/react": "^11.7.0",
