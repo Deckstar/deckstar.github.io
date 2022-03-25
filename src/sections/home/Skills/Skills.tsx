@@ -30,6 +30,7 @@ const Skills = () => {
           skillItems {
             extra
             name
+            href
             src {
               childImageSharp {
                 gatsbyImageData(layout: CONSTRAINED, height: 16)
@@ -38,6 +39,7 @@ const Skills = () => {
             subSkills {
               extra
               name
+              href
               src {
                 childImageSharp {
                   gatsbyImageData(layout: CONSTRAINED, height: 16)
@@ -45,6 +47,7 @@ const Skills = () => {
               }
               subSkills {
                 name
+                href
                 src {
                   childImageSharp {
                     gatsbyImageData(layout: CONSTRAINED, height: 16)

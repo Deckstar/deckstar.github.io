@@ -4,14 +4,17 @@
     "skillItems": [
       {
         "name": "JavaScript",
+        "href": "https://www.javascript.com",
         "src": "../images/logos/javascript.png",
         "subSkills": [
           {
             "name": "TypeScript",
+            "href": "https://www.typescriptlang.org",
             "src": "../images/logos/typescript.png"
           },
           {
             "name": "Lodash",
+            "href": "https://lodash.com",
             "src": "../images/logos/lodash.png",
             "extra": "utilities"
           }
@@ -19,10 +22,12 @@
       },
       {
         "name": "Python",
+        "href": "https://www.python.org",
         "src": "../images/logos/python.png",
         "subSkills": [
           {
             "name": "Jupyter",
+            "href": "https://jupyter.org",
             "src": "../images/logos/jupyter.png",
             "extra": "data analysis"
           }
@@ -30,18 +35,22 @@
       },
       {
         "name": "Java",
+        "href": "https://www.java.com/en/",
         "src": "../images/logos/java.png"
       },
       {
         "name": "GraphQL",
+        "href": "https://graphql.org",
         "src": "../images/logos/graphql.png"
       },
       {
         "name": "Wolfram Language",
+        "href": "https://www.wolfram.com/language/",
         "src": "../images/logos/wolfram-language.png",
         "subSkills": [
           {
             "name": "Mathematica",
+            "href": "https://www.wolfram.com/mathematica/",
             "src": "../images/logos/mathematica.png",
             "extra": "math & technical computing"
           }
@@ -53,6 +62,7 @@
         "subSkills": [
           {
             "name": "Bootstrap CSS",
+            "href": "https://getbootstrap.com",
             "src": "../images/logos/bootstrap.png"
           }
         ]
@@ -64,10 +74,12 @@
     "skillItems": [
       {
         "name": "React",
+        "href": "https://reactjs.org",
         "src": "../images/logos/react.png",
         "subSkills": [
           {
             "name": "React Native",
+            "href": "https://reactnative.dev",
             "src": "../images/logos/react native.png"
           },
           {
@@ -75,66 +87,80 @@
             "subSkills": [
               {
                 "name": "Next.js",
+                "href": "https://nextjs.org",
                 "src": "../images/logos/nextjs.png"
               },
               {
                 "name": "Gatsby",
+                "href": "https://www.gatsbyjs.com",
                 "src": "../images/logos/gatsby.png"
               }
             ]
           },
           {
             "name": "Material UI",
+            "href": "https://mui.com",
             "src": "../images/logos/material-ui.png"
           },
           {
             "name": "Formik",
+            "href": "https://formik.org",
             "src": "../images/logos/formik.png"
           },
           {
             "name": "i18next",
+            "href": "https://www.i18next.com",
             "src": "../images/logos/i18next.png"
           }
         ]
       },
       {
         "name": "Vue",
+        "href": "https://vuejs.org",
         "src": "../images/logos/vue.png",
         "subSkills": [
           {
             "name": "Ant Design",
+            "href": "https://www.antdv.com/docs/vue/introduce/",
             "src": "../images/logos/ant-design-vue.png"
           }
         ]
       },
       {
         "name": "Apollo",
+        "href": "https://www.apollographql.com",
         "src": "../images/logos/apollo.png"
       },
       {
         "name": "Redux",
+        "href": "https://redux.js.org",
         "src": "../images/logos/redux.png",
         "subSkills": [
           {
             "name": "Redux Saga",
+            "href": "https://redux-saga.js.org",
             "src": "../images/logos/redux-saga.png"
           },
           {
             "name": "Redux Form",
+            "href": "https://redux-form.com",
             "src": "../images/logos/redux-form.png"
           }
         ]
       },
       {
         "name": "WordPress",
+        "href": "https://wordpress.com",
         "src": "../images/logos/wordpress.png"
       },
       {
         "name": "Svelte",
+        "href": "https://svelte.dev",
         "src": "../images/logos/svelte.png"
       },
       {
         "name": "Electron",
+        "href": "https://www.electronjs.org",
         "src": "../images/logos/electron.png"
       }
     ]
@@ -144,50 +170,61 @@
     "skillItems": [
       {
         "name": "NodeJS",
+        "href": "https://nodejs.org",
         "src": "../images/logos/node.png",
         "subSkills": [
           {
             "name": "Express",
+            "href": "https://expressjs.com",
             "src": "../images/logos/express.png"
           },
           {
             "name": "Apollo Server",
+            "href": "https://www.apollographql.com/docs/apollo-server/",
             "src": "../images/logos/apollo-server.png"
           },
           {
             "name": "PostGraphile",
+            "href": "https://www.graphile.org/postgraphile/",
             "src": "../images/logos/postgraphile.png"
           },
           {
             "name": "NestJS",
+            "href": "https://nestjs.com",
             "src": "../images/logos/nestjs.png"
           },
           {
             "name": "TypeGraphQL",
+            "href": "https://typegraphql.com",
             "src": "../images/logos/type-graphql.png"
           },
           {
             "name": "TypeORM",
+            "href": "https://typeorm.io",
             "src": "../images/logos/type-orm.png"
           },
           {
             "name": "Mongoose",
+            "href": "https://mongoosejs.com",
             "src": "../images/logos/mongoose.png"
           }
         ]
       },
       {
         "name": "Django",
+        "href": "https://www.djangoproject.com",
         "src": "../images/logos/django-python.png",
         "subSkills": [
           {
             "name": "Graphene",
+            "href": "https://docs.graphene-python.org/projects/django/en/latest/",
             "src": "../images/logos/graphene.png"
           }
         ]
       },
       {
         "name": "Redis",
+        "href": "https://redis.io",
         "src": "../images/logos/redis.png"
       }
     ]
@@ -201,10 +238,12 @@
         "subSkills": [
           {
             "name": "PostgreSQL",
+            "href": "https://www.postgresql.org",
             "src": "../images/logos/postgresql.png",
             "subSkills": [
               {
                 "name": "PostGIS",
+                "href": "https://postgis.net",
                 "src": "../images/logos/postgis.png"
               },
               {
@@ -219,6 +258,7 @@
           },
           {
             "name": "SQLite3",
+            "href": "https://www.sqlite.org/index.html",
             "src": "../images/logos/sqlite3.png"
           }
         ]
@@ -229,11 +269,13 @@
         "subSkills": [
           {
             "name": "MongoDB",
+            "href": "https://www.mongodb.com",
             "src": "../images/logos/mongodb.png",
             "extra": "with Cloud Atlas"
           },
           {
             "name": "Firebase",
+            "href": "https://firebase.google.com",
             "src": "../images/logos/firebase.png",
             "extra": "Cloud Firestore"
           }
@@ -247,33 +289,45 @@
       {
         "name": "Git",
         "extra": "version control",
+        "href": "https://git-scm.com",
         "src": "../images/logos/git.png",
         "subSkills": [
           {
             "name": "Github",
+            "href": "https://github.com",
             "src": "../images/logos/github.png"
           },
           {
             "name": "Bitbucket",
+            "href": "https://bitbucket.org",
             "src": "../images/logos/bitbucket.png"
           },
           {
             "name": "Azure Repos",
+            "href": "https://azure.microsoft.com/services/devops/repos/",
             "src": "../images/logos/azure-repos.png"
           }
         ]
       },
       {
         "name": "Testing",
-        "subSkills": [{ "name": "Jest", "src": "../images/logos/jest.png" }]
+        "subSkills": [
+          {
+            "name": "Jest",
+            "href": "https://jestjs.io",
+            "src": "../images/logos/jest.png"
+          }
+        ]
       },
       {
         "name": "Docker",
+        "href": "https://www.docker.com",
         "src": "../images/logos/docker.png",
         "extra": "containerization"
       },
       {
         "name": "PM2",
+        "href": "https://pm2.keymetrics.io",
         "src": "../images/logos/pm2.png",
         "extra": "process management"
       },
@@ -282,14 +336,17 @@
         "subSkills": [
           {
             "name": "Heroku",
+            "href": "https://www.heroku.com",
             "src": "../images/logos/heroku.png"
           },
           {
             "name": "Amazon Web Services",
+            "href": "https://aws.amazon.com",
             "src": "../images/logos/aws.png"
           },
           {
             "name": "DigitalOcean",
+            "href": "https://www.digitalocean.com",
             "src": "../images/logos/digital-ocean.png"
           }
         ]
@@ -304,31 +361,37 @@
         "subSkills": [
           {
             "name": "Jira",
+            "href": "https://www.atlassian.com/software/jira",
             "src": "../images/logos/jira.png"
           },
           {
             "name": "Asana",
+            "href": "https://asana.com",
             "src": "../images/logos/asana.png"
           }
         ]
       },
       {
         "name": "Postman",
+        "href": "https://www.postman.com",
         "src": "../images/logos/postman.png",
         "extra": "easy HTTP requests"
       },
       {
         "name": "Xcode",
+        "href": "https://developer.apple.com/xcode/",
         "src": "../images/logos/xcode.png",
         "extra": "iOS development"
       },
       {
         "name": "Android Studio",
+        "href": "https://developer.android.com/studio",
         "src": "../images/logos/android-studio.png",
         "extra": "Android development"
       },
       {
         "name": "Mockaroo",
+        "href": "https://www.mockaroo.com",
         "src": "../images/logos/mockaroo.png",
         "extra": "mock data generation"
       }
@@ -339,6 +402,7 @@
     "skillItems": [
       {
         "name": "Adobe Creative Cloud",
+        "href": "https://www.adobe.com/creativecloud.html",
         "src": "../images/logos/adobe-creative-cloud.png",
         "subSkills": [
           {
@@ -357,10 +421,12 @@
       },
       {
         "name": "Figma",
+        "href": "https://www.figma.com",
         "src": "../images/logos/figma.png"
       },
       {
         "name": "Sketch",
+        "href": "https://www.sketch.com",
         "src": "../images/logos/sketch.png"
       }
     ]
@@ -392,11 +458,13 @@
     "skillItems": [
       {
         "name": "Final Cut Pro",
+        "href": "https://www.apple.com/final-cut-pro/",
         "src": "../images/logos/final-cut-pro.png",
         "extra": "video editing"
       },
       {
         "name": "Logic Pro",
+        "href": "https://www.apple.com/logic-pro/",
         "src": "../images/logos/logic pro.png",
         "extra": "audio recording & mixing"
       },
@@ -405,10 +473,12 @@
         "subSkills": [
           {
             "name": "Guitar Pro",
+            "href": "https://www.guitar-pro.com",
             "src": "../images/logos/guitar-pro.png"
           },
           {
             "name": "MuseScore",
+            "href": "https://musescore.org/en",
             "src": "../images/logos/musescore.png"
           }
         ]

@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 
 export interface SkillItem {
   name: string;
+  href?: string;
   src?: {
     childImageSharp: {
       gatsbyImageData: IGatsbyImageData;

@@ -1,8 +1,8 @@
-import { Card, CardContent, CardHeader } from '@mui/material';
+import { Card, CardContent, CardHeader, Link } from '@mui/material';
 import { SkillCardProps, SkillItem } from '@typescript/@types/skills';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { map, size } from 'lodash';
-import React, { memo } from 'react';
+import React, { FC, memo } from 'react';
 
 import useStyles from './SkillCard.style';
 
@@ -53,12 +53,27 @@ const Logo = (props: { name: SkillItem['name']; src: SkillItem['src'] }) => {
   return null;
 };
 
+const LinkOrFragment: FC<{ href?: string }> = (props) => {
+  const { children, href } = props;
+
+  if (!href) {
+    return <>{children}</>;
+  }
+
+  return (
+    <Link href={href} color="inherit">
+      {children}
+    </Link>
+  );
+};
+
 const Skill = (props: SkillItem) => {
-  const { name, src, extra, subSkills } = props;
+  const { name, href, src, extra, subSkills } = props;
 
   return (
     <li>
-      {name} <Logo name={name} src={src} /> <Extra extra={extra} />
+      <LinkOrFragment href={href}>{name}</LinkOrFragment>{' '}
+      <Logo name={name} src={src} /> <Extra extra={extra} />
       <SubSkills subSkills={subSkills} />
     </li>
   );
