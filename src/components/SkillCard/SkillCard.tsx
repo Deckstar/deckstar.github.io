@@ -63,7 +63,7 @@ const LinkOrFragment: FC<{ href?: string }> = (props) => {
   }
 
   return (
-    <Link href={href} color="inherit">
+    <Link href={href} color="inherit" rel="noopener noreferrer" target="_blank">
       {children}
     </Link>
   );
