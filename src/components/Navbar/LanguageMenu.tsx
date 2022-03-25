@@ -32,7 +32,9 @@ const Flag = (props: FlagProps) => {
     </IconButton>
   );
 };
-const FlagChoice = (props: LanguageObject) => {
+type FlagChoiceProps = LanguageObject & Pick<FlagProps, 'flag'>;
+
+const FlagChoice = (props: FlagChoiceProps) => {
   const { code, label, flag } = props;
 
   return (

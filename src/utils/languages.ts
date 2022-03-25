@@ -1,16 +1,15 @@
-import { flags } from '@images';
 import { ArrayElement } from '@typescript/@types/utils';
 import { map } from 'lodash';
 
 export const langMap = [
-  { code: 'en', flag: flags.UK, label: 'English' },
-  // { code: 'de', flag: flags.Germany, label: 'Deutsch' },
-  { code: 'es', flag: flags.Spain, label: 'Español' },
-  { code: 'et', flag: flags.Estonia, label: 'Eesti' },
-  { code: 'fr', flag: flags.France, label: 'Français' },
-  { code: 'hu', flag: flags.Hungary, label: 'Magyar' },
-  { code: 'ru', flag: flags.Russia, label: 'Русский' },
-  // { code: 'se', flag: flags.Sweden, label: 'Svensk' },
+  { code: 'en', label: 'English' },
+  // { code: 'de', label: 'Deutsch' },
+  { code: 'es', label: 'Español' },
+  { code: 'et', label: 'Eesti' },
+  { code: 'fr', label: 'Français' },
+  { code: 'hu', label: 'Magyar' },
+  { code: 'ru', label: 'Русский' },
+  // { code: 'se', label: 'Svensk' },
 ] as const;
 
 export type LanguageObject = ArrayElement<typeof langMap>;
