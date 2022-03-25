@@ -1,4 +1,3 @@
-import { overlays } from '@images';
 import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@theme/themes';
 
@@ -7,9 +6,10 @@ const useStyles = makeStyles()((theme: Theme) => ({
     backgroundImage: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
   },
   background: {
-    backgroundImage: `url(${overlays.overlay3.default})`,
-    backgroundSize: 'cover',
-    position: 'relative',
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    objectFit: 'cover',
   },
   inner: {
     minHeight: '30rem',

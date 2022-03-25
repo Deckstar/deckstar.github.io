@@ -1,4 +1,5 @@
-import { overlays } from '@images';
+// @ts-ignore
+import overlay3 from '@images/overlays/overlay3.svg';
 import { Link, Typography } from '@mui/material';
 import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@theme/themes';
@@ -16,8 +17,6 @@ const useStyles = makeStyles()((theme: Theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundImage: `url(${overlays.overlay3.default})`,
-    backgroundSize: 'cover',
     position: 'relative',
 
     '&::before': {
@@ -30,6 +29,12 @@ const useStyles = makeStyles()((theme: Theme) => ({
       height: '100%',
       width: '100%',
     },
+  },
+  background: {
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    objectFit: 'cover',
   },
   textContainer: {
     justifyContent: 'center',
@@ -51,6 +56,8 @@ const Footer = () => {
 
   return (
     <footer id="footer" className={classes.container}>
+      <img src={overlay3} className={classes.background} alt="" />
+
       <div className={classes.textContainer}>
         <Typography>
           &copy; 2019 – {currentYear} |{' '}
