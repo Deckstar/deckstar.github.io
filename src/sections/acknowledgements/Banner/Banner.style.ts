@@ -4,6 +4,7 @@ import { makeStyles } from '@theme/themes';
 const useStyles = makeStyles()((theme: Theme) => ({
   section: {
     backgroundImage: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+    position: 'relative',
   },
   background: {
     position: 'absolute',
