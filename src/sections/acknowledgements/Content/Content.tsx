@@ -1,5 +1,3 @@
-import { LineHighImage } from '@components';
-import { logos } from '@images';
 // @ts-ignore
 import developers from '@images/stories/Developer activity-rafiki.svg';
 // @ts-ignore
@@ -8,6 +6,7 @@ import designers from '@images/stories/Portfolio Update-rafiki.svg';
 import libraries from '@images/stories/Team-rafiki.svg';
 import { Container, Link, List, ListItem, Typography } from '@mui/material';
 import clsx from 'clsx';
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 import useStyles from './Content.style';
@@ -44,9 +43,10 @@ const Content = () => {
               <List>
                 <ListItem className={classes.listItem}>
                   <Typography>
-                    <LineHighImage
-                      src={logos.gatsby.default}
+                    <StaticImage
+                      src="../../../images/logos/gatsby.png"
                       alt="Gatsby JS logo"
+                      height={20}
                     />{' '}
                     <Link href="https://www.gatsbyjs.com" color="secondary">
                       Gatsby JS
@@ -63,9 +63,10 @@ const Content = () => {
                   <Typography>
                     However you feel about the look of this website, I recommend
                     checking out{' '}
-                    <LineHighImage
-                      src={logos.materialUI.default}
+                    <StaticImage
+                      src="../../../images/logos/material-ui.png"
                       alt="Material UI logo"
+                      height={20}
                     />{' '}
                     <Link href="https://material-ui.com" color="secondary">
                       Material UI
@@ -82,9 +83,10 @@ const Content = () => {
                 <ListItem className={classes.listItem}>
                   <Typography>
                     The{' '}
-                    <LineHighImage
-                      src={logos.masonic.default}
+                    <StaticImage
+                      src="../../../images/logos/masonic.png"
                       alt="masonic logo"
+                      height={20}
                     />{' '}
                     <Link
                       href="https://github.com/jaredLunde/masonic"
@@ -103,9 +105,10 @@ const Content = () => {
                   <Typography>
                     There is only one translations library that I've ever used
                     with React, and that is{' '}
-                    <LineHighImage
-                      src={logos.i18next.default}
+                    <StaticImage
+                      src="../../../images/logos/i18next.png"
                       alt="i18next logo"
+                      height={20}
                     />{' '}
                     <Link href="https://www.i18next.com" color="secondary">
                       i18next
@@ -118,9 +121,10 @@ const Content = () => {
                 <ListItem className={classes.listItem}>
                   <Typography>
                     Another quick shout-out goes to{' '}
-                    <LineHighImage
-                      src={logos.reactAwesomeReveal.default}
+                    <StaticImage
+                      src="../../../images/logos/react-awesome-reveal.png"
                       alt="React Awesome Reveal logo"
+                      height={20}
                     />{' '}
                     <Link
                       href="https://github.com/dennismorello/react-awesome-reveal"
@@ -135,9 +139,10 @@ const Content = () => {
                 <ListItem className={classes.listItem}>
                   <Typography>
                     Last but not least, thanks a lot to{' '}
-                    <LineHighImage
-                      src={logos.lodash.default}
+                    <StaticImage
+                      src="../../../images/logos/lodash.png"
                       alt="Lodash logo"
+                      height={20}
                     />{' '}
                     <Link href="https://lodash.com" color="secondary">
                       Lodash
@@ -181,9 +186,10 @@ const Content = () => {
                   <Typography>
                     The wonderful collection of round country flags that I used
                     throughout this website can be found at this{' '}
-                    <LineHighImage
-                      src={logos.flaticon.default}
+                    <StaticImage
+                      src="../../../images/logos/flaticon.png"
                       alt="Flaticon logo"
+                      height={20}
                     />{' '}
                     <Link
                       href="https://www.flaticon.com/packs/countrys-flags"
@@ -197,9 +203,10 @@ const Content = () => {
                 <ListItem className={classes.listItem}>
                   <Typography>
                     Speaking of{' '}
-                    <LineHighImage
-                      src={logos.freepik.default}
+                    <StaticImage
+                      src="../../../images/logos/freepik.png"
                       alt="Freepik logo"
+                      height={20}
                     />{' '}
                     <Link
                       href="https://stories.freepik.com/rafiki"
@@ -247,9 +254,10 @@ const Content = () => {
                 <ListItem className={classes.listItem}>
                   <Typography>
                     My sincerest thanks to the creator of{' '}
-                    <LineHighImage
-                      src={logos.html5up.default}
+                    <StaticImage
+                      src="../../../images/logos/html5up.png"
                       alt="HTML5UP logo"
+                      height={20}
                     />{' '}
                     <Link href="https://html5up.net" color="secondary">
                       HTML5UP
