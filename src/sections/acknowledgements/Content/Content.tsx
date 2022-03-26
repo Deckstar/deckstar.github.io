@@ -129,24 +129,6 @@ const Content = () => {
               </ListItem>
               <ListItem className={classes.listItem}>
                 <Typography>
-                  Another quick shout-out goes to{' '}
-                  <StaticImage
-                    src="../../../images/logos/react-awesome-reveal.png"
-                    alt="React Awesome Reveal"
-                    height={20}
-                  />{' '}
-                  <Link
-                    href="https://github.com/dennismorello/react-awesome-reveal"
-                    color="secondary"
-                  >
-                    React Awesome Reveal
-                  </Link>
-                  , for making it incredibly easy to make websites look fancy
-                  without killing their performance.
-                </Typography>
-              </ListItem>
-              <ListItem className={classes.listItem}>
-                <Typography>
                   Last but not least, thanks a lot to{' '}
                   <StaticImage
                     src="../../../images/logos/lodash.png"

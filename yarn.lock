@@ -1619,19 +1619,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/cache@npm:^11.1.3":
-  version: 11.1.3
-  resolution: "@emotion/cache@npm:11.1.3"
-  dependencies:
-    "@emotion/memoize": ^0.7.4
-    "@emotion/sheet": ^1.0.0
-    "@emotion/utils": ^1.0.0
-    "@emotion/weak-memoize": ^0.2.5
-    stylis: ^4.0.3
-  checksum: 09a7ddde3f7bcc9adb0694f1432cc740fab80f5069cceb773baa64961e83e5cd4549bb7b9ec2acd9ff0a80b437d82cf7e382881de5fff827a8ede959b7ffd90a
-  languageName: node
-  linkType: hard
-
 "@emotion/cache@npm:^11.6.0":
   version: 11.6.0
   resolution: "@emotion/cache@npm:11.6.0"
@@ -1665,29 +1652,6 @@ __metadata:
   version: 0.7.5
   resolution: "@emotion/memoize@npm:0.7.5"
   checksum: 83da8d4a7649a92c72f960817692bc6be13cc13e107b9f7e878d63766525ed4402881bfeb3cda61145c050281e7e260f114a0a2870515527346f2ef896b915b3
-  languageName: node
-  linkType: hard
-
-"@emotion/react@npm:^11.1.4":
-  version: 11.1.5
-  resolution: "@emotion/react@npm:11.1.5"
-  dependencies:
-    "@babel/runtime": ^7.7.2
-    "@emotion/cache": ^11.1.3
-    "@emotion/serialize": ^1.0.0
-    "@emotion/sheet": ^1.0.1
-    "@emotion/utils": ^1.0.0
-    "@emotion/weak-memoize": ^0.2.5
-    hoist-non-react-statics: ^3.3.1
-  peerDependencies:
-    "@babel/core": ^7.0.0
-    react: ">=16.8.0"
-  peerDependenciesMeta:
-    "@babel/core":
-      optional: true
-    "@types/react":
-      optional: true
-  checksum: e1d13d0fca16f3da526d4325a897fa650763c8ae3570f31fa796da6327df6acf92d20043f511b8b365555b281d2e157c627e5b9b2f847c25e1991ebbea606fad
   languageName: node
   linkType: hard
 
@@ -1727,19 +1691,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/serialize@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@emotion/serialize@npm:1.0.0"
-  dependencies:
-    "@emotion/hash": ^0.8.0
-    "@emotion/memoize": ^0.7.4
-    "@emotion/unitless": ^0.7.5
-    "@emotion/utils": ^1.0.0
-    csstype: ^3.0.2
-  checksum: 72dd85a8c8a14da2f1084a3cc8ab4d3c5347c3aad2f807f0f0e4c908d44b387b6879e8816de979de80de602f8b1ff8d0447416c98908fd3b46e4af7b44a1870a
-  languageName: node
-  linkType: hard
-
 "@emotion/server@npm:^11.4.0":
   version: 11.4.0
   resolution: "@emotion/server@npm:11.4.0"
@@ -1754,13 +1705,6 @@ __metadata:
     "@emotion/css":
       optional: true
   checksum: 41ed2472c3b16e5f28126fed755098d1cc2f189096fa830b98583558d93d153e5b0ced8bd1a7514803f1c29ad218a5cd75dc6a348efcd44167a4cdd11887b2f2
-  languageName: node
-  linkType: hard
-
-"@emotion/sheet@npm:^1.0.0, @emotion/sheet@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@emotion/sheet@npm:1.0.1"
-  checksum: 624e2ede033e9b668fe9e20be92a9b712a0efb290f39ad72baa267688d41c37fd684f9b9349dbd62f722818a50c175d1b364b8d49896bd7e89f03083228a5eab
   languageName: node
   linkType: hard
 
@@ -8164,7 +8108,6 @@ __metadata:
     masonic: ^3.3.10
     prettier: 2.1.2
     react: ^17.0.2
-    react-awesome-reveal: ^3.3.1
     react-dom: ^16.12.0
     react-helmet-async: ^1.0.7
     react-i18next: ^11.7.3
@@ -13114,19 +13057,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-awesome-reveal@npm:^3.3.1":
-  version: 3.7.0
-  resolution: "react-awesome-reveal@npm:3.7.0"
-  dependencies:
-    "@emotion/react": ^11.1.4
-    react-intersection-observer: ^8.31.0
-    react-is: ^17.0.1
-  peerDependencies:
-    react: "*"
-  checksum: c523c50b3e3f31db99b7a55e0d2c534178554c08b3e7ba2cb0fb8c3f45c8b2d468f46fedf1fd9b3be0d1a2ea26cc0252fa3061a009c20f5df05e0533fe6b53ec
-  languageName: node
-  linkType: hard
-
 "react-dev-utils@npm:^11.0.4":
   version: 11.0.4
   resolution: "react-dev-utils@npm:11.0.4"
@@ -13230,26 +13160,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-intersection-observer@npm:^8.31.0":
-  version: 8.31.0
-  resolution: "react-intersection-observer@npm:8.31.0"
-  peerDependencies:
-    react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
-  checksum: f821056c2edf9f2ed5bd71a405c31a9970e62ca27d3796f2066d0babcd95b000461bcf68b8dae44a3393607513d5f1fe22a5ea8458523bb398410ebf24b58a85
-  languageName: node
-  linkType: hard
-
 "react-is@npm:^16.7.0, react-is@npm:^16.8.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
-  languageName: node
-  linkType: hard
-
-"react-is@npm:^17.0.1":
-  version: 17.0.1
-  resolution: "react-is@npm:17.0.1"
-  checksum: 5e6945a286367894d11b24f41a0065607ba62bdac0df0b567294b2e299c037e3641434e66f9be30536b8c47f7ad94d44e633feb2ba25959c2c42423844e6c2f1
   languageName: node
   linkType: hard
 
