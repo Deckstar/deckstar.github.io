@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-pages-index-tsx",
     "path": "/de/",
     "result": {"data":{"locales":{"edges":[{"node":{"ns":"common","data":"{\"Banner\":{\"SoftwareDeveloper\":\"Softwareentwickler\"}}","language":"de"}}]}},"pageContext":{"language":"de","i18n":{"language":"de","languages":["en","de","es","et","fr","hu","ru","se"],"defaultLanguage":"en","generateDefaultLanguagePage":false,"routed":true,"originalPath":"/","path":"de/"}}},
-    "staticQueryHashes": ["1057508485","2346408523","28819956","3155563934","3486922188","79244422"]}
+    "staticQueryHashes": ["1057508485","271409595","3155563934","3486922188","4247758808","79244422"]}
