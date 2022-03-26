@@ -407,14 +407,17 @@
         "subSkills": [
           {
             "name": "Photoshop",
+            "href": "https://www.adobe.com/products/photoshop.html",
             "src": "../images/logos/photoshop.png"
           },
           {
             "name": "Illustrator",
+            "href": "https://www.adobe.com/products/illustrator.html",
             "src": "../images/logos/illustrator.png"
           },
           {
             "name": "Audition",
+            "href": "https://www.adobe.com/products/audition.html",
             "src": "../images/logos/audition.png"
           }
         ]
