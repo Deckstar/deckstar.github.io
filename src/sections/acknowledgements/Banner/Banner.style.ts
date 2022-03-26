@@ -11,6 +11,7 @@ const useStyles = makeStyles()((theme: Theme) => ({
     height: '100%',
     width: '100%',
     objectFit: 'cover',
+    pointerEvents: 'none',
   },
   inner: {
     minHeight: '30rem',

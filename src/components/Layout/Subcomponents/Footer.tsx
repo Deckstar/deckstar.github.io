@@ -17,24 +17,15 @@ const useStyles = makeStyles()((theme: Theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundImage: `linear-gradient(45deg, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`,
     position: 'relative',
-
-    '&::before': {
-      backgroundImage: `linear-gradient(45deg, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`,
-      content: '""',
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      zIndex: -1,
-      height: '100%',
-      width: '100%',
-    },
   },
   background: {
     position: 'absolute',
     height: '100%',
     width: '100%',
     objectFit: 'cover',
+    pointerEvents: 'none',
   },
   textContainer: {
     justifyContent: 'center',
