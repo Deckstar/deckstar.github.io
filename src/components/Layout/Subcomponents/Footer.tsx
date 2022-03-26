@@ -55,7 +55,7 @@ const Footer = () => {
           <Link
             component={GatsbyLink}
             to="/acknowledgements"
-            underline="none"
+            underline="hover"
             color="inherit"
             className={classes.link}
           >
