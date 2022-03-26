@@ -20,7 +20,7 @@ const SubSkills = (props: { subSkills?: SkillItem[] }) => {
     <ul className={classes.list}>
       {map(subSkills, (subSkill) => {
         const { name } = subSkill;
-        return <Skill {...subSkill} key={`subSkill ${name}`} />;
+        return <Skill {...subSkill} key={name} />;
       })}
     </ul>
   );
@@ -89,7 +89,7 @@ const SkillCard = memo(function SkillCard(props: SkillCardProps) {
     <Card elevation={3} className={classes.cardContainer}>
       <CardHeader
         className={classes.cardHeader}
-        title={`${title}:`}
+        title={title}
         titleTypographyProps={{
           className: classes.cardTitle,
           variant: 'body1',
@@ -99,7 +99,7 @@ const SkillCard = memo(function SkillCard(props: SkillCardProps) {
         <ul className={classes.list}>
           {map(skillItems, (skill) => {
             const { name } = skill;
-            return <Skill {...skill} key={`skill ${name}`} />;
+            return <Skill {...skill} key={name} />;
           })}
         </ul>
       </CardContent>

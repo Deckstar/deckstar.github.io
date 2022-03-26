@@ -59,8 +59,9 @@ const Education = () => {
         <div className={classes.itemsOuterContainer}>
           <div className={classes.line} />
           <div className={classes.itemsContainer}>
-            {map(schoolItems, (school, i) => {
-              return <ExperienceItem {...school} key={`school ${i}`} />;
+            {map(schoolItems, (school) => {
+              const { name } = school || {};
+              return <ExperienceItem {...school} key={name} />;
             })}
           </div>
         </div>

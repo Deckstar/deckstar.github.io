@@ -46,7 +46,7 @@ interface BlogPostProps extends Article {
 const Post = (props: BlogPostProps) => {
   const { classes } = useStyles();
 
-  const { id, article, featuredImg } = props;
+  const { article, featuredImg } = props;
   const {
     url,
     tags,
@@ -113,7 +113,7 @@ const Post = (props: BlogPostProps) => {
           {map(tags, (tag) => {
             return (
               <Typography
-                key={`post ${id} tag ${tag}`}
+                key={tag}
                 variant="subtitle2"
                 className={classes.cardTag}
               >
@@ -169,7 +169,7 @@ const Blog = () => {
         <Paper className={classes.postsContainer} elevation={10}>
           {map(devArticles, (post) => {
             const { id } = post;
-            return <Post {...post} key={`article ${id}`} />;
+            return <Post {...post} key={id} />;
           })}
 
           {/* Without this end dot, the last article touches the right wall of the scroll container */}

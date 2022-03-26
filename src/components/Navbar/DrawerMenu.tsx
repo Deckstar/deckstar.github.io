@@ -157,9 +157,10 @@ const DrawerMenu = () => {
 
         <HomePageSectionButtons />
 
-        {map(PAGE_LINKS, (link, i) => (
-          <DrawerLink {...link} key={`page link ${i}`} />
-        ))}
+        {map(PAGE_LINKS, (link) => {
+          const { title } = link || {};
+          return <DrawerLink {...link} key={title} />;
+        })}
         <Divider />
       </div>
       <div className={classes.drawerFooter}>
