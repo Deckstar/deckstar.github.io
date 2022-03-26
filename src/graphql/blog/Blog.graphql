@@ -1,0 +1,23 @@
+query Blog {
+  allDevArticles(
+    sort: { fields: [article___published_at], order: DESC }
+    limit: 6
+  ) {
+    nodes {
+      id
+      article {
+        url
+        tags
+        title
+        description
+        published_at
+        positive_reactions_count
+      }
+      featuredImg {
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED, height: 300)
+        }
+      }
+    }
+  }
+}

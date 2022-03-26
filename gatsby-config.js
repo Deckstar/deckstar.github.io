@@ -49,6 +49,12 @@ module.exports = {
         pages: [],
       },
     },
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./src/graphql/index.tsx`,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet-async`,
     `gatsby-plugin-sass`,

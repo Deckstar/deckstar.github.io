@@ -1,0 +1,23 @@
+query Education {
+  allEducationJson {
+    nodes {
+      location
+      locationFlag {
+        name
+        childImageSharp {
+          gatsbyImageData(layout: FIXED, width: 24, height: 24)
+        }
+      }
+      title
+      name
+      logo {
+        name
+        childImageSharp {
+          gatsbyImageData(layout: CONSTRAINED, height: 40)
+        }
+      }
+      dates
+      description
+    }
+  }
+}

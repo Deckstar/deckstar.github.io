@@ -8,6 +8,7 @@ module.exports = {
   ],
   plugins: [
     '@typescript-eslint',
+    'graphql',
     'react-hooks',
     'react',
     'simple-import-sort',
