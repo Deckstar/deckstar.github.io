@@ -3,8 +3,7 @@ import { makeStyles } from '@theme/themes';
 
 const useStyles = makeStyles()((theme: Theme) => ({
   container: {
-    padding: '30px 0',
-    borderBottom: `2px solid ${theme.palette.divider}`,
+    paddingTop: theme.spacing(4),
   },
   title: {
     fontFamily: 'Caveat, "Roboto", "Helvetica", "Arial", sans-serif',

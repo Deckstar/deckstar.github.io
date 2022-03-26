@@ -23,6 +23,7 @@ const Acknowledgements = (pageProps: PageProps) => {
   return (
     <>
       <SEO title="Acknowledgements" pathname={pageProps.location.pathname} />
+
       <Wrapper>
         <Banner />
         <Content />
