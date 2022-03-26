@@ -45,7 +45,7 @@ const Content = () => {
                   <Typography>
                     <StaticImage
                       src="../../../images/logos/gatsby.png"
-                      alt="Gatsby JS logo"
+                      alt="Gatsby JS"
                       height={20}
                     />{' '}
                     <Link href="https://www.gatsbyjs.com" color="secondary">
@@ -65,7 +65,7 @@ const Content = () => {
                     checking out{' '}
                     <StaticImage
                       src="../../../images/logos/material-ui.png"
-                      alt="Material UI logo"
+                      alt="Material UI"
                       height={20}
                     />{' '}
                     <Link href="https://material-ui.com" color="secondary">
@@ -85,7 +85,7 @@ const Content = () => {
                     The{' '}
                     <StaticImage
                       src="../../../images/logos/masonic.png"
-                      alt="masonic logo"
+                      alt="masonic"
                       height={20}
                     />{' '}
                     <Link
@@ -107,7 +107,7 @@ const Content = () => {
                     with React, and that is{' '}
                     <StaticImage
                       src="../../../images/logos/i18next.png"
-                      alt="i18next logo"
+                      alt="i18next"
                       height={20}
                     />{' '}
                     <Link href="https://www.i18next.com" color="secondary">
@@ -123,7 +123,7 @@ const Content = () => {
                     Another quick shout-out goes to{' '}
                     <StaticImage
                       src="../../../images/logos/react-awesome-reveal.png"
-                      alt="React Awesome Reveal logo"
+                      alt="React Awesome Reveal"
                       height={20}
                     />{' '}
                     <Link
@@ -141,7 +141,7 @@ const Content = () => {
                     Last but not least, thanks a lot to{' '}
                     <StaticImage
                       src="../../../images/logos/lodash.png"
-                      alt="Lodash logo"
+                      alt="Lodash"
                       height={20}
                     />{' '}
                     <Link href="https://lodash.com" color="secondary">
@@ -188,7 +188,7 @@ const Content = () => {
                     throughout this website can be found at this{' '}
                     <StaticImage
                       src="../../../images/logos/flaticon.png"
-                      alt="Flaticon logo"
+                      alt="Flaticon"
                       height={20}
                     />{' '}
                     <Link
@@ -205,7 +205,7 @@ const Content = () => {
                     Speaking of{' '}
                     <StaticImage
                       src="../../../images/logos/freepik.png"
-                      alt="Freepik logo"
+                      alt="Freepik"
                       height={20}
                     />{' '}
                     <Link
@@ -256,7 +256,7 @@ const Content = () => {
                     My sincerest thanks to the creator of{' '}
                     <StaticImage
                       src="../../../images/logos/html5up.png"
-                      alt="HTML5UP logo"
+                      alt="HTML5UP"
                       height={20}
                     />{' '}
                     <Link href="https://html5up.net" color="secondary">
