@@ -1,23 +1,81 @@
-import { DateRange, LocationOn } from '@mui/icons-material';
+import { DateRange, LocationOn, Schedule } from '@mui/icons-material';
 import { Tooltip, Typography } from '@mui/material';
 import { ExperienceItemProps } from '@typescript/@types/experience';
+import { ArrayElement } from '@typescript/@types/utils';
+import clsx from 'clsx';
+import dayjs from 'dayjs';
+import durationPlugin from 'dayjs/plugin/duration';
+import relativeTimePlugin from 'dayjs/plugin/relativeTime';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import React from 'react';
+import { compact, join, map, reduce, uniq } from 'lodash';
+import React, { useMemo } from 'react';
 
 import useStyles from './ExperienceItem.style';
+
+dayjs.extend(durationPlugin);
+dayjs.extend(relativeTimePlugin);
+
+type Dates = ExperienceItemProps['dates'];
+
+const makeDuration = (duration: ArrayElement<Dates>) => {
+  const { start, end } = duration;
+
+  const startParsed = dayjs(start);
+  const endParsed = dayjs(end || undefined);
+
+  const startFormatted = startParsed.format('MMMM YYYY');
+  const endFormatted = end ? endParsed.format('MMMM YYYY') : 'ongoing';
+
+  const nonEmptyDates = compact([startFormatted, endFormatted]);
+  const uniqueDates = uniq(nonEmptyDates);
+
+  const label = join(uniqueDates, ' – ');
+
+  const days = endParsed.diff(startParsed, 'days');
+
+  return { days, label };
+};
+
+const makeDurations = (dates: Dates) => {
+  const parsedDurations = map(dates, makeDuration);
+
+  const durations = reduce(
+    parsedDurations,
+    (accumulator, value) => {
+      const accumulatedLabels = accumulator.labels;
+      const accumulatedDays = accumulator.totalDays;
+
+      const { days, label } = value;
+
+      const merged: typeof accumulator = {
+        totalDays: accumulatedDays + days,
+        labels: [...accumulatedLabels, label],
+      };
+      return merged;
+    },
+    { labels: [] as string[], totalDays: 0 }
+  );
+
+  const { labels, totalDays } = durations;
+
+  const duration = (() => {
+    try {
+      return dayjs.duration({ days: totalDays }).humanize();
+    } catch (error) {
+      return `${totalDays} days`;
+    }
+  })();
+
+  return { duration, labels };
+};
 
 const ExperienceItem = (props: ExperienceItemProps) => {
   const { classes } = useStyles();
 
-  const {
-    location,
-    locationFlag,
-    title,
-    logo,
-    name,
-    dates,
-    description,
-  } = props;
+  const { location, locationFlag, title, logo, name, dates, description } =
+    props;
+
+  const { duration, labels } = useMemo(() => makeDurations(dates), [dates]);
 
   return (
     <div className={classes.itemContainer}>
@@ -32,6 +90,7 @@ const ExperienceItem = (props: ExperienceItemProps) => {
           </span>
         </Tooltip>
       </div>
+
       <div className={classes.itemContent}>
         <GatsbyImage
           image={logo?.childImageSharp?.gatsbyImageData}
@@ -46,11 +105,25 @@ const ExperienceItem = (props: ExperienceItemProps) => {
             <LocationOn />
             <Typography className={classes.location}>{location}</Typography>
           </div>
-          <div className={classes.row}>
-            <DateRange />
-            <Typography>{dates}</Typography>
+
+          <div className={classes.durations}>
+            <div className={classes.row}>
+              <DateRange />
+
+              <div>
+                {map(labels, (label) => {
+                  return <Typography>{label}</Typography>;
+                })}
+              </div>
+            </div>
+
+            <div className={clsx(classes.row, classes.durationRow)}>
+              <Schedule />
+              <Typography className={classes.duration}>{duration}</Typography>
+            </div>
           </div>
         </div>
+
         <Typography className={classes.description}>{description}</Typography>
       </div>
     </div>

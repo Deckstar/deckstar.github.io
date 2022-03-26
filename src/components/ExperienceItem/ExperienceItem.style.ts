@@ -19,6 +19,7 @@ const useStyles = makeStyles()((theme) => ({
   },
   itemContent: {
     marginLeft: theme.spacing(4),
+    flex: 1,
   },
   // end px units
   logo: {
@@ -45,6 +46,25 @@ const useStyles = makeStyles()((theme) => ({
   },
   description: {
     whiteSpace: 'pre-wrap',
+  },
+  durations: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    gap: theme.spacing(1),
+    flex: 1,
+  },
+  durationRow: {
+    justifyContent: 'flex-end',
+    textAlign: 'right',
+
+    '& > svg': {
+      [theme.breakpoints.down('sm')]: {
+        display: 'none',
+      },
+    },
+  },
+  duration: {
+    whiteSpace: 'nowrap',
   },
 }));
 

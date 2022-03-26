@@ -16,6 +16,6 @@ export interface ExperienceItemProps {
     };
     name: string;
   };
-  dates: string;
+  dates: { start: string; end: string | null }[];
   description: string;
 }

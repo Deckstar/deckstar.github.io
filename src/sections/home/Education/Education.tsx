@@ -31,7 +31,10 @@ const Education = () => {
               gatsbyImageData(layout: CONSTRAINED, height: 40)
             }
           }
-          dates
+          dates {
+            start
+            end
+          }
           description
         }
       }

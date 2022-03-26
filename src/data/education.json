@@ -5,7 +5,7 @@
     "title": "Stockholm School of Economics",
     "logo": "../images/companies/sse-logo-white.png",
     "name": "Stockholm School of Economics (Handelshögskolan i Stockholm)",
-    "dates": "September 2017 – May 2019",
+    "dates": [{ "start": "2017/09/01", "end": "2019/05/31" }],
     "description": "MSc Master of Finance, specialization in Investment Management\n\nFinal thesis on using multifractal mathematics to simulate and  statistically analyze financial markets."
   },
   {
@@ -14,7 +14,7 @@
     "title": "University College London",
     "logo": "../images/companies/ucl.png",
     "name": "University College London",
-    "dates": "September 2014 – May 2017",
+    "dates": [{ "start": "2014/09/01", "end": "2017/05/31" }],
     "description": "BA Economics and Business with East European Studies"
   },
   {
@@ -23,7 +23,7 @@
     "title": "Institut Le Rosey",
     "logo": "../images/companies/le-rosey-light.png",
     "name": "Institut Le Rosey",
-    "dates": "September 2008 – June 2014",
+    "dates": [{ "start": "2008/09/01", "end": "2014/06/30" }],
     "description": "IB International Baccalaureate bilingual diploma"
   }
 ]
