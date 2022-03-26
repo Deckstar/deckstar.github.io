@@ -1,5 +1,11 @@
 import { LineHighImage } from '@components';
-import { logos, stories } from '@images';
+import { logos } from '@images';
+// @ts-ignore
+import developers from '@images/stories/Developer activity-rafiki.svg';
+// @ts-ignore
+import designers from '@images/stories/Portfolio Update-rafiki.svg';
+// @ts-ignore
+import libraries from '@images/stories/Team-rafiki.svg';
 import { Container, Link, List, ListItem, Typography } from '@mui/material';
 import clsx from 'clsx';
 import React from 'react';
@@ -16,10 +22,7 @@ const Content = () => {
           <div className={clsx(classes.twoRows, classes.reverse)}>
             <div className={classes.bigPhotoContainer}>
               <div className={classes.bigPhotoCard}>
-                <img
-                  src={stories.libraries.default}
-                  className={classes.bigPhoto}
-                />
+                <img src={libraries} className={classes.bigPhoto} />
                 <div>
                   <Typography
                     color="textSecondary"
@@ -154,10 +157,7 @@ const Content = () => {
           <div className={classes.twoRows}>
             <div className={classes.bigPhotoContainer}>
               <div className={classes.bigPhotoCard}>
-                <img
-                  src={stories.designers.default}
-                  className={classes.bigPhoto}
-                />
+                <img src={designers} className={classes.bigPhoto} />
                 <div>
                   <Typography
                     color="textSecondary"
@@ -224,10 +224,7 @@ const Content = () => {
           <div className={clsx(classes.twoRows, classes.reverse)}>
             <div className={classes.bigPhotoContainer}>
               <div className={classes.bigPhotoCard}>
-                <img
-                  src={stories.developers.default}
-                  className={classes.bigPhoto}
-                />
+                <img src={developers} className={classes.bigPhoto} />
                 <div>
                   <Typography
                     color="textSecondary"
