@@ -144,11 +144,13 @@ const DrawerMenu = () => {
     <div className={clsx(classes.grow, classes.drawerMenu)}>
       <div className={classes.drawerContainer}>
         <div className={classes.drawerLogoContainer}>
-          <StaticImage
-            src="../../images/icons/main.png"
-            className={classes.drawerLogo}
-            alt="DS"
-          />
+          <GatsbyLink to="/">
+            <StaticImage
+              src="../../images/icons/main.png"
+              className={classes.drawerLogo}
+              alt="DS"
+            />
+          </GatsbyLink>
         </div>
 
         <Divider />
