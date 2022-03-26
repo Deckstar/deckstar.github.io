@@ -25,6 +25,7 @@ const Work = () => {
           }
           title
           name
+          href
           logo {
             name
             childImageSharp {

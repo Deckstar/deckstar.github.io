@@ -1,6 +1,7 @@
 export { default as ExperienceItem } from './ExperienceItem/ExperienceItem';
 export { default as HideOnScroll } from './HideOnScroll/HideOnScroll';
 export { default as Layout } from './Layout/Layout';
+export { default as LinkOrFragment } from './LinkOrFragment/LinkOrFragment';
 export { default as Navbar } from './Navbar/Navbar';
 export { default as SEO } from './SEO/SEO';
 export { default as SkillCard } from './SkillCard/SkillCard';

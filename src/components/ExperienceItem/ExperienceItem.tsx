@@ -10,6 +10,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { compact, join, map, reduce, uniq } from 'lodash';
 import React, { useMemo } from 'react';
 
+import LinkOrFragment from '../LinkOrFragment/LinkOrFragment';
 import useStyles from './ExperienceItem.style';
 
 dayjs.extend(durationPlugin);
@@ -72,8 +73,16 @@ const makeDurations = (dates: Dates) => {
 const ExperienceItem = (props: ExperienceItemProps) => {
   const { classes } = useStyles();
 
-  const { location, locationFlag, title, logo, name, dates, description } =
-    props;
+  const {
+    location,
+    locationFlag,
+    title,
+    logo,
+    name,
+    href,
+    dates,
+    description,
+  } = props;
 
   const { duration, labels } = useMemo(() => makeDurations(dates), [dates]);
 
@@ -92,11 +101,14 @@ const ExperienceItem = (props: ExperienceItemProps) => {
       </div>
 
       <div className={classes.itemContent}>
-        <GatsbyImage
-          image={logo?.childImageSharp?.gatsbyImageData}
-          alt={name}
-          className={classes.logo}
-        />
+        <LinkOrFragment href={href}>
+          <GatsbyImage
+            image={logo?.childImageSharp?.gatsbyImageData}
+            alt={name}
+            className={classes.logo}
+          />
+        </LinkOrFragment>
+
         <div className={classes.rows}>
           <Typography variant="h5" className={classes.title}>
             {title}

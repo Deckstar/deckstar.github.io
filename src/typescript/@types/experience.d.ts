@@ -10,6 +10,7 @@ export interface ExperienceItemProps {
   };
   title: string;
   name: string;
+  href: string | null;
   logo: {
     childImageSharp: {
       gatsbyImageData: IGatsbyImageData;

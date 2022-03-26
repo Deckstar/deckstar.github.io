@@ -25,6 +25,7 @@ const Education = () => {
           }
           title
           name
+          href
           logo {
             name
             childImageSharp {
