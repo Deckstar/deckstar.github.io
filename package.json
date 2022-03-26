@@ -37,7 +37,7 @@
     "gh-pages": "^3.2.3",
     "i18next": "^19.8.0",
     "lodash": "^4.17.20",
-    "masonic": "^3.3.10",
+    "masonic": "^3.6.4",
     "react": "^17.0.2",
     "react-dom": "^16.12.0",
     "react-helmet-async": "^1.0.7",
