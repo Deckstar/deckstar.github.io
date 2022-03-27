@@ -57,9 +57,8 @@ const Work = () => {
         <div className={classes.itemsOuterContainer}>
           <div className={classes.line} />
           <div className={classes.itemsContainer}>
-            {map(workItems, (job) => {
-              const { name } = job || {};
-              return <ExperienceItem {...job} key={name} />;
+            {map(workItems, (job, i) => {
+              return <ExperienceItem {...job} key={i} />;
             })}
           </div>
         </div>
