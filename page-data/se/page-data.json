@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-pages-index-tsx",
     "path": "/se/",
     "result": {"data":{"locales":{"edges":[{"node":{"ns":"common","data":"{\"Banner\":{\"SoftwareDeveloper\":\"Mjukvaruutvecklare\"}}","language":"se"}}]}},"pageContext":{"language":"se","i18n":{"language":"se","languages":["en","de","es","et","fr","hu","ru","se"],"defaultLanguage":"en","generateDefaultLanguagePage":false,"routed":true,"originalPath":"/","path":"se/"}}},
-    "staticQueryHashes": ["1057508485","271409595","3155563934","3486922188","4247758808","79244422"]}
+    "staticQueryHashes": ["1057508485","2357310266","3027590333","3155563934","3486922188","79244422"]}
