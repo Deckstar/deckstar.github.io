@@ -101,7 +101,7 @@ const ExperienceItem = (props: ExperienceItemProps) => {
       </div>
 
       <div className={classes.itemContent}>
-        <LinkOrFragment href={href}>
+        <LinkOrFragment href={href} title={name}>
           <GatsbyImage
             image={logo?.childImageSharp?.gatsbyImageData}
             alt={name}
