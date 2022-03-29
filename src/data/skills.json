@@ -317,7 +317,7 @@
       {
         "name": "Azure DevOps",
         "src": "../images/logos/azure-devops.png",
-        "hre": "https://azure.microsoft.com/services/devops/",
+        "href": "https://azure.microsoft.com/services/devops/",
         "subSkills": [
           {
             "name": "Azure Pipelines",
