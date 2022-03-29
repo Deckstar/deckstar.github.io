@@ -303,9 +303,26 @@
             "src": "../images/logos/bitbucket.png"
           },
           {
+            "name": "Gitlab",
+            "href": "https://gitlab.com",
+            "src": "../images/logos/gitlab.png"
+          },
+          {
             "name": "Azure Repos",
             "href": "https://azure.microsoft.com/services/devops/repos/",
             "src": "../images/logos/azure-repos.png"
+          }
+        ]
+      },
+      {
+        "name": "Azure DevOps",
+        "src": "../images/logos/azure-devops.png",
+        "hre": "https://azure.microsoft.com/services/devops/",
+        "subSkills": [
+          {
+            "name": "Azure Pipelines",
+            "href": "https://azure.microsoft.com/services/devops/pipelines/",
+            "src": "../images/logos/azure-pipelines.png"
           }
         ]
       },
