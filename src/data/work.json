@@ -2,11 +2,21 @@
   {
     "location": "Tallinn, Estonia",
     "locationFlag": "../images/flags/estonia.png",
+    "title": "Full stack software engineer",
+    "logo": "../images/companies/microsoft.png",
+    "name": "Microsoft",
+    "href": "https://www.microsoft.com",
+    "dates": [{ "start": "2022/09/15" }],
+    "description": "Worked full-time on the \"Big Red Button\" team, developing an internal app-health monitoring and error-tracking software.\n\nKey tech: TypeScript, React, Next.js, C#, ASP.NET Core."
+  },
+  {
+    "location": "Tallinn, Estonia",
+    "locationFlag": "../images/flags/estonia.png",
     "title": "Full stack software developer",
     "logo": "../images/companies/singleton.png",
     "name": "Singleton OÜ",
     "href": "https://singleton.ee",
-    "dates": [{ "start": "2020/02/01" }],
+    "dates": [{ "start": "2020/02/01", "end": "2022/08/31" }],
     "description": "Worked full-time on developing software for web and mobile. Made software from start to finish.\nDevelopment projects included: iOS & Android applications; websites (using React); WordPress plugins; a newspaper content-management system (CMS) page."
   },
   {
