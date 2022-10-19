@@ -6,7 +6,6 @@ const useStyles = makeStyles()((theme: Theme) => ({
     background: `linear-gradient(to right bottom, ${theme.palette.primary.contrastText} 35%, ${theme.palette.secondary.contrastText} 100%)`,
     padding: '75px 0',
     borderRadius: '400% 100% / 20%',
-    overflow: 'hidden',
 
     [theme.breakpoints.up('md')]: {
       padding: '105px 20px 100px',

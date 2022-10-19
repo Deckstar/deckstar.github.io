@@ -57,7 +57,7 @@ const Post = (props: BlogPostProps) => {
   } = article;
 
   return (
-    <Card elevation={3} className={classes.cardContainer}>
+    <Card elevation={3} className={classes.card}>
       <Link href={url} target="_blank" className={classes.cardPhotoContainer}>
         <GatsbyImage
           className={classes.cardPhoto}
@@ -169,11 +169,12 @@ const Blog = () => {
         <Paper className={classes.postsContainer} elevation={10}>
           {map(devArticles, (post) => {
             const { id } = post;
-            return <Post {...post} key={id} />;
+            return (
+              <div key={id} className={classes.cardBox}>
+                <Post {...post} />
+              </div>
+            );
           })}
-
-          {/* Without this end dot, the last article touches the right wall of the scroll container */}
-          <div className={classes.dummyDivForPaddingToWork}>.</div>
         </Paper>
       </Container>
     </section>

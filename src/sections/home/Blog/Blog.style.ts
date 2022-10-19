@@ -6,7 +6,6 @@ const useStyles = makeStyles()((theme: Theme) => ({
     background: `linear-gradient(to right bottom, ${theme.palette.primary.contrastText} 35%, ${theme.palette.secondary.contrastText} 100%)`,
     padding: '75px 0',
     borderRadius: '400% 100% / 10%',
-    overflow: 'hidden',
 
     [theme.breakpoints.up('md')]: {
       padding: '105px 20px 100px',
@@ -25,19 +24,26 @@ const useStyles = makeStyles()((theme: Theme) => ({
     marginBottom: theme.spacing(2),
   },
   postsContainer: {
-    display: 'flex',
-    flexWrap: 'nowrap',
-    overflowX: 'auto',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr));',
+    gap: '2em',
+    backgroundColor: 'transparent',
     padding: '2rem 1rem',
+
+    [theme.breakpoints.down('sm')]: {
+      gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr));',
+    },
   },
 
-  cardContainer: {
-    marginRight: '1.5rem',
-    flex: '0 0 auto',
-    width: '92.5%',
+  cardBox: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  card: {
     maxWidth: '24rem',
     display: 'flex',
     flexDirection: 'column',
+    flex: 1,
   },
   cardPhotoContainer: {
     position: 'relative',

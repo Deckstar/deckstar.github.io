@@ -7,7 +7,7 @@
     "name": "Microsoft",
     "href": "https://www.microsoft.com",
     "dates": [{ "start": "2022/09/15" }],
-    "description": "Worked full-time on the \"Big Red Button\" team, developing an internal app-health monitoring and error-tracking software.\n\nKey tech: TypeScript, React, Next.js, C#, ASP.NET Core."
+    "description": "Worked full-time on the \"Big Red Button\" team, developing an internal app-health monitoring and error-tracking software.\n\nKey tech: TypeScript, React, Next.js, C#, .NET Core."
   },
   {
     "location": "Tallinn, Estonia",
