@@ -33,5 +33,12 @@
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "formatFiles.excludePattern": "**/node_modules,**/.vscode"
+  "formatFiles.excludePattern": "**/node_modules,**/.vscode",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#542c84",
+    "tab.activeBorder": "#542c84",
+    "titleBar.activeBackground": "#542c84",
+    "titleBar.border": "#542c84",
+    "titleBar.inactiveBackground": "#542c84"
+  },
 }
