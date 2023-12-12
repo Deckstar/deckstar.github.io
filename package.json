@@ -6,7 +6,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "lint": "yarn prettier:all --check && yarn eslint .",
     "lint:fix": "yarn eslint --fix . && yarn prettier:all --write",
     "prettier:all": "prettier --ignore-path .eslintignore \"**/*.{js,jsx,ts,tsx,graphql,md}\"",

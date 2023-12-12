@@ -34,6 +34,11 @@
         ]
       },
       {
+        "name": "C#",
+        "href": "https://dotnet.microsoft.com/en-us/languages/csharp",
+        "src": "../images/logos/c-sharp.png"
+      },
+      {
         "name": "Lua",
         "href": "https://www.lua.org",
         "src": "../images/logos/lua.png"
@@ -103,14 +108,39 @@
             ]
           },
           {
-            "name": "Material UI",
-            "href": "https://mui.com",
-            "src": "../images/logos/material-ui.png"
+            "name": "UI libraries",
+            "subSkills": [
+              {
+                "name": "Material UI",
+                "href": "https://mui.com",
+                "src": "../images/logos/material-ui.png"
+              },
+              {
+                "name": "Fluent UI",
+                "href": "https://react.fluentui.dev/",
+                "src": "../images/logos/fluent-ui.png"
+              }
+            ]
           },
           {
-            "name": "Formik",
-            "href": "https://formik.org",
-            "src": "../images/logos/formik.png"
+            "name": "Forms",
+            "subSkills": [
+              {
+                "name": "Final Form",
+                "href": "https://final-form.org",
+                "src": "../images/logos/final-form.png"
+              },
+              {
+                "name": "Formik",
+                "href": "https://formik.org",
+                "src": "../images/logos/formik.png"
+              },
+              {
+                "name": "Redux Form",
+                "href": "https://redux-form.com",
+                "src": "../images/logos/redux-form.png"
+              }
+            ]
           },
           {
             "name": "i18next",
@@ -132,24 +162,29 @@
         ]
       },
       {
-        "name": "Apollo",
-        "href": "https://www.apollographql.com",
-        "src": "../images/logos/apollo.png"
-      },
-      {
-        "name": "Redux",
-        "href": "https://redux.js.org",
-        "src": "../images/logos/redux.png",
+        "name": "State managers",
         "subSkills": [
           {
-            "name": "Redux Saga",
-            "href": "https://redux-saga.js.org",
-            "src": "../images/logos/redux-saga.png"
+            "name": "Apollo",
+            "href": "https://www.apollographql.com",
+            "src": "../images/logos/apollo.png"
           },
           {
-            "name": "Redux Form",
-            "href": "https://redux-form.com",
-            "src": "../images/logos/redux-form.png"
+            "name": "TanStack Query",
+            "href": "https://tanstack.com/query/latest",
+            "src": "../images/logos/tanstack-query.png"
+          },
+          {
+            "name": "Redux",
+            "href": "https://redux.js.org",
+            "src": "../images/logos/redux.png",
+            "subSkills": [
+              {
+                "name": "Redux Saga",
+                "href": "https://redux-saga.js.org",
+                "src": "../images/logos/redux-saga.png"
+              }
+            ]
           }
         ]
       },
@@ -231,6 +266,11 @@
         "name": "Redis",
         "href": "https://redis.io",
         "src": "../images/logos/redis.png"
+      },
+      {
+        "name": ".NET",
+        "href": "https://dotnet.microsoft.com/",
+        "src": "../images/logos/dot-net.png"
       }
     ]
   },
@@ -254,10 +294,6 @@
               {
                 "name": "PL/pgSQL",
                 "src": "../images/logos/pl-pgsql.png"
-              },
-              {
-                "name": "Postgres",
-                "src": "../images/logos/postgres.png"
               }
             ]
           },
@@ -338,6 +374,11 @@
             "name": "Jest",
             "href": "https://jestjs.io",
             "src": "../images/logos/jest.png"
+          },
+          {
+            "name": "Cypress",
+            "href": "https://www.cypress.io",
+            "src": "../images/logos/cypress.png"
           }
         ]
       },

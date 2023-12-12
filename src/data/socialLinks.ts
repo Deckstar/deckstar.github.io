@@ -1,5 +1,8 @@
-import { Github, Goodreads, Twitter } from '@components/Icons';
-import { SvgIconComponent } from '@mui/icons-material';
+import { Github, Goodreads } from '@components/Icons';
+import { Email, SvgIconComponent } from '@mui/icons-material';
+
+/** The current email address to use. */
+export const EMAIL_ADDRESS = 'dexter.sibirtsev@gmail.com';
 
 interface SocialLink {
   title: string;
@@ -9,9 +12,9 @@ interface SocialLink {
 
 const socialLinks: SocialLink[] = [
   {
-    title: 'Twitter',
-    url: 'https://twitter.com/Deckstar01',
-    Icon: Twitter,
+    title: 'Email,',
+    url: `mailto:${EMAIL_ADDRESS}`,
+    Icon: Email,
   },
   {
     title: 'Github,',

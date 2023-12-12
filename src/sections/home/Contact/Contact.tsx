@@ -1,4 +1,4 @@
-import socialLinks from '@data/socialLinks';
+import socialLinks, { EMAIL_ADDRESS } from '@data/socialLinks';
 import { Email } from '@mui/icons-material';
 import { Button, Container, Link, Typography } from '@mui/material';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
@@ -32,9 +32,9 @@ const Contact = () => {
             })}
           </div>
           <Typography paragraph>{t('Contact.SendEmail')}:</Typography>
-          <Link href="mailto:dexter.sibirtsev@gmail.com">
+          <Link href={`mailto:${EMAIL_ADDRESS}`}>
             <Button color="grey" variant="contained" startIcon={<Email />}>
-              dexter.sibirtsev@gmail.com
+              {EMAIL_ADDRESS}
             </Button>
           </Link>
         </div>
