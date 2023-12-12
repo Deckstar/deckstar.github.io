@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-404-tsx",
-    "path": "/et/404.html",
-    "result": {"pageContext":{"language":"et","i18n":{"language":"et","languages":["en","de","es","et","fr","hu","ru","se"],"defaultLanguage":"en","generateDefaultLanguagePage":false,"routed":true,"originalPath":"/404.html","path":"et/404.html"}}},
-    "staticQueryHashes": []}
+{"componentChunkName":"component---src-pages-404-tsx","path":"/et/404.html","result":{"pageContext":{"language":"et","i18n":{"language":"et","languages":["en","de","es","et","fr","hu","ru","se"],"defaultLanguage":"en","generateDefaultLanguagePage":false,"routed":true,"originalPath":"/404.html","path":"et/404.html"}}},"staticQueryHashes":[]}

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdeckstar_portfolio=self.webpackChunkdeckstar_portfolio||[]).push([[218],{2513:function(e,t,a){a.r(t);var f=a(1082),s=a(7294);t.default=()=>((0,s.useEffect)((()=>{(0,f.navigate)("/")}),[]),null)}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-57772189ef5ffd062156.js.map

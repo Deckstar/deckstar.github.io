@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-index-tsx",
-    "path": "/de/",
-    "result": {"data":{"locales":{"edges":[{"node":{"ns":"common","data":"{\"Banner\":{\"SoftwareDeveloper\":\"Softwareentwickler\"}}","language":"de"}}]}},"pageContext":{"language":"de","i18n":{"language":"de","languages":["en","de","es","et","fr","hu","ru","se"],"defaultLanguage":"en","generateDefaultLanguagePage":false,"routed":true,"originalPath":"/","path":"de/"}}},
-    "staticQueryHashes": ["1057508485","2357310266","3027590333","3155563934","3486922188","79244422"]}
+{"componentChunkName":"component---src-pages-index-tsx","path":"/de/","result":{"data":{"locales":{"edges":[{"node":{"ns":"common","data":"{\"Banner\":{\"SoftwareDeveloper\":\"Softwareentwickler\"}}","language":"de"}}]}},"pageContext":{"language":"de","i18n":{"language":"de","languages":["en","de","es","et","fr","hu","ru","se"],"defaultLanguage":"en","generateDefaultLanguagePage":false,"routed":true,"originalPath":"/","path":"de/"}}},"staticQueryHashes":["1057508485","2357310266","3027590333","3155563934","3486922188","79244422"]}
