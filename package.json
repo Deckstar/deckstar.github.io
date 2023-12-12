@@ -24,7 +24,7 @@
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.2",
     "dayjs": "^1.11.0",
-    "gatsby": "^4.10.3",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-image": "^2.10.1",
     "gatsby-plugin-react-helmet-async": "^1.2.1",
     "gatsby-plugin-react-i18next": "^1.2.2",
